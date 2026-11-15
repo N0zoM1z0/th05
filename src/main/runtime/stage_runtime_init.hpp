@@ -1,11 +1,11 @@
-// Full canonical motion and real per-stage state/reset interfaces.
+// Declarations used by stage_runtime_init().
 #ifndef TH05_STAGE_RUNTIME_HPP
 #define TH05_STAGE_RUNTIME_HPP
 #include "src/main/player/player.hpp"
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner implements TH05 MAIN per-stage runtime initialization
+#error This is TH05 MAIN code
 #endif
 
 typedef int vram_y_t;
@@ -35,7 +35,9 @@ extern nearfunc_t_near bg_render_bombing_func;
 #pragma codeseg STAGE_RUNTIME_TEXT main_01
 void near stage_runtime_init(void);
 extern "C" void near stage_state_init(void);
-// Exact current C/Pascal far interface from the accepted item owner.
+// shot_level_update() and hud_put() are far, but in the same physical code
+// segment; `samecodeseg` lets TLINK shorten their calls to
+// NOP / PUSH CS / CALL near, as in the original.
 extern "C" void pascal far shot_level_update(void);
 #pragma samecodeseg shot_level_update
 void near randring_fill(void);

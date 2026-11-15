@@ -1,9 +1,9 @@
-// Complete resident/score and the accepted foreign formatting interfaces.
+// Verdict bonus calculation and the selection of the second comment line.
 #ifndef TH05_MAINE_VERDICT_BONUS_HPP
 #define TH05_MAINE_VERDICT_BONUS_HPP
 #include "src/maine/verdict/format.hpp"
 
-// The full resident end-sequence domain, shared with the actual MAINE entry.
+// Values of resident->end_sequence.
 enum verdict_end_sequence_t {
     VERDICT_ES_GOOD = 0xFF,
     VERDICT_ES_BAD = 0xFE,
@@ -14,7 +14,7 @@ enum verdict_end_sequence_t {
 extern long random_seed;
 extern screen_x_t verdict_text_left;
 extern screen_y_t verdict_text_top;
-// A distinct original percent object at DS:1620; no new initialized DATA.
+// A separate "％" object from verdict_percent_sign. Defined in metric_ui_data.cpp.
 extern const shiftjis_t near verdict_bonus_percent_sign[];
 
 #ifdef TH05_VERDICT_FULL_FAMILY

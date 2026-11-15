@@ -1,4 +1,4 @@
-// Score/stage display uses native near-Pascal word arguments and Master frames.
+// Declarations for registration_score_put() and registration_stage_put().
 #ifndef TH05_MREG_VALUES_HPP
 #define TH05_MREG_VALUES_HPP
 #pragma codeseg _TEXT

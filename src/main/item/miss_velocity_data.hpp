@@ -1,4 +1,4 @@
-// Complete canonical Subpixel/item layouts; no storage or constructor substitute.
+// Velocities of the items dropped when losing a life.
 #ifndef TH05_ITEM_MISS_VELOCITY_DATA_HPP
 #define TH05_ITEM_MISS_VELOCITY_DATA_HPP
 #include "src/main/item/item.hpp"

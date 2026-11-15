@@ -1,4 +1,6 @@
-// Natural TH05 all-cast ending animation, adapted from pinned ReC98.
+// All Cast ending (Extra Stage clear): seven background pictures fading in,
+// each followed by its credit lines, timed to the measures of the BGM.
+// Adapted from ReC98 th05/end/allcast.cpp.
 #pragma option -zCMAINE_01_TEXT
 
 #include "src/maine/allcast/page_shown.h"
@@ -26,7 +28,7 @@ static const screen_y_t CUTSCENE_PIC_TOP = ((RES_Y / 2) - (CUTSCENE_PIC_H / 2));
 int measure_cur;
 int frame_half;
 int measure_target;
-// C public `page_shown` is owned by the one-byte DATA initializer.
+// [page_shown] is defined in page_shown.c.
 
 // During screen_line_next_animate(), this is 1 more than the ID of the current
 // screen shown!
@@ -54,8 +56,8 @@ extern int BG_QUARTER[PLAYCHAR_COUNT][SCREEN_COUNT];
 bool near wait_flip_and_check_measure_target(void);
 // -----------------------
 
-bool near screen_line_next_animate(void)
-;
+// Defined in lines.cpp.
+bool near screen_line_next_animate(void);
 
 void pascal near screen_fadeout_animate_and_advance(
 	screen_x_t pic_left, screen_y_t pic_top

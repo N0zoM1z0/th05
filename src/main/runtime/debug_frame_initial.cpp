@@ -1,5 +1,6 @@
-// Original first two MAIN _DATA bytes; code consumers determine their roles.
-// ReC98 th05_main.asm opens DATA with two explicit `db 0` values.
+// The first two bytes of MAIN's data segment: the debug-mode fast-forward
+// state used by gameplay_loop(), and whether Q toggles it (set by
+// stage_session_init() in debug mode).
 #pragma option -zCDEBUG_FRAME_INIT_TEXT -zPmain_01
 #include "src/main/hud/resident.hpp"
 

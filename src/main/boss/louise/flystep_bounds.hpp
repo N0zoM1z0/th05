@@ -1,4 +1,5 @@
-// Louise's actual inclusive bouncing rectangle and first-frame setup clock.
+// Louise bounces off the edges of this rectangle, in playfield pixels. The
+// edges are inclusive.
 #ifndef TH05_LOUISE_FLYSTEP_BOUNDS_HPP
 #define TH05_LOUISE_FLYSTEP_BOUNDS_HPP
 

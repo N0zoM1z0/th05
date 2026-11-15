@@ -1,4 +1,6 @@
-// Natural byte-plane dot operation through the actual incoming ES plane.
+// C version of item_splash_dot_render(), which sets one pixel in the VRAM
+// plane in ES. Not built: Borland compiles it to 42 bytes instead of the
+// original 28. The game uses splash_dot_exact.asm.
 #pragma option -zCITEM_DOT_TEXT -zPmain_01 -k-
 #include "src/shared/abi.hpp"
 

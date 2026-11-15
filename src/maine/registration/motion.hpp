@@ -1,4 +1,5 @@
-// Complete adjacent glyph creation/animation context and true provider frames.
+// Declarations for glyphball_spawn() and glyphballs_update(). The empty SHARED
+// segment must stay ungrouped, or the far calls into it get the wrong frame.
 #ifndef TH05_MREG_MOTION_HPP
 #define TH05_MREG_MOTION_HPP
 #include "src/maine/registration/glyphball.hpp"
@@ -27,10 +28,12 @@ void near glyphballs_update(void);
 
 static const uint8_t REGISTRATION_SPACE_GLYPH = 0xCD;
 static const uint8_t REGISTRATION_EMPTY_GLYPH = 0x02;
-static const int REG_GLYPH_CLOUD = 20;
-static const int REG_GLYPH_SPLASH = 24;
-static const int REG_GLYPH_BALL = 28;
-static const int REG_GLYPH_CELS = 4;
-static const int REG_CLOUD_SIZE = 32;
-static const int REG_BALL_SIZE = 16;
+// super_*() patterns (ReC98 names): 32x32 clouds and splashes in sctm0.bft,
+// 16x16 balls in sctm1.bft.
+static const int PAT_GLYPHBALL_CLOUD = 20;
+static const int PAT_GLYPHBALL_SPLASH = 24;
+static const int PAT_GLYPHBALL = 28;
+static const int GLYPHBALL_CELS = 4;
+static const int GLYPHBALL_CLOUD_SPLASH_W = 32;
+static const int GLYPHBALL_W = 16;
 #endif

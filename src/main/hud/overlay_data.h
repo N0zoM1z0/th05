@@ -1,10 +1,13 @@
-/* Explicit C model of the complete semantic overlay DATA objects. */
+/* Initialized data of the playfield overlays (overlay.cpp): fade and popup
+ * state, the stage/popup strings in the gaiji font and the blank text row.
+ * ZUN declared these as separate variables; here they are grouped into one
+ * struct so that a single C file reproduces their layout. */
 #ifndef TH05_HUD_OVERLAY_DATA_H
 #define TH05_HUD_OVERLAY_DATA_H
 #include "src/shared/abi.hpp"
 
-/* These are glyph selectors, not pixels. Popup fragments occupy consecutive
- * named slots in the game's gaiji font; bold letters use the canonical order. */
+/* Gaiji font glyph numbers. Each popup message is drawn as consecutive glyphs
+ * starting at its *_FIRST value; the bold alphabet runs from 0-9 to A-Z. */
 typedef enum HudGaijiSelector {
     HG_NULL = 0,
     HG_EMPTY = 0x02,
@@ -30,12 +33,14 @@ typedef union HudOverlayFade {
     unsigned char out_time;
 } HudOverlayFade;
 
+/* The variables are word-aligned, so the struct needs -a2. The option has to
+ * come after HudOverlayFade, which would otherwise be padded to two bytes. */
 #pragma option -a2
 typedef struct HudOverlayData {
     HudOverlayFade overlay_fade;
     unsigned char boss_bgm_frame;
     unsigned char popup_frame;
-    uint16_t bb_txt_seg;
+    uint16_t bb_txt_seg; /* segment of the loaded BB text sprites */
     HudGaijiSelector gStage_1[8];
     const HudGaijiSelector gFINAL_STAGE[12];
     const HudGaijiSelector gEXTRA_STAGE[12];
@@ -48,7 +53,7 @@ typedef struct HudOverlayData {
     unsigned char dissolve_sprite;
     const uint8_t far *PLAYFIELD_BLANK_ROW;
     const HudGaijiSelector gDEMO_PLAY[10];
-    const uint8_t blank_row[49];
+    const uint8_t blank_row[49]; /* 48 spaces, one playfield row */
 } HudOverlayData;
 
 extern HudOverlayData near hud_overlay_data;

@@ -1,6 +1,11 @@
-// Preserve the original command-return bug: only line break, gaiji and
-// box-begin return true; other executed commands may also print control glyphs
-// when called from the text box loop.
+// Runs the TX2 script command [c], with dialog_p pointing just past it.
+// Included by opcode.cpp, runtime.cpp and opcode_full_context.cpp.
+//
+// ZUN landmine: only unknown command bytes should have returned false. As it
+// is, line break, gaiji and box begin are the only commands usable inside a
+// text box: dialog_run()'s box loop also prints every other command byte as
+// the lead byte of a Shift-JIS character, followed by whatever comes next in
+// the script, which the text chip shows as control-character glyphs.
 bool pascal near dialog_op(uint8_t c)
 {
     screen_x_t left;
@@ -19,6 +24,7 @@ bool pascal near dialog_op(uint8_t c)
         break;
     case DIALOG_FACE:
         c = *(dialog_p++);
+        // ZUN quirk: the face loader waits one more frame itself.
         frame_delay(1);
         if(dialog_side == SIDE_PLAYCHAR) {
             dialog_face_load_unput_put_free_8(FACE_PLAYCHAR_LEFT, FACE_PLAYCHAR_TOP, c);
@@ -27,6 +33,9 @@ bool pascal near dialog_op(uint8_t c)
         }
         break;
     case DIALOG_LOAD_SPRITES:
+        // ZUN landmine: scripts are responsible for freeing stage sprites
+        // with DIALOG_CLEAR_STAGE_SPRITES before loading boss sprites, so
+        // that the boss sprites land at the patnums the boss code expects.
         fn = reinterpret_cast<const unsigned char far *>(dialog_p);
         super_entry_bfnt(reinterpret_cast<const char far *>(fn));
         dialog_p += (strlen(reinterpret_cast<const char far *>(fn)) + 1);
@@ -43,6 +52,7 @@ bool pascal near dialog_op(uint8_t c)
         if(fn[0] == '$') {
             snd_kaja_func(KAJA_SONG_STOP, 0);
         } else {
+            // snd_load() stops the current BGM by itself.
             snd_load(reinterpret_cast<const char far *>(fn), SND_LOAD_SONG);
             snd_kaja_func(KAJA_SONG_PLAY, 0);
         }
@@ -65,7 +75,7 @@ bool pascal near dialog_op(uint8_t c)
         c = *(dialog_p++);
         palette_white_in(c);
         break;
-    case DIALOG_LINEBREAK:
+    case DIALOG_LINEBREAK:   // 0x0B, not ASCII LF (0x0A)
         dialog_op_linebreak();
         return true;
     case DIALOG_GAIJI:

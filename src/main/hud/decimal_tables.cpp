@@ -1,4 +1,6 @@
-// Decimal divisors, highest place first; ordinary semantic number tables.
+// Powers of ten, highest place first, used as divisors to split numbers into
+// decimal digits. The seven-digit table serves numbers.asm, the five-digit one
+// score.asm and the point number popups.
 #pragma option -zCDECIMAL_TABLE_DATA_TEXT -zPmain_01
 #include "src/main/hud/decimal_tables.hpp"
 

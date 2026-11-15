@@ -1,11 +1,11 @@
-// Yumeko's original 16-byte Boss scratch arena, viewed through its real
-// stage-entry, attack-phase and final-ring lifetimes. No extra state is added.
+// Views of the 16 [boss_statebyte] bytes as used by stage5_setup() and each of
+// Yumeko's attacks.
 #ifndef TH05_MAIN_BOSS_YUMEKO_FINAL_RING_SCRATCH_HPP
 #define TH05_MAIN_BOSS_YUMEKO_FINAL_RING_SCRATCH_HPP
 
 #include <stddef.h>
 
-// The three late bytes are deliberately reused by mutually exclusive attacks.
+// Bytes 13-15 have a different meaning in each attack.
 union YumekoPatternByte13 {
     unsigned char aimed_swords_accelerated;
     unsigned char laser_swords_accelerated;
@@ -30,15 +30,15 @@ typedef char yumeko_fan_mirror_at_zero[(offsetof(YumekoPatternByte15, fan_mirror
 typedef char yumeko_sweep_spacing_at_zero[(offsetof(YumekoPatternByte15, sweep_spacing) == 0) ? 1 : -1];
 typedef char yumeko_final_ring_count_at_zero[(offsetof(YumekoPatternByte15, final_ring_count) == 0) ? 1 : -1];
 
-// Stage 5 seeds the two attack clocks before Yumeko's first callback.
+// stage5_setup() initializes the spawn intervals of the two stationary attacks.
 struct YumekoStage5SetupScratch {
     unsigned char sword_spawn_interval; // byte 0: aimed-sword cadence
     unsigned char laser_spawn_interval; // byte 1: laser cadence
     unsigned char unused_2_to_15[14];
 };
 
-// The first stationary attack keeps the stage-seeded sword interval until
-// its own HP gate accelerates it. Bytes 12..15 are its live volley state.
+// The aimed-sword attack uses the sword interval set by stage5_setup() until
+// it speeds up.
 struct YumekoAimedSwordsScratch {
     unsigned char sword_spawn_interval; // byte 0
     unsigned char unused_1_to_11[11];
@@ -48,9 +48,8 @@ struct YumekoAimedSwordsScratch {
     YumekoPatternByte15 pattern_byte15; // byte 15
 };
 
-// The laser attack inherits byte 1 from stage setup, then changes it once
-// at the near-HP gate. Its volley, acceleration and paired-angle bytes match
-// the aimed-sword offsets but have a separate phase lifetime.
+// The laser/sword attack uses the laser interval set by stage5_setup() until
+// it speeds up. Bytes 12-15 are used just like in the aimed-sword attack.
 struct YumekoLaserSwordsScratch {
     unsigned char unused_0;
     unsigned char laser_spawn_interval; // byte 1
@@ -61,14 +60,14 @@ struct YumekoLaserSwordsScratch {
     YumekoPatternByte15 pattern_byte15; // byte 15
 };
 
-// The two later spread callbacks share the angle pair at bytes 14 and 15.
+// Both spread attacks keep their two angles in bytes 14 and 15.
 struct YumekoSpreadScratch {
     unsigned char unused_0_to_13[14];
     YumekoPatternByte14 pattern_byte14; // byte 14
     YumekoPatternByte15 pattern_byte15; // byte 15
 };
 
-// The sweep reuses the same tail as a round counter, side angle and spacing.
+// The sword sweep's round counter, side angle and sword spacing.
 struct YumekoSweepScratch {
     unsigned char unused_0_to_12[13];
     YumekoPatternByte13 pattern_byte13; // byte 13
@@ -76,14 +75,14 @@ struct YumekoSweepScratch {
     YumekoPatternByte15 pattern_byte15; // byte 15
 };
 
-// The final ring resets byte 14/15 before using them as angle and shot count.
+// The final ring's angle and ring counter.
 struct YumekoFinalRingScratch {
     unsigned char earlier_phase_state[14];
     YumekoPatternByte14 pattern_byte14; // byte 14
     YumekoPatternByte15 pattern_byte15; // byte 15
 };
 
-// Mobile fan patterns use byte 15 as their one-bit mirrored-side selector.
+// The sword fan's mirrored-side flag.
 struct YumekoPatternScratch {
     unsigned char earlier_phase_state[15];
     YumekoPatternByte15 pattern_byte15; // byte 15
@@ -127,9 +126,6 @@ typedef char yumeko_sweep_byte14_at_14[(offsetof(YumekoSweepScratch, pattern_byt
 typedef char yumeko_sweep_byte15_at_15[(offsetof(YumekoSweepScratch, pattern_byte15) == 15) ? 1 : -1];
 typedef char yumeko_final_byte14_at_14[(offsetof(YumekoFinalRingScratch, pattern_byte14) == 14) ? 1 : -1];
 typedef char yumeko_final_byte15_at_15[(offsetof(YumekoFinalRingScratch, pattern_byte15) == 15) ? 1 : -1];
-// Preserve the established final-ring assertion names for existing tests/docs.
-typedef char yumeko_final_angle_at_14[(offsetof(YumekoFinalRingScratch, pattern_byte14) == 14) ? 1 : -1];
-typedef char yumeko_final_rings_at_15[(offsetof(YumekoFinalRingScratch, pattern_byte15) == 15) ? 1 : -1];
 typedef char yumeko_pattern_byte15_at_15[(offsetof(YumekoPatternScratch, pattern_byte15) == 15) ? 1 : -1];
 
 typedef char yumeko_stage5_view_at_zero[(offsetof(YumekoBossScratch, stage5_setup) == 0) ? 1 : -1];
@@ -143,14 +139,15 @@ typedef char yumeko_pattern_view_at_zero[(offsetof(YumekoBossScratch, pattern) =
 #define yumeko_boss_scratch (*reinterpret_cast<YumekoBossScratch near *>(boss_statebyte))
 #define yumeko_final_scratch yumeko_boss_scratch.final_ring
 #define yumeko_pattern_scratch yumeko_boss_scratch.pattern
-// Compatibility name for the original fan-specific source view.
-#define yumeko_fan_scratch yumeko_pattern_scratch
 
-// Movement/reposition vs active callback are original Boss mode values.
+// Values of [boss.mode] in the mobile waves.
 static const unsigned char YUMEKO_MODE_REPOSITION = 0;
 static const unsigned char YUMEKO_MODE_ATTACK = 1;
+
 static const unsigned char YUMEKO_FAN_NORMAL_SIDE = 0;
 static const unsigned char YUMEKO_FAN_MIRRORED_SIDE = 1;
+
+// Number of attacks in each mobile wave.
 static const unsigned char YUMEKO_WAVE_PATTERN_LIMIT = 20;
 
 #endif

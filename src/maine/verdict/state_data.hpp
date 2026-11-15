@@ -1,4 +1,6 @@
-// DATA-only declarations matching the canonical verdict interfaces' types.
+// Declarations for state_data.cpp. Same types as in format.hpp, display.hpp
+// and main.hpp, but without their `#pragma codeseg` function declarations:
+// those would add an empty SHARED segment to this data-only object file.
 #ifndef TH05_MAINE_VERDICT_STATE_DATA_HPP
 #define TH05_MAINE_VERDICT_STATE_DATA_HPP
 #include "src/main/hud/resident.hpp"
@@ -11,8 +13,4 @@ extern int verdict_text_top;
 extern bool skill_subtract;
 extern char verdict_rank_glyphs[5][8];
 extern bool graph_3_digit_put_as_fixed_2_digit;
-
-typedef char verdict_state_coord_is_word[(sizeof(verdict_text_left) == 2) ? 1 : -1];
-typedef char verdict_state_color_is_word[(sizeof(verdict_text_color) == 2) ? 1 : -1];
-typedef char verdict_state_flag_is_byte[(sizeof(skill_subtract) == 1) ? 1 : -1];
 #endif

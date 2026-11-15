@@ -86,7 +86,7 @@ No additional executable bytes are claimed by this refinement.
 
 ## Four-column Devil projectiles and rank-specific firing periods (2026-11-12)
 
-The full 802-byte Devil attacker now uses `devil_ballistics.hpp` for the
+The full 802-byte Devil attacker now names, next to their use, the
 actual four independently addressed lasers, their width 6, red/blue
 laser color 14, initial 0x40 direction, the 0x80 left/right reflection,
 prelude-to-full bullet count 1→3, spread angle 0x30 and 7-pixel-per-frame

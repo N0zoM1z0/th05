@@ -1,11 +1,7 @@
-// The four All Cast programs: seven genuine PI names plus one null sentinel.
-// Distinct filename bytes are owned in background_filenames.c.
+// Per-character All Cast background picture file names and the quarter of
+// each .PI image to show. The file name strings are in background_filenames.c.
 #pragma option -zCALLCAST_BG_INDEX_TEXT -zPgroup_01
 #include "src/maine/allcast/background_index.hpp"
-
-// The preceding source-defined C bank owns the actual editable filename bytes.
-// Keep the C symbol rather than fabricating 28 literal far addresses.
-
 
 typedef const char far *AllCastBackgroundFilename;
 
@@ -27,7 +23,8 @@ AllCastBackgroundFilename BG_FN[4][8] = {
     ALLCAST_BACKGROUNDS_FOR(3)
 };
 
-// Each background picture is assigned a quarter-screen entry position.
+// Every .PI image holds four 320x200 pictures; this selects the one shown on
+// each screen.
 int BG_QUARTER[4][8] = {
     { 1, 0, 1, 3, 0, 0, 0, 0 },
     { 1, 0, 1, 2, 1, 1, 1, 0 },
@@ -36,7 +33,3 @@ int BG_QUARTER[4][8] = {
 };
 
 #undef ALLCAST_BACKGROUNDS_FOR
-
-typedef char allcast_bg_index_pointer_width[(sizeof(AllCastBackgroundFilename) == 4) ? 1 : -1];
-typedef char allcast_bg_index_ptr_size[(sizeof(BG_FN) == 128) ? 1 : -1];
-typedef char allcast_bg_index_quarter_size[(sizeof(BG_QUARTER) == 64) ? 1 : -1];

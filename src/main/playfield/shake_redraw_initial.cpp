@@ -1,4 +1,5 @@
-// ReC98 th04/main/playfld[data].asm: original one-byte shake redraw clock.
+// Initial value of the shake redraw counter (ReC98 th04/main/playfld[data].asm).
+// It is a byte: the number of frames that still need a tile redraw.
 #pragma option -zCSHAKE_REDRAW_INIT_TEXT -zPmain_01
 
 char playfield_shake_redraw_time = 0;

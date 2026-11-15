@@ -1,17 +1,18 @@
-// Full spawn-splash record and genuine main_03 calls; ReC98 b6ba5b0a
-// th04/main/item/splash.hpp and maintained TH04 splash owner provenance.
+// Item spawn splashes: expanding dotted circles shown when an item appears.
+// Follows ReC98's th04/main/item/splash.hpp.
 #ifndef TH05_MAIN_ITEM_SPLASH_HPP
 #define TH05_MAIN_ITEM_SPLASH_HPP
 #include "src/main/item/item.hpp"
 
 static const int ITEM_SPLASH_COUNT = 8;
 static const int ITEM_SPLASH_DOTS = 32;
+// Radius in pixels
 static const int ITEM_SPLASH_RADIUS_START = 2;
 static const int ITEM_SPLASH_RADIUS_DELTA = 2;
 static const int ITEM_SPLASH_RADIUS_END = 32;
 struct item_splash_t {
     entity_flag_t flag;
-    char time;
+    char time; // ZUN bloat: Expressed via the radius.
     SPPoint center;
     Subpixel radius_cur;
     Subpixel radius_prev;

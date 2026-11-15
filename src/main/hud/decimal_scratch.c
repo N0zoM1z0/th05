@@ -1,11 +1,11 @@
-/* One real writable nine-cell PC-98 HUD decimal glyph staging row. */
+/* Glyph row shared by the HUD number renderers in bar.asm, score.asm and
+ * numbers.asm. Each fills in up to eight glyphs and draws the row with
+ * gaiji_putsa(). */
 #pragma option -zCHUD_DECIMAL_SCRATCH_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Native near HUD scratch initialized DATA is produced by C
+#error This file must be compiled as C
 #endif
 
-/* The original bar, score and variable-length number raster writers
- * all rewrite the same eight glyph cells, plus the trailing NUL byte. */
 #define HUD_DECIMAL_RENDER_CELLS 8
 #define HUD_DECIMAL_TERMINATOR_CELLS 1
 

@@ -1,5 +1,5 @@
-// TH05 original DATA at 209D:00A0, before the pause-action glyphs.
-// The historical TASM source emits two adjacent `db 0` bytes.
+// Whether stage_session_init() has to load the player character's sprites,
+// which it does at the start of a new game (Stage 1 or the Extra Stage).
 #pragma option -zCLOAD_PLAYCHAR_INIT_TEXT -zPmain_01
 
 int load_playchar_resources = 0;

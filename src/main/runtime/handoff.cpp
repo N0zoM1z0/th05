@@ -1,9 +1,10 @@
-// Natural maintained TH04 gameover/gameexecl semantics, with independently
-// reviewed TH05 score reset, resident statistics and resource-release order.
+// Hands control to another executable (OP or MAINE): saves the score and the
+// play statistics to the resident structure, frees everything, and execl()s.
 #pragma option -zCHANDOFF_TEXT -zPmain_01
 #include "src/main/runtime/handoff.hpp"
 #pragma codeseg HANDOFF_TEXT main_01
 
+// Copies the score into the resident structure, then resets it.
 void near game_state_save_score(void)
 {
     for(int i = 0; i < SCORE_DIGITS; i++) {
@@ -40,8 +41,8 @@ int pascal far GameExecl(const char far *binary_fn)
     text_clear();
     game_exit();
 
-    // TC4's real 16-bit process.h takes mutable far strings. These legacy
-    // qualifier casts preserve the original pointers and their actual ABI.
-    // In large model NULL is a four-byte sentinel for this variadic API.
+    // Turbo C++ 4.0's execl() takes non-const strings, hence the casts.
+    // In the large model, NULL is 0L, a four-byte terminator. Only returns
+    // if DOS can't start the program.
     return execl((char far *)binary_fn, (char far *)binary_fn, NULL);
 }

@@ -1,5 +1,5 @@
-// TH05 item progress counters, in their actual native DGROUP order.
-// Source semantics: ReC98 th04/main/item/items[data].asm (GAME=5).
+// Item counters and the bomb attraction flag, in their original data order.
+// ReC98: th04/main/item/items[data].asm (GAME=5).
 #pragma option -zCITEM_STATE_DATA_TEXT -zPmain_01
 #include "src/main/hud/resident.hpp"
 

@@ -1,4 +1,4 @@
-// Canonical puppet storage and real movement/dispatcher foreign interfaces.
+// Declarations for the puppet movement.
 #ifndef TH05_MAIN_BOSS_ALICE_PUPPET_MOTION_HPP
 #define TH05_MAIN_BOSS_ALICE_PUPPET_MOTION_HPP
 #include "src/main/boss/alice/beam.hpp"

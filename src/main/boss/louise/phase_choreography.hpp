@@ -1,7 +1,8 @@
-// Louise's observed eight-phase fight; no additional Boss state is allocated.
+// HP thresholds, phase lengths and other parameters of Louise's fight.
 #ifndef TH05_LOUISE_PHASE_CHOREOGRAPHY_HPP
 #define TH05_LOUISE_PHASE_CHOREOGRAPHY_HPP
 
+// HP at the end of each phase.
 enum LouiseHealthThreshold {
     LOUISE_HP_AFTER_SETUP = 3000,
     LOUISE_HP_AFTER_BLUE_RED_WAVES = 1900,
@@ -10,7 +11,6 @@ enum LouiseHealthThreshold {
 };
 
 enum LouisePhaseClock {
-    LOUISE_FIRST_FRAME = 1,
     LOUISE_HP_FILL_FRAMES = 128,
     LOUISE_READY_FRAMES = 64,
     LOUISE_FIRE_TRANSITION_FRAMES = 64,
@@ -24,21 +24,12 @@ enum LouisePhaseClock {
     LOUISE_AIMED_PELLET_PATTERN_LIMIT = 10
 };
 
-enum LouiseFightReset {
-    LOUISE_PHASE_FRAME_RESET = 0,
-    LOUISE_PATTERN_COUNT_RESET = 0
-};
-
 enum LouiseFightResource {
     LOUISE_GATHER_RADIUS_PX = 64,
     LOUISE_GATHER_ANGLE_DELTA = 2,
     LOUISE_GATHER_RING_POINTS = 8,
     LOUISE_INITIAL_CHARGE_SPEED = 0x18,
     LOUISE_LATER_CHARGE_SPEED = 0x14,
-    LOUISE_FIRST_PATTERN_BLUE = 0,
-    LOUISE_LATER_PATTERN_SWEEP = 0,
-    LOUISE_SECOND_PATTERN_TOGGLE = 1,
-    LOUISE_BLUE_RED_PATTERN_PARITY = 1,
     LOUISE_SOUND_ENTRANCE = 13,
     LOUISE_PATTERN_HIT_BONUS = 10,
     LOUISE_DEFEAT_BONUS = 10

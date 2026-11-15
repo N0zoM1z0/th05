@@ -1,27 +1,36 @@
-// Louise's exact charge, blue/red volley, mirrored fan and laser clocks.
-// Pure compile-time values; all physical Boss and bullet state is external.
+// Parameters of Louise's attack patterns (LC = Louise charge). Angles use
+// 0x00 = right and 0x40 = down.
 #ifndef TH05_LOUISE_CHARGED_WEAPON_RULES_HPP
 #define TH05_LOUISE_CHARGED_WEAPON_RULES_HPP
+
+// Charging: gather ring from frame 16, firing from frame 32.
 #define LC_CHARGE_FIRST_FRAME 16
 #define LC_CHARGE_INITIALIZE 32
 #define LC_CHARGE_COLOR_FIRST 9
 #define LC_CHARGE_COLOR_SECOND 8
 #define LC_CHARGE_SE 8
 #define LC_FIRE_SPRITE_SE 15
+// Frame at which each charged pattern ends.
 #define LC_BLUE_PHASE_END 64
 #define LC_RED_PHASE_END 96
 #define LC_SWEEP_PHASE_END 128
+
+// Blue spreads, fired in two opposite directions that turn by 7 each volley.
 #define LC_BLUE_VOLLEY_COUNT 5
 #define LC_BLUE_VOLLEY_STEP 6
 #define LC_BLUE_FIRE_INTERVAL 2
-#define LC_BLUE_ANGLE_LEFT 0x20
-#define LC_BLUE_ANGLE_RIGHT 0x60
+#define LC_BLUE_ANGLE_DOWN_RIGHT 0x20
+#define LC_BLUE_ANGLE_DOWN_LEFT 0x60
 #define LC_BLUE_OTHER_SIDE_ANGLE 0x80
-#define LC_BLUE_LEFT_SPIN_STEP 0x87
-#define LC_BLUE_RIGHT_SPIN_STEP 0x79
+// Back to the first direction, then turned by +7 or -7.
+#define LC_BLUE_TURN_CLOCKWISE (0x80 + 7)
+#define LC_BLUE_TURN_COUNTERCLOCKWISE (0x80 - 7)
+// Charge speed limits, in subpixels per frame.
 #define LC_BLUE_MAX_SPEED 0x24
 #define LC_RED_MAX_SPEED 0x20
 #define LC_CHARGE_SPEED_ADD 4
+
+// Red stacks, turning by 8 every second frame.
 #define LC_RED_BASE_SPEED 2.0f
 #define LC_RED_STACK_EASY 10
 #define LC_RED_STACK_NORMAL 12
@@ -34,6 +43,8 @@
 #define LC_RED_STACK_INITIAL_ANGLE (-0x40)
 #define LC_RED_FIRE_INTERVAL 2
 #define LC_RED_TURN_ANGLE 8
+
+// Mirrored fans.
 #define LC_MIRROR_INTERVAL 32
 #define LC_MIRROR_HALF_INTERVAL 64
 #define LC_MIRROR_FIRST_ANGLE 0x24
@@ -45,6 +56,8 @@
 #define LC_MIRROR_SWEEP_STEP 8
 #define LC_MIRROR_BASE_SPEED 3.0f
 #define LC_MIRROR_SPEED_DECAY 0.3125f
+
+// Sweeping lasers.
 #define LC_SWEEP_WIDTH 6
 #define LC_SWEEP_COLOR 8
 #define LC_SWEEP_INITIAL_ANGLE (-16)
@@ -56,6 +69,8 @@
 #define LC_SWEEP_FIRE_INTERVAL 4
 #define LC_SWEEP_MIRROR 0x80
 #define LC_SWEEP_TURN_STEP 10
+
+// Turning rings.
 #define LC_TURN_RING_SPREAD 24
 #define LC_TURN_RING_ANGLE_STEP 8
 #define LC_TURN_RING_STACK 5
@@ -64,6 +79,8 @@
 #define LC_TURN_RING_RANDOM_SIDE 1
 #define LC_TURN_RING_CLOCKWISE 0x20
 #define LC_TURN_RING_COUNTERCLOCKWISE (-0x20)
+
+// Aimed pellets.
 #define LC_PELLET_FIRE_INTERVAL 32
 #define LC_PELLET_SIDE_INTERVAL 64
 #define LC_PELLET_BASE_SPEED 2.0f

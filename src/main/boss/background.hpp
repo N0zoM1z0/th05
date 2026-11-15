@@ -1,6 +1,7 @@
-// Boss background ABI adapted from natural C++ in nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/main/boss/render.cpp,
-// th05/main/boss/bosses.hpp, th04/main/boss/impl.hpp and their interface headers.
+// Declarations for the boss background renderers in background.cpp: particle
+// and line set structures, backdrop positions, and the tile, GRCG and sprite
+// functions they call. Adapted from ReC98's th05/main/boss/render.cpp,
+// th05/main/boss/bosses.hpp and th04/main/boss/impl.hpp.
 #ifndef TH05_MAIN_BOSS_BACKGROUND_HPP
 #define TH05_MAIN_BOSS_BACKGROUND_HPP
 
@@ -42,7 +43,6 @@ static const unsigned char PHASE_BOSS_EXPLODE_BIG = 254;
 #define LINESET_LINE_COUNT 20
 #define LINESET_COUNT 4
 
-// All fields are represented; no layout-only padding arrays.
 struct boss_particle_t {
     PlayfieldPoint pos;
     PlayfieldPoint origin;
@@ -249,6 +249,7 @@ static const int ENTRANCE_BB_TRANSITION_FRAMES_PER_CEL = 2;
 	} \
 }
 
+// Layout checks: the original code hardcodes these offsets.
 typedef char th05_background_particle_is_16[(sizeof(boss_particle_t) == 16) ? 1 : -1];
 typedef char th05_background_particle_pos_at_0[(offsetof(boss_particle_t, pos) == 0) ? 1 : -1];
 typedef char th05_background_particle_origin_at_4[(offsetof(boss_particle_t, origin) == 4) ? 1 : -1];

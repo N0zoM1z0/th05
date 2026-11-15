@@ -1,3 +1,4 @@
+// Resets both popup ring cursors. Shared by init.cpp and lifecycle.cpp.
 extern "C" void pascal near pointnums_init(void)
 {
     pointnum_white_p = 0;

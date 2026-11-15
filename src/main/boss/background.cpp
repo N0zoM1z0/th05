@@ -1,7 +1,6 @@
-// Boss background algorithms adapted from natural C++ in nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/main/boss/render.cpp.
-// Exact original-order compiler context for all 19 Boss background functions.
-// The signed-zero particle clip retains ReC98's original symbolic operand.
+// Boss background renderers for all stages, including Shinki's particles and
+// line sets and EX-Alice's hexagrams, in their original order. Adapted from
+// ReC98's th05/main/boss/render.cpp.
 #pragma option -zCBOSS_BG_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/boss/background.hpp"
@@ -94,8 +93,6 @@ static const int SHINKI_LINE_2 = (1 * 6);
 static const int SHINKI_LINE_3 = (2 * 6);
 static const int SHINKI_LINE_4 = (3 * 6);
 
-// All five physical Shinki background globals have C-linkage owners.
-
 #define shinki_spinline_x_and_angle(set, delta) \
 	if(set->radius[SHINKI_LINE_MAIN] > to_sp(96.0f)) { \
 		set->radius[SHINKI_LINE_MAIN].v -= to_sp(0.125f); \
@@ -132,15 +129,15 @@ static const int SHINKI_LINE_4 = (3 * 6);
 		set++; \
 	}
 
-// In types B and C, both genuine two-line-set wave loops begin by
-// shifting the previous line history then integrating the active Y center.
+// Start of each line set iteration in types B and C: shift the line history
+// and apply the vertical velocity to the main line.
 #define shinki_spinline_prepare_set(set) { \
     shinki_lineset_forward_copy(*set); \
     set->center[SHINKI_LINE_MAIN].y.v += set->velocity_y.v; \
 }
 
-// Alternate the two mirrored line sets only after the background-specific
-// vertical-velocity rule and the common X/angle update have run.
+// End of each line set iteration in types B and C. The second set moves in
+// the mirrored direction.
 #define shinki_spinline_advance_set(set, delta, set_i) { \
     shinki_spinline_x_and_angle(set, delta); \
     set_i++; \
@@ -148,8 +145,9 @@ static const int SHINKI_LINE_4 = (3 * 6);
     delta = -delta; \
 }
 
-// Original signed top clip uses the source-level symbolic zero preserved by
-// ReC98: a near address at DGROUP:0000 forces the actual CMP AX,0000.
+// Returns 0 in a way that keeps Turbo C++ from optimizing a comparison with it
+// into `OR AX, AX`. ZUN's code has `CMP AX, 0`, which needs the address of a
+// symbol at DGROUP:0000. Taken from ReC98.
 template <class T> inline T keep_0(T x) {
     if(x == 0) {
         extern void *near address_0;
@@ -207,9 +205,6 @@ void near shinki_bg_particles_render(void)
 		particle++;
 	}
 }
-
-// The complete Shinki particle renderer and following backgrounds stay in
-// the same native CODE contribution. Nothing is reserved between functions.
 
 void near shinki_bg_type_a_update_part1(void)
 {
@@ -385,7 +380,7 @@ void near shinki_bg_type_b_update_part1(void)
 			// Huh? Not PLAYFIELD_H?
 			particle->pos.y.v = randring1_next16_mod(to_sp(PLAYFIELD_W));
 			particle->origin.x = particle->pos.x;
-			particle->origin.y.v = to_sp(SHB_TYPE_D_RISING_VELOCITY_PX);
+			particle->origin.y.v = to_sp(-1.0f); // just above the playfield
 			particle->velocity.x.v = to_sp(0.0f);
 			particle->velocity.y.v = to_sp(0.0f);
 			particle->patnum = background_random8(
@@ -577,7 +572,7 @@ void pascal near shinki_bg_render(void)
 	} else if(boss.phase < SHB_BACKGROUND_C_END_PHASE) {
 		boss_bg_fill_col_0();
 		shinki_bg_type_c_update_and_render();
-	} else /* if(boss.phase == PHASE_NONE) */ { \
+	} else { // phase 12 and later, including the defeat explosions
 		cdg_put_noalpha_8(
 			SHINKI_BACKDROP_LEFT, SHINKI_TYPE_D_BACKDROP_TOP, CDG_BG_2
 		);
@@ -641,9 +636,9 @@ void pascal near exalice_grcg_hexagram_put(subpixel_t radius, int angle)
 	#undef tri_point_0
 }
 
-// Finish with the two original EX-Alice background functions in a separate
-// genuine compiler CODE contribution. This preserves the native FIXUPP record
-// boundaries without adding a linker hole or changing the function bodies.
+// The last two functions go into their own segment. Compiled into the same
+// segment, the code is identical, but the object file splits its data records
+// at different points, which reorders the relocations in the linked binary.
 #pragma codeseg BOSS_BG_LATE_TEXT main_01
 
 void near exalice_hexagrams_update_and_render(void)

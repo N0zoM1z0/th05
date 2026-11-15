@@ -1,7 +1,8 @@
-/* Main HUD palette selectors, empty HP strip and two editable Japanese captions. */
+/* HUD bar colors, the blank HP bar, and the "x" strings for life and bomb
+ * counts above five. */
 #pragma option -zCHUD_COLORS_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Semantic HUD DATA requires a C producer
+#error This file must be compiled as C
 #endif
 #include "src/main/hud/overlay_data.h"
 
@@ -11,16 +12,17 @@ enum HudTramColor {
     HC_WHITE = 0xE1
 };
 
-/* The leading zero is separately observed in the original HUD DATA source,
- * but its purpose is unknown. It gets no authored semantic-byte credit. */
+/* The two "x" strings are identical and must not be const: Borland would then
+ * merge them into one. The leading zero byte has no known use, but it keeps
+ * the following data at its original even address. */
 typedef struct HudBarResources {
     unsigned char unidentified_zero;
     unsigned char dream_colors[9];
     unsigned char power_colors[10];
     unsigned char hp_empty[9];
     unsigned char hp_colors[5];
-    char hp_caption[11];
-    char hp_caption_copy[11];
+    char lives_extra[11];
+    char bombs_extra[11];
 } HudBarResources;
 
 HudBarResources near hud_bar_resources = {
@@ -41,5 +43,5 @@ typedef char hud_bar_dream[(offsetof(HudBarResources, dream_colors) == 1) ? 1 : 
 typedef char hud_bar_power[(offsetof(HudBarResources, power_colors) == 10) ? 1 : -1];
 typedef char hud_bar_empty[(offsetof(HudBarResources, hp_empty) == 20) ? 1 : -1];
 typedef char hud_bar_hp_colors[(offsetof(HudBarResources, hp_colors) == 29) ? 1 : -1];
-typedef char hud_bar_captions[(offsetof(HudBarResources, hp_caption) == 34) ? 1 : -1];
-typedef char hud_bar_second_caption[(offsetof(HudBarResources, hp_caption_copy) == 45) ? 1 : -1];
+typedef char hud_bar_lives_extra[(offsetof(HudBarResources, lives_extra) == 34) ? 1 : -1];
+typedef char hud_bar_bombs_extra[(offsetof(HudBarResources, bombs_extra) == 45) ? 1 : -1];

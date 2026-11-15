@@ -1,5 +1,7 @@
+// Draws the stage gaiji of one row of [pc]'s table, with a shadow.
 void pascal near registration_stage_put(int place, int pc, int glyph)
 {
+    // [y] has to be declared before [color] for the original stack layout.
     int y;
     unsigned char color;
     register int place_r = place;

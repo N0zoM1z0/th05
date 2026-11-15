@@ -1,7 +1,9 @@
-/* Semantic four-stage character-overlay masks for TH05 MAINE. */
+/* The four dither masks that the hardware text renderer (ReC98
+ * th04/hardware/grppsafx.asm) uses to fade glyphs in, from sparse (8/0/2/0)
+ * to a full checkerboard (A/5/A/5). Each row repeats a 4-pixel nibble. */
 #pragma option -zCGLYPH_OVERLAY_DATA_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error The glyph-coverage bank must be owned by an actual C object
+#error This file is compiled as C
 #endif
 #include "src/shared/hardware/glyph_coverage.h"
 

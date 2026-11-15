@@ -1,4 +1,7 @@
-// Actual writable 3x17 gaiji-selector keyboard; no font bitmap is defined here.
+// Gaiji codes of the name registration keyboard. Most of them are from the
+// bold gaiji font. RA_FULL_STOP and RA_ELLIPSIS are the centered dot moved to
+// the baseline (once and three times), and 0x0F is a duplicate of the Siddham
+// "HAM" glyph at 0xCC.
 #ifndef TH05_MREG_ALPHABET_DATA_HPP
 #define TH05_MREG_ALPHABET_DATA_HPP
 #include "src/maine/registration/glyphball.hpp"
@@ -26,6 +29,4 @@ enum RegistrationAlphabetCode {
     RA_SPACE = 0xCD,
     RA_END = 0xD5
 };
-typedef char reg_alphabet_rows3[(REGISTRATION_ALPHABET_ROWS == 3) ? 1 : -1];
-typedef char reg_alphabet_cols17[(REGISTRATION_ALPHABET_COLS == 17) ? 1 : -1];
 #endif

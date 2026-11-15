@@ -1,4 +1,4 @@
-// Original Alice Boss near-callback dispatch: puppet moves and four main waves.
+// Alice's puppet pattern table and her pattern table for the four waves.
 #pragma option -zCALICE_CALLBACK_TABLE_TEXT -zPmain_03
 #include "src/main/boss/alice/callback_tables.hpp"
 

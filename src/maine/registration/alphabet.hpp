@@ -1,4 +1,4 @@
-// Real three-word near-Pascal cursor API; Master glyph output is far Pascal.
+// Declarations for alphabet_cursor_put().
 #ifndef TH05_MREG_ALPHA_HPP
 #define TH05_MREG_ALPHA_HPP
 #pragma codeseg _TEXT

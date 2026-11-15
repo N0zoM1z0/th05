@@ -1,4 +1,4 @@
-// TH05 Alice puppet-beam algorithm: real full storage and foreign interfaces.
+// Alice's puppets and the beam pattern they fire together.
 #ifndef TH05_MAIN_BOSS_ALICE_BEAM_HPP
 #define TH05_MAIN_BOSS_ALICE_BEAM_HPP
 
@@ -8,10 +8,10 @@
 #include "src/main/bullet/cheeto.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner requires TH05 MAIN
+#error This header is only for TH05 MAIN
 #endif
 
-// Complete original puppet overlay of a26-byte canonical custom-entity slot.
+// Alice's view of a 26-byte custom entity slot.
 struct AlicePuppet {
     unsigned char flag;
     unsigned char angle;
@@ -24,7 +24,7 @@ struct AlicePuppet {
     int patnum;
     int hp;
     int damage_this_frame;
-    int padding; // Original int16_t; Borland int is the 16-bit slot word.
+    int padding; // unused
 };
 #define alice_puppet0 (reinterpret_cast<AlicePuppet &>(custom_entities[0]))
 #define alice_puppet1 (reinterpret_cast<AlicePuppet &>(custom_entities[1]))
@@ -37,7 +37,7 @@ extern BulletTemplate bullet_template;
 extern nearfunc_t_near bullet_template_tune;
 
 #pragma codeseg MAIN_01_TEXT main_01
-// Real no-argument far-cdecl hitbox consumer; damage is returned in AX.
+// Returns the damage dealt by player shots.
 int far shots_hittest_laser(void);
 #pragma codeseg SHARED
 extern "C" void pascal far snd_se_play(int sound);

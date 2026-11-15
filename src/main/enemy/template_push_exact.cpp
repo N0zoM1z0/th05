@@ -1,4 +1,9 @@
-// Copy one full native bullet template into the live spawner.
+// enemy_bullet_template_push(): copies an enemy's bullet template into the
+// global bullet_template, as one REP MOVSW.
+//
+// A plain structure assignment calls Borland's F_SCOPY@ helper instead, and
+// the __memcpy__ intrinsic loads SI, DI and CX in a different order; setting
+// the registers in this order reproduces the original.
 #pragma option -zCENEMY_TEMPLATE_COPY_TEXT -zPmain_03
 #include <dos.h>
 #include "src/main/bullet/template.hpp"

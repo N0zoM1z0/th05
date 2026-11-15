@@ -1,5 +1,7 @@
-// Natural source: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47.
-// Original source-level optimization-barrier calls are preserved in the shared update body.
+// Shinki's 32x32 balls, attacks and main update function, following ReC98's
+// th05/main/boss/b6.cpp. update_context.cpp, devil.cpp, cheeto_walls.cpp,
+// wing_preparation.cpp and balls_update.cpp compile parts of this code on
+// their own.
 /// Stage 6 Boss - Shinki
 /// ---------------------
 
@@ -7,7 +9,6 @@
 #include "src/main/boss/shinki/shinki.hpp"
 #include "src/main/boss/shinki/scratch.hpp"
 #include "src/main/boss/shinki/final_spiral_timing.hpp"
-#include "src/main/boss/shinki/ball_lifecycle.hpp"
 #include "src/main/boss/shinki/wing_hitboxes.hpp"
 #include "src/main/boss/shinki/wing_attack_rules.hpp"
 #include "src/main/boss/shinki/early_attack_rules.hpp"
@@ -18,7 +19,7 @@
 // Constants
 // ---------
 
-static const int PHASE_2_3_PATTERN_START_FRAME = SEAR_PATTERN_START_FRAME;
+static const int PHASE_2_3_PATTERN_START_FRAME = 32;
 
 #include "src/main/boss/shinki/hp.inl"
 // ---------
@@ -41,7 +42,7 @@ extern pattern_loop_func_t wing_pattern;
 // Rendering
 // ---------
 
-// Renderer remains foreign; its real frame is declared in shinki.hpp.
+// shinki_custombullets_render() is declared in shinki.hpp.
 // ---------
 
 // Game logic
@@ -64,16 +65,20 @@ void near b6balls_add(void)
 		p->pos.cur = b6ball_template.origin;
 		vector2_near(p->pos.velocity, b6ball_template.angle, speed);
 		p->patnum_tiny = b6ball_template.patnum_tiny;
-		p->cloud_radius.v = to_sp(SHINKI_B6_BIRTH_CLOUD_RADIUS_PX);
+		p->cloud_radius.v = to_sp(48.0f);
 		return;
 	}
 }
 
 #include "src/main/boss/shinki/balls_update_body.inl"
 
-// The complete natural ball updater now matches the original 220-byte
-// function and leads directly into the following accepted pattern group.
 #pragma codeseg B6_PATTERN_A_TEXT main_03
+
+// Frame at which the curved rings end, relative to the pattern start.
+#define SEAR_CURVE_END_DELAY 28
+
+// 16-way rings, fired every 4 frames from a random angle that curves to the
+// left or right, with each ring faster than the previous one.
 bool near pattern_curved_rings(void)
 {
 	#define delta_angle shinki_scratch.spiral_or_devil_outer_angle.curved_ring_delta_angle
@@ -81,18 +86,18 @@ bool near pattern_curved_rings(void)
 	if(boss.phase_frame == PHASE_2_3_PATTERN_START_FRAME) {
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
 		bullet_template.patnum = PAT_BULLET16_N_OUTLINED_BALL_BLUE;
-		bullet_template.speed.v = sara_to_sp8(SEAR_CURVE_RING_SPEED_PX);
+		bullet_template.speed.v = sara_to_sp8(2.0f);
 		bullet_template.group = BG_RING;
 		bullet_template.special_motion = BSM_EXACT_LINEAR;
 		bullet_template.angle = randring2_next16();
-		bullet_template.spread = SEAR_CURVE_RING_COUNT;
-		delta_angle = randring2_next16_and(SEAR_CURVE_RANDOM_SIDE_MASK) ? SEAR_CURVE_TURN_POSITIVE : SEAR_CURVE_TURN_NEGATIVE;
+		bullet_template.spread = 16;
+		delta_angle = randring2_next16_and(1) ? 0x02 : (-0x02);
 		bullet_template_tune();
-		snd_se_play(SEAR_CURVE_CHARGE_SE);
+		snd_se_play(15);
 	}
-	if((boss.phase_frame % SEAR_CURVE_VOLLEY_FRAMES) == 0) {
+	if((boss.phase_frame % 4) == 0) {
 		bullets_add_special();
-		bullet_template.speed.v = (bullet_template.speed.v + sara_to_sp8(SEAR_CURVE_ACCELERATION_PX));
+		bullet_template.speed.v = (bullet_template.speed.v + sara_to_sp8(0.5f));
 		bullet_template.angle += delta_angle;
 	}
 	return (boss.phase_frame == (PHASE_2_3_PATTERN_START_FRAME + SEAR_CURVE_END_DELAY));
@@ -100,6 +105,10 @@ bool near pattern_curved_rings(void)
 	#undef delta_angle
 }
 
+#undef SEAR_CURVE_END_DELAY
+
+// Pairs of slow and fast 16-way rings from random points within 32 pixels of
+// Shinki, at a rank-dependent interval.
 bool near pattern_dualspeed_rings(void)
 {
 	#define interval shinki_scratch.spiral_or_devil_outer_angle.dual_speed_ring_interval
@@ -109,39 +118,41 @@ bool near pattern_dualspeed_rings(void)
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullet_template.group = BG_RING;
 		bullet_template.angle = randring2_next16();
-		bullet_template.spread = SEAR_DUAL_RING_COUNT;
-		interval = select_for_rank(SEAR_DUAL_EASY_INTERVAL, SEAR_DUAL_NORMAL_INTERVAL, SEAR_DUAL_HARD_INTERVAL, SEAR_DUAL_LUNATIC_INTERVAL);
+		bullet_template.spread = 16;
+		interval = select_for_rank(16, 12, 8, 4);
 	}
 	if((boss.phase_frame % interval) == 0) {
 		vector2_at(
 			bullet_template.origin,
 			boss.pos.cur.x,
 			boss.pos.cur.y,
-			randring2_next16_mod(to_sp(SEAR_DUAL_RADIUS_JITTER_PX)),
+			randring2_next16_mod(to_sp(32.0f)),
 			bullet_template.angle
 		);
-		bullet_template.speed.v = sara_to_sp8(SEAR_DUAL_SLOW_SPEED_PX);
+		bullet_template.speed.v = sara_to_sp8(2.0f);
 		bullets_add_regular();
 
-		bullet_template.speed.v = sara_to_sp8(SEAR_DUAL_FAST_SPEED_PX);
-		bullet_template.angle += SEAR_DUAL_ANGLE_STEP;
+		bullet_template.speed.v = sara_to_sp8(4.0f);
+		bullet_template.angle += 0x08;
 		bullets_add_regular();
 
-		snd_se_play(SEAR_DUAL_FIRE_SE);
+		snd_se_play(3);
 	}
-	return (boss.phase_frame == (PHASE_2_3_PATTERN_START_FRAME + SEAR_DUAL_END_DELAY));
+	return (boss.phase_frame == (PHASE_2_3_PATTERN_START_FRAME + 64));
 
 	#undef interval
 }
 
-// Begin at the original even function boundary so the later semantic switch
-// table keeps its genuine compiler alignment phase without inserted bytes.
+// Starts a new segment, which aligns the code up to and including the
+// switch table in shinki_update() to the original word boundaries.
 #pragma codeseg B6_UPDATE_TEXT main_03
+
+// Charges for 32 frames, then runs [phase_2_3_pattern] until it returns true.
 static void near phase_2_3_with_pattern(void)
 {
 	if(boss.phase_frame < PHASE_2_3_PATTERN_START_FRAME) {
-		gather_add_only_3stack((boss.phase_frame - SEAR_CHARGE_GATHER_LEAD), SEAR_CHARGE_FIRST_COLOR, SEAR_CHARGE_SECOND_COLOR);
-		if(boss.phase_frame == SEAR_CHARGE_TEMPLATE_FRAME) {
+		gather_add_only_3stack((boss.phase_frame - 16), 7, 6);
+		if(boss.phase_frame == 2) {
 			boss.sprite = PAT_SHINKI_CAST;
 
 			// ZUN bloat: What's this, part of an unused pattern? Actually,
@@ -152,67 +163,73 @@ static void near phase_2_3_with_pattern(void)
 			);
 			bullet_template.patnum = PAT_BULLET16_N_BALL_RED;
 			bullet_template.group = BG_RING;
-			bullet_template.speed.v = sara_to_sp8(SEAR_CHARGE_BULLET_SPEED_PX);
-			bullet_template.spread = SEAR_CHARGE_BULLET_COUNT;
+			bullet_template.speed.v = sara_to_sp8(3.75f);
+			bullet_template.spread = 16;
 			bullet_template_tune();
-			snd_se_play(SEAR_CHARGE_SE);
+			snd_se_play(8);
 		}
 	} else if(phase_2_3_pattern()) {
 		boss.sprite = PAT_SHINKI_STILL;
 		boss.phase_frame = 0;
-		boss.mode = SEAR_REPOSITION_MODE;
+		boss.mode = 0;
 	}
 }
 
+// Random blue directional bullets and kunai from both sides of Shinki, while
+// she moves to random positions.
 bool near pattern_random_directional_and_kunai(void)
 {
 	if(boss.phase_frame == PHASE_2_3_PATTERN_START_FRAME) {
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
-		bullet_template.speed.v = sara_to_sp8(SEAR_KUNAI_INITIAL_SPEED_PX);
+		bullet_template.speed.v = sara_to_sp8(1.75f);
 		bullet_template.group = BG_RANDOM_ANGLE_AND_SPEED;
-		bullet_template.spread = SEAR_KUNAI_RANDOM_COUNT;
+		bullet_template.spread = 3;
 		bullet_template_tune();
-		snd_se_play(SEAR_KUNAI_START_SE);
+		snd_se_play(15);
 	}
-	if((boss.phase_frame % SEAR_KUNAI_VOLLEY_FRAMES) == 0) {
+	if((boss.phase_frame % 2) == 0) {
 		bullet_template.patnum = PAT_BULLET16_D_BLUE;
-		bullet_template.origin.x.v -= to_sp((BOSS_W / SEAR_KUNAI_WING_QUARTER));
+		bullet_template.origin.x.v -= to_sp((BOSS_W / 4.0f));
 		bullets_add_regular();
 
 		bullet_template.patnum = PAT_BULLET16_V_BLUE;
-		bullet_template.origin.x.v += to_sp(((BOSS_W / SEAR_KUNAI_WING_QUARTER) * SEAR_KUNAI_WING_DOUBLE));
+		bullet_template.origin.x.v += to_sp(((BOSS_W / 4.0f) * 2.0f));
 		bullets_add_regular();
 	}
 	return boss_flystep_random(
-		boss.phase_frame - PHASE_2_3_PATTERN_START_FRAME - SEAR_KUNAI_FLYSTEP_LEAD
+		boss.phase_frame - PHASE_2_3_PATTERN_START_FRAME - 32
 	);
 }
 
+// Aimed 2-way stacks of blue balls every 4 frames, while Shinki moves to
+// random positions.
 bool near pattern_dense_blue_stacks(void)
 {
 	if(boss.phase_frame == PHASE_2_3_PATTERN_START_FRAME) {
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullet_template.group = BG_SPREAD_STACK_AIMED;
-		bullet_template.angle = SEAR_STACK_START_ANGLE;
-		sara_set_spread(SEAR_STACK_SPREAD_COUNT, SEAR_STACK_SPREAD_STEP);
+		bullet_template.angle = 0;
+		sara_set_spread(2, 0x04);
 		shinki_set_stack_for_rank(
-			SEAR_STACK_EASY_COUNT, SEAR_STACK_EASY_SPEED_PX,
-			SEAR_STACK_NORMAL_COUNT, SEAR_STACK_NORMAL_SPEED_PX,
-			SEAR_STACK_HARD_COUNT, SEAR_STACK_HARD_SPEED_PX,
-			SEAR_STACK_LUNATIC_COUNT, SEAR_STACK_LUNATIC_SPEED_PX
+			5, 0.75f,
+			6, 0.75f,
+			6, 0.8125f,
+			7, 0.8125f
 		);
-		bullet_template.speed.v = sara_to_sp8(SEAR_STACK_INITIAL_SPEED_PX);
+		bullet_template.speed.v = sara_to_sp8(2.0f);
 	}
-	if((boss.phase_frame % SEAR_STACK_FIRE_FRAMES) == 0) {
+	if((boss.phase_frame % 4) == 0) {
 		bullets_add_regular();
-		snd_se_play(SEAR_STACK_FIRE_SE);
+		snd_se_play(15);
 	}
 	return boss_flystep_random(
-		boss.phase_frame - PHASE_2_3_PATTERN_START_FRAME - SEAR_KUNAI_FLYSTEP_LEAD
+		boss.phase_frame - PHASE_2_3_PATTERN_START_FRAME - 32
 	);
 }
 
+// Six lasers that sweep outwards from Shinki and turn into her wings,
+// followed by a burst of 50 blue balls from the wing area.
 bool near pattern_wing_preparation(void)
 {
 	enum {
@@ -295,23 +312,25 @@ bool near pattern_wing_preparation(void)
 	#undef tone
 }
 
+// Blue 32x32 balls falling from random points near the top, and aimed 5-way
+// spreads from random points of the wings.
 void near pattern_random_rain_and_spreads_from_wings(void)
 {
-	if(boss.phase_frame <= SHW_RAIN_FIRST_ATTACK_FRAME) {
+	if(boss.phase_frame <= 128) {
 		return;
 	}
-	if((boss.phase_frame % SHW_RAIN_BALL_INTERVAL) == 0) {
+	if((boss.phase_frame % 8) == 0) {
 		b6ball_template.origin.x.v = randring2_next16_mod(to_sp(PLAYFIELD_W));
 		b6ball_template.origin.y.v = shinki_rand_speed16(
-			(SHW_RAIN_MIN_Y_FRACTION * PLAYFIELD_H), (SHW_RAIN_MAX_Y_FRACTION * PLAYFIELD_H)
+			((2 / 23.0f) * PLAYFIELD_H), ((6 / 23.0f) * PLAYFIELD_H)
 		);
-		b6ball_template.angle = SHW_RAIN_DOWN_ANGLE;
-		b6ball_template.speed.v = sara_rand_speed(SHW_RAIN_SPEED_MIN_PX, SHW_RAIN_SPEED_MAX_PX);
+		b6ball_template.angle = 0x40;
+		b6ball_template.speed.v = sara_rand_speed(3.0f, 5.0f);
 		b6ball_template.patnum_tiny = PAT_B6BALL_BLUE_1;
 		b6balls_add();
-		snd_se_play(SHW_RAIN_VOLLEY_SOUND);
+		snd_se_play(3);
 	}
-	if((boss.phase_frame % SHW_RAIN_SPREAD_INTERVAL) == 0) {
+	if((boss.phase_frame % 24) == 0) {
 		bullet_template.origin.x.v = shinki_wing_random_x();
 		bullet_template.origin.y.v = (
 			boss.pos.cur.y.v - randring2_next16_mod(to_sp(BOSS_H))
@@ -319,12 +338,12 @@ void near pattern_random_rain_and_spreads_from_wings(void)
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
 		bullet_template.patnum = PAT_BULLET16_N_BALL_BLUE;
 		bullet_template.group = BG_SPREAD_AIMED;
-		bullet_template.spread = SHW_RAIN_SPREAD_COUNT;
+		bullet_template.spread = 5;
 		bullet_template.spread_angle_delta = select_for_rank(
-			SHW_RAIN_ANGLE_EASY, SHW_RAIN_ANGLE_NORMAL, SHW_RAIN_ANGLE_HARD, SHW_RAIN_ANGLE_LUNATIC
+			0x10, 0x0C, 0x0A, 0x08
 		);
 		bullet_template.angle = 0;
-		bullet_template.speed.v = sara_to_sp8(SHW_RAIN_SPREAD_SPEED_PX);
+		bullet_template.speed.v = sara_to_sp8(3.0f);
 		bullet_template_tune();
 		bullets_add_regular();
 	}
@@ -332,74 +351,80 @@ void near pattern_random_rain_and_spreads_from_wings(void)
 
 #include "src/main/boss/shinki/cheeto_walls.inl"
 
+// Shinki shakes for 32 frames, then turns her wings purple and releases 16
+// purple 32x32 balls from them.
 bool near pattern_wings_to_purple(void)
 {
-	if(boss.phase_frame < SHW_PURPLE_HOLD_FRAMES) {
+	if(boss.phase_frame < 160) {
 		return false;
-	} else if(boss.phase_frame < SHW_PURPLE_OSCILLATE_UNTIL) {
-		if(boss.phase_frame == SHW_PURPLE_UNREACHABLE_CHARGE_FRAME) {
-			snd_se_play(SHW_PURPLE_UNREACHABLE_CHARGE_SE);
+	} else if(boss.phase_frame < 192) {
+		// ZUN bug: Never true within this branch, so the charge sound never
+		// plays.
+		if(boss.phase_frame == 128) {
+			snd_se_play(8);
 		}
 		if(boss.phase_frame & 1) {
-			boss.pos.cur.y.v += to_sp(SHW_PURPLE_OSCILLATE_PX);
+			boss.pos.cur.y.v += to_sp(2.0f);
 		} else {
-			boss.pos.cur.y.v -= to_sp(SHW_PURPLE_OSCILLATE_PX);
+			boss.pos.cur.y.v -= to_sp(2.0f);
 		}
-	} else if(boss.phase_frame == SHW_PURPLE_SPAWN_FRAME) {
+	} else if(boss.phase_frame == 192) {
 		b6ball_template.patnum_tiny = PAT_B6BALL_PURPLE;
-		for(int i = 0; i < SHW_PURPLE_SPAWN_COUNT; i++) {
+		for(int i = 0; i < 16; i++) {
 			b6ball_template.origin.x.v = shinki_wing_random_x();
 			b6ball_template.origin.y.v = shinki_wing_random_y();
-			b6ball_template.angle = randring2_next8_mod_ge_lt(SHW_PURPLE_SPAWN_ANGLE_MIN, SHW_PURPLE_SPAWN_ANGLE_END);
-			b6ball_template.speed.v = sara_rand_speed(SHW_PURPLE_SPAWN_SPEED_MIN, SHW_PURPLE_SPAWN_SPEED_MAX);
+			b6ball_template.angle = randring2_next8_mod_ge_lt(0x20, 0x60);
+			b6ball_template.speed.v = sara_rand_speed(2.0f, 6.0f);
 			b6balls_add();
 		}
 		boss.sprite = PAT_SHINKI_WINGS_PURPLE;
-		snd_se_play(SHW_PURPLE_TRANSITION_SE);
-		playfield_shake_anim_time = SHW_PURPLE_SCREEN_SHAKE_FRAMES;
+		snd_se_play(15);
+		playfield_shake_anim_time = 8;
 	}
-	return (boss.phase_frame == SHW_PURPLE_FINISH_FRAME);
+	return (boss.phase_frame == 200);
 }
 
+// Aimed purple 32x32 balls, and mirrored 3-way spreads of red bullets from
+// both wing tips whose angle swings back and forth.
 void near pattern_aimed_b6balls_and_symmetric_spreads(void)
 {
 	#define b6ball_interval shinki_aimed_b6ball_scratch.ranked_interval.aimed_b6ball_interval
 
-	if(boss.phase_frame <= SHW_AIMED_FIRST_ATTACK_FRAME) {
+	if(boss.phase_frame <= 128) {
 		return;
 	}
-	if(boss.phase_frame == SHW_AIMED_INIT_FRAME) {
-		b6ball_interval = select_for_rank(SHW_AIMED_INTERVAL_EASY, SHW_AIMED_INTERVAL_NORMAL, SHW_AIMED_INTERVAL_HARD, SHW_AIMED_INTERVAL_LUNATIC);
+	if(boss.phase_frame == 129) {
+		b6ball_interval = select_for_rank(96, 32, 28, 24);
 	}
 
-	int spread_cycle = (boss.phase_frame % SHW_AIMED_SPREAD_PERIOD);
+	int spread_cycle = (boss.phase_frame % (0x40 * 2));
 
 	if((boss.phase_frame % b6ball_interval) == 0) {
 		b6ball_template.angle = player_angle_from(b6ball_template.origin.x, b6ball_template.origin.y);
-		b6ball_template.speed.v = sara_to_sp8(SHW_AIMED_BALL_SPEED_PX);
+		b6ball_template.speed.v = sara_to_sp8(4.0f);
 		b6ball_template.patnum_tiny = PAT_B6BALL_PURPLE;
 		b6balls_add();
 	}
-	if((boss.phase_frame % SHW_AIMED_SPREAD_INTERVAL) == 0) {
+	if((boss.phase_frame % 4) == 0) {
 		bullet_template.origin.x.v -= to_sp((SHINKI_WING_W / 2));
 		bullet_template.group = BG_SPREAD;
 		bullet_template.special_motion = BSM_EXACT_LINEAR;
-		sara_set_spread(SHW_AIMED_SPREAD_COUNT, SHW_AIMED_SPREAD_DELTA);
+		sara_set_spread(3, 0x02);
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
-		bullet_template.speed.v = sara_to_sp8(SHW_AIMED_SPREAD_SPEED_PX);
+		bullet_template.speed.v = sara_to_sp8(2.5f);
 		bullet_template.patnum = PAT_BULLET16_V_RED;
-		if(spread_cycle < SHW_AIMED_SPREAD_HALF_CYCLE) {
-			bullet_template.angle = (spread_cycle * SHW_AIMED_SPREAD_ANGLE_MULTIPLIER);
+		if(spread_cycle < 0x40) {
+			bullet_template.angle = (spread_cycle * 3);
 		} else {
-			bullet_template.angle = (SHW_AIMED_SPREAD_HALF_CYCLE - (spread_cycle * SHW_AIMED_SPREAD_ANGLE_MULTIPLIER));
+			bullet_template.angle = (0x40 - (spread_cycle * 3));
 		}
 		bullets_add_special();
 
-		bullet_template.angle = (SHW_AIMED_MIRROR_ANGLE - bullet_template.angle);
+		bullet_template.angle = (0x80 - bullet_template.angle);
 		bullet_template.origin.x.v += to_sp(SHINKI_WING_W);
 		bullets_add_special();
 
-		snd_se_play(SHW_AIMED_SPREAD_SOUND);
+		snd_se_play(15);
 	}
 
 	#undef b6ball_interval

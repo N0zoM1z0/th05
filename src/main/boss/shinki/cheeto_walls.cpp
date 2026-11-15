@@ -1,4 +1,5 @@
-// Natural complete Shinki cheeto-wall pattern; one canonical body.
+// Shinki's cheeto attack within walls of spreads, compiled on its own. The
+// body lives in cheeto_walls.inl.
 #pragma option -zCB6_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/shinki/cheeto_walls.hpp"
 #include "src/main/boss/shinki/scratch.hpp"

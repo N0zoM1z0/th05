@@ -1,11 +1,12 @@
-// Natural maintained TH04 splashes.inl algorithms, adapted to canonical TH05
-// geometry without changing shared class definitions. Init stays foreign.
+// Item spawn splashes: expanding dotted circles shown when an item appears.
 #pragma option -zCITEM_SPLASH_TEXT -zPmain_03
 #include "src/main/item/splash.hpp"
 #pragma codeseg ITEM_SPLASH_TEXT main_03
 
 void pascal near item_splashes_add(Subpixel center_x, Subpixel center_y)
 {
+    // ZUN quirk: the ring index advances even if the next splash is still
+    // active, in which case no new splash appears.
     item_splash_t near &splash = item_splashes[item_splash_last_id];
     item_splash_last_id++;
     if(item_splash_last_id >= ITEM_SPLASH_COUNT) {

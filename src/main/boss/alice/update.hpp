@@ -1,8 +1,9 @@
-// Complete Alice callback state and observed foreign interfaces.
+// Declarations for alice_update().
 #ifndef TH05_MAIN_BOSS_ALICE_UPDATE_HPP
 #define TH05_MAIN_BOSS_ALICE_UPDATE_HPP
 
-// Preserve this real main_01 callback context before setup.hpp declares it.
+// alice_bg_render() is in main_01. Turbo C++ binds a function to the segment
+// that is active at its first declaration, so declare it before setup.hpp.
 #pragma codeseg BOSS_BG_TEXT main_01
 void pascal near alice_bg_render(void);
 #pragma codeseg B4_UPDATE_TEXT main_03
@@ -20,14 +21,12 @@ typedef void (near *near AlicePattern)(void);
 extern AlicePuppetPattern alice_puppet_pattern0;
 extern AlicePuppetPattern alice_puppet_pattern1;
 extern AlicePattern alice_pattern_current;
-// Existing semantic callback table; no entries or asset payload are defined.
 extern AlicePattern alice_pattern_table[4][3];
 extern SPPoint homing_target;
 extern unsigned char bullet_clear_time;
 extern nearfunc_t_near bg_render_bombing_func;
 
-// The actual puppet dispatcher pushes a near reference, consumes AL and the
-// four real foreign callback entries all return RET2.
+// Puppet patterns. They return true when they are done.
 bool pascal near alice_puppet_initial(AlicePuppet near &puppet);
 bool pascal near alice_puppet_spread(AlicePuppet near &puppet);
 bool pascal near alice_puppet_rings(AlicePuppet near &puppet);
@@ -46,7 +45,7 @@ void near alice_pattern_final_spread(void);
 
 static const int ALICE_HP_TOTAL = 9600;
 static const int ALICE_PUPPET_HP = 500;
-// The original fifteen ordinary phases: opening, four waves and puppet beams.
+// Phases. Each pattern wave except the last is followed by a beam attack.
 static const unsigned char ALICE_PHASE_SETUP = 0;
 static const unsigned char ALICE_PHASE_READY = 1;
 static const unsigned char ALICE_PHASE_PUPPET_ENTRANCE = 2;

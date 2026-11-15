@@ -1,4 +1,4 @@
-// Maintained TH04 release flow, with TH05's single allocated image bank.
+// Frees the .MPN tile images. TH05 has one image bank where TH04 had slots.
 #pragma option -zC_TEXT -k-
 #include "src/main/formats/mpn_free.hpp"
 #pragma codeseg _TEXT

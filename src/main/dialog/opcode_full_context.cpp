@@ -1,6 +1,7 @@
-// Genuine contiguous 73+218+106+456+270-byte original dialog code context.
-// Compile the already owned neighbors together to recover the command table's
-// natural one-byte alignment without hand-written filler or machine-code copy.
+// The whole dialog code segment from std_update_done() to dialog_run(), in
+// original order. dialog_op() only gets the alignment byte before its switch
+// table when everything before it is compiled in the same translation unit.
+// Each body is also built on its own through its own .cpp file.
 #pragma option -zCDIALOG_RUN_TEXT -zPmain_01
 #include <dos.h>
 #include <string.h>

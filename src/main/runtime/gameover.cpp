@@ -1,9 +1,16 @@
-// Natural maintained TH04 donor, independently adapted to TH05's original
-// input polling, separate remaining-life/bomb globals and game-over behavior.
+// Game over: the playfield fade, the GAME OVER animation and the continue
+// menu. Choosing not to continue hands off to MAINE for the score screen.
 #pragma option -zCGAMEOVER_TEXT -zPmain_01
 #include "src/main/runtime/gameover.hpp"
 #pragma codeseg GAMEOVER_TEXT main_01
 
+// Gaiji (font) slots. The playfield fade uses the 8 cels just below
+// GAIJI_FADE_END; higher ones cover more of the screen.
+#define GAIJI_FADE_END 0x40
+#define GAIJI_BOLD_0 0xA0
+#define GAIJI_BOLD_G 0xB0
+
+// Fades the playfield in, one cel every 4 frames. Returns 1 when done.
 unsigned char near gameover_fade_in(void)
 {
     unsigned char cel_num;
@@ -17,7 +24,7 @@ unsigned char near gameover_fade_in(void)
         if(cel_num != 0) {
             for(int y = 1; y < 24; y++) {
                 for(int x = 4; x < 52; x += 2) {
-                    gaiji_putca(x, y, (0x40 - cel_num), GAMEOVER_TX_BLACK);
+                    gaiji_putca(x, y, (GAIJI_FADE_END - cel_num), GAMEOVER_TX_BLACK);
                 }
             }
         }
@@ -26,6 +33,7 @@ unsigned char near gameover_fade_in(void)
     return 0;
 }
 
+// Fades the playfield out, one cel every 4 frames. Returns 1 when done.
 unsigned char near gameover_fade_out(void)
 {
     unsigned char cel_num;
@@ -40,7 +48,7 @@ unsigned char near gameover_fade_out(void)
         if(cel_num != 0) {
             for(int y = 1; y < 24; y++) {
                 for(int x = 4; x < 52; x += 2) {
-                    gaiji_putca(x, y, (0x40 - cel_num), GAMEOVER_TX_BLACK);
+                    gaiji_putca(x, y, (GAIJI_FADE_END - cel_num), GAMEOVER_TX_BLACK);
                 }
             }
         }
@@ -48,9 +56,13 @@ unsigned char near gameover_fade_out(void)
     return 0;
 }
 
+// Returns GAMEOVER_KEEP_RUNNING if the player continues. Otherwise, it
+// starts MAINE and doesn't return.
 unsigned char near gameover_run(void)
 {
-    int y;
+    // ZUN bloat: one variable for both the X column of the animation and
+    // the result of the continue menu.
+    int i;
     gameover_fade_frame = 0x20;
     while(1) {
         if(gameover_fade_out()) {
@@ -66,20 +78,22 @@ unsigned char near gameover_run(void)
         }
         frame_delay(1);
     }
-    for(y = 0x32; y > 8; y -= 2) {
-        gaiji_putca(y, 12, 0xB0, GAMEOVER_TX_WHITE);
+    // A bold G slides in from the right, bounces off the left side and
+    // stops where the full GAME OVER text then appears.
+    for(i = 0x32; i > 8; i -= 2) {
+        gaiji_putca(i, 12, GAIJI_BOLD_G, GAMEOVER_TX_WHITE);
         frame_delay(1);
-        text_putsa(y, 12, gameover_erase_in, GAMEOVER_TX_WHITE);
+        text_putsa(i, 12, gameover_erase_in, GAMEOVER_TX_WHITE);
     }
-    for(y = 8; y < 0x14; y += 2) {
-        gaiji_putca(y, 12, 0xB0, GAMEOVER_TX_WHITE);
+    for(i = 8; i < 0x14; i += 2) {
+        gaiji_putca(i, 12, GAIJI_BOLD_G, GAMEOVER_TX_WHITE);
         frame_delay(1);
-        text_putsa(y, 12, gameover_erase_out, GAMEOVER_TX_WHITE);
+        text_putsa(i, 12, gameover_erase_out, GAMEOVER_TX_WHITE);
     }
     gaiji_putsa(20, 12, gGAMEOVER, GAMEOVER_TX_WHITE);
     input_wait_for_change(0);
     overlay_wipe();
-    y = gameover_continue_menu();
+    i = gameover_continue_menu();
     gameover_fade_frame = 0x20;
     while(1) {
         if(gameover_fade_out()) {
@@ -87,7 +101,7 @@ unsigned char near gameover_run(void)
         }
         frame_delay(1);
     }
-    if(y == GAMEOVER_KEEP_RUNNING) {
+    if(i == GAMEOVER_KEEP_RUNNING) {
         PaletteTone = 100;
         palette_show();
         while(1) {
@@ -99,25 +113,29 @@ unsigned char near gameover_run(void)
         overlay_wipe();
     } else {
         resident->end_sequence = GAMEOVER_END_SCORE;
-        snd_kaja_interrupt((2 << 8) | 4);
+        snd_kaja_interrupt((2 << 8) | 4); // KAJA_SONG_FADE, speed 4
         palette_black_out(4);
         GameExecl(maine_binary);
     }
-    return static_cast<unsigned char>(y);
+    return static_cast<unsigned char>(i);
 }
 
+// Returns GAMEOVER_KEEP_RUNNING if the player continues, 1 otherwise. There
+// are no continues in the Extra Stage, and three per game otherwise.
 unsigned char near gameover_continue_menu(void)
 {
-    unsigned char atrb;
+    unsigned char attr;
     unsigned char credits;
     int selected;
-    int previous_input;
+    int input;
 
     if(stage_id == 6) {
         return 1;
     }
     selected = 0;
-    previous_input = 1;
+    // Nonzero until the first poll, so that a key held from the game over
+    // animation isn't taken as a menu choice.
+    input = 1;
     credits = (3 - continues_used);
     if(credits == 0) {
         return 1;
@@ -126,39 +144,40 @@ unsigned char near gameover_continue_menu(void)
     gaiji_putsa(24, 13, gYES, (GAMEOVER_TX_GREEN | GAMEOVER_TX_REVERSE));
     gaiji_putsa(25, 15, gNO, GAMEOVER_TX_WHITE);
     gaiji_putsa(19, 22, gCREDIT, GAMEOVER_TX_GREEN);
-    gaiji_putca(33, 22, (0xA0 + credits), GAMEOVER_TX_GREEN);
+    gaiji_putca(33, 22, (GAIJI_BOLD_0 + credits), GAMEOVER_TX_GREEN);
 
     for(;;) {
         input_reset_sense_held();
-        if(previous_input == 0) {
-            previous_input = key_det;
-            if((previous_input & GAMEOVER_INPUT_UP) || (previous_input & GAMEOVER_INPUT_DOWN)) {
+        // Only react on frames after a frame without input.
+        if(input == 0) {
+            input = key_det;
+            if((input & GAMEOVER_INPUT_UP) || (input & GAMEOVER_INPUT_DOWN)) {
                 selected = (1 - selected);
                 if(selected == 0) {
-                    atrb = (GAMEOVER_TX_GREEN | GAMEOVER_TX_REVERSE);
+                    attr = (GAMEOVER_TX_GREEN | GAMEOVER_TX_REVERSE);
                 } else {
-                    atrb = GAMEOVER_TX_WHITE;
+                    attr = GAMEOVER_TX_WHITE;
                 }
-                gaiji_putsa(24, 13, gYES, atrb);
+                gaiji_putsa(24, 13, gYES, attr);
                 if(selected == 1) {
-                    atrb = (GAMEOVER_TX_GREEN | GAMEOVER_TX_REVERSE);
+                    attr = (GAMEOVER_TX_GREEN | GAMEOVER_TX_REVERSE);
                 } else {
-                    atrb = GAMEOVER_TX_WHITE;
+                    attr = GAMEOVER_TX_WHITE;
                 }
-                gaiji_putsa(25, 15, gNO, atrb);
+                gaiji_putsa(25, 15, gNO, attr);
             }
-            if(previous_input & GAMEOVER_INPUT_CANCEL) {
+            if(input & GAMEOVER_INPUT_CANCEL) {
                 selected = 1;
                 break;
             }
-            if(previous_input & GAMEOVER_INPUT_OK) {
+            if(input & GAMEOVER_INPUT_OK) {
                 break;
             }
-            if(previous_input & GAMEOVER_INPUT_SHOT) {
+            if(input & GAMEOVER_INPUT_SHOT) {
                 break;
             }
         } else {
-            previous_input = key_det;
+            input = key_det;
         }
         frame_delay(1);
     }
@@ -171,6 +190,7 @@ unsigned char near gameover_continue_menu(void)
         shot_level_update();
         hud_lives_put();
         hud_bombs_put();
+        // The lowest digit of the score shares its byte with this counter.
         continues_used++;
         score_reset();
         hud_score_put();

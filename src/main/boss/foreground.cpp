@@ -1,4 +1,5 @@
-// Natural sprite animation and damage flashing for the first two bosses.
+// Sara's and Louise's foreground renderers, compiled together in their
+// original order.
 #pragma option -zCBOSS_FG_TEXT -zPmain_01
 #include "src/main/boss/foreground.hpp"
 

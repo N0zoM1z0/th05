@@ -1,11 +1,11 @@
-// TH05 replay-buffer and master.lib ABI. Natural ReC98 source provenance:
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47, th04/main/demo.hpp.
+// Demo replay buffer layout and the functions used by demo.cpp. Names
+// follow ReC98's th04/main/demo.hpp.
 #ifndef TH05_MAIN_DEMO_HPP
 #define TH05_MAIN_DEMO_HPP
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner is TH05 MAIN demo playback
+#error This is TH05 MAIN code
 #endif
 
 typedef uint16_t input_t;
@@ -13,6 +13,8 @@ typedef uint8_t input_replay_t;
 static const input_t INPUT_MOVEMENT = 0x0F0F;
 static const unsigned int DEMO_N = 5000;
 static const unsigned int DEMO_N_EXTRA = (DEMO_N * 4);
+// A DEMO?.REC file: the low byte of key_det for every frame, then the
+// shift key state for every frame.
 template <unsigned int Frames> struct REC {
     input_replay_t input[Frames];
     bool shift[Frames];
@@ -32,8 +34,9 @@ extern "C" {
     void pascal far file_close(void);
     void pascal far palette_black_out(unsigned speed);
 }
-// This real Pascal far routine returns with RETF4 in the original. Its
-// original call from DemoPlay was relaxed by the linker within the same CS.
+// GameExecl() is far Pascal. TLINK shortens the call from DemoPlay() to
+// NOP / PUSH CS / CALL near only if both end up in the same segment
+// (DEMO_TEXT, as in the original); being in the same group is not enough.
 #pragma codeseg DEMO_GAMEEXECL_CONTEXT main_01
 int pascal far GameExecl(const char far *binary_fn);
 #pragma codeseg DEMO_TEXT main_01

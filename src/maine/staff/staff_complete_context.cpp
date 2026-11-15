@@ -1,4 +1,7 @@
-// Original 17 exact Staff scene functions, two PC-98 bitmap device kernels and the 991-byte controller.
+// The whole staff roll code, in its original order: the 17 scene functions,
+// the two verdict bitmap transfers, and staffroll_animate().
+// The controller's relocations only come out in the original order when it
+// is compiled after all the other functions in the same segment.
 #pragma option -zCSTAFF_FULL_TEXT
 #define TH05_STAFF_FULL_FAMILY
 #include "src/maine/staff/state_publics.h"
@@ -22,16 +25,13 @@
 #include "src/maine/staff/body/staff_scene_render.inl"
 #include "src/maine/staff/body/staff_frame_advance.inl"
 
-// All source CODE contributions stay in the actual original 17-function
-// source segment. The two real GRCG device loops are original-language
-// inline-ASM context, not accepted CODE owners at this stage.
 #pragma codeseg STAFF_FULL_TEXT group_01
 void pascal near verdict_bitmap_snap(size_t bitmap_offset);
 void pascal near verdict_bitmap_put(size_t bitmap_offset);
 void near staffroll_animate(void);
 extern unsigned char verdict_bitmap[2][352][40];
-// Both independent canonical headers define this real 0xC0 constant.
-// Rename the second declaration only within this combined translation unit.
+// render.hpp and controller.hpp both define this constant for their
+// standalone builds. Rename the second one to avoid a redefinition here.
 #define STAFF_GRCG_RMW STAFF_CONTROLLER_GRCG_RMW
 #include "src/maine/staff/controller.hpp"
 #undef STAFF_GRCG_RMW

@@ -1,4 +1,4 @@
-// Puppet sprite bobbing, charge circles/beam and the complete Alice foreground.
+// Renders Alice's puppets, their charge circles and beam, and Alice herself.
 #pragma option -zCALICE_FG_TEXT -zPmain_01
 #include "src/main/boss/alice/foreground.hpp"
 

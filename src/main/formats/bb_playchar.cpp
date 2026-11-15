@@ -1,4 +1,5 @@
-// Load and release the selected player's bomb-background tile bitmap.
+// Load and release the .BB tile masks for the selected player's bomb
+// animation (BB0.BB to BB3.BB).
 #pragma option -zCBB_PLAYCHAR_TEXT -zPmain_01 -k-
 #include "src/shared/abi.hpp"
 
@@ -13,7 +14,9 @@ extern unsigned char playchar;
 
 extern "C" void pascal near bb_playchar_load(void)
 {
-    // This is the original additive filename update, including repeated calls.
+    // ZUN landmine: the player index is *added* to the digit instead of
+    // assigned, so a second call without a reset would load the wrong file.
+    // The explicit char cast keeps the single byte-sized ADD to memory.
     bb_playchar_fn[2] += static_cast<char>(playchar);
     bb_playchar_seg = bb_load(bb_playchar_fn);
 }

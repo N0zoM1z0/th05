@@ -1,5 +1,5 @@
-/* One original pair of writable near-DATA C globals, shared by two C++
- * stage-clear renderers without changing their resident score state. */
+/* Miss and bomb totals at the end of the previous stage, used by
+ * stage_clear_bonus() and stage_allclear_bonus(). */
 #ifndef TH05_STAGE_BONUS_PREVIOUS_RESOURCES_H
 #define TH05_STAGE_BONUS_PREVIOUS_RESOURCES_H
 #ifdef __cplusplus

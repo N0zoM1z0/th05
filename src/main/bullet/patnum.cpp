@@ -1,8 +1,8 @@
-// Natural ReC98 b6ba5b0a: th05/main/bullet/patnum.cpp.
-// Real byte return ABI is preserved; the trailing reference NOP is omitted.
+// Sprite number of a directional 16x16 bullet or sword for a given angle.
+// Same as ReC98's th05/main/bullet/patnum.cpp, minus its trailing alignment
+// NOP, which belongs to the next function's segment here.
 #pragma option -zCBULLET_P_TEXT -zPmain_03 -k-
 #include "src/main/runtime/small.hpp"
-
 
 // The function calculates a 16-bit return value, every call site assigns the
 // result to a 16-bit variable, but ZUN still declared an 8-bit return type...
@@ -15,6 +15,7 @@ unsigned char pascal near bullet_patnum_for_angle(
 	#define angle_wide 	static_cast<unsigned int>(_AX)
 	#define patnum_base	static_cast<unsigned int>(_BX)
 
+	// Parameters are read straight off the stack, without a BP frame.
 	_BX = _SP;
 	angle_low = peekb(_SS, (_BX + 2)); /* = */ (angle);
 	patnum_base = peek(_SS, (_BX + 4)); /* = */ (patnum_base_);

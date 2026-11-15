@@ -1,4 +1,4 @@
-// Natural maintained TH04 stage_runtime_init with actual TH05 state fields.
+// Per-stage reset of scrolling, the player and the HUD.
 #pragma option -zCSTAGE_RUNTIME_TEXT -zPmain_01
 #include "src/main/runtime/stage_runtime_init.hpp"
 
@@ -16,6 +16,7 @@ void near stage_runtime_init(void)
     scroll_row_advance_previous = 0;
     playfield_shake_x = 0;
     playfield_shake_y = 0;
+    // Player starts at (192, 320), in subpixels.
     player_pos.cur.x.v = 192 * 16;
     player_pos.cur.y.v = 320 * 16;
     player_pos.prev.x.v = 192 * 16;

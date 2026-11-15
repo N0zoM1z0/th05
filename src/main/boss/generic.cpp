@@ -1,9 +1,10 @@
-// Natural generic TH05 boss behavior, specialized to the pinned original.
+// Code shared by all bosses: shot and player collision, item drops, phase
+// transitions and the defeat sequence. Adapted from ReC98's
+// th04/main/boss/boss.cpp.
 #pragma option -zCBOSS_TEXT
 
 #include <dos.h>
 #include "src/main/boss/generic.hpp"
-#include "src/main/boss/defeat_combat_rules.hpp"
 
 // Processes any collision between the player and boss sprites.
 #pragma codeseg BOSS_COLLISION_TEXT main_03
@@ -31,8 +32,8 @@ int pascal near midboss_hittest_shots_damage(
 )
 {
 	shots_hittest_against_boss = true;
-	// Keep the scalar stores: the inline center/radius helper emits 4 fewer
-	// bytes here and no longer matches the original 352-byte generic unit.
+	// ZUN bloat: Should just call the inline shots_hittest() overload, but
+	// that compiles into 4 fewer bytes than the original.
 	shot_hitbox_radius.x.v = radius_x;
 	shot_hitbox_radius.y.v = radius_y;
 	shot_hitbox_center.x.v = midboss.pos.cur.x.v;
@@ -123,9 +124,8 @@ void pascal near boss_phase_next(
 	boss.phase_end_hp = next_end_hp;
 }
 
-// Complete natural 414-byte defeat function: source-authentic inline
-// optimization_barrier() prevents Turbo C++ from coalescing the two real
-// all-clear bonus call paths. Its body emits no runtime instructions.
+// The optimization_barrier() call (taken from ReC98) emits nothing, but keeps
+// Turbo C++ from merging the two stage_allclear_bonus() calls into one.
 #pragma codeseg BOSS_DEFEAT_TEXT main_03
 inline bool optimization_barrier(void) { return false; }
 void pascal near boss_defeat_update(unsigned int bonus_units)
@@ -134,7 +134,7 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 		if(boss.phase_frame == BDF_SMALL_1) {
 			boss.damage_this_frame = 0;
 			boss_explode_small(ET_CIRCLE);
-			snd_se_play(GDEF_INITIAL_EXPLOSION_SE);
+			snd_se_play(13);
 		}
 		if(boss.phase_frame == BDF_SMALL_2) {
 			boss_explode_small(ET_VERTICAL);
@@ -147,13 +147,13 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 		homing_target.y.v = HOMING_TARGET_NONE;
 		return;
 	} else if(boss.phase == PHASE_BOSS_EXPLODE_BIG) {
-		if(boss.phase_frame < GDEF_BIG_SHAKE_END_FRAME) {
-			playfield_shake_x = (stage_frame_mod2 == GDEF_SHAKE_NEGATIVE_X_MOD2) ? -GDEF_SHAKE_DISTANCE_PX : +GDEF_SHAKE_DISTANCE_PX;
-			playfield_shake_y = (stage_frame_mod4 <= GDEF_SHAKE_NEGATIVE_Y_LAST_MOD4) ? -GDEF_SHAKE_DISTANCE_PX : +GDEF_SHAKE_DISTANCE_PX;
+		if(boss.phase_frame < 12) {
+			playfield_shake_x = (stage_frame_mod2 == 0) ? -4 : +4;
+			playfield_shake_y = (stage_frame_mod4 <= 1) ? -4 : +4;
 		}
 		bg_render_bombing_func = tiles_render_all;
-		slowdown_factor = GDEF_SLOWDOWN_FACTOR;
-		if((boss.phase_frame % GDEF_BIG_SPRITE_ADVANCE_FRAMES) == 0) {
+		slowdown_factor = 2;
+		if((boss.phase_frame % 8) == 0) {
 			boss.sprite++;
 			if(boss.sprite >= (PAT_ENEMY_KILL_last + 1)) {
 				boss.phase++; // = PHASE_NONE
@@ -164,7 +164,7 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 		}
 		return;
 	} // else if(boss.phase == PHASE_NONE) {
-	palette_settone_deferred(GDEF_FINAL_PALETTE_TONE);
+	palette_settone_deferred(60);
 	if(boss.phase_frame == BDF_DIALOG) {
 		resident->graze += stage_graze;
 		if(stage_id != (MAIN_STAGE_COUNT - 1)) {
@@ -179,8 +179,8 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 			stage_allclear_bonus();
 		}
 	} else if(boss.phase_frame == BDF_FADEOUT) {
-		// This pinned original TH05 build proceeds directly to stage-score
-		// storage here. The reference-only score_delta_commit call is absent.
+		// Unlike ReC98's version of this function, this build of TH05 does
+		// not call score_delta_commit() here.
 
 		if(stage_id < STAGE_EXTRA) {
 			for(int i = 0; i < SCORE_DIGITS; i++) {
@@ -193,17 +193,15 @@ void pascal near boss_defeat_update(unsigned int bonus_units)
 			end_extra();
 		}
 		overlay_stage_leave();
-		snd_kaja_func(KAJA_SONG_FADE, GDEF_SONG_FADE_PARAMETER);
+		snd_kaja_func(KAJA_SONG_FADE, 10);
 	} else if(boss.phase_frame == BDF_NEXT_STAGE) {
 		resident->stage++;
 		quit = Q_NEXT_STAGE;
-		frame_delay(GDEF_NEXT_STAGE_WAIT_FRAMES);
+		frame_delay(1);
 	}
 	homing_target.x.v = HOMING_TARGET_NONE;
 	homing_target.y.v = HOMING_TARGET_NONE;
 }
 
-// The complete original-register player collision now uses the same real
-// AX/DX state as the original C++ source and compiles to 43 native bytes.
 #pragma codeseg BOSS_COLLISION_TEXT main_03
 #include "src/main/boss/collision_body.inl"

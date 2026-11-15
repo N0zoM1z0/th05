@@ -1,4 +1,5 @@
-// True foreign frames precede the shared score/menu declarations.
+// Declarations for regist_menu(). The master.lib and SHARED functions must be
+// declared before the score headers are included.
 #ifndef TH05_MREG_MENU_HPP
 #define TH05_MREG_MENU_HPP
 #include <dos.h>
@@ -46,6 +47,7 @@ extern char registration_bg_fn[8];
 extern char registration_score_font[10];
 extern char registration_cloud_font[10];
 extern char registration_ball_font[10];
+// The slow-mode warning text (despite the name) and its shadow copy.
 extern uint8_t registration_turbo_warning_shadow[51];
 extern uint8_t registration_turbo_warning[51];
 extern char registration_bgm_fn[5];
@@ -59,11 +61,11 @@ void near registration_frame(void);
 #pragma codeseg REG_MENU_TEXT GROUP_01
 void near regist_menu(void);
 
-static const uint8_t REG_NO_ENTRY = 0xFF;
+static const uint8_t REG_NO_ENTRY = 0xFF; // [entered_place] if not in the top 5
 static const uint8_t REG_EMPTY_GLYPH = 0x02;
 static const uint16_t REG_INPUT_BOMB = 0x10;
-static const uint8_t REG_END_EXTRA = 0xFD;
-static const int REG_ATTR_WHITE = 0xE1;
+static const uint8_t REG_END_EXTRA = 0xFD; // ES_EXTRA
+static const int REG_ATTR_WHITE = 0xE1; // Text RAM attributes
 static const int REG_ATTR_HIGHLIGHT = 0x85;
-static const int REG_REPEAT_DELAY = 30;
+static const int REG_REPEAT_DELAY = 30; // Frames until a held key repeats
 #endif

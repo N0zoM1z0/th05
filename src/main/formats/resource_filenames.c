@@ -1,4 +1,5 @@
-/* Writable MAIN resource names, followed by the original even-DATA alignment. */
+/* Writable filenames for the text masks, the stage map and the config file.
+ * bb_txt_load() and map_load() change one digit of their names in place. */
 #pragma option -zCMAIN_FORMAT_NAMES_TEXT -zPmain_01
 #ifdef __cplusplus
 #error Resource filename DATA is compiled in C mode
@@ -8,7 +9,7 @@
 typedef struct MainFormatFilenames {
     char bb_text[8];
     char stage_map[9];
-    unsigned char next_word_alignment;
+    unsigned char next_word_alignment; /* zero padding to an even address */
     char cfg_filename[9];
 } MainFormatFilenames;
 

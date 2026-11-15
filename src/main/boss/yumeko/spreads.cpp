@@ -1,4 +1,5 @@
-// Two complete later Yumeko spreads, independent of the aimed-sword candidate.
+// Yumeko's counterrotating and mirrored spread attacks. The bodies live in
+// spreads.inl; they keep their rotating angles in Boss scratch bytes 15 and 14.
 #ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
 #endif

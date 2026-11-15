@@ -1,7 +1,8 @@
-// Complete Yumeko callback interfaces; accepted layouts stay unchanged.
+// Declarations shared by Yumeko's update function, attacks and swords.
 #ifndef TH05_MAIN_BOSS_YUMEKO_UPDATE_HPP
 #define TH05_MAIN_BOSS_YUMEKO_UPDATE_HPP
-// These genuine near rendering pointers use main_01, before setup repeats them.
+// Near render callbacks in main_01. They must be declared here, before
+// stage/setup.hpp declares them again.
 #pragma codeseg YUMEKO_UPDATE_MAIN01_TEXT main_01
 void pascal near yumeko_bg_render(void);
 extern "C" {
@@ -14,8 +15,7 @@ void near yumeko_pattern_final_ring(void);
 #include "src/main/boss/yumeko/phase_patterns.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
 
-// Complete canonical definitions verbatim from accepted bullet/update.hpp.
-// Preserve one external object type across independent TUs, without reduced views.
+// Same definitions as in bullet/update.hpp.
 union bullet_special_angle_t {
     unsigned char turn_by;
     char target;
@@ -37,8 +37,8 @@ typedef void (near *near yumeko_pattern_func_t)(void);
 extern yumeko_pattern_func_t yumeko_pattern;
 extern yumeko_pattern_func_t yumeko_patterns_phase2[4];
 extern yumeko_pattern_func_t yumeko_patterns_phase5[12];
-void near yumeko_pattern_laser_swords(void); // Real foreign phase-seven body.
-void near yumeko_pattern_sword_sweep(void); // Real foreign phase-eight body.
+void near yumeko_pattern_laser_swords(void); // Phase 7
+void near yumeko_pattern_sword_sweep(void); // Phase 8
 
 #pragma codeseg BOSS_TEXT main_03
 bool near boss_hittest_shots(void);

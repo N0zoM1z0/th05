@@ -1,4 +1,5 @@
-// Alice's charged laser/bullet patterns, sharing the validated full game ABI.
+// Declarations for Alice's charged patterns: a laser fan, paired stacks and
+// rotating rings.
 #ifndef TH05_MAIN_BOSS_ALICE_CHARGE_PATTERNS_HPP
 #define TH05_MAIN_BOSS_ALICE_CHARGE_PATTERNS_HPP
 

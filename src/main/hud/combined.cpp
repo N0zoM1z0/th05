@@ -1,37 +1,54 @@
-// Genuine contiguous HUD family, not a synthetic prefix. The eight preceding
-// functions are copied verbatim from frozen accepted natural owners; see the
-// private source-equivalence proof. They retain zero additional credit here.
+// The complete HUD code block, score_reset() through hud_put(), in original
+// order. The first eight functions are copies of score_reset.cpp,
+// lives_bombs.cpp, indicators.cpp and hp_draw.cpp; keep them in sync.
+// hud_put() needs to be compiled behind them: it starts at an odd address,
+// which decides the alignment of its switch jump table and the grouping of
+// its relocations.
 #pragma option -G -zCHUD_COMBINED_TEXT -zPmain_01
 #include "src/main/hud/combined.hpp"
-// Same maintained TH04 HUD context: define byte aggregates before -a2.
+// Word alignment, as in TH04's hud.cpp. It must come after combined.hpp, whose
+// color and glyph structs need to keep their odd sizes.
 #pragma option -a2
 
-// BEGIN FROZEN BODY src/main/hud/score_reset.cpp
+// --- Copy of score_reset.cpp ---
+
+// States of the digit-by-digit comparison against the resident high score.
+#define HISCORE_KEPT 0
+#define HISCORE_UNDECIDED 1
+#define HISCORE_BEATEN 2
+
+// Saves the current score as the new high score if it is higher, then clears
+// the score and the pending score deltas.
 void near score_reset(void)
 {
-    int record = 1;
+    int record = HISCORE_UNDECIDED;
     register int i;
     for(i = SCORE_DIGITS - 1; i > 0; i--) {
-        if(record == 1) {
+        if(record == HISCORE_UNDECIDED) {
             if(resident->score_highest.digits[i] < score.digits[i]) {
-                record = 2;
+                record = HISCORE_BEATEN;
             } else if(resident->score_highest.digits[i] > score.digits[i]) {
-                record = 0;
+                record = HISCORE_KEPT;
             }
         }
-        if(record == 2) {
+        if(record == HISCORE_BEATEN) {
             resident->score_highest.digits[i] = score.digits[i];
         }
-        // Digit0 retains the continuation-count/least-significant slot.
+        // Digit 0 counts the continues used. It is neither compared, copied
+        // nor cleared here.
         score.digits[i] = 0;
     }
     score_delta = 0;
     score_delta_frame = 0;
     hiscore_popup_shown = 0;
 }
-// END FROZEN BODY src/main/hud/score_reset.cpp
 
-// BEGIN FROZEN BODY src/main/hud/lives_bombs.cpp
+#undef HISCORE_BEATEN
+#undef HISCORE_UNDECIDED
+#undef HISCORE_KEPT
+
+// --- Copy of lives_bombs.cpp ---
+
 void far hud_lives_put(void)
 {
     signed char value;
@@ -68,9 +85,8 @@ void far hud_bombs_put(void)
     signed char value;
     signed char i = 0;
     register int x;
-    // The stored count is compared in its unsigned byte domain before being
-    // assigned to the original signed display local. Keep the canonical
-    // signed storage declaration used by the gameplay owners unchanged.
+    // [bombs] is declared signed for the gameplay code, but this limit check
+    // compares it as an unsigned byte, as the original does.
     if(static_cast<unsigned char>(bombs) <= 5) {
         x = 62;
         value = bombs;
@@ -96,15 +112,17 @@ void far hud_bombs_put(void)
             HUD_RESOURCE_WHITE);
     }
 }
-// END FROZEN BODY src/main/hud/lives_bombs.cpp
 
-// BEGIN FROZEN BODY src/main/hud/indicators.cpp
+// --- Copy of indicators.cpp ---
+
 extern "C" void pascal far hud_point_items_put(void)
 {
     hud_5_digit_put(62, 16, stage_point_items_collected, HUD_INDICATOR_WHITE);
     hud_5_digit_put(62, 15, extend_point_items_collected, HUD_INDICATOR_CYAN);
 }
 
+// Draws the dream bar. Reaching the maximum shows the "DreamBonus Max" popup
+// and clears bullets for at least 20 frames.
 extern "C" void pascal far hud_dream_put(void)
 {
     const hud_dream_colors_t colors = HUD_DREAM_COLORS;
@@ -130,9 +148,9 @@ extern "C" void pascal far hud_power_put(void)
     const hud_power_colors_t colors = HUD_POWER_COLORS;
     hud_bar_put(22, power, colors.v[shot_level]);
 }
-// END FROZEN BODY src/main/hud/indicators.cpp
 
-// BEGIN FROZEN BODY src/main/hud/hp_draw.cpp
+// --- Copy of hp_draw.cpp ---
+
 void pascal far hud_hp_put(int bar_value)
 {
     const hud_bar9_t blank = gHUD_HP_BLANK;
@@ -148,9 +166,8 @@ void pascal far hud_hp_put(int bar_value)
             HUD_HP_DRAW_WHITE);
     }
 }
-// END FROZEN BODY src/main/hud/hp_draw.cpp
 
-// New complete initializer; original ordinary switch generates its own table.
+// Draws the complete HUD: all captions, then every value.
 void far hud_put(void)
 {
     gaiji_putsa(60, 3, reinterpret_cast<const char far *>(gsHISCORE),
@@ -191,6 +208,9 @@ void far hud_put(void)
     gaiji_putca(58, 18, HUD_FULL_GRAZE_GLYPH, HUD_FULL_YELLOW);
     hud_graze_put();
     hud_power_put();
+    // The near pointer to the rank label is converted to far implicitly.
+    // Unlike an explicit far cast, this pushes DS before computing the offset,
+    // as the original does.
     gaiji_putsa(57, 23, (const char near *)&glEASY[rank * 8],
         ((rank == 0) ? HUD_FULL_GREEN :
          (rank == 1) ? HUD_FULL_CYAN :

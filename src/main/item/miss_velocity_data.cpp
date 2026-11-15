@@ -1,9 +1,10 @@
-// Three real miss-drop fields, each Y/X axis and five item slots.
+// Velocities of the five items dropped when losing a life, depending on
+// whether the player is in the left, center or right third of the playfield.
 #pragma option -zCITEM_MISS_DATA_CONTEXT -zPmain_01
 #include "src/main/item/miss_velocity_data.hpp"
 
-// Each innermost brace initializes the real Subpixel aggregate's public v.
-// Integer arithmetic expresses pixels/frame and fractional subpixel steps.
+// In subpixels per frame. Each field lists the five Y velocities, then the
+// five X velocities.
 const Subpixel ITEM_MISS_VELOCITIES[MISS_FIELD_COUNT][2][ITEM_MISS_COUNT] = {
     { // MISS_FIELD_LEFT
         {

@@ -1,4 +1,6 @@
-// Natural semantic ReC98 b6ba5b0a TH05 laser state machine.
+// Per-frame laser update: movement of shoot-out lasers, growing and shrinking
+// of fixed lasers, decay during bullet clears and zaps, and hit testing.
+// Same as lasers_update() in ReC98's th05/main/bullet/laser.cpp.
 #pragma option -zCLASER_UPDATE_TEXT -zPmain_01 -G
 #include "src/main/bullet/update.hpp"
 #include "src/main/bullet/laser.hpp"
@@ -29,6 +31,8 @@ void near lasers_update(void)
 			continue;
 		}
 
+		// Clears and zaps only turn shoot-out lasers into decaying ones;
+		// fixed lasers stay.
 		if(bullet_clear_time || bullet_zap.active) {
 			if(laser->flag == LF_SHOOTOUT) {
 				laser->flag = LF_SHOOTOUT_DECAY;

@@ -1,10 +1,13 @@
-// Candidate adapted from nmlgc/ReC98@b6ba5b0a; requires local cold replay.
+// Boss explosions: rings of small or big sprites that expand from the boss
+// and die after 32 frames. The big one also flashes and fades the palette.
+// Adapted from ReC98's th04/main/boss/explode.cpp.
 #pragma option -zCBOSS_EXP_TEXT
 
 #include <dos.h>
 #include "src/main/boss/explosion_frame.h"
 #include "src/main/boss/explosion.hpp"
-#include "src/main/boss/explosion_choreography.hpp"
+
+#define BEXP_LIFETIME_FRAMES 32
 
 #define explosion_update(p) { \
     (p).radius_cur.x.v += (p).radius_delta.x.v; \
@@ -18,9 +21,9 @@
 void near explosions_small_update_and_render(void)
 {
     enum {
-        SPRITE_W = BEXP_SMALL_SPRITE_W,
-        SPRITE_H = BEXP_SMALL_SPRITE_H,
-        SPRITES = BEXP_SMALL_RING_SPRITES
+        SPRITE_W = 16,
+        SPRITE_H = 16,
+        SPRITES = 64
     };
 
     _ES = SEG_PLANE_B;
@@ -50,7 +53,7 @@ void near explosions_small_update_and_render(void)
                 z_super_roll_put_tiny_16x16(left, top, PAT_EXPLOSION_SMALL);
             }
             sprite++;
-            angle += (BEXP_FULL_CIRCLE_ANGLE / SPRITES);
+            angle += (0x100 / SPRITES);
 
             #undef top
             #undef left
@@ -64,16 +67,18 @@ void near explosions_small_update_and_render(void)
 void near explosions_big_update_and_render(void)
 {
     enum {
-        // Retain the original 64x64 assumption although the sprite is 48x48.
-        SPRITE_W = BEXP_BIG_CLIP_ASSUMED_W,
-        SPRITE_H = BEXP_BIG_CLIP_ASSUMED_H,
-        SPRITES = BEXP_BIG_RING_SPRITES
+        // ZUN bug: The sprite is actually 48x48 pixels. Assuming 64x64
+        // misaligns both the conversion to screen space and the clipping.
+        SPRITE_W = 64,
+        SPRITE_H = 64,
+        SPRITES = 16
     };
 
     #define frame explosion_big_frame
     Explosion near &p = explosions_big;
     int sprite;
 
+    // ZUN bloat: Should be a separate PlayfieldPoint and screen point.
     subpixel_t x;
     #define x_center x
     #define x_left static_cast<int>(x)
@@ -91,17 +96,17 @@ void near explosions_big_update_and_render(void)
                 super_put(x_left, y.top, PAT_EXPLOSION_BIG);
             }
             sprite++;
-            angle += (BEXP_FULL_CIRCLE_ANGLE / SPRITES);
+            angle += (0x100 / SPRITES);
         }
         explosion_update(p);
 
         frame++;
-        if((frame < BEXP_BIG_FLASH_END_FRAME) && (frame & BEXP_BIG_ODD_FRAME_MASK)) {
-            palette_settone_deferred(BEXP_BIG_FLASH_TONE);
-        } else if((frame >= BEXP_BIG_FLASH_END_FRAME) && (frame < BEXP_BIG_FADE_END_FRAME)) {
-            palette_settone_deferred(BEXP_BASE_TONE + (BEXP_BIG_FADE_END_FRAME * BEXP_FADE_TONE_PER_FRAME) - (frame * BEXP_FADE_TONE_PER_FRAME));
+        if((frame < 8) && (frame & 1)) {
+            palette_settone_deferred(150);
+        } else if((frame >= 8) && (frame < 16)) {
+            palette_settone_deferred(100 + (16 * 6) - (frame * 6));
         } else {
-            palette_settone_deferred(BEXP_BASE_TONE);
+            palette_settone_deferred(100);
         }
     } else {
         frame = 0;

@@ -1,3 +1,6 @@
+// Loads and sets up everything for the stage in resident->stage, including
+// a new game on Stage 1 or the Extra Stage, debug mode and demo playback.
+// Shared by stage_session_init.cpp and stage_complete_context.cpp.
 void near stage_session_init(void)
 {
     int i;
@@ -7,6 +10,7 @@ void near stage_session_init(void)
     if(stage_id == 0 || stage_id == 6) {
         load_playchar_resources = 1;
         text_fillca(' ', 0x05); // Black reversed TRAM cells.
+        // Pascal and cdecl are the same for a function without parameters.
         input_sense_hook = reinterpret_cast<StageInputCallback>(nullfunc_near);
         gameplay_session_init();
         if(resident->debug) {
@@ -19,6 +23,7 @@ void near stage_session_init(void)
         if(resident->demo_num != 0) {
             demo_load();
             stage_id = (resident->stage = resident->demo_stage);
+            // Demos start at full power, except for the Extra Stage demo.
             if(resident->demo_num != 5) {
                 power = 128;
             }
@@ -59,6 +64,7 @@ void near stage_session_init(void)
         case 3: super_entry_bfnt(SESSION_YUKA16_BFT); break;
         }
         super_entry_bfnt(SESSION_MIKO16_BFT);
+        // Convert sprite patterns 12-171 to master.lib's "tiny" format.
         for(i = 12; i < 172; i++) {
             super_convert_tiny(i);
         }
@@ -121,6 +127,8 @@ void near stage_session_init(void)
     dialog_load();
     tiles_fill_initial();
     graph_accesspage(0);
+    // Keep the eyecatch on screen for at least 128 VSyncs since this
+    // function started loading.
     while(vsync_Count2 < 128) {
     }
     palette_black_out(1);

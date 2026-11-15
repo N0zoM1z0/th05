@@ -1,8 +1,10 @@
-// Word-value view of the existing near Pascal aim-angle entry.
+// Calls player_angle_from() with X and Y as plain subpixel words.
 #ifndef TH05_YUMEKO_ANGLE_CALL_HPP
 #define TH05_YUMEKO_ANGLE_CALL_HPP
-// Native171CC reads X/Y at BP+8/+6, the angle byte at BP+4, and returns RET6.
-// Each canonical Subpixel argument is one signed word, with no hidden pointer.
+// player_angle_from() takes two Subpixel values, which are single words on the
+// stack. Passing an `x.v + to_sp(64)` expression through the Subpixel signature
+// would first store it in a Subpixel temporary, an instruction that ZUN's code
+// doesn't have.
 typedef unsigned char (pascal near *near YumekoAimWords)(
     subpixel_t x, subpixel_t y, unsigned char plus_angle);
 typedef char yumeko_aim_pointer_is_near[(sizeof(YumekoAimWords) == 2) ? 1 : -1];

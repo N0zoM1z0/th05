@@ -1,31 +1,34 @@
-// Candidate adapted from nmlgc/ReC98@b6ba5b0a; not accepted before cold replay.
+// Boss movement: random flight within the clamp rectangle, and flying
+// towards a target point. Adapted from ReC98's th05/main/boss/move.cpp.
 #pragma option -zCmain_032_TEXT
 
 #include "src/main/boss/movement.hpp"
-#include "src/main/boss/movement_dynamics.hpp"
+
+// Higher = slower approach in boss_flystep_towards().
+#define BMD_TOWARDS_DIVISOR 16
 
 bool pascal near boss_flystep_random(int frame)
 {
-    if(frame == BMD_FIRST_MOTION_FRAME) {
+    if(frame == 0) {
         if(boss.pos.cur.x.v < BOSS_FLYSTEP_RANDOM_FIELD_LEFT) {
-            boss.angle = randring2_next8_ge_lt(BMD_RAND_LEFT_MIN_ANGLE, BMD_RAND_LEFT_MAX_ANGLE);
+            boss.angle = randring2_next8_ge_lt(-0x30, +0x30);
         } else if(boss.pos.cur.x.v > BOSS_FLYSTEP_RANDOM_FIELD_RIGHT) {
-            // Preserve the original AND selection even though this is not
-            // a power-of-two interval.
-            boss.angle = randring2_next8_and_ge_lt(BMD_RAND_RIGHT_MIN_ANGLE, BMD_RAND_RIGHT_MAX_ANGLE);
+            // ZUN bug: [0x30, 0x91) is not a power-of-two range, so masking
+            // with 0x60 only ever yields 0x30, 0x50, 0x70 and 0x90.
+            boss.angle = randring2_next8_and_ge_lt(+0x30, +0x91);
         } else {
             boss.angle = randring2_next16();
         }
         if(
-            (boss_flystep_random_next_y_direction == Y_UP) && (boss.angle < BMD_VERTICAL_SPLIT_ANGLE) ||
-            (boss_flystep_random_next_y_direction == Y_DOWN) && (boss.angle >= BMD_VERTICAL_SPLIT_ANGLE)
+            (boss_flystep_random_next_y_direction == Y_UP) && (boss.angle < 0x80) ||
+            (boss_flystep_random_next_y_direction == Y_DOWN) && (boss.angle >= 0x80)
         ) {
             boss.angle = -boss.angle;
         }
         boss_flystep_random_next_y_direction = Y_ANY;
     }
-    if(frame >= BMD_FIRST_MOTION_FRAME) {
-        vector2_near(boss.pos.velocity, boss.angle, (to_sp(BMD_INITIAL_RANDOM_SPEED_PX) - (frame * BMD_RANDOM_DECEL_SUBPX)));
+    if(frame >= 0) {
+        vector2_near(boss.pos.velocity, boss.angle, (to_sp(4.0f) - (frame * 2)));
         boss.pos.cur.x.v += boss.pos.velocity.x.v;
         boss.pos.cur.y.v += boss.pos.velocity.y.v;
         if(boss.pos.velocity.x.v < 0) {
@@ -55,7 +58,7 @@ bool pascal near boss_flystep_random(int frame)
 
 static const int TOWARDS_FRACTION = BMD_TOWARDS_DIVISOR;
 
-inline int towards(int val, int speed = BMD_TOWARDS_DEFAULT_SPEED) {
+inline int towards(int val, int speed = 1) {
     return (val / (TOWARDS_FRACTION / speed));
 }
 
@@ -66,7 +69,7 @@ bool pascal near boss_flystep_towards(subpixel_t target_x, subpixel_t target_y)
 
     dist = (target_x - boss.pos.cur.x.v);
     if(towards(dist) != 0) { boss.pos.cur.x.v += towards(dist); }
-    else if(towards(dist, BMD_TOWARDS_FINE_X_SPEED) != 0) { boss.pos.cur.x.v += towards(dist, BMD_TOWARDS_FINE_X_SPEED); }
+    else if(towards(dist, 4) != 0) { boss.pos.cur.x.v += towards(dist, 4); }
     else {
         boss.pos.cur.x.v = target_x;
         reached_dimensions++;
@@ -79,13 +82,13 @@ bool pascal near boss_flystep_towards(subpixel_t target_x, subpixel_t target_y)
 
     dist = (target_y - boss.pos.cur.y.v);
     if(towards(dist) != 0) { boss.pos.cur.y.v += towards(dist); }
-    else if(towards(dist, BMD_TOWARDS_FINE_Y_SPEED) != 0) { boss.pos.cur.y.v += towards(dist, BMD_TOWARDS_FINE_Y_SPEED); }
+    else if(towards(dist, 8) != 0) { boss.pos.cur.y.v += towards(dist, 8); }
     else {
         boss.pos.cur.y.v = target_y;
         reached_dimensions++;
     }
 
-    if(reached_dimensions != BMD_REACHED_DIMENSIONS) {
+    if(reached_dimensions != 2) {
         return false;
     }
     boss.sprite = boss_sprite_stay;

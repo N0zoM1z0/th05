@@ -18,8 +18,7 @@ that it emits PUSH BP/MOV BP,SP/SUB SP in place of the shorter ENTER prologue.
 Ordinary `register` declarations also recover their original local allocation:
 Cheeto marks its node index; the bullet renderer marks its pattern and pointer.
 These are natural compiler hints, with no variables bound to physical registers.
-See [Cheeto](../../src/main/bullet/cheeto_render.md) and
-[bullets](../../src/main/bullet/render.md) for complete raw-byte receipts.
+See the [bullet notes](../../src/main/bullet/NOTES.md).
 
 ## Types and calling conventions
 
@@ -417,4 +416,4 @@ This is evidence for **OMF buffering across
 real CODE contributions**; zero bytes, a dummy prefix, output relocation
 sorting or an altered function interface are not needed. Source is maintained
 once per function, and only the two newly exact complete callbacks receive
-fresh credit. See `src/main/boss/yumeko/attacks_context.md`.
+fresh credit. See `src/main/boss/yumeko/NOTES.md`.

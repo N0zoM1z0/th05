@@ -1,14 +1,11 @@
-// TH05 score-file recreation/loading and view-only High Score menu.
-// Natural C++ provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th04/formats/scoredat/recreate.cpp, th04/hiscore/score_ld.cpp and view.cpp.
-// GAME=5 / BINARY='O' branches only; default filenames remain ordinary text.
+// GENSOU.SCR recreation and loading, and the view-only High Score screen.
+// Based on ReC98 th04/formats/scoredat/recreate.cpp, th04/hiscore/score_ld.cpp
+// and th04/hiscore/view.cpp.
 #pragma option -zCSCORE_TEXT -zPop_01
 #include <dos.h>
 #include <stdio.h>
 #include "src/op/hiscore/view.hpp"
 #include "src/op/hiscore/files.hpp"
-
-
 
 static const int SCORE_INITIAL_DIGIT = ((GAME == 5) ? 6 : 5);
 
@@ -39,16 +36,6 @@ void near scoredat_recreate(void)
 			digit -= (10 / SCOREDAT_PLACES);
 		}
 
-		// ZUN landmine: This assigns decreasing stage numbers even for TH05's
-		// Extra Stage, which should default to a constant 1 according to the
-		// loop below.
-		// Classifying this as a landmine because it's impossible for the
-		// MAINE.EXE version of this code to ever run within our criteria of
-		// observability - OP.EXE will have always regenerated [SCOREDAT_FN] if
-		// it didn't exist or was corrupted, so this code can only ever run if
-		// the file was somehow modified or deleted from outside the game while
-		// it was running.
-
 		for(c = 0; c < SCOREDAT_NAME_LEN; c++) {
 			hi.score.g_name[i][c] = gs_DOT;
 		}
@@ -77,7 +64,6 @@ void near scoredat_recreate(void)
 
 // This file is probably the prime reason why you'd rather want to work on the
 // `debloated` or `anniversary` branches instead.
-
 
 // ZUN bloat: Take [rank] as a parameter instead.
 extern unsigned char rank;
@@ -147,7 +133,6 @@ bool pascal near hiscore_scoredat_load_for(playchar2 playchar)
 
 /// View-only High Score menu
 /// -------------------------
-
 
 enum hiscore_patnum_t {
 	// scnum.bft

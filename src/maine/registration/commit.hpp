@@ -1,4 +1,4 @@
-// True far integer/sound APIs and the foreign no-result registration frame.
+// Declarations for glyphballs_commit_and_wait().
 #ifndef TH05_MREG_COMMIT_HPP
 #define TH05_MREG_COMMIT_HPP
 #pragma codeseg SHARED

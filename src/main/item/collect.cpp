@@ -1,5 +1,5 @@
-// Natural item collection/miss algorithms adapted from maintained TH04 source.
-// TH05 dream, point scoring, globals and counters independently reconstructed.
+// Item collection and the penalty for items that fall off the playfield.
+// Part of the item family translation unit (family.cpp).
 #ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma option -zCITEM_REWARD_TEXT -zPmain_03
 #endif
@@ -7,6 +7,8 @@
 #ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma codeseg ITEM_REWARD_TEXT main_03
 #endif
+
+#define DREAM_MAX 128
 
 void pascal near item_collect(item_t near *item)
 {
@@ -28,11 +30,13 @@ void pascal near item_collect(item_t near *item)
             base_points = 1;
             break;
         }
+        // At full power, every power item raises the reward step. At the last
+        // step, each one also adds 1 dream, except during bombs.
         power_overflow++;
         if(static_cast<unsigned int>(power_overflow) >= ITEM_POWER_OVERFLOW_MAX) {
             power_overflow = ITEM_POWER_OVERFLOW_MAX;
             use_yellow_point_number = true;
-            if((items_pull_to_player == false) && (dream < 128)) {
+            if((items_pull_to_player == false) && (dream < DREAM_MAX)) {
                 dream++;
             }
         }
@@ -41,7 +45,10 @@ void pascal near item_collect(item_t near *item)
         break;
 
     case IT_POINT:
-        if(dream < 128) {
+        // Point items are worth the maximum above a line that moves down as
+        // the dream gauge fills. Below it, they are worth 2800 minus half of
+        // their distance to the line in subpixels.
+        if(dream < DREAM_MAX) {
             point_relative_y = collected_item->pos.cur.y.v - (dream * 24) - 896;
             base_points = 5120;
         } else {
@@ -51,11 +58,11 @@ void pascal near item_collect(item_t near *item)
         if(point_relative_y <= 0) {
             item_playperf_raise++;
             if(items_pull_to_player == false) {
-                // Preserve the real byte addition before its upper clamp.
+                // 6 dream at the top of the playfield, 1 less per 64 pixels
                 dream = static_cast<unsigned char>(dream +
                     (6 - collected_item->pos.cur.y.v / TO_SP(64)));
-                if(dream > 128) {
-                    dream = 128;
+                if(dream > DREAM_MAX) {
+                    dream = DREAM_MAX;
                 }
                 hud_dream_put();
             }
@@ -67,20 +74,20 @@ void pascal near item_collect(item_t near *item)
         item_playperf_raise++;
         extend_point_items_collected++;
         total_point_items_collected++;
-        // This actual executable has an unconditional byte increment, not
-        // the saturating word-counter path in the reference listing.
+        // A plain byte increment, unlike the saturating word in ReC98's
+        // reference listing.
         stage_point_items_collected++;
         item_extend_check();
         hud_point_items_put();
         break;
 
     case IT_DREAM:
-        if(dream >= 128) {
+        if(dream >= DREAM_MAX) {
             base_points = 12800;
             use_yellow_point_number = true;
         } else {
             base_points = 1;
-            dream = 128;
+            dream = DREAM_MAX;
         }
         hud_dream_put();
         item_playperf_raise += 2;
@@ -102,8 +109,9 @@ void pascal near item_collect(item_t near *item)
             break;
         }
         power_overflow += 5;
-        // Historical order: the table read precedes the clamp. Above-cap
-        // values are immediately replaced with the fixed2560 reward below.
+        // ZUN landmine: power_overflow can be up to 47 here, so this reads past
+        // the end of POWER_OVERFLOW_BONUS before the clamp. The result is then
+        // replaced by the fixed reward below.
         base_points = POWER_OVERFLOW_BONUS[power_overflow];
         if(static_cast<unsigned int>(power_overflow) > ITEM_POWER_OVERFLOW_MAX) {
             power_overflow = ITEM_POWER_OVERFLOW_MAX;
@@ -138,8 +146,7 @@ void pascal near item_collect(item_t near *item)
         break;
     }
 
-    // TH05 adds the base reward directly; the display latch does not double
-    // score_delta here. The explicit unsigned-long conversion zero-extends it.
+    // Unlike TH04, pointnum_times_2 does not double the score here.
     score_delta += static_cast<unsigned long>(base_points);
     if(use_yellow_point_number == false) {
         pointnums_add_white(collected_item->pos.cur.x.v,
@@ -160,7 +167,9 @@ void pascal near item_miss_penalty(item_t near *item)
     register item_t near *missed_item = item;
     switch(missed_item->type) {
     case IT_POINT:
-        if((dream > 1) && (dream < 128)) {
+        // The dream gauge doesn't drop below 1, and stays at the maximum
+        // once full.
+        if((dream > 1) && (dream < DREAM_MAX)) {
             dream--;
         }
         break;
@@ -173,3 +182,5 @@ void pascal near item_miss_penalty(item_t near *item)
     }
     hud_dream_put();
 }
+
+#undef DREAM_MAX

@@ -1,9 +1,8 @@
-// Complete recovery/hold callbacks and Alice's early charged bullet patterns.
+// Puppet recovery and hold patterns, and Alice's patterns for her first wave.
 #pragma option -zCALICE_OPN_TEXT -zPmain_03
 #include "src/main/boss/alice/opening_patterns.hpp"
 
-// All three opening attacks charge with the same real gather frames,
-// boss sprite and single sound. Preserve each occurrence before its fire.
+// Charge step at the start of each of the three opening patterns.
 #define ALICE_OPENING_GATHER_AND_SOUND() { \
     gather_add_only_3stack(boss.phase_frame - 40, 9, 8); \
     boss.sprite = 184; \

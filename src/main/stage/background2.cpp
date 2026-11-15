@@ -1,4 +1,6 @@
-// Coherent stage-two background owner, sharing the two maintained bodies.
+// Stage 2 background: the particle initializer and the per-frame update in one
+// translation unit, as they are laid out in the original code segment.
+// Not part of the build; the two functions are compiled from their own files.
 #pragma option -zCSTAGE2_TEXT -zPmain_01
 #include "src/main/stage/background2.hpp"
 

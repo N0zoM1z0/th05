@@ -1,17 +1,8 @@
-// TH05 character selection, including genuine C++ checkerboard darkening.
-// Natural-source provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th05/m_char.cpp and th04/op/darken.cpp. Hardware writes remain typed far
-// memory assignments through the real external VRAM pointer object.
+// Player character selection menu. Based on ReC98 th05/m_char.cpp and
+// th04/op/darken.cpp.
 #pragma option -zCM_CHAR_TEXT -zPop_01
 #include <dos.h>
 #include "src/op/charselect/menu.hpp"
-
-/* ReC98
- * -----
- * TH05 player character selection menu
- */
-
-
 
 #pragma option -a2
 
@@ -41,7 +32,6 @@ unsigned char playchar_menu_rank;
 static uint8_t unused_0[4]; // ZUN bloat
 bool extra_playable_with[PLAYCHAR_COUNT];
 bool selectable_with[PLAYCHAR_COUNT];
-
 
 // Darkens the [w]×[h] area starting at [vram_offset], by writing an
 // alternating dot pattern in the given [col].

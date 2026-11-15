@@ -1,4 +1,6 @@
-// One canonical natural menu definition, shared by bounded producer contexts.
+// The High Score viewer's main loop: Left/Right switch between difficulties,
+// any confirm/cancel key returns to the main menu. Included by both view.cpp
+// and menu.cpp. Based on ReC98 th04/hiscore/view.cpp.
 void near regist_view_menu(void)
 {
 	snd_kaja_func(KAJA_SONG_STOP, 0);

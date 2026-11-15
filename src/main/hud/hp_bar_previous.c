@@ -1,7 +1,7 @@
-/* True original near initialized C public for hud_hp_bar_value_prev. */
+/* The HP bar value shown in the previous frame (see hp.cpp). */
 #pragma option -zCHUD_HP_PREV_DATA_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Original mutable zero-state requires the Borland native C producer
+#error This file must be compiled as C
 #endif
 
 #include "src/main/boss/late_game_state_publics.h"

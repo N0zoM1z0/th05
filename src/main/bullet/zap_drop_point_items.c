@@ -1,7 +1,7 @@
-/* True original near initialized C public for bullet_zap_drop_point_items. */
+/* If set, zapping bullets turns every 4th one into a point item. */
 #pragma option -zCBULLET_ZAP_DROP_DATA_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Original mutable zero-state requires the Borland native C producer
+#error This file must be compiled as C
 #endif
 
 #include "src/main/boss/late_game_state_publics.h"

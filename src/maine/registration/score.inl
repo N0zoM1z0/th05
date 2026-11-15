@@ -1,3 +1,7 @@
+// Draws the score in one row of [pc]'s table. The most significant digit can
+// exceed 9 and is then drawn as two digits. The row being edited uses the
+// second set of digit sprites, 10 patterns later; [pc] is reused to hold that
+// pattern offset.
 void pascal near registration_score_put(int place, int pc)
 {
     int digit;

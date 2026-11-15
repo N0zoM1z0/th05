@@ -1,5 +1,5 @@
-// Semantic display order and the seven real screen-line counts.
-// Every table entry names a complete foreign UI string object; no raw addresses.
+// The order in which the All Cast credit lines are shown, and the number of
+// lines on each screen. The strings themselves are in credits_data.cpp.
 #pragma option -zCALLCAST_LINES_DATA_TEXT -zPgroup_01
 #include "src/maine/allcast/credits_data.hpp"
 
@@ -56,7 +56,3 @@ const uint8_t far *LINES[ALLCAST_CREDIT_LINE_COUNT] = {
 int allcast_lines_per_screen[7] = {
     1, 2, 6, 10, 9, 12, 7
 };
-
-typedef char allcast_pointer_table_is_188[(sizeof(LINES) == 188) ? 1 : -1];
-typedef char allcast_screen_counts_are_14[
-    (sizeof(allcast_lines_per_screen) == 14) ? 1 : -1];

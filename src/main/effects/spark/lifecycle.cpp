@@ -1,10 +1,13 @@
-// Semantic donor: maintained TH04 spark/init.cpp and spark/invalidate.cpp.
-// TH05 keeps the original 96-entry traversal despite its 64-entry active pool.
+// Spark initialization and tile invalidation (ReC98 th04/main/sparks.asm).
+//
+// ZUN bug: both functions walk 96 sparks although the pool only has 64, so
+// they also touch the 512 bytes that follow `sparks` in memory.
 #pragma option -zCSPARK_LIFE_TEXT -zPmain_01 -k-
 #include "src/main/effects/spark/lifecycle.hpp"
 
-// The existing canonical tile entry consumes four actual point bytes and
-// RET4. Reuse the reviewed legacy Borland by-value view, as in enemy invalidation.
+// tiles_invalidate_around() takes its 4-byte point by value on the stack and
+// pops it with RET 4. Calling it through this pointer type passes the point
+// the same way the original does (enemy invalidation uses the same trick).
 typedef void (near pascal *near SparkPointInvalidation)(const SPPoint center);
 typedef char spark_point_call_is_near[(sizeof(SparkPointInvalidation) == 2) ? 1 : -1];
 
@@ -32,10 +35,12 @@ extern "C" void near sparks_init(void)
     spark = sparks;
     sparks_left = SPARK_COUNT_BUG;
     do {
+        // Only the low byte of the 16-bit angle is randomized.
         *reinterpret_cast<unsigned char near *>(&spark->angle) =
             static_cast<unsigned char>(irand());
         spark++;
     } while(--sparks_left != 0);
-    // The original writes only the low byte of this genuine word object.
+    // ZUN quirk: like the angles above, only the low byte of this 16-bit
+    // variable is cleared.
     *reinterpret_cast<unsigned char near *>(&spark_ring_offset) = 0;
 }

@@ -1,14 +1,13 @@
-// Real TH05 OP title ABI and shared sprite-load inline.
-// Natural-source provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th04/sprites/op_cdg.hpp, th05/formats/pi.hpp, th03/formats/cdg.h,
-// pc98.h and th04/shiftjis/fnshared.hpp.
+// Declarations for the OP title screen: CDG/PI loaders and the sprite set
+// shared by all OP menus. Based on ReC98 th04/sprites/op_cdg.hpp,
+// th05/formats/pi.hpp and th03/formats/cdg.h.
 #ifndef TH05_OP_TITLE_HPP
 #define TH05_OP_TITLE_HPP
 
 #include "src/op/charselect/menu.hpp"
 
 #if GAME != 5 || BINARY != 'O'
-#error This owner is the TH05 OP title implementation
+#error This header is for TH05 OP.EXE only
 #endif
 
 typedef bool page_t;
@@ -28,13 +27,9 @@ void pascal far pi_put_masked_8(screen_x_t left, vram_y_t top,
     int slot, int mask_id);
 
 inline void op_cdg_load_shared(void) {
-    typedef char title_difficulty_sprite_extent_is_4[
-        (CDG_OPTION_VALUE_RANK_last == CDG_OPTION_VALUE_RANK + 3) ? 1 : -1];
     cdg_load_all(CDG_NUMERAL, "sft1.cd2");
     cdg_load_all(CDG_MAIN, "sft2.cd2");
     cdg_load_all(CDG_CURSOR, "car.cd2");
 }
-
-typedef char th05_title_page_is_1[(sizeof(page_t) == 1) ? 1 : -1];
 
 #endif

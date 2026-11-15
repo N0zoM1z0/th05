@@ -1,4 +1,4 @@
-// Full registration entities, score section and actual graphics/math providers.
+// Declarations for the standalone update.cpp.
 #ifndef TH05_MREG_UPDATE_HPP
 #define TH05_MREG_UPDATE_HPP
 #include "src/maine/registration/glyphball.hpp"
@@ -23,10 +23,12 @@ void pascal near reg_name_put(int place, playchar_t pc, uint8_t cursor);
 void near glyphballs_update(void);
 #pragma codeseg
 
-static const int REG_GLYPH_CLOUD = 20;
-static const int REG_GLYPH_SPLASH = 24;
-static const int REG_GLYPH_BALL = 28;
-static const int REG_GLYPH_CELS = 4;
-static const int REG_CLOUD_SIZE = 32;
-static const int REG_BALL_SIZE = 16;
+// super_*() patterns (ReC98 names): 32x32 clouds and splashes in sctm0.bft,
+// 16x16 balls in sctm1.bft.
+static const int PAT_GLYPHBALL_CLOUD = 20;
+static const int PAT_GLYPHBALL_SPLASH = 24;
+static const int PAT_GLYPHBALL = 28;
+static const int GLYPHBALL_CELS = 4;
+static const int GLYPHBALL_CLOUD_SPLASH_W = 32;
+static const int GLYPHBALL_W = 16;
 #endif

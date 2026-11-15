@@ -1,8 +1,7 @@
-// Candidate ABI and movement helpers adapted from nmlgc/ReC98@b6ba5b0a529edbb3:
-// th04/main/boss/boss.hpp, th05/main/boss/boss.hpp, game/coords.hpp,
-// th02/math/randring.hpp, th03/math/randring.hpp and th04/math/vector.hpp.
-// Unused structure fields remain represented; complete target ownership is a
-// separate review. These declarations alone do not establish byte exactness.
+// Boss state, the random-number helpers used for boss movement, and the two
+// shared flystep movement functions. Adapted from ReC98's th04/main/boss/
+// boss.hpp, th05/main/boss/boss.hpp, th02/th03 randring.hpp and
+// th04/math/vector.hpp.
 #ifndef TH05_MAIN_BOSS_MOVEMENT_HPP
 #define TH05_MAIN_BOSS_MOVEMENT_HPP
 
@@ -56,6 +55,8 @@ extern "C" void pascal near vector2_near(
     SPPoint near &ret, unsigned char angle, subpixel_t length
 );
 
+// Middle quarter of the 384-pixel playfield. A boss left of it starts its
+// random flight towards the right, and vice versa.
 static const subpixel_t BOSS_FLYSTEP_RANDOM_FIELD_LEFT = (144 << 4);
 static const subpixel_t BOSS_FLYSTEP_RANDOM_FIELD_RIGHT = (240 << 4);
 static const int BOSS_FLYSTEP_RANDOM_FRAMES = 28;
@@ -85,9 +86,18 @@ inline uint8_t randring2_next8_ge_lt(uint8_t min, uint8_t max) {
     return randring2_next8_mod_ge_lt(min, max);
 }
 
+// Picks a random [boss.angle] on [frame] 0, based on the boss position and the
+// directional latch, then flies into that direction at a [frame]-dependent,
+// decreasing speed. Returns true once [frame] reaches
+// BOSS_FLYSTEP_RANDOM_FRAMES. Does nothing for negative [frame]s, which the
+// boss scripts rely on.
 bool pascal near boss_flystep_random(int frame);
+
+// Moves the boss by a fraction of the remaining distance to the target point.
+// Returns true once it has reached that point in both dimensions.
 bool pascal near boss_flystep_towards(subpixel_t target_x, subpixel_t target_y);
 
+// Layout checks: these offsets are hardcoded in the original code.
 typedef char th05_boss_state_is_24[(sizeof(boss_stuff_t) == 24) ? 1 : -1];
 typedef char th05_boss_pos_at_0[(offsetof(boss_stuff_t, pos) == 0) ? 1 : -1];
 typedef char th05_boss_hp_at_12[(offsetof(boss_stuff_t, hp) == 12) ? 1 : -1];

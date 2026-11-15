@@ -1,4 +1,5 @@
-// Complete natural reflecting random movement, original MAIN1D8BE..1D938.
+// Louise flies into a random direction, picked on frame 1, and bounces off the
+// edges of her rectangle until [end_frame].
 #include "src/main/boss/louise/flystep.hpp"
 #include "src/main/boss/louise/flystep_bounds.hpp"
 

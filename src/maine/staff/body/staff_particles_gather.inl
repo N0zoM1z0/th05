@@ -1,3 +1,5 @@
+// Sends every particle towards the center of the window, where the orb starts
+// growing.
 void near staff_particles_gather(void)
 {
     orb_particle_t near *p = particles;

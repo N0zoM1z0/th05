@@ -1,4 +1,4 @@
-// Natural maintained TH04 item rendering; canonical GAME5 pool/dot counts.
+// Draws the item spawn splashes and all live items.
 #pragma option -zCITEM_RENDER_TEXT -zPmain_01
 #include "src/main/item/render.hpp"
 
@@ -16,9 +16,12 @@ extern "C" void pascal near items_render(void)
         if(item->flag != F_ALIVE) {
             continue;
         }
+        // Only items above the playfield are skipped; items_update() removes
+        // the ones that leave it at the sides or the bottom.
         if(item->pos.cur.y.v <= TO_SP(-(ITEM_H / 2))) {
             continue;
         }
+        // X in AX, VRAM Y in DX, drawn into the VRAM plane in ES
         _DX = scroll_subpixel_y_to_vram_seg1(
             item->pos.cur.y.v + TO_SP(PLAYFIELD_TOP - (ITEM_H / 2))
         );

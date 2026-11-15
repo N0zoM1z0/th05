@@ -1,4 +1,5 @@
-// Semantic near-pointer UI bank; all real text providers are maintained separately.
+// Pointers to the bonus screen texts: the multiplier descriptions, indexed by
+// stage_bonus_factor_apply(), and one pointer for each tally label.
 #pragma option -zCBONUS_PTR_TEXT -zPmain_03
 #include "src/main/stage/bonus_pointers.hpp"
 

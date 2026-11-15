@@ -1,4 +1,10 @@
-// Render alternating Cheeto trail nodes and their heads without stage scroll.
+// Renders every other trail node of each Cheeto, then its head. Cheetos are
+// not shifted by the stage scroll. Same algorithm as ReC98's
+// th05/main/bullet/cheetos_render.asm.
+//
+// -G (optimize for speed) produces the original PUSH BP/MOV BP,SP/SUB SP
+// prologue instead of ENTER; `register` on [node_i] reproduces the original
+// register allocation.
 #pragma option -zCCHEETO_RENDER_TEXT -zPmain_01 -G
 #include <dos.h>
 #include "src/main/bullet/cheeto.hpp"
@@ -7,6 +13,11 @@
 void near grcg_setcolor_direct_raw(void);
 extern "C" void __fastcall near cheeto_put(int left, int top, int sprite);
 
+// Converts a playfield-space center to the sprite's top-left screen position
+// and blits it if any part is visible. X adds the 32-pixel playfield offset
+// and subtracts half the sprite width; for Y, the 16-pixel playfield offset
+// and half the sprite height cancel out. Negative tops wrap around the
+// 400-line VRAM.
 #define cheeto_render_point(point_value, sprite_value) { \
     _DX = ((point_value).y.v >> 4); \
     _AX = ((point_value).x.v >> 4); \
@@ -26,7 +37,7 @@ extern "C" void pascal near cheetos_render(void)
     cheeto_head_t near *head = cheeto_heads;
     cheeto_trail_t near *trail = cheeto_trails;
     register int node_i;
-    _ES = 0xA800;
+    _ES = 0xA800; // VRAM B plane
     for(bullet_i = 1; bullet_i < (1 + CHEETO_COUNT); bullet_i++, head++, trail++) {
         if(trail->flag == CF_FREE) {
             continue;

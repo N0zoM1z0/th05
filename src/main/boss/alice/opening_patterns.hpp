@@ -1,4 +1,5 @@
-// Real puppet recovery callbacks and opening-phase pattern interfaces.
+// Declarations for the puppet recovery and hold patterns and Alice's first
+// patterns.
 #ifndef TH05_MAIN_BOSS_ALICE_OPENING_PATTERNS_HPP
 #define TH05_MAIN_BOSS_ALICE_OPENING_PATTERNS_HPP
 #include "src/main/boss/alice/beam.hpp"

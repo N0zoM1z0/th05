@@ -1,5 +1,6 @@
-// Natural TH04 HUD algorithm adapted to the actual TH05 standalone counts.
-// -G is the maintained donor's initial producer option, not a size probe.
+// Lives and bomb counters in the HUD: one icon per life or bomb, up to five,
+// and a "x N" number for larger counts. Same algorithm as TH04's hud.cpp,
+// whose -G (optimize for speed) option this file also uses.
 #pragma option -G -zCHUD_RESOURCES_TEXT -zPmain_01
 #include "src/main/hud/lives_bombs.hpp"
 
@@ -39,9 +40,8 @@ void far hud_bombs_put(void)
     signed char value;
     signed char i = 0;
     register int x;
-    // The stored count is compared in its unsigned byte domain before being
-    // assigned to the original signed display local. Keep the canonical
-    // signed storage declaration used by the gameplay owners unchanged.
+    // [bombs] is declared signed for the gameplay code, but this limit check
+    // compares it as an unsigned byte, as the original does.
     if(static_cast<unsigned char>(bombs) <= 5) {
         x = 62;
         value = bombs;

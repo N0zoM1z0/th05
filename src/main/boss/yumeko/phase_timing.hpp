@@ -1,7 +1,9 @@
-// Observed Yumeko fight HP ladder, resource range, and phase clocks.
+// HP thresholds, phase durations, positions and sound/score values used by
+// yumeko_update().
 #ifndef TH05_YUMEKO_PHASE_TIMING_HPP
 #define TH05_YUMEKO_PHASE_TIMING_HPP
 
+// HP at which each phase ends, passed to boss_phase_next().
 enum YumekoHealthGates {
     YUMEKO_HP_AFTER_SETUP = 7500,
     YUMEKO_HP_AFTER_MOBILE_FIRST = 5700,
@@ -17,27 +19,26 @@ enum YumekoPhaseClocks {
     YUMEKO_READY_END_FRAME = 64,
     YUMEKO_MOBILE_REPOSITION_FRAMES = 64,
     YUMEKO_STATIONARY_TIMEOUT_FRAMES = 2000,
-    YUMEKO_FINAL_RING_TIMEOUT_FRAMES = 1200,
-    YUMEKO_FINAL_RING_FIRST_VOLLEY_FRAME = 32,
-    YUMEKO_FINAL_RING_CHARGE_SOUND_FRAME = 16,
-    YUMEKO_FINAL_RING_INTERVAL_FRAMES = 16,
-    YUMEKO_FINAL_RING_VOLLEY_COUNT =
-        ((YUMEKO_FINAL_RING_TIMEOUT_FRAMES - YUMEKO_FINAL_RING_FIRST_VOLLEY_FRAME) /
-            YUMEKO_FINAL_RING_INTERVAL_FRAMES) + 1,
-    YUMEKO_FINAL_RING_TURN_ANGLE = 0x40,
-    YUMEKO_FINAL_RING_REFLECT_ANGLE = 0x80
+    YUMEKO_FINAL_RING_TIMEOUT_FRAMES = 1200
 };
 
 enum YumekoVisualGeometry {
+    // Sprites converted to tiny 32x32 sprites for the swords.
     YUMEKO_TINY_SPRITE_FIRST = 193,
     YUMEKO_TINY_SPRITE_AFTER_LAST = 229,
+
     YUMEKO_GATHER_RADIUS_PX = 64,
     YUMEKO_GATHER_ANGLE_DELTA = 2,
     YUMEKO_GATHER_RING_POINTS = 8,
     YUMEKO_INITIAL_VELOCITY_X_PX = 4,
-    YUMEKO_EXITING_BOSS_Y_THRESHOLD_PX = 32,
-    YUMEKO_EXITING_BOSS_Y_SPEED_PX = 1,
-    YUMEKO_EXITING_BOSS_SHOT_RADIUS_PX = 24,
+
+    // During the entrance, the gate at [boss2] (sprite 192, see
+    // yumeko_fg_render()) moves up until it is 32 pixels above the playfield.
+    // Shots hitting it only play a sound.
+    YUMEKO_GATE_EXIT_Y_PX = 32,
+    YUMEKO_GATE_SPEED_PX = 1,
+    YUMEKO_GATE_HITBOX_RADIUS_PX = 24,
+
     YUMEKO_ENTER_MOVE_X_STEP_PX = 2,
     YUMEKO_ARENA_CENTER_X_PX = 192,
     YUMEKO_WAVE_APPROACH_Y_PX = 64,
@@ -45,20 +46,11 @@ enum YumekoVisualGeometry {
     YUMEKO_BOUNCE_SPEED_PX = 2
 };
 
-// Scores and sounds are explicit game-design values, not compiler mechanics.
 enum YumekoFightEffects {
     YUMEKO_PATTERN_BONUS = 10,
     YUMEKO_DEFEAT_BONUS = 65,
-    YUMEKO_SPRITE_CONVERSION_DONE_SE = 13,
-    YUMEKO_GRAZE_HIT_SE = 10,
-    YUMEKO_FINAL_RING_CHARGE_SE = 8,
-    YUMEKO_FINAL_RING_FIRE_SE = 3,
-    YUMEKO_FINAL_RING_BULLET_PATTERN = 116,
-    YUMEKO_FINAL_RING_BULLET_COUNT = 18,
-    YUMEKO_FINAL_RING_TURN_SPEED_SUBPIXELS = 2 * 16 + 6,
-    YUMEKO_FINAL_RING_GATHER_LEAD_FRAMES = 16,
-    YUMEKO_FINAL_RING_GATHER_COLOR = 7,
-    YUMEKO_FINAL_RING_GATHER_SECONDARY_COLOR = 6
+    YUMEKO_ENTRANCE_END_SE = 13, // Yumeko has slid into the center.
+    YUMEKO_GATE_HIT_SE = 10 // A shot hit the departing gate.
 };
 
 #endif

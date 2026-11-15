@@ -1,23 +1,21 @@
-// The real sixteen-byte Boss scratch array is shared across Alice's four
-// attack waves, three puppet beams and the stationary charge patterns.
+// Alice's view of [boss_statebyte].
 #ifndef TH05_MAIN_BOSS_ALICE_SCRATCH_HPP
 #define TH05_MAIN_BOSS_ALICE_SCRATCH_HPP
 #include <stddef.h>
 
 struct AliceScratch {
     unsigned char earlier_state[7];
-    // Advances only when a complete regular pattern wave ends (0..3).
+    // Index of the current pattern wave (0-3). Incremented at the end of each
+    // wave, so it ends up at 4, but nothing reads it after the fourth wave.
     unsigned char attack_wave;
-    // Puppet beam emits a sprite base during the 64+ frame beam animation.
+    // Sprite of the puppet beam, from frame 64 of the beam pattern on.
     unsigned char beam_sprite_patnum;
-    // The same beam lifecycle state is read by both puppet render/motion.
+    // AliceBeamPhase. Read by the puppet renderer and the puppet movement.
     unsigned char beam_phase;
-    // Alice's ready transition stores 24 here; no Alice-owned code reads it.
-    // Keep the original write without inventing seed/timer semantics.
+    // Set to 24 when the fight starts, but never read by Alice's code.
     unsigned char ready_phase_store_only;
     unsigned char unrelated_state[4];
-    // Separate paired-stack and rotating-ring charge patterns reinitialize
-    // this angle to 8 or 0; it is not persistent across attack families.
+    // Angle of the paired stacks (starting at 8) and rotating rings (at 0).
     unsigned char charge_angle;
 };
 typedef char alice_scratch_is_16[(sizeof(AliceScratch) == 16) ? 1 : -1];

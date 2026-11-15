@@ -1,4 +1,5 @@
-// Natural Louise charging and alternating first-phase bullet patterns.
+// Louise's charge sequence and attack patterns, with the bullet template
+// helpers they use.
 #ifndef TH05_MAIN_BOSS_LOUISE_PATTERNS_HPP
 #define TH05_MAIN_BOSS_LOUISE_PATTERNS_HPP
 
@@ -9,11 +10,10 @@ extern "C" int pascal far select_for_rank(int easy, int normal, int hard, int lu
 #include "src/main/gather/gather.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner requires TH05 MAIN
+#error This header is only for TH05 MAIN
 #endif
 
-// The complete original helper returns these four distinct states in AL.
-// The state machine is recovered here together with both actual consumers.
+// Return value of louise_charge_update().
 enum louise_charge_state_t {
     LOUISE_CHARGE_INACTIVE = 0,
     LOUISE_CHARGE_INITIALIZE = 1,
@@ -23,9 +23,8 @@ enum louise_charge_state_t {
 };
 typedef char louise_charge_state_is_byte[(sizeof(louise_charge_state_t) == 1) ? 1 : -1];
 
-// The first and second attack waves reuse the same Boss mode byte. The
-// names differ by wave, but reposition/attack transitions keep these exact
-// numeric states and both charged patterns return to reposition (zero).
+// [boss.mode] values. Phases 2 and 5 use the same values for different
+// patterns.
 static const unsigned char LOUISE_MODE_REPOSITION = 0;
 static const unsigned char LOUISE_MODE_BLUE_SPREADS = 1;
 static const unsigned char LOUISE_MODE_RED_STACKS = 2;

@@ -1,10 +1,11 @@
-// Complete TH05 persistent statistics and actual process-handoff interfaces.
+// Declarations used by handoff.cpp: the play statistics that are saved to
+// the resident structure, and the resource release functions.
 #ifndef TH05_HANDOFF_HPP
 #define TH05_HANDOFF_HPP
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This producer implements the TH05 MAIN process handoff
+#error This is TH05 MAIN code
 #endif
 
 extern score_lebcd_t score;

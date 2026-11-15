@@ -1,5 +1,6 @@
-// Natural semantic ReC98 b6ba5b0a TH05 laser creation/control functions.
-// Target addresses and complete contribution require independent verification.
+// Laser spawning and control: shoot-out lasers, fixed lasers with timed or
+// script-controlled growth, and stopping. Same as the corresponding functions
+// in ReC98's th05/main/bullet/laser.cpp.
 #pragma option -zCLASER_SC_TEXT -zPmain_03 -G
 #include "src/main/bullet/laser.hpp"
 
@@ -30,11 +31,13 @@ void near lasers_shootout_add(void)
 			(LASER_DISTANCE_MIN / 2),
 			laser_template.coords.angle
 		);
-		snd_se_play(5);
+		snd_se_play(5); // laser sound
 		return;
 	}
 }
 
+// Fixed lasers occupy the [slot] chosen by the script, and are not spawned if
+// that slot is in use.
 void pascal near laser_fixed_spawn(int slot)
 {
 	Laser near &laser = lasers[slot];
@@ -51,6 +54,8 @@ void pascal near laser_fixed_spawn(int slot)
 	snd_se_play(5);
 }
 
+// Like laser_fixed_spawn(), but the laser only grows and shrinks when told to
+// by laser_manual_grow() and laser_stop().
 void pascal near laser_manual_fixed_spawn(int slot)
 {
 	Laser near &laser = lasers[slot];
@@ -73,9 +78,12 @@ void pascal near laser_manual_grow(int slot)
 		return;
 	}
 	lasers[slot].flag = LF_FIXED_GROW;
-	snd_se_play(6);
+	snd_se_play(6); // laser growth sound
 }
 
+// Active fixed lasers start shrinking and shoot-out lasers start decaying.
+// Lasers already in LF_FIXED_SHRINK or LF_SHOOTOUT_DECAY are left alone; all
+// others are removed immediately.
 void pascal near laser_stop(int slot)
 {
 	if(lasers[slot].flag == LF_FIXED_ACTIVE) {
@@ -89,4 +97,3 @@ void pascal near laser_stop(int slot)
 		lasers[slot].flag = LF_FREE;
 	}
 }
-// ---------

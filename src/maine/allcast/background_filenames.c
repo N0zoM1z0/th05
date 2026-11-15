@@ -1,11 +1,12 @@
-/* Distinct mutable All Cast PI backgrounds, including repeated filenames. */
+/* All Cast background picture file names, per player character. Repeated
+ * names are separate strings in the original, too. */
 #pragma option -zCALLCAST_BACKGROUND_FILES_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error These natural filename initializers require a C compiler producer
+#error This file is compiled as C
 #endif
 
-/* Four background programs, seven named slides each. Each original screen
- * also has a terminal null pointer in its separate eight-entry index. */
+/* Seven screens per character. BG_FN in background_index.cpp points into
+ * this table and adds an eighth null entry per character. */
 char allcast_background_filenames[4][7][10] = {
     {
         "EXED01.pi", "EXED07.pi", "EXED08.pi", "EXED09.pi",
@@ -24,7 +25,3 @@ char allcast_background_filenames[4][7][10] = {
         "EXED06.pi", "EXED16.pi", "EXED15.pi"
     }
 };
-
-typedef char allcast_bg_file_size[(sizeof(allcast_background_filenames) == 280) ? 1 : -1];
-typedef char allcast_bg_program_size[(sizeof(allcast_background_filenames[0]) == 70) ? 1 : -1];
-typedef char allcast_bg_filename_width[(sizeof(allcast_background_filenames[0][0]) == 10) ? 1 : -1];

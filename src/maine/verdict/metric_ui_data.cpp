@@ -1,5 +1,8 @@
-// Readable verdict heading and metric labels.
-// Canonical UTF-8 source requires explicit CP932 compiler staging.
+// Verdict heading and metric labels. (UTF-8; converted to Shift-JIS before
+// compiling.)
+// Identical const strings within one translation unit may be merged by the
+// compiler, so the original's duplicates ("最終得点", "％", "点") are spread
+// across this file, score_ui_data.cpp and punctuation_data.c.
 #pragma option -zCVERDICT_METRIC_DATA_TEXT -zPgroup_01
 #include "src/maine/verdict/ui_data.hpp"
 

@@ -1,4 +1,4 @@
-// One coherent source contribution for initialization, spawning and rewards.
+// Functions of the item family translation unit (family.cpp).
 #ifndef TH05_ITEM_FAMILY_HPP
 #define TH05_ITEM_FAMILY_HPP
 #include "src/main/item/item.hpp"

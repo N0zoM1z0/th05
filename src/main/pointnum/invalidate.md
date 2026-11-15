@@ -1,82 +1,18 @@
-# Point-popup invalidation: natural scalar C++, still inexact
+# Point popup invalidation (`invalidate.asm`, `invalidate.cpp`)
 
-The complete MAIN scope `[E17A,E1A6)` has 44 instruction bytes, no
-instruction NOPs and no MZ fixups. It walks all 280 complete 16-byte records,
-including every nonzero flag, sets height once, then copies each active
-record's full width before the actual near Pascal tile-provider call.
-Arguments remain previous Y at record offset 6 and current X at offset 2;
-they are not one contiguous point. All pool/list storage remains foreign BSS.
+`pointnums_invalidate()` (ReC98 th04/main/pointnum/inv_upd.asm) sets the
+invalidation box height to 8 once, then, for every record that is not free,
+sets the box width to the popup width and calls
+`tiles_invalidate_around(previous Y, current X)`. Popups move only vertically,
+so that is where the popup was drawn last frame.
 
-The earlier whole-lifecycle candidate used an unsigned count and emitted a
-redundant zero test. The new standalone owner uses an ordinary signed count,
-whose actual values remain 280..0, and the canonical `Subpixel` scalar
-conversions. Neither change alters the loop's behavior, layouts or ABI.
-The shared header, compiler options, full types and provider prototype are
-unchanged. No physical-register alias or assembly body is supplied.
+`invalidate.asm` is built. `invalidate.cpp` compiles to the same 44 bytes but
+is not counted, since the assembly covers the function. Earlier C++ attempts:
 
-Three actual first producers were retained:
-
-| Natural source context | Complete CODE | Observation |
+| Source | Bytes | Result |
 | --- | ---: | --- |
-| Signed count, ordinary current-X local | 52 | Two-byte stack slot, ENTER, dead local store and LEAVE |
-| Same local with block scope and `register` | 52 | Identical complete CODE; storage annotation has no effect |
-| Canonical scalar conversions, no local | 43 | No frame; two direct memory PUSH arguments |
+| Current X in an ordinary local (with or without `register`) | 52 | `ENTER`/`LEAVE` and a dead store to a stack slot |
+| Both fields passed directly | 43 | Both arguments pushed from memory |
+| Current X staged in `_AX` (current file) | 44 | Matches |
 
-The original preloads current X into AX, then pushes previous Y and AX.
-The final ordinary C++ lowers the two arguments to memory PUSHes, one byte
-shorter. All native bytes remain mandatory; the discrepancy is not padding.
-The 43-byte result was the best natural source until the 2026-11-13 AX
-argument-register refinement below. The current source remains outside the
-live exact manifest because the complete extent is already credited to the
-reviewed ASM family; no duplicate C++ CODE ownership is inferred. Init/update
-and both alignment NOPs remain outside this source; init has its own
-independent [11-byte acceptance](init.md), while update remains unaccepted.
-
-Actual ordinary CRC-valid OMF, complete MAP extents, source snapshots and
-compiler argv were reread for all three attempts. Private first producers
-are `.analysis/unit-replays/main-pointnums-invalidate-{a,b,c}/`.
-Review `.analysis/pointnums-invalidate-scalar-producers.json`, SHA-256
-`f30e293d20a1ac0265e541ce33ed858ae4ac12a2cb6a8f597596e1d8d99333c0`.
-No padding, ABI reinterpretation, fabricated callee, flag search or original
-ASM attribution is inferred from the failed C++ output.
-
-The final actual compiler output and native invalidator both pass seven
-independent generated full-pool cases, covering empty/full/mixed pools,
-flags 0/1/2/3/128/255, signed X boundaries, deliberately distinct current and
-previous Y, full word widths, unchanged record/list tails and stale width
-when the pool is empty. The checker compares all generated DGROUP bytes,
-actual RET4 arguments and box values, scratch-register clobbers, preserved
-SI/DI/BP/DS/SP and IF/DF. Tile-provider effects are excluded.
-Report `.analysis/pointnums-invalidate-scalar-semantic-check.json`, SHA-256
-`e6746fe0d4a820d18ffdedebf2b60f71bfbd4cd1154d779f9ecc27f481efbccf`.
-This is bounded semantic evidence, not exact acceptance.
-
-## Exact reviewed native invalidation source — 2026-11-10
-
-The full original `pointnums_invalidate()` at MAIN `[E17A,E1A6)` is now an
-independently verified **44-byte / 19-instruction** reviewed assembly owner.
-The natural source `invalidate.cpp` remains the single real typed C++
-experiment: previous builds produced 43 bytes at best, without the original
-complete instruction layout. The real TH04 `main/pointnum/inv_upd.asm`
-provides independently maintained assembly semantics for the no-frame
-near-Pascal loop, `F_FREE` skip, full 280-slot pointnum walk, and previous-Y /
-current-X parameter pair to the real `TILES_INVALIDATE_AROUND` provider.
-
-`invalidate.asm` maintains these operations with canonical 16-byte
-`pointnum_t` offsets, original hitbox height8, full 280-record count, near
-`RET`, register-preservation and actual source state at `DS:3502` / `DS:9F04`.
-The binder contributes only external symbolic addresses (actual CS AE1,
-DS209D) and outside ranges, with no game DATA, BSS, padding or opcode body.
-Its own paragraph-aligned foreign tail was adjusted to its *true* initial
-paragraph after `E1A6`, so linker placement naturally produces the original
-DS frame. This is original-language reviewed ASM credit, not reconstructed
-compiler-generated C++ or a claim of historical source identity.
-
-Focused receipt `.analysis/gpt-web-pointnums-invalidate-asm-b/receipt.json`
-verifies two independent genuine TASM32/TLINK producers, complete **44/44
-raw bytes**, the native empty ordered relocation stream, entire OMF source
-LEDATA and original MAP public `pointnums_invalidate()`. Its natural source
-negative changes the hitbox height from8 to9, and the complete 44-byte unit
-fails the original comparison as required. The accepted adjacent 111-byte
-pointnum updater and previous init/render helpers are unchanged and were
-not cold-replayed.
+An unsigned loop counter adds a redundant zero test; the counter is signed.

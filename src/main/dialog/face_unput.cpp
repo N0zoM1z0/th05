@@ -1,5 +1,5 @@
-// Original-register face-region EGC page copy: complete 74-byte near-Pascal
-// function, with source-backed 16-bit PC-98 hardware loop.
+// dialog_face_unput_8(), the EGC copy that restores a face area from the
+// other VRAM page, built on its own.
 #pragma option -zCDIALOG_RUN_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/dialog/runtime.hpp"

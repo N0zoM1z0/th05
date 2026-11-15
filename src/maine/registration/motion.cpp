@@ -1,4 +1,5 @@
-// Genuine adjacent creation and animation functions, with one canonical body each.
+// Standalone build of glyphball_spawn() and glyphballs_update(), which are
+// adjacent in the original (see full_context.cpp).
 #pragma option -zCREG_MOTION_TEXT -zPGROUP_01
 #include "src/maine/registration/motion.hpp"
 #pragma codeseg REG_MOTION_TEXT GROUP_01

@@ -1,6 +1,5 @@
-// Exact TH05 item motion and collection loop adapted from maintained TH04 C++.
-// The native 32-bit Motion result remains in AX:DX; two genuine register
-// subtraction primitives use the source-level Turbo C++ inline assembler.
+// Per-frame item update: attraction to the player during bombs, motion,
+// removal at the playfield edges, and collection.
 #pragma option -zCITEM_UPDATE_TEXT -zPmain_03
 #include <dos.h>
 #include "src/main/item/update.hpp"
@@ -32,7 +31,9 @@ extern "C" void pascal far items_update(void)
             item->pos.velocity.y.v = 0;
             item->pulled_to_player = false;
         }
-        // Return value remains in the original AX:DX registers through pickup.
+        // update_seg3() returns the new position as X in AX and Y in DX. The
+        // original keeps using these registers up to the pickup test, so
+        // that test uses the Y position from before the clamp below.
         item->pos.update_seg3();
         if((static_cast<subpixel_t>(_AX) <= -TO_SP(ITEM_W / 2)) ||
             (static_cast<subpixel_t>(_AX) >= TO_SP(PLAYFIELD_W + ITEM_W / 2)) ||
@@ -47,6 +48,10 @@ extern "C" void pascal far items_update(void)
         if(item->pos.velocity.y.v >= 0) {
             item->pos.velocity.x.v = 0;
         }
+        // Pickup box: 24 pixels to the left and right of the player, from 14
+        // pixels above to 24 pixels below. The subtractions are written as
+        // inline asm because Borland would encode them as 2B D8 / 2B DA
+        // instead of the original 29 C3 / 29 D3.
         if(miss_time == 0) {
             _BX = player_pos.cur.x.v;
             _BX += TO_SP(24);

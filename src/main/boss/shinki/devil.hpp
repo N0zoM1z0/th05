@@ -1,4 +1,4 @@
-// Full canonical Shinki ABI; no abbreviated entity or HP views.
+// Declarations for the Devil attack.
 #ifndef TH05_SHINKI_DEVIL_HPP
 #define TH05_SHINKI_DEVIL_HPP
 #pragma codeseg B6_DEVIL_TEXT main_03

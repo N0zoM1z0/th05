@@ -1,5 +1,4 @@
-// Natural TH04 maintained stage/session_init.cpp cleanup and menu semantics,
-// with TH05's actual slot ranges, held-input service and release condition.
+// Freeing a stage's resources, and the pause menu.
 #pragma option -zCSESSION_END_TEXT -zPmain_01
 #include "src/main/runtime/session_end.hpp"
 #pragma codeseg SESSION_END_TEXT main_01
@@ -16,6 +15,7 @@ extern "C" void near stage_session_free(void)
     }
 }
 
+// Returns 1 if the player chose to quit, 0 to resume.
 extern "C" int near pause(void)
 {
     int selected = 0;
@@ -37,6 +37,7 @@ extern "C" int near pause(void)
                 gaiji_putsa(26, 15, gsSHUURYOU, PAUSE_TX_WHITE + PAUSE_TX_UNDERLINE);
             }
         }
+        // Q quits immediately, leaving the menu on screen.
         if(key_det & PAUSE_INPUT_Q) {
             return 1;
         }
@@ -48,7 +49,7 @@ extern "C" int near pause(void)
             break;
         }
     }
-    // TH05 waits only for CANCEL release here; other held inputs survive.
+    // Unlike TH04, this only waits for CANCEL to be released.
     while(key_det & PAUSE_INPUT_CANCEL) {
         input_reset_sense_held();
     }

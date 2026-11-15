@@ -1,4 +1,5 @@
-// Semantic UI labels and modifier explanations, not glyph/font assets.
+// Japanese texts of the bonus screens: multiplier descriptions and tally
+// labels. The build converts this file from UTF-8 to Shift-JIS.
 #pragma option -zCBONUS_UI_TEXT -zPmain_03
 #include "src/main/stage/bonus_strings.hpp"
 

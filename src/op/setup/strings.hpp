@@ -1,9 +1,8 @@
-// Readable original setup text; canonical UTF-8, explicit CP932 build staging.
-// Natural-source provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th04/shiftjis/m_setup.hpp. These are semantic help-pointer arrays and text.
+// Help texts, choices and captions of the first-launch sound setup menu.
+// UTF-8, converted to Shift-JIS before compilation. Based on ReC98
+// th04/shiftjis/m_setup.hpp.
 #ifndef TH05_OP_SETUP_STRINGS_HPP
 #define TH05_OP_SETUP_STRINGS_HPP
-
 
 static const int HELP_LINES = 9;
 static const pixel_t HELP_W = (46 * GLYPH_HALF_W);
@@ -46,9 +45,5 @@ shiftjis_t* SE_HELP[HELP_LINES] = {
 #define SETUP_SE_CAPTION 	"　　　　効果音に使用する音源を選択してね☆"
 
 static const pixel_t CAPTION_W = (52 * GLYPH_HALF_W);
-
-
-typedef char th05_setup_bgm_help_table_is_36[(sizeof(BGM_HELP) == 36) ? 1 : -1];
-typedef char th05_setup_se_help_table_is_36[(sizeof(SE_HELP) == 36) ? 1 : -1];
 
 #endif

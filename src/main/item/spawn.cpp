@@ -1,5 +1,5 @@
-// Natural spawn/death-drop algorithms adapted from maintained TH04 item owner.
-// Real TH05 changes: bomb-drop conversion, forty slots, global remaining lives.
+// Item spawning: single items, and the five items dropped when losing a life.
+// Part of the item family translation unit (family.cpp).
 #ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma option -zCITEM_SPAWN_TEXT -zPmain_03
 #endif
@@ -13,8 +13,9 @@ void pascal near items_add(subpixel_t x, subpixel_t y, item_type_t type)
     register item_t near *item;
     register int i;
 
-    // TH05 bomb attraction converts ordinary/automatic drops into power.
-    // The raw type field is a byte: IT_NONE remains distinct from FF drop-next.
+    // While a bomb pulls items to the player, power, point and dream items
+    // and automatic drops all become power items. The unsigned byte
+    // comparison leaves IT_NONE (0xFE) alone.
     if(items_pull_to_player &&
         ((static_cast<unsigned char>(type) < IT_BIGPOWER) ||
          (type == IT_ENEMY_DROP_NEXT))) {
@@ -64,9 +65,8 @@ extern "C" void pascal far items_miss_add(void)
     register int spawned_count;
 
     big_power_slot = randring2_next16_mod(ITEM_MISS_COUNT);
-    // The target consumes a second, distinct slot selection but never uses
-    // the result. Its ring advance is observable by every later random-ring
-    // caller, so this draw is part of the gameplay sequence.
+    // ZUN bloat: a second slot, different from the first, is picked and never
+    // used. It still advances the random ring.
     do {
         discarded_distinct_slot = randring2_next16_mod(ITEM_MISS_COUNT);
     } while(discarded_distinct_slot == big_power_slot);
@@ -79,10 +79,9 @@ extern "C" void pascal far items_miss_add(void)
         miss_velocity_field = MISS_FIELD_RIGHT;
     }
 
-    // Fill up to five free pool entries. A full pool truncates the drop; no
-    // live item is displaced. Non-big slots each consume another shared-ring
-    // sample, even when the last-life override below changes them to full
-    // power items.
+    // Spawn up to five items into free slots; if the pool is full, fewer
+    // items drop. Every item except the big power one draws another random
+    // number, even if it is replaced by a full power item on the last life.
     spawned_count = 0;
     item = items;
     pool_index = 0;

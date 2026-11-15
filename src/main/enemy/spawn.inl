@@ -1,4 +1,5 @@
-// ReC98's TH05 spawn record is read through the actual far STD cursor.
+// Spawns the enemy described by the STD record at std_ip into the first free
+// slot. Does nothing if all slots are in use.
 extern "C" void pascal near enemies_add(void)
 {
     int i;
@@ -19,6 +20,7 @@ extern "C" void pascal near enemies_add(void)
         enemy->script = reinterpret_cast<unsigned char near *>(
             std_enemy_scripts[current_spawn.script]);
 
+        // 999 means a random position.
         if(center_x == TO_SP(999)) {
             center_x = randring2_next16_mod(TO_SP(PLAYFIELD_W));
         }
@@ -39,11 +41,11 @@ extern "C" void pascal near enemies_add(void)
         enemy->anim_cur_cel = 0;
         enemy->can_be_damaged = false;
         enemy->kills_player_on_collision = false;
-        enemy->autofire_cur_frame = randring2_next16();
+        enemy->autofire_cur_frame = randring2_next16();   // truncated to 8 bits
         enemy->autofire_interval = 128;
         enemy->bullet_template.group = BG_FORCESINGLE_AIMED;
         enemy->bullet_template.spawn_type = BST_NORMAL;
-        enemy->bullet_template.speed.v = (TO_SP(2) + 10);
+        enemy->bullet_template.speed.v = (TO_SP(2) + 10);   // 2.625 pixels
         enemy->bullet_template.origin.x.v = 0;
         enemy->bullet_template.origin.y.v = 0;
         enemy->bullet_template.patnum = 0;

@@ -1,7 +1,8 @@
-/* Two separately writable MAINE child filenames used by end_game/end_extra. */
+/* The MAINE filenames passed to GameExecl() by end_game() and end_extra().
+ * ZUN bloat: each one has its own copy of the string. */
 #pragma option -zCEND_BINARY_NAMES_TEXT -zPmain_01
 #ifdef __cplusplus
-#error End-sequence filenames require the native C DATA initializer
+#error Compile this file as C
 #endif
 
 char game_end_binary_name[] = "maine";

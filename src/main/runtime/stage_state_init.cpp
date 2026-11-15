@@ -1,10 +1,11 @@
-// Natural TH04 stage_state_init algorithm, actual TH05 full typed pools/state.
-// The donor's DWORD storage aliases are deliberately not used.
+// Per-stage reset of the frame counters and all entity pools.
 #pragma option -zCSTAGE_STATE_TEXT -zPmain_01
 #include "src/main/runtime/stage_state_init.hpp"
 
 extern "C" void near stage_state_init(void)
 {
+    // A chained assignment, so that the zero is computed once and stored to
+    // shots_alive_count first, as in the original.
     hitshot_next_free_id = shots_alive_count = 0;
     frames_unused = 0;
     stage_frame = 0;
@@ -20,7 +21,9 @@ extern "C" void near stage_state_init(void)
     stage_graze = 0;
     circles_color = 13;
 
+    // Clip to the 384x368 playfield at (32, 16).
     grc_setclip(32, 16, (32 + 384 - 1), (16 + 368 - 1));
+    // clear_dwords() takes the size in 32-bit units.
     clear_dwords(hitshots, sizeof(hitshots) / sizeof(unsigned long));
     clear_dwords(lasers, sizeof(lasers) / sizeof(unsigned long));
     clear_dwords(shots, sizeof(shots) / sizeof(unsigned long));
@@ -35,7 +38,7 @@ extern "C" void near stage_state_init(void)
 
     gather_template.ring_points = 8;
     gather_template.col = 9;
-    gather_template.radius.v = 64 * 16;
+    gather_template.radius.v = 64 * 16; // 64 pixels
     gather_template.angle_delta = 2;
     gather_template.velocity.x.v = 0;
     gather_template.velocity.y.v = 0;

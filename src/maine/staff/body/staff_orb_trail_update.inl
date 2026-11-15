@@ -1,3 +1,4 @@
+// Records the current orb position as the newest trail sample.
 void near staff_orb_trail_update(void)
 {
     int i;

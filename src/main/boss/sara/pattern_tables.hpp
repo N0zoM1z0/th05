@@ -1,4 +1,4 @@
-// Full canonical interface and real void near attack callbacks.
+// Sara's attack patterns for phases 2 and 3, chosen at random.
 #ifndef TH05_SARA_PATTERN_TABLES_HPP
 #define TH05_SARA_PATTERN_TABLES_HPP
 #include "src/main/boss/sara/sara.hpp"

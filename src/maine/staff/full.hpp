@@ -1,10 +1,12 @@
-// Genuine contiguous17-function staff source family, no original-TU claim.
+// Declarations for the 17 staff scene functions compiled by full.cpp and
+// staff_complete_context.cpp.
 #ifndef TH05_MAINE_STAFF_FULL_HPP
 #define TH05_MAINE_STAFF_FULL_HPP
 #ifndef TH05_STAFF_FULL_FAMILY
-#error The full wrapper must select the true shared near-code context
+#error Define TH05_STAFF_FULL_FAMILY to put every staff function into STAFF_FULL_TEXT
 #endif
-// lifecycle's first declarations establish clip and master contexts before staff.hpp.
+// lifecycle.hpp must come first: it declares grc_setclip() and
+// space_window_set() before staff.hpp redeclares them.
 #include "src/maine/staff/lifecycle.hpp"
 #include "src/maine/staff/orb_opening.hpp"
 #include "src/maine/staff/rain.hpp"

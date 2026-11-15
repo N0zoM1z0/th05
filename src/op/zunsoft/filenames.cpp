@@ -1,4 +1,5 @@
-// Real source resource names from ReC98 th04/op/zunsoft.cpp, in native order.
+// File and song names used by the ZUN Soft logo, as in ReC98
+// th04/op/zunsoft.cpp.
 #pragma option -zCZUNSOFT_DATA_TEXT -zPop_01
 char zun00_pi[] = "zun00.pi";
 char logo[] = "logo";

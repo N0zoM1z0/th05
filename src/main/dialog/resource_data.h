@@ -1,4 +1,5 @@
-/* Complete mutable dialog filename, tiny text-buffer and sequence state bank. */
+/* Layout of the initialized dialog data: the Extra Stage replay sequence
+ * byte, file names and the character buffer used by dialog_run(). */
 #ifndef TH05_DIALOG_RESOURCE_DATA_H
 #define TH05_DIALOG_RESOURCE_DATA_H
 #include <stddef.h>

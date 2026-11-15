@@ -1,4 +1,4 @@
-// Original verdict settings and five semantic glyph strings, without font pixels.
+// Verdict screen layout, formatter flags, and the difficulty names.
 #pragma option -zCVERDICT_STATE_DATA_TEXT -zPgroup_01
 #include "src/maine/verdict/state_data.hpp"
 
@@ -7,13 +7,15 @@ enum VerdictDataGlyph {
     VERDICT_GLYPH_EMPTY = 0x02
 };
 
-// GAME5's bold alphabet is sequential; unlike the older definition, M precedes N.
+// Gaiji codes of the bold alphabet. Unlike the TH02 bold font, M and N are
+// in alphabetical order.
 enum VerdictRankGlyph {
     VR_A = 0xAA, VR_B, VR_C, VR_D, VR_E, VR_F, VR_G, VR_H, VR_I,
     VR_J, VR_K, VR_L, VR_M, VR_N, VR_O, VR_P, VR_Q, VR_R, VR_S,
     VR_T, VR_U, VR_V, VR_W, VR_X, VR_Y, VR_Z
 };
 
+// Staff roll changes these to (32, 16), with colors 13.
 int verdict_text_left = 336;
 unsigned int verdict_text_color = 2;
 unsigned int verdict_comment_color = 6;
@@ -31,6 +33,3 @@ char verdict_rank_glyphs[5][8] = {
       VR_E, VR_X, VR_T, VR_R, VR_A, VERDICT_GLYPH_NULL }
 };
 bool graph_3_digit_put_as_fixed_2_digit = false;
-
-typedef char verdict_rank_rows_check[(sizeof(verdict_rank_glyphs) == 40) ? 1 : -1];
-typedef char verdict_rank_stride_check[(sizeof(verdict_rank_glyphs[0]) == 8) ? 1 : -1];

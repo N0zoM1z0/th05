@@ -1,10 +1,13 @@
-/* The six original independent C publics consumed by the game-over renderer. */
+/* Gaiji strings of the game over screen and continue menu.
+ * They are not const: Borland puts const and non-const data in a different
+ * order, and only this order matches the original. */
 #pragma option -zCGAMEOVER_GAIJI_DATA_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Gameover semantic initialized DATA is compiled as C
+#error Compile this file as C
 #endif
 #include "src/main/hud/overlay_data.h"
 
+/* The gaiji question mark, not ASCII '?'. */
 enum GameoverGaijiSpecial { GAMEOVER_GAIJI_QUESTION = 8 };
 
 char near gGAMEOVER[10] = {
@@ -24,6 +27,8 @@ char near gCREDIT[7] = {
     HG_BOLD_C, HG_BOLD_R, HG_BOLD_E, HG_BOLD_D,
     HG_BOLD_I, HG_BOLD_T, HG_NULL
 };
+/* Erases the sliding G of the GAME OVER animation. The second copy,
+ * gameover_erase_out, is in score_handoff_names.c. */
 char near gameover_erase_in[3] = "  ";
 
 typedef char gameover_six_c_objects_size[

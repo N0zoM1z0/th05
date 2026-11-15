@@ -1,5 +1,6 @@
-// Native segmented VRAM capture, with the intrinsic owning the row copy.
-// The canonical full buffer and near Pascal interface remain unchanged.
+// Another attempt at verdict_bitmap_snap() in C++, switching DS and ES only
+// once. Still 58 bytes instead of the original 43; see
+// bitmap_hardware_context.inl for the matching version.
 #pragma option -zCSTAFF_BITMAP_TEXT -zPgroup_01
 #include "src/maine/staff/bitmap.hpp"
 
@@ -9,8 +10,7 @@ void pascal near verdict_bitmap_snap(size_t bitmap_offset)
     const uint8_t near *source;
     int rows;
 
-    // The PC-98 E plane is read through DS, while ES retains the RAM segment.
-    // Keep the caller's DS around this real hardware segment transition.
+    // Read the E plane through DS and write to the RAM buffer through ES.
     asm { push ds; }
     _ES = _DS;
     _DS = STAFF_BITMAP_E_SEGMENT;

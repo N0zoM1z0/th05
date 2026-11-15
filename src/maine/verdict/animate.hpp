@@ -1,4 +1,4 @@
-// Original MAINE near verdict callbacks and genuine far hardware/API boundaries.
+// verdict_animate(): the stand-alone verdict screen, on top of ude.pi.
 #ifndef TH05_MAINE_VERDICT_ANIMATE_HPP
 #define TH05_MAINE_VERDICT_ANIMATE_HPP
 #include <dos.h>
@@ -32,6 +32,7 @@ void near verdict_comments_put(void);
 #pragma codeseg VERDICT_ANIMATE_TEXT group_01
 #endif
 void near verdict_animate(void);
+// Inlined versions of master.lib's graph_accesspage() / graph_showpage().
 #define verdict_graph_accesspage(page) outportb(0xA6, page)
 #define verdict_graph_showpage(page) outportb(0xA4, page)
 #endif

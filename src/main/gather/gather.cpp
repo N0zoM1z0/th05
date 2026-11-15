@@ -1,5 +1,10 @@
-// Natural TH05 gather behavior. The genuine ASM structure-copy routines
-// remain external; no replacement instructions are provided by this owner.
+// Gather circles: rings of points that shrink towards their center and, once
+// they are small enough, fire the bullets stored in their template. Same code
+// as ReC98's th04/main/gather.cpp with GAME=5.
+//
+// In the original module the two template copy functions sit between the
+// "add" and the "run" functions, which is why this file uses two code
+// segments. The copies are in copy_to_bullet.cpp and copy_from_bullet.cpp.
 #pragma option -zCGATHER_ADD_TEXT
 
 #include "src/main/gather/gather.hpp"

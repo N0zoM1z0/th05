@@ -1,4 +1,4 @@
-// Actual HP bar caption/drawing ABI; the separate HP animator stays unchanged.
+// hud_hp_put() and the data it draws. The animation lives in hp.cpp.
 #ifndef TH05_HUD_HP_DRAW_HPP
 #define TH05_HUD_HP_DRAW_HPP
 #include "src/shared/abi.hpp"
@@ -15,7 +15,8 @@ static const unsigned int HUD_HP_DRAW_WHITE = 0xE1;
 extern "C" void pascal far gaiji_putsa(unsigned int x, unsigned int y,
     const char far *text, unsigned int attribute);
 #pragma codeseg HUD_HP_BAR_API_TEXT main_01
-// Actual TH05 helper is near Pascal and consumes three complete stack words.
+// Implemented in bar.asm. The value is an int even though the bar only reads
+// its low byte: callers zero-extend byte globals before pushing them.
 extern "C" void pascal near hud_bar_put(unsigned int y,
     int value, unsigned int attribute);
 #pragma codeseg HUD_HP_DRAW_TEXT main_01

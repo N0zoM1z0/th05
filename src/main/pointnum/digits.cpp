@@ -1,4 +1,7 @@
-// Natural C++ recovery; source semantics and native exactness are separate.
+// pointnum_digits_set(): splits a point value into five little-endian decimal
+// digits and returns the popup's width in pixels. Not built: Borland gives
+// 96 bytes instead of 58 (BP frame, stack locals, a second DIV for the
+// remainder). The built version is digits_register.asm.
 #pragma option -zCPOINTNUM_DIGITS_TEXT -zPmain_03 -k-
 #include "src/main/pointnum/digits.hpp"
 

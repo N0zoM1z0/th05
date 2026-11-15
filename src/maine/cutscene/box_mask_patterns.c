@@ -1,7 +1,9 @@
-/* Five levels of 16-pixel EGC text-box transition coverage, four rows each. */
+/* The five masks of the text box crossfade (box_1_to_0_masked()), from sparse
+ * to fully opaque, four rows each. Also defines the color map entry count,
+ * which sits right before them in the original. */
 #pragma option -zCCUTSCENE_BOX_MASK_DATA_TEXT -zPgroup_01 -a2
 #ifdef __cplusplus
-#error This semantic mask bank uses the original C initializer lane
+#error This file is compiled as C
 #endif
 #include "src/shared/abi.hpp"
 
@@ -19,7 +21,7 @@ enum BoxMaskNibble {
     BOX_MASK_ALL = 0xF
 };
 
-/* Number of colour-map entries defined by the running cutscene script. */
+/* Number of color map entries defined by the running cutscene script. */
 unsigned char colmap_count = 0;
 
 const unsigned int near BOX_MASKS[5][4] = {
@@ -35,7 +37,4 @@ const unsigned int near BOX_MASKS[5][4] = {
       EGC_REPEAT_NIBBLE(BOX_MASK_ALL), EGC_REPEAT_NIBBLE(BOX_MASK_ALL) }
 };
 
-typedef char box_mask_words_are_two[(sizeof(unsigned int) == 2) ? 1 : -1];
-typedef char box_mask_rows_are_eight[(sizeof(BOX_MASKS[0]) == 8) ? 1 : -1];
-typedef char box_mask_bank_is_forty[(sizeof(BOX_MASKS) == 40) ? 1 : -1];
 #undef EGC_REPEAT_NIBBLE

@@ -1,14 +1,16 @@
-/* Semantic dialog resources; no dialog script or bitmap payload is embedded. */
+/* Dialog file names and the Shift-JIS character buffer, in their original
+ * data segment order. The faceset names are mutable templates: the face
+ * loader patches the stage or character digit into them. */
 #pragma option -zCDIALOG_RESOURCE_TEXT -zPmain_01
 #ifdef __cplusplus
-#error This initialized resource bank requires C mode
+#error Build this file as C
 #endif
 #include "src/main/dialog/resource_data.h"
 
 DialogResourceBank near dialog_resources = {
     0,
     "_DM00.TX2",
-    "  ",
+    "  ",   /* one fullwidth character, NUL-terminated */
     "st06.bb1",
     "st06.bb2",
     "st06b",

@@ -1,5 +1,5 @@
-// TH05 .TX2 dialog-file format and real master.lib ABI. ReC98 source:
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47, th05/formats/dialog.hpp.
+// .TX2 dialog file format and loader declarations.
+// ReC98: th05/formats/dialog.hpp.
 #ifndef TH05_MAIN_DIALOG_FILE_HPP
 #define TH05_MAIN_DIALOG_FILE_HPP
 #include "src/shared/abi.hpp"
@@ -8,6 +8,8 @@
 #error This owner is TH05 MAIN dialog-file loading
 #endif
 static const unsigned int PLAYCHAR_COUNT = 4;
+// A .TX2 file starts with the offset of each character's script plus the end
+// offset of the last one; script N spans [offset_for[N], offset_for[N + 1]).
 struct tx2_header_t {
     uint16_t offset_for[PLAYCHAR_COUNT + 1];
 };

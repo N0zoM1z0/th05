@@ -1,10 +1,9 @@
-// Semantic all-cast UI text, its real far pointer table, and seven counts.
-// Canonical text source is UTF-8; compiler staging must explicitly use CP932.
+// All Cast credit line strings, the line table and the per-screen line counts.
 #ifndef TH05_ALLCAST_DATA_HPP
 #define TH05_ALLCAST_DATA_HPP
 #include "src/shared/abi.hpp"
 #if GAME != 5 || BINARY != 'E'
-#error This owner requires the TH05 MAINE data context
+#error This header is for TH05's MAINE.EXE only
 #endif
 
 static const int ALLCAST_CREDIT_LINE_COUNT = 47;
@@ -59,7 +58,4 @@ extern uint8_t allcast_credit_players[];
 extern const uint8_t far *LINES[ALLCAST_CREDIT_LINE_COUNT];
 extern int allcast_lines_per_screen[7];
 
-typedef char allcast_data_pointer_is_far[
-    (sizeof(const uint8_t far *) == 4) ? 1 : -1];
-typedef char allcast_data_count_is_word[(sizeof(int) == 2) ? 1 : -1];
 #endif

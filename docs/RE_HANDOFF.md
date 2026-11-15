@@ -26,7 +26,7 @@ The target is **98% authored bytes exact**, but the global authored-byte
 - Recent Boss work clarified the fixed circular explosion API in the shared
   defeat path and typed Mai Solo's byte-10 laser-counter/revenge-angle reuse.
   Both changes preserve original bytes and have focused multi-owner receipts;
-  see [`generic.md`](../src/main/boss/generic.md) and
+  see [the Boss notes](../src/main/boss/NOTES.md) and
   [`solo_scratch.md`](../src/main/boss/mai_yuki/solo_scratch.md).
 - The 40-byte natural-C++ Scroll coordinate converter is also exact, but
   occupies the same physical interval as the accepted reviewed-ASM owner. It
@@ -88,7 +88,7 @@ from its automatic pseudoregister save/restore lowering. The compiled
 2048→2047 DOS-read-length negative is rejected. This is an exact hybrid source
 provider but adds no second CODE or coverage credit; the ASM family remains
 the sole physical owner. Receipt and compiler findings are in
-[`bb_load_cpp_candidate.md`](../src/main/formats/bb_load_cpp_candidate.md).
+[`formats/NOTES.md`](../src/main/formats/NOTES.md).
 
 ### 3. Near Vector2 — unresolved C++ alternative, ASM owner already exact
 
@@ -186,11 +186,11 @@ rejected) and its ASM family has been retired:
 
 | Function | Binaries | Bytes | Notes |
 | --- | --- | ---: | --- |
-| gather template copies (to/from) | MAIN | 27 + 27 | [copy.md](../src/main/gather/copy.md) |
-| `tiles_invalidate_reset/all` | MAIN | 42 (1 NOP) | [invalidate_all.md](../src/main/tile/invalidate_all.md) |
+| gather template copies (to/from) | MAIN | 27 + 27 | [copy_to_bullet.cpp](../src/main/gather/copy_to_bullet.cpp) |
+| `tiles_invalidate_reset/all` | MAIN | 42 (1 NOP) | [tile/NOTES.md](../src/main/tile/NOTES.md) |
 | `cdg_put_noalpha_8` | MAIN/OP/MAINE | 3 × 102 (2 NOPs each) | [cdg_opaque.md](../src/shared/graphics/cdg_opaque.md) |
 | `egc_copy_rect_1_to_0_16` | OP/MAINE | 2 × 124 (1 NOP each) | [egc_rect_copy.md](../src/shared/hardware/egc_rect_copy.md) |
-| Yumeko `swords_update` | MAIN | 283 | [swords_update.md](../src/main/boss/yumeko/swords_update.md) |
+| Yumeko `swords_update` | MAIN | 283 | [yumeko/NOTES.md](../src/main/boss/yumeko/NOTES.md) |
 | `hitshot_from` | MAIN | 108 | [hitshot_from.md](../src/main/player/hitshot_from.md) |
 
 How to judge the remaining ASM owners: ReC98 `.cpp` alone is not proof, since

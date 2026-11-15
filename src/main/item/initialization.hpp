@@ -1,4 +1,4 @@
-// Full canonical item/splash records and the actual stage initialization APIs.
+// Item state reset at the start of a stage.
 #ifndef TH05_ITEM_INITIALIZATION_HPP
 #define TH05_ITEM_INITIALIZATION_HPP
 #include "src/main/item/item.hpp"
@@ -14,5 +14,5 @@ void far items_init(void);
 #endif
 #pragma codeseg
 
-extern unsigned int item_dream_score;
+extern unsigned int item_dream_score; // name from TH04
 #endif

@@ -1,4 +1,5 @@
-// Half-tile dirty-map fills, after ReC98 th04/main/tile/tile.cpp.
+// Clearing and setting every flag of the half-tile dirty map (ReC98
+// th04/main/tile/tile.cpp). tiles_redraw_invalidated() redraws flagged halves.
 #pragma option -zCTILE_INVALIDATE_TEXT -zPmain_01 -k-
 #include <dos.h>
 #include "src/shared/abi.hpp"
@@ -7,9 +8,11 @@
 // The game's bool is an unsigned byte.
 extern uint8_t halftiles_dirty[50][32];
 
-// ZUN bloat: memset(halftiles_dirty, value, sizeof(halftiles_dirty)).
-// ZUN landmine: DF is not cleared before the backwards-capable REP STOSD.
-// (A macro: TCC rejects inline assembly inside inline functions.)
+// ZUN bloat: memset(halftiles_dirty, value, sizeof(halftiles_dirty)), which
+// Borland would compile to REP STOSW instead of the original REP STOSD.
+// ZUN landmine: the direction flag is never cleared before the REP STOSD.
+// This is a macro because Turbo C++ rejects inline assembly in inline
+// functions.
 #define tiles_invalidate_set_all(value) { \
     _ES = FP_SEG(halftiles_dirty); \
     _DI = FP_OFF(halftiles_dirty); \
@@ -23,6 +26,7 @@ void near tiles_invalidate_reset(void)
     tiles_invalidate_set_all(0ul);
 }
 
+// Alignment NOP between the two functions
 #pragma codestring "\x90"
 
 void near tiles_invalidate_all(void)

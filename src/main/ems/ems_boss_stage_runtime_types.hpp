@@ -1,11 +1,11 @@
-// Full canonical motion and real per-stage state/reset interfaces.
+// State reset by stage_runtime_init(), and the functions it calls.
 #ifndef TH05_STAGE_RUNTIME_HPP
 #define TH05_STAGE_RUNTIME_HPP
 #include "src/main/player/player.hpp"
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner implements TH05 MAIN per-stage runtime initialization
+#error TH05 MAIN only
 #endif
 
 typedef int vram_y_t;
@@ -35,8 +35,8 @@ extern nearfunc_t_near bg_render_bombing_func;
 #pragma codeseg STAGE_RUNTIME_TEXT main_01
 void near stage_runtime_init(void);
 extern "C" void near stage_state_init(void);
-// Exact current C/Pascal far interface from the accepted item owner.
-// Already declared as original C++ FAR callback in the 1826-byte predecessor.
+// shot_level_update() and hud_put() are already declared by the first part
+// of the combined unit.
 
 #pragma samecodeseg shot_level_update
 void near randring_fill(void);

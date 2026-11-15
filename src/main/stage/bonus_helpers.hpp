@@ -1,4 +1,4 @@
-// Complete resident/Boss state and real stage-bonus display interfaces.
+// Multipliers applied to both clear bonuses.
 #ifndef TH05_STAGE_BONUS_HELPERS_HPP
 #define TH05_STAGE_BONUS_HELPERS_HPP
 #include "src/main/boss/movement.hpp"
@@ -6,7 +6,7 @@
 
 extern unsigned char continues_used;
 extern unsigned char rank;
-// TH05 uses eleven real two-byte near pointers; strings remain foreign.
+// Unlike TH04, these are near pointers.
 extern const char near *const STAGE_CLEAR_BONUS_DESC[11];
 static const unsigned int BONUS_TX_RED = 0x41;
 static const unsigned int BONUS_TX_GREEN = 0x81;

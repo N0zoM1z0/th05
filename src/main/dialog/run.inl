@@ -1,13 +1,17 @@
+// Runs the loaded TX2 script until its terminating DIALOG_END. Included by
+// run.cpp, runtime.cpp and opcode_full_context.cpp.
 void near dialog_run(void)
 {
     uint8_t c;
-    uint8_t speedup_cycle;
+    uint8_t speedup_cycle;   // ZUN bloat: never incremented, a TH03 leftover
     shiftjis_t far *kanji_str = dialog_kanji_buf;
     while(1) {
         c = *(dialog_p++);
         if(c == DIALOG_END) {
             break;
         } else if(c == DIALOG_BOX_BEGIN) {
+            // Start a new box on the side chosen by the last side command:
+            // rewind the cursor and clear both boxes.
             if(dialog_side == SIDE_PLAYCHAR) {
                 dialog_cursor.x = to_dialog_x(TEXT_PLAYCHAR_LEFT);
                 dialog_cursor.y = to_dialog_y(TEXT_PLAYCHAR_TOP);
@@ -25,6 +29,8 @@ void near dialog_run(void)
                 to_tram_y(to_dialog_y(TEXT_BOSS_TOP + BOX_H)), TX_BLUE);
             dialog_box_wipe(dialog_cursor.x, dialog_cursor.y);
             speedup_cycle = 0;
+            // Box loop: one fullwidth character per iteration until the
+            // box's DIALOG_END, which waits for a key.
             while(1) {
                 input_reset_sense();
                 c = *(dialog_p++);
@@ -35,6 +41,9 @@ void near dialog_run(void)
                     kanji_str[0] = c;
                     kanji_str[1] = *(dialog_p++);
                     dialog_text_put(kanji_str);
+                    // ZUN bug: this second sensing call can only change
+                    // key_det if the keyboard state changed since the first
+                    // one, which is almost never the case.
                     input_sense();
                     dialog_delay(speedup_cycle);
                 }

@@ -1,4 +1,4 @@
-// Shared natural implementation; no layout or instruction bytes are supplied.
+// Alice's final-phase pattern: a downward 13-way spread every 32 frames.
 void near alice_pattern_final_spread(void)
 {
     bullet_template.spawn_type = 0x10;

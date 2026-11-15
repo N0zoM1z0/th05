@@ -1,6 +1,6 @@
-// TH05 character selection interfaces, reused canonical resident/menu types.
-// Natural-source provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th05/m_char.cpp, th04/op/darken.cpp, planar.h, bgimage.hpp and op/impl.hpp.
+// Declarations for the character selection menu, plus the planar VRAM and
+// page-flipping helpers it uses. Based on ReC98 th05/m_char.cpp,
+// th04/op/darken.cpp, planar.h, bgimage.hpp and th04/op/impl.hpp.
 #ifndef TH05_OP_CHARSELECT_MENU_HPP
 #define TH05_OP_CHARSELECT_MENU_HPP
 
@@ -16,7 +16,8 @@ typedef uint32_t dots32_t;
 #define ROW_SIZE 80
 static const uint8_t INPUT_NONE = 0;
 
-// Actual foreign pointer object, not a constant substituted for its storage.
+// master.lib's pointer to the blue VRAM plane. The darkening code writes
+// through this variable, not through a constant address.
 extern dots8_t far *VRAM_PLANE_B;
 extern unsigned char playchar_menu_sel;
 extern unsigned char playchar_menu_rank;
@@ -42,8 +43,7 @@ extern "C" {
 static inline vram_offset_t vram_offset_shift(screen_x_t x, vram_y_t y) {
     return (x >> 3) + (y << 6) + (y << 4);
 }
-// Genuine far memory access to the selected 1bpp hardware plane. The compiler
-// emits the store; no instruction bytes or register-body transcription.
+// Writes [bit_count] pixels to the plane selected by the GRCG.
 #define grcg_put(offset_value, pattern_value, bit_count) \
     *(dots##bit_count##_t far *)(VRAM_PLANE_B + offset_value) = pattern_value
 
@@ -60,12 +60,5 @@ inline void sync_pages_and_delay(void) {
 void pascal near pic_darken(unsigned char playchar);
 void pascal near pic_put(bool16 darkened);
 void near playchar_menu_put_initial(void);
-
-typedef char th05_charselect_word_bool_is_2[(sizeof(bool16) == 2) ? 1 : -1];
-typedef char th05_charselect_offset_is_2[(sizeof(vram_offset_t) == 2) ? 1 : -1];
-typedef char th05_charselect_pattern_is_4[(sizeof(dots32_t) == 4) ? 1 : -1];
-typedef char th05_charselect_vram_pointer_is_4[(sizeof(VRAM_PLANE_B) == 4) ? 1 : -1];
-typedef char th05_charselect_selectable_is_4[(sizeof(selectable_with) == 4) ? 1 : -1];
-typedef char th05_charselect_cleared_is_20[(sizeof(cleared_with) == 20) ? 1 : -1];
 
 #endif

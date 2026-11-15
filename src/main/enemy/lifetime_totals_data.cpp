@@ -1,5 +1,6 @@
-// Original MAIN persistent enemy-life statistics, retained across stage handoff.
-// Both counters are adjacent 16-bit initialized values in the game's DGROUP.
+// Enemy statistics for the whole game: enemies that left the playfield or
+// were killed, and enemies killed. Saved to the resident structure when MAIN
+// hands over to another binary.
 #pragma option -zCENEMY_LIFETIME_TOTALS_DATA_TEXT -zPmain_01
 #include "src/shared/abi.hpp"
 

@@ -1,7 +1,8 @@
-// Three distinct real 5-byte on-screen pause clearing resources.
+// Blank strings that pause() prints over its three menu lines when it
+// closes. ZUN bloat: three identical strings instead of one.
 #pragma option -zCPAUSE_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Original pause-screen initializer is produced by C
+#error Compile this file as C
 #endif
 #include <stddef.h>
 typedef struct MainPauseClearText {

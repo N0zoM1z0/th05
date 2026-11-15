@@ -1,5 +1,6 @@
-// bullet_template = gather.bullet_template, as ZUN's register-level copy
+// bullet_template = gather.bullet_template, copied as 7 words with REP MOVSW
 // (ReC98 th04/main/gather.cpp: copy_near_struct_member(..., prepare_di_si)).
+// A plain structure assignment would call Borland's F_SCOPY@ helper instead.
 #pragma option -zCGATHER_COPY_FROM_TEXT -zPmain_03
 #include <stddef.h>
 #include "src/main/gather/gather.hpp"

@@ -1,7 +1,8 @@
-// Persistent 32-bit frame totals and 16-bit story/dialogue frame count.
+// Frame counters for the play statistics that GameExecl() saves to the
+// resident structure: all frames, slowed-down frames, and dialog frames.
 #pragma option -zCMAIN_FRAME_COUNTER_DATA_TEXT -zPmain_01
-// The definitions match the existing gameplay-loop and handoff declarations.
-// No header CODE-segment pragmas belong to this data-only translation unit.
+// Deliberately includes no header: their code segment declarations would
+// make TLINK report that group main_01 exceeds 64 KiB.
 
 unsigned long total_slow_frames = 0;
 unsigned long total_frames = 0;

@@ -1,16 +1,15 @@
-// Candidate adapted from nmlgc/ReC98@b6ba5b0a; requires local cold replay.
+// Playfield text overlays: stage fade-in/out, stage and BGM titles with their
+// dissolve effect, and the popup messages at the top of the playfield.
+// Adapted from ReC98's th04/main/hud/overlay.cpp, with GAME == 5 selected.
 #pragma option -zCHUD_OVRL_TEXT -zPmain_01
 
 #include <string.h>
 #include <dos.h>
 #include "src/main/hud/overlay.hpp"
 
-
-#if (GAME == 5)
-#else
-#endif
-
-// See tile.hpp for the reason why this declaration is necessary
+// The prototype takes separate Y and X words, so that constant coordinates
+// can be pushed as one 32-bit immediate (-3). Other callers pass a point
+// instead; see ReC98's th04/main/tile/tile.hpp.
 extern "C" void pascal near tiles_invalidate_around(
 	subpixel_t center_y, subpixel_t center_x
 );
@@ -551,7 +550,7 @@ void pascal near popup_put_points_th04(unsigned long points)
 #endif
 // ----------------------------------------------------------------------------
 
-// TODO: These need to be turned into definitions once we can.
+// Defined in other translation units.
 extern unsigned char bgm_title_id;
 extern popup_id_t overlay_popup_id_new;
 extern nearfunc_t_near overlay1;

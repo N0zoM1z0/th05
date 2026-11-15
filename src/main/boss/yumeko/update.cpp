@@ -1,19 +1,21 @@
-// Natural final pattern and full Yumeko state machine from original TH05
-// behavior. ReC98 b6ba5b0a disassembly is evidence, not an instruction template.
+// Yumeko's final ring attack and her main update function.
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/yumeko/update.hpp"
 #include "src/main/boss/yumeko/final_ring_scratch.hpp"
 #include "src/main/boss/yumeko/phase_timing.hpp"
-#include "src/main/boss/yumeko/mobile_attack_rules.hpp"
-#include "src/main/boss/yumeko/sweep_combat_rules.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
-// Applied after canonical record declarations. The original semantic switch
-// table has a genuine word boundary relative to this odd-address contribution.
+// The phase switch table in yumeko_update() is word-aligned, which needs -a2.
+// It must come after the declarations above, which require byte alignment.
 #pragma option -a2
 
 #define yumeko_final_angle yumeko_final_scratch.pattern_byte14.final_ring_angle
 #define yumeko_final_rings yumeko_final_scratch.pattern_byte15.final_ring_count
-static const int YUMEKO_HP_TOTAL = YSW_BOSS_TOTAL_HP;
+static const int YUMEKO_HP_TOTAL = 8300;
+
+// Number of direction changes of each final-ring bullet. (The sweep's YSW_
+// prefix is misleading, but the name is used by this unit's negative control in
+// config/exact_units.toml.)
+#define YSW_FINAL_TURNS_MAX 2
 
 enum YumekoPhase {
     YUMEKO_PHASE_HP_FILL = 0,
@@ -29,47 +31,50 @@ enum YumekoPhase {
     YUMEKO_PHASE_FINAL_RING = 10
 };
 
+// 18-way rings of decelerating bullets that turn twice by 0x40, every 16
+// frames starting at frame 32. The ring angle advances by 1 for every ring;
+// every odd ring is mirrored along the vertical axis and turns the other way.
+// The phase ends at frame 1200 at the latest, after 74 rings.
 void near yumeko_pattern_final_ring(void)
 {
-    // The strict charge bound makes frame 32 the first volley frame.
-    if(boss.phase_frame < YUMEKO_FINAL_RING_FIRST_VOLLEY_FRAME) {
-        gather_add_only_3stack(
-            boss.phase_frame - YUMEKO_FINAL_RING_GATHER_LEAD_FRAMES,
-            YUMEKO_FINAL_RING_GATHER_COLOR, YUMEKO_FINAL_RING_GATHER_SECONDARY_COLOR
-        );
-        if(boss.phase_frame == YUMEKO_FINAL_RING_CHARGE_SOUND_FRAME) {
+    if(boss.phase_frame < 32) {
+        gather_add_only_3stack(boss.phase_frame - 16, 7, 6);
+        if(boss.phase_frame == 16) {
             boss.sprite = YUMEKO_SPRITE_CHARGE;
             bullet_template.spawn_type = YUMEKO_NO_DECELERATE;
-            bullet_template.patnum = YUMEKO_FINAL_RING_BULLET_PATTERN; // Blue directional vector bullet.
+            bullet_template.patnum = 116; // Blue directional vector bullet.
             bullet_template.group = BG_RING;
-            bullet_template.spread = YUMEKO_FINAL_RING_BULLET_COUNT;
+            bullet_template.spread = 18;
             bullet_template.special_motion = BSM_DECELERATE_THEN_TURN;
-            bullet_template.speed.v = YUMEKO_FINAL_RING_TURN_SPEED_SUBPIXELS;
+            bullet_template.speed.v = (2 * 16 + 6);
             bullet_template_tune();
-            snd_se_play(YUMEKO_FINAL_RING_CHARGE_SE);
+            snd_se_play(8);
             yumeko_final_rings = 0;
             bullet_special.turns_max = YSW_FINAL_TURNS_MAX;
             yumeko_final_angle = 0;
         }
         return;
     }
-    if((boss.phase_frame % YUMEKO_FINAL_RING_INTERVAL_FRAMES) == 0) {
+    if((boss.phase_frame % 16) == 0) {
         bullet_template.angle = yumeko_final_angle;
-        if((yumeko_final_rings & YSW_FINAL_RING_PARITY_MASK) != 0) {
-            bullet_template_special_angle.turn_by = YUMEKO_FINAL_RING_TURN_ANGLE;
-            bullet_template.angle = YUMEKO_FINAL_RING_REFLECT_ANGLE - bullet_template.angle;
+        if((yumeko_final_rings & 1) != 0) {
+            bullet_template_special_angle.turn_by = 0x40;
+            bullet_template.angle = 0x80 - bullet_template.angle;
         } else {
-            bullet_template_special_angle.turn_by = -YUMEKO_FINAL_RING_TURN_ANGLE;
+            bullet_template_special_angle.turn_by = -0x40;
         }
         bullets_add_special_fixedspeed();
         yumeko_final_angle++;
         yumeko_final_rings++;
-        snd_se_play(YUMEKO_FINAL_RING_FIRE_SE);
+        snd_se_play(3);
     }
 }
 
-// The stationary sword/laser waves and the sword sweep use one timed hit
-// window. A miss breaks the enclosing phase switch, not an inner loop.
+#undef YSW_FINAL_TURNS_MAX
+
+// The stationary attacks and the sword sweep end either on a timeout or once
+// their HP is depleted, with a score bonus for every hit until then. The
+// `break` leaves the phase switch.
 #define YUMEKO_STATIONARY_HIT_WINDOW() \
     if(boss.phase_frame < YUMEKO_STATIONARY_TIMEOUT_FRAMES) { \
         if(!boss_hittest_shots()) { \
@@ -78,19 +83,14 @@ void near yumeko_pattern_final_ring(void)
         boss_score_bonus(YUMEKO_PATTERN_BONUS); \
     }
 
-// Forward phase transitions reset their own clock before selecting the next
-// attack; this does not change any specific callback or animation state.
 #define YUMEKO_ADVANCE_PHASE_CLOCK() \
     boss.phase++; \
     boss.phase_frame = 0
 
-// First and second mobile waves use distinct genuine callback banks but
-// exactly the same current pattern counter and alternating one-bit index.
+// The mobile waves alternate between the first two attacks of their bank.
 #define YUMEKO_SELECT_MOBILE_BANK(bank) \
-    yumeko_pattern = bank[boss.phase_state.patterns_seen & YM_MOBILE_ATTACK_VARIANT_MASK]
+    yumeko_pattern = bank[boss.phase_state.patterns_seen & 1]
 
-// Each mobile wave ends at its own HP threshold and explosion orientation.
-// Do not change the previous hit-bonus or pattern-timeout behavior.
 #define YUMEKO_FINISH_MOBILE_WAVE(explosion, hp_end) \
     boss_phase_next(explosion, hp_end)
 
@@ -120,13 +120,13 @@ void pascal far yumeko_update(void)
             boss_sprite_right = 180;
             boss_sprite_stay = 180;
         }
-        if(boss2.pos.cur.y.v >= -to_sp(YUMEKO_EXITING_BOSS_Y_THRESHOLD_PX)) {
-            boss2.pos.cur.y.v -= to_sp(YUMEKO_EXITING_BOSS_Y_SPEED_PX);
-            shot_hitbox_radius.x.v = to_sp(YUMEKO_EXITING_BOSS_SHOT_RADIUS_PX);
-            shot_hitbox_radius.y.v = to_sp(YUMEKO_EXITING_BOSS_SHOT_RADIUS_PX);
+        if(boss2.pos.cur.y.v >= -to_sp(YUMEKO_GATE_EXIT_Y_PX)) {
+            boss2.pos.cur.y.v -= to_sp(YUMEKO_GATE_SPEED_PX);
+            shot_hitbox_radius.x.v = to_sp(YUMEKO_GATE_HITBOX_RADIUS_PX);
+            shot_hitbox_radius.y.v = to_sp(YUMEKO_GATE_HITBOX_RADIUS_PX);
             shot_hitbox_center = boss2.pos.cur;
             if(shots_hittest()) {
-                snd_se_play(YUMEKO_GRAZE_HIT_SE);
+                snd_se_play(YUMEKO_GATE_HIT_SE);
             }
         }
         if(boss.phase_frame < YUMEKO_ENTER_INVINCIBLE_END_FRAME) {
@@ -138,7 +138,7 @@ void pascal far yumeko_update(void)
         if(boss.pos.cur.x.v >= to_sp(YUMEKO_ARENA_CENTER_X_PX)) {
             boss.sprite = YUMEKO_SPRITE_STILL;
             YUMEKO_ADVANCE_PHASE_CLOCK();
-            snd_se_play(YUMEKO_SPRITE_CONVERSION_DONE_SE);
+            snd_se_play(YUMEKO_ENTRANCE_END_SE);
             bg_render_bombing_func = yumeko_bg_render;
         }
         break;
@@ -162,8 +162,9 @@ void pascal far yumeko_update(void)
                 boss.phase_frame = 0;
                 boss.mode++;
                 boss.phase_state.patterns_seen++;
-                // The phase's first callback was installed before this wave.
-                // Completion 20 ends the wave before another bank lookup or hit test.
+                // The first attack of each wave was already selected when
+                // entering its phase, so a wave consists of 20 attacks. The
+                // 20th reposition ends the wave without a hit test.
                 if(boss.phase_state.patterns_seen >= YUMEKO_WAVE_PATTERN_LIMIT) {
                     goto moving_phase_end;
                 }
@@ -229,15 +230,15 @@ void pascal far yumeko_update(void)
         boss_hittest_shots();
         if(boss_flystep_towards(to_sp(YUMEKO_ARENA_CENTER_X_PX), to_sp(YUMEKO_FINAL_APPROACH_Y_PX))) {
             YUMEKO_ADVANCE_PHASE_CLOCK();
-            // patterns_seen aliases defeat_bonus at Boss byte 21. Clear it
-            // on arrival so a timed final-ring exit cannot inherit a reward.
+            // [patterns_seen] and [defeat_bonus] share the same byte. This
+            // clears the bonus for the case of a timeout in the final phase.
             boss.phase_state.patterns_seen = 0;
         }
         break;
 
     case YUMEKO_PHASE_FINAL_RING:
-        // Run the leaf first: frame 1200 still fires the 74th volley, then
-        // the strict timeout skips the HP-only defeat_bonus write.
+        // Frame 1200 still fires the 74th ring before the timeout. Only
+        // depleting the HP awards the defeat bonus.
         yumeko_pattern_final_ring();
         if(boss.phase_frame < YUMEKO_FINAL_RING_TIMEOUT_FRAMES) {
             if(!boss_hittest_shots()) {

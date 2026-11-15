@@ -1,4 +1,4 @@
-// MAIN's raw DOS file interface and unchanged complete TH05 score records.
+// MAIN's GENSOU.SCR access for the current character and rank.
 #ifndef TH05_MAIN_SCORE_CURRENT_HPP
 #define TH05_MAIN_SCORE_CURRENT_HPP
 #include <dos.h>

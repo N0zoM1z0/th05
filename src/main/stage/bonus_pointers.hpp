@@ -1,4 +1,4 @@
-// Actual two-byte near UI pointers consumed by the stage-bonus functions.
+// Pointers to the bonus screen texts.
 #ifndef TH05_STAGE_BONUS_POINTERS_HPP
 #define TH05_STAGE_BONUS_POINTERS_HPP
 #include "src/main/stage/bonus_strings.hpp"

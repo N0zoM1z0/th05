@@ -1,12 +1,13 @@
-// TH05 first-launch sound setup and animated windows, adapted from natural
-// ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th04/op/m_setup.cpp.
-// Canonical UTF-8 source and strings require explicit CP932 staging.
+// First-launch sound setup: BGM and sound effect device selection inside
+// animated drop-down windows. Based on ReC98 th04/op/m_setup.cpp. This file
+// and strings.hpp are UTF-8 and converted to Shift-JIS before compilation.
 #pragma option -zCOP_SETUP_TEXT -zPop_01
 #include <dos.h>
 #include "src/op/setup/setup.hpp"
 #include "src/op/setup/strings.hpp"
-#include "src/op/setup/window_choreography.hpp"
 
+// Window tiles are revealed or hidden at half a tile per frame.
+#define OSU_DROP_SPEED_DIVISOR 2
 
 // MSWIN.BFT sprites
 enum setup_window_patnum_t {
@@ -27,7 +28,7 @@ static const vc2 COL_ACTIVE = V_WHITE;
 // Coordinates
 // -----------
 
-static const pixel_t MSWIN_BORDER_H = OSU_BORDER_VERTICAL_PX;
+static const pixel_t MSWIN_BORDER_H = 8;
 
 #define window_w_for_content_w(content_w) (\
 	MSWIN_W + content_w + MSWIN_W \
@@ -37,7 +38,7 @@ static const pixel_t DROP_SPEED = (MSWIN_H / OSU_DROP_SPEED_DIVISOR);
 static const int DROP_FRAMES_PER_TILE = (MSWIN_H / DROP_SPEED);
 
 static const screen_x_t CAPTION_LEFT = ((RES_X / 2) - (CAPTION_W / 2));
-static const screen_y_t CAPTION_TOP = OSU_CAPTION_TOP_PX;
+static const screen_y_t CAPTION_TOP = 88;
 
 inline void assert_that_all_choices_are_equally_wide(void) {
 	SETUP_STATIC_ASSERT(shiftjis_w(BGM_CHOICE_FM86) == shiftjis_w(BGM_CHOICE_FM26));
@@ -50,13 +51,13 @@ inline void assert_that_all_choices_are_equally_wide(void) {
 static const pixel_t CHOICE_W = shiftjis_w(BGM_CHOICE_FM86);
 static const pixel_t CHOICE_WINDOW_W = window_w_for_content_w(CHOICE_W);
 
-static const screen_x_t CHOICE_LEFT = OSU_CHOICES_LEFT_PX; // Not quite centered...
-static const screen_x_t CHOICE_TOP = OSU_CHOICES_TOP_PX;
+static const screen_x_t CHOICE_LEFT = 48; // Not quite centered...
+static const screen_x_t CHOICE_TOP = 136;
 static const screen_x_t HELP_LEFT = (CHOICE_LEFT + CHOICE_WINDOW_W);
 static const screen_x_t HELP_TOP = CHOICE_TOP;
 // -----------
 
-static SetupPalette8 palette_unused; // Real original unused 48-byte palette.
+static SetupPalette8 palette_unused; // ZUN bloat
 SetupWindow window;
 
 // Blits ([DROP_SPEED] + [MSWIN_H]) pixels in the Y direction.
@@ -69,7 +70,7 @@ void pascal near window_dropdown_put(
 	super_put(left, bottom_tile_top, MSWIN_MIDDLE_LEFT);
 	super_put(left, (bottom_tile_top + DROP_SPEED), MSWIN_LEFT_BOTTOM);
 	left += MSWIN_W;
-	for(mswin_tile_amount_t x = OSU_FIRST_INTERIOR_TILE; x < (window.w - 1); (x++, left += MSWIN_W)) {
+	for(mswin_tile_amount_t x = 1; x < (window.w - 1); (x++, left += MSWIN_W)) {
 		super_put(left, bottom_tile_top, MSWIN_INSIDE);
 		super_put(left, (bottom_tile_top + DROP_SPEED), MSWIN_MIDDLE_BOTTOM);
 	}
@@ -85,7 +86,7 @@ void pascal near window_rollup_put(screen_x_t left, screen_y_t bottom_tile_top)
 
 	super_put(left, bottom_tile_top, MSWIN_LEFT_BOTTOM);
 	left += MSWIN_W;
-	for(mswin_tile_amount_t x = OSU_FIRST_INTERIOR_TILE; x < (window.w - 1); (x++, left += MSWIN_W)) {
+	for(mswin_tile_amount_t x = 1; x < (window.w - 1); (x++, left += MSWIN_W)) {
 		super_put(left, bottom_tile_top, MSWIN_MIDDLE_BOTTOM);
 	}
 	super_put(left, bottom_tile_top, MSWIN_RIGHT_BOTTOM);
@@ -99,16 +100,16 @@ void pascal near dropdown(screen_x_t left, screen_y_t top_)
 
 	super_put(tile_left, top, MSWIN_LEFT_TOP);
 	tile_left += MSWIN_W;
-	for(i = OSU_FIRST_INTERIOR_TILE; i < (window.w - 1); (i++, tile_left += MSWIN_W)) {
+	for(i = 1; i < (window.w - 1); (i++, tile_left += MSWIN_W)) {
 		super_put(tile_left, top, MSWIN_MIDDLE_TOP);
 	}
 	super_put(tile_left, top, MSWIN_RIGHT_TOP);
 
 	top += MSWIN_H;
-	i = OSU_FIRST_INTERIOR_TILE;
+	i = 1;
 	while(i < ((window.h * DROP_FRAMES_PER_TILE) - DROP_FRAMES_PER_TILE - 1)) {
 		window_dropdown_put(left, top);
-		frame_delay(OSU_FRAME_WAIT);
+		frame_delay(1);
 		i++;
 		top += DROP_SPEED;
 	}
@@ -116,12 +117,12 @@ void pascal near dropdown(screen_x_t left, screen_y_t top_)
 
 void pascal near singleline(screen_x_t left, screen_y_t top)
 {
-	egc_copy_rect_1_to_0_16(left, top, window.pixel_w(), (MSWIN_H * OSU_SINGLELINE_ROWS));
+	egc_copy_rect_1_to_0_16(left, top, window.pixel_w(), (MSWIN_H * 2));
 
 	super_put(left, (top + (0 * MSWIN_H)), MSWIN_LEFT_TOP);
 	super_put(left, (top + (1 * MSWIN_H)), MSWIN_LEFT_BOTTOM);
 	left += MSWIN_W;
-	for(mswin_tile_amount_t x = OSU_FIRST_INTERIOR_TILE; x < (window.w - 1); (x++, left += MSWIN_W)) {
+	for(mswin_tile_amount_t x = 1; x < (window.w - 1); (x++, left += MSWIN_W)) {
 		super_put(left, (top + (0 * MSWIN_H)), MSWIN_MIDDLE_TOP);
 		super_put(left, (top + (1 * MSWIN_H)), MSWIN_MIDDLE_BOTTOM);
 	}
@@ -134,10 +135,10 @@ void pascal near rollup(screen_x_t left, screen_y_t top)
 	screen_y_t bottom_tile_top = top;
 	bottom_tile_top += (window.pixel_h() - MSWIN_H);
 
-	mswin_tile_amount_t i = OSU_FIRST_INTERIOR_TILE;
+	mswin_tile_amount_t i = 1;
 	while(i < ((window.h * DROP_FRAMES_PER_TILE) - DROP_FRAMES_PER_TILE)) {
 		window_rollup_put(left, bottom_tile_top);
-		frame_delay(OSU_FRAME_WAIT);
+		frame_delay(1);
 		i++;
 		bottom_tile_top -= DROP_SPEED;
 	}
@@ -153,7 +154,7 @@ inline void window_animate(
 	window.w = (window_w_for_content_w(content_w) / MSWIN_W);
 	if(content_lines != 1) {
 		window.h = (
-			((MSWIN_BORDER_H * OSU_BORDER_COUNT) + (content_lines * GLYPH_H)) / MSWIN_H
+			((MSWIN_BORDER_H * 2) + (content_lines * GLYPH_H)) / MSWIN_H
 		);
 	}
 	animate_func((content_left - MSWIN_W), (content_top - MSWIN_BORDER_H));
@@ -167,9 +168,9 @@ void pascal near bgm_choice_put(int bgm_mode, vc2 col)
 	const shiftjis_t* str;
 	SETUP_STATIC_ASSERT(SND_BGM_MODE_COUNT == 3);
 	switch(bgm_mode) {
-	case SND_BGM_FM86:	str = BGM_CHOICE_FM86;	top += (OSU_FIRST_CHOICE_ROW * GLYPH_H);	break;
-	case SND_BGM_FM26:	str = BGM_CHOICE_FM26;	top += (OSU_SECOND_CHOICE_ROW * GLYPH_H);	break;
-	case SND_BGM_OFF:	str = BGM_CHOICE_OFF; 	top += (OSU_THIRD_CHOICE_ROW * GLYPH_H);	break;
+	case SND_BGM_FM86:	str = BGM_CHOICE_FM86;	top += (0 * GLYPH_H);	break;
+	case SND_BGM_FM26:	str = BGM_CHOICE_FM26;	top += (1 * GLYPH_H);	break;
+	case SND_BGM_OFF:	str = BGM_CHOICE_OFF; 	top += (2 * GLYPH_H);	break;
 	}
 	graph_putsa_fx(CHOICE_LEFT, top, col, str);
 }
@@ -180,9 +181,9 @@ void pascal near se_choice_put(int se_mode, vc2 col)
 	const shiftjis_t* str;
 	SETUP_STATIC_ASSERT(SND_SE_MODE_COUNT == 3);
 	switch(se_mode) {
-	case SND_SE_FM:  	str = SE_CHOICE_FM;  	top += (OSU_FIRST_CHOICE_ROW * GLYPH_H);	break;
-	case SND_SE_BEEP:	str = SE_CHOICE_BEEP;	top += (OSU_SECOND_CHOICE_ROW * GLYPH_H);	break;
-	case SND_SE_OFF: 	str = SE_CHOICE_OFF; 	top += (OSU_THIRD_CHOICE_ROW * GLYPH_H);	break;
+	case SND_SE_FM:  	str = SE_CHOICE_FM;  	top += (0 * GLYPH_H);	break;
+	case SND_SE_BEEP:	str = SE_CHOICE_BEEP;	top += (1 * GLYPH_H);	break;
+	case SND_SE_OFF: 	str = SE_CHOICE_OFF; 	top += (2 * GLYPH_H);	break;
 	}
 	graph_putsa_fx(CHOICE_LEFT, top, col, str);
 }
@@ -229,7 +230,7 @@ void near se_help_put(void)
 	sel = choice_default; \
 	while(1) { \
 		input_wait_for_change(0); \
-		frame_delay(OSU_FRAME_WAIT); \
+		frame_delay(1); \
 		if((key_det & INPUT_OK) || (key_det & INPUT_SHOT)) { \
 			break; \
 		} \
@@ -289,19 +290,19 @@ void near setup_se_menu(void)
 
 void near setup_menu(void)
 {
-	palette_settone(OSU_PALETTE_BLACK_TONE);
+	palette_settone(0);
 	super_entry_bfnt("mswin.bft");
-	graph_accesspage(OSU_OFFSCREEN_PAGE);
-	pi_fullres_load_palette_apply_put_free(OSU_SETUP_BACKGROUND_SLOT, "ms.pi");
-	graph_copy_page(OSU_CLEAR_SOURCE_PAGE);
-	palette_black_in(OSU_PALETTE_FADE_STEP);
+	graph_accesspage(1);
+	pi_fullres_load_palette_apply_put_free(0, "ms.pi");
+	graph_copy_page(0);
+	palette_black_in(1);
 
 	setup_bgm_menu();
-	frame_delay(OSU_FRAME_WAIT); // ZUN quirk: Already done after every rollup frame.
+	frame_delay(1); // ZUN quirk: Already done after every rollup frame.
 
-	graph_copy_page(OSU_CLEAR_SOURCE_PAGE);
+	graph_copy_page(0);
 	setup_se_menu();
-	palette_black_out(OSU_PALETTE_FADE_STEP);
+	palette_black_out(1);
 
 	super_free();
 }

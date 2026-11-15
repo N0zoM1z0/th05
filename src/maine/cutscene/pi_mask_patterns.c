@@ -1,11 +1,13 @@
-/* Four 16-bit planar coverage masks used by the cutscene PI quarter wipe. */
+/* The four masks for the cutscene's picture crossfade, used by
+ * pi_put_quarter_masked_8(). Same patterns as ReC98's
+ * th03/formats/pi_put_masked[data].asm. */
 #pragma option -zCCUTSCENE_PI_MASK_DATA_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error This semantic planar-mask DATA must have a C producer
+#error This file is compiled as C
 #endif
 #include "src/shared/abi.hpp"
 
-/* Source-level periodic 4-pixel coverage, not a stored image asset. */
+/* Each 16-pixel row repeats one 4-pixel nibble. */
 #define PI_REPEAT_PIXELS(nibble) ((unsigned int)((nibble) * 0x1111U))
 
 enum PiCoverageBit {
@@ -33,7 +35,4 @@ const unsigned int near PI_MASKS[4][4] = {
       PI_REPEAT_PIXELS(PI_COVER_FINAL_THIRD), PI_REPEAT_PIXELS(PI_COVER_FINAL_FOURTH) }
 };
 
-typedef char pi_mask_word_size[(sizeof(unsigned int) == 2) ? 1 : -1];
-typedef char pi_mask_row_size[(sizeof(PI_MASKS[0]) == 8) ? 1 : -1];
-typedef char pi_mask_bank_size[(sizeof(PI_MASKS) == 32) ? 1 : -1];
 #undef PI_REPEAT_PIXELS

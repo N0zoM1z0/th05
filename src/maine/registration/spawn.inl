@@ -23,8 +23,9 @@ void pascal near glyphball_spawn(int x, int y, int place, playchar_t pc, uint8_t
     ball->angle = irand();
     ball->speed.v = (irand() % (4 * 16)) + (4 * 16);
 
-    // The already-consumed cell coordinates become this character's score
-    // panel origin. The default preserves them, matching the real byte domain.
+    // Reuse [x] and [y] for the top-left corner of the name field, in
+    // [pc]'s quarter of the screen. Place 0 has 8 extra pixels below it.
+    // An invalid [pc] keeps the keyboard cell coordinates.
     switch(pc) {
     case PLAYCHAR_REIMU:
         x = 8;

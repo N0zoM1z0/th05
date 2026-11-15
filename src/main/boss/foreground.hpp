@@ -1,4 +1,5 @@
-// Sara/Louise foreground callbacks with the full canonical Boss and sprite ABI.
+// Sara's and Louise's foreground renderers: the animated boss sprite, drawn
+// in a single plane when hit, followed by the boss explosions.
 #ifndef TH05_SARA_LOUISE_FG_HPP
 #define TH05_SARA_LOUISE_FG_HPP
 #pragma codeseg BOSS_FG_TEXT main_01
@@ -13,6 +14,7 @@ static const int SARA_FG_PAT_STAY = 180;
 static const int SARA_FG_PAT_RIGHT = 184;
 static const int SARA_FG_PAT_LEFT = 186;
 static const int BOSS_FG_ANIMATION_FRAMES = 4;
+// super_put_1plane() argument for the hit flash.
 static const unsigned int BOSS_FG_PUT_PLANES = 0xFF00 | 0xC0;
 
 #pragma codeseg _TEXT

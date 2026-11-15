@@ -1,4 +1,4 @@
-// Later Yumeko patterns reuse accepted full Sword/Boss/template ABIs.
+// Yumeko's stationary aimed-sword attack and the second mobile wave's spreads.
 #ifndef TH05_MAIN_BOSS_YUMEKO_PHASE_PATTERNS_HPP
 #define TH05_MAIN_BOSS_YUMEKO_PHASE_PATTERNS_HPP
 #pragma codeseg B5_UPDATE_TEXT main_03

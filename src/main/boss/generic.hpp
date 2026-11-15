@@ -1,12 +1,13 @@
-// Generic TH05 boss interfaces. Reuse complete accepted boss/midboss/resident
-// structures; this file supplies real interfaces, never helper implementations.
+// Declarations for the code shared by all bosses (generic.cpp): explosions,
+// item drops, the defeat sequence and the game state they touch.
 #ifndef TH05_MAIN_BOSS_GENERIC_HPP
 #define TH05_MAIN_BOSS_GENERIC_HPP
 
 #include <dos.h>
 
-// These callbacks and far routines genuinely belong to main_01, independently
-// of this owner's main_03 frame. Declare them before the shared setup surface.
+// These functions live in main_01, not in this file's main_03 group. Turbo C++
+// binds a function to the segment that is active at its first declaration, so
+// they have to be declared here, before setup.hpp declares them again.
 #pragma codeseg GENERIC_BOSS_MAIN01_TEXT main_01
 extern "C" void pascal near nullfunc_near(void);
 void pascal near tiles_render_all(void);
@@ -22,7 +23,7 @@ void far end_extra(void);
 #include "src/main/bullet/template.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner is the TH05 MAIN generic boss implementation
+#error This header is only for TH05 MAIN
 #endif
 
 enum explosion_type_t {
@@ -95,8 +96,8 @@ enum boss_defeat_frames_t {
 #define overlay_stage_leave() (overlay1 = overlay_stage_leave_update_and_render)
 #define snd_kaja_func(operation, parameter) \
     snd_kaja_interrupt(((operation) << 8) | static_cast<uint8_t>(parameter))
-// The generic defeat transition always starts the circular big explosion;
-// the former unused `type` macro argument suggested a choice that never existed.
+// Starts the big explosion and awards the defeat bonus. ReC98 passes an
+// explosion type here, but TH05 only ever uses the circular one.
 #define boss_defeat_explode_big_circle(bonus_units) { \
     boss_explode_big_circle(); \
     boss.phase++; \

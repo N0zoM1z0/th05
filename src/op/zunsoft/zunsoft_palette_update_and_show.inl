@@ -1,3 +1,4 @@
+// Sets the first 15 colors to [tone]% of [zunsoft_palette].
 void pascal near zunsoft_palette_update_and_show(int tone)
 {
 	register int color = 0;

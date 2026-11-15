@@ -1,4 +1,4 @@
-// Scalar playfield-shake ABI from ReC98 th04/main/playfld.hpp, GAME=5.
+// Playfield geometry and shake state (ReC98 th04/main/playfld.hpp, GAME=5).
 #ifndef TH05_MAIN_PLAYFIELD_SHAKE_HPP
 #define TH05_MAIN_PLAYFIELD_SHAKE_HPP
 

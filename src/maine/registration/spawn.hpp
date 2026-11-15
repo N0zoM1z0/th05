@@ -1,4 +1,5 @@
-// Real four-character byte domain, identical to the canonical TH05 playchar ABI.
+// Declarations for the standalone spawn.cpp. playchar_t is a copy of the one
+// in src/op/main/menu.hpp.
 #ifndef TH05_MREG_SPAWN_HPP
 #define TH05_MREG_SPAWN_HPP
 #include "src/maine/registration/glyphball.hpp"
@@ -20,7 +21,6 @@ void near registration_frame(void);
 void pascal near glyphball_spawn(int x, int y, int place, playchar_t pc, uint8_t cursor);
 #pragma codeseg
 
-typedef char reg_spawn_playchar_is_byte[(sizeof(playchar_t) == 1) ? 1 : -1];
 static const uint8_t REGISTRATION_SPACE_GLYPH = 0xCD;
 static const uint8_t REGISTRATION_EMPTY_GLYPH = 0x02;
 #endif

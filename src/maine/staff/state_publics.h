@@ -1,5 +1,6 @@
-/* The six original C DATA groups of the MAINE Staff-roll scene.
- * Each public is independently addressable at its real DGROUP address. */
+/* Small initialized staff roll state, defined by the staff_*.c files.
+ * These are C symbols; include this header before any C++ header that
+ * redeclares them, so that the C linkage wins. */
 #ifndef TH05_MAINE_STAFF_STATE_PUBLICS_H
 #define TH05_MAINE_STAFF_STATE_PUBLICS_H
 #ifdef __cplusplus

@@ -1,4 +1,6 @@
-// Natural four-function logo scene, specialized to original TH05 behavior.
+// The ZUN Soft logo animation shown on OP.EXE's first start: fireworks
+// ("pyros") over ZUN00.PI, timed to the LOGO song. Based on ReC98
+// th04/op/zunsoft.cpp, with TH05's differences.
 #pragma option -zCOP_ZUNSOFT_TEXT -zPop_01
 #include "src/op/zunsoft/zunsoft.hpp"
 #pragma codeseg OP_ZUNSOFT_TEXT op_01

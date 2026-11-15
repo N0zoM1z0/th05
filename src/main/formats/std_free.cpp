@@ -1,4 +1,4 @@
-// Complete natural release function; no raw-DOS loader body is supplied here.
+// Frees the segment holding the current stage's .STD file.
 #pragma option -zCSTD_FREE_TEXT -zPmain_01 -k-
 #include "src/main/formats/std_free.hpp"
 

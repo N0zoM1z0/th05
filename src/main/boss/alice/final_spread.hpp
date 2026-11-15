@@ -1,4 +1,4 @@
-// Alice's complete final-phase periodic spread and canonical foreign ABI.
+// Alice's final-phase pattern.
 #ifndef TH05_MAIN_BOSS_ALICE_FINAL_SPREAD_HPP
 #define TH05_MAIN_BOSS_ALICE_FINAL_SPREAD_HPP
 #include "src/main/boss/alice/beam.hpp"

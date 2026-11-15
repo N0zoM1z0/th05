@@ -1,5 +1,5 @@
-// Complete TH05 new-game state and callback ABI. Resident storage is reused;
-// function-selector tables remain the actual foreign objects.
+// Declarations used by gameplay_session_init(): new-game state, the
+// character and difficulty enums, and the callbacks it selects.
 #ifndef TH05_SESSION_INIT_HPP
 #define TH05_SESSION_INIT_HPP
 #include "src/main/hud/resident.hpp"
@@ -51,7 +51,8 @@ void pascal near bomb_marisa(void);
 void pascal near bomb_mima(void);
 void pascal near bomb_yuuka(void);
 
-// Preserve the real first-declaration frame of the existing tuning routines.
+// The bullet tuning functions are first declared in their own main_03
+// segment, which determines how their addresses are encoded.
 #pragma codeseg BULLET_A_TEXT main_03
 #include "src/main/bullet/tune.hpp"
 #pragma codeseg SESSION_INIT_TEXT main_01

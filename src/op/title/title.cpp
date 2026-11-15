@@ -1,10 +1,11 @@
-// Natural TH05 title sprite loading and roll/fade animation.
-// Provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th05/op_title.cpp -> th05/op/title.cpp. Resources remain external.
+// Title screen: sprite loading for the main menu and the animated roll/fade
+// into the title image. Based on ReC98 th05/op/title.cpp.
 #pragma option -zCOP_TITLE_TEXT -zPop_01
 #include <dos.h>
 #include "src/op/title/title.hpp"
-#include "src/op/title/title_animation_rules.hpp"
+
+// Pause between the roll animation and the masked fade-in of the title image.
+#define OT_FADE_SETTLE_FRAMES 16
 
 
 void near main_cdg_load(void)
@@ -26,12 +27,12 @@ void near main_cdg_free(void)
 void near op_animate(void)
 {
 	enum {
-		ROLL_CELS = OT_ROLL_CELS,
-		ROLL_FRAMES_PER_CEL = OT_ROLL_FRAMES_PER_CEL,
+		ROLL_CELS = 8,
+		ROLL_FRAMES_PER_CEL = 8,
 		ROLL_FRAMES = (ROLL_CELS * ROLL_FRAMES_PER_CEL),
 
 		FADE_CELS = PI_MASK_COUNT,
-		FADE_FRAMES_PER_CEL = OT_FADE_FRAMES_PER_CEL,
+		FADE_FRAMES_PER_CEL = 4,
 		FADE_FRAMES = (FADE_CELS * FADE_FRAMES_PER_CEL),
 	};
 
@@ -48,11 +49,8 @@ void near op_animate(void)
 			show = (1 - show);
 		}
 	} page;
-	typedef char title_page_state_is_2[(sizeof(page) == 2) ? 1 : -1];
-	typedef char title_page_show_is_1[(sizeof(page.show) == 1) ? 1 : -1];
-	typedef char title_page_access_is_1[(sizeof(page.access) == 1) ? 1 : -1];
 
-	palette_settone(OT_START_BLACK_TONE);
+	palette_settone(0);
 	pi_load(0, "op2a.pi");
 	pi_load(1, "op2b.pi");
 	pi_load(2, "op2c.pi");
@@ -63,36 +61,36 @@ void near op_animate(void)
 	pi_load(7, "op2h.pi");
 
 	// ZUN bloat: Changed again below, and the palette is black anyway.
-	graph_accesspage(OT_PAGE_BACK);
-	graph_showpage(OT_PAGE_BACK);
+	graph_accesspage(0);
+	graph_showpage(0);
 
 	// Not the same as graph_clear(), which uses hardware palette color #0.
-	grcg_setcolor(GC_RMW, OT_PALETTE_COLOR_BLACK);
-	graph_accesspage(OT_PAGE_FRONT);	grcg_boxfill_8(0, 0, (RES_X - 1), (RES_Y - 1));
-	graph_accesspage(OT_PAGE_BACK);	grcg_boxfill_8(0, 0, (RES_X - 1), (RES_Y - 1));
+	grcg_setcolor(GC_RMW, 1);
+	graph_accesspage(1);	grcg_boxfill_8(0, 0, (RES_X - 1), (RES_Y - 1));
+	graph_accesspage(0);	grcg_boxfill_8(0, 0, (RES_X - 1), (RES_Y - 1));
 	grcg_off();
 	graph_copy_page(1); // ZUN bloat: You've just cleared both pages...
 
-	page.access = OT_PAGE_FRONT;
-	page.show = OT_PAGE_BACK;
+	page.access = 1;
+	page.show = 0;
 
-	graph_accesspage(OT_PAGE_BACK);
+	graph_accesspage(0);
 
 	// ZUN landmine: Should be page 1. .PI blitting is quite slow, and might
 	// cause tearing on slower systems on the first frame of the loop below.
-	graph_showpage(OT_PAGE_BACK);
+	graph_showpage(0);
 
 	{for(int frame = 0; frame < ROLL_FRAMES; frame++) {
 		// Blit to both pages
 		if((frame % ROLL_FRAMES_PER_CEL) <= (PAGE_COUNT - 1)) {
 			pi_palette_apply(frame / ROLL_FRAMES_PER_CEL);
-			pi_put_8(OT_TITLE_ROLL_LEFT_PX, OT_TITLE_ROLL_TOP_PX, (frame / ROLL_FRAMES_PER_CEL));
+			pi_put_8(0, 278, (frame / ROLL_FRAMES_PER_CEL));
 		}
 		page.wait_and_flip();
 
 		// ZUN bug: Off by one; the last iteration will leave [PaletteTone] at
 		// 99, not 100, which does in fact significantly darken the image.
-		palette_settone((OT_PALETTE_FULL_TONE - ROLL_FRAMES) + frame);
+		palette_settone((100 - ROLL_FRAMES) + frame);
 	}}
 
 	// The pi_load() call below automatically does this for slot 0.
@@ -105,12 +103,12 @@ void near op_animate(void)
 	// than one frame.
 	graph_copy_page(1);
 
-	if(resident->demo_num == OT_MAIN_MENU_MUSIC_DEMO_GATE) {
+	if(resident->demo_num == 0) {
 		snd_load(BGM_MENU_MAIN_FN, SND_LOAD_SONG);
 		snd_kaja_func(KAJA_SONG_PLAY, 0);
 	}
 
-	pi_load(OT_TITLE_BG_SLOT, MENU_MAIN_BG_FN);
+	pi_load(0, MENU_MAIN_BG_FN);
 
 	// ZUN bug: This one starts with a screen tearing landmine caused by slow
 	// .PI blitting onto the shown page. However, it then turns out that shown
@@ -124,28 +122,28 @@ void near op_animate(void)
 	//   one frame from the last cel.
 	// In the end, we end up with a frame timing of 5-4-4-3 instead of the
 	// intended 4-4-4-4.
-	graph_accesspage(OT_PAGE_BACK);
-	graph_showpage(OT_PAGE_BACK);
+	graph_accesspage(0);
+	graph_showpage(0);
 	frame_delay(OT_FADE_SETTLE_FRAMES);
 
 	{for(int frame = 0; frame < FADE_FRAMES; frame++) {
 		// Blit to both pages
 		if((frame % FADE_FRAMES_PER_CEL) <= (PAGE_COUNT - 1)) {
-			pi_put_masked_8(0, 0, OT_TITLE_BG_SLOT, (frame / FADE_FRAMES_PER_CEL));
+			pi_put_masked_8(0, 0, 0, (frame / FADE_FRAMES_PER_CEL));
 		}
 		page.wait_and_flip();
 	}}
 
 	// Blit the original, unmasked image
-	graph_accesspage(OT_PAGE_FRONT);
-	graph_showpage(OT_PAGE_BACK);
+	graph_accesspage(1);
+	graph_showpage(0);
 
 	// Doing this might have been better before the masked blitting loop. But
 	// if the palettes of the roll animation images and the final title image
 	// don't match up, there will be a sudden jump *somewhere*.
-	pi_palette_apply(OT_TITLE_BG_SLOT);
+	pi_palette_apply(0);
 
-	pi_put_8(0, 0, OT_TITLE_BG_SLOT);
-	pi_free(OT_TITLE_BG_SLOT);
+	pi_put_8(0, 0, 0);
+	pi_free(0);
 	graph_copy_page(0); // ZUN bloat: Slower than a second call to pi_put_8()!
 }

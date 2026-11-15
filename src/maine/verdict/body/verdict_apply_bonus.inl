@@ -1,34 +1,41 @@
-#include "src/maine/verdict/bonus_scoring_rules.hpp"
+// The bonus constants are deliberately `int`: spelling them as long literals
+// changes the generated code. Only the miss/bomb factor is a long.
+#define VBR_TURBO_MODE_BONUS 2000
+
+// Calculates the "気合い" bonus from the starting lives/bombs settings, the
+// game speed, grazes, and the difference of misses and bombs. Adds it to
+// [skill] and renders it as a percentage.
 void near verdict_apply_bonus(void)
 {
     long bonus;
     random_seed = resident->rand;
     switch(resident->credit_lives) {
-    case VBR_LIVES_ONE: bonus = VBR_LIFE_BONUS_ONE; break;
-    case VBR_LIVES_TWO: bonus = VBR_LIFE_BONUS_TWO; break;
-    case VBR_LIVES_THREE: bonus = VBR_LIFE_BONUS_THREE; break;
-    case VBR_LIVES_FOUR: bonus = VBR_LIFE_BONUS_FOUR; break;
-    case VBR_LIVES_FIVE: bonus = VBR_LIFE_BONUS_FIVE; break;
-    case VBR_LIVES_SIX: bonus = VBR_LIFE_BONUS_SIX; break;
+    case 1: bonus = 2500; break;
+    case 2: bonus = 2000; break;
+    case 3: bonus = 1500; break;
+    case 4: bonus = 1000; break;
+    case 5: bonus = 500; break;
+    case 6: bonus = 0; break;
     }
     switch(resident->credit_bombs) {
-    case VBR_BOMBS_ZERO: bonus += VBR_BOMB_BONUS_ZERO; break;
-    case VBR_BOMBS_ONE: bonus += VBR_BOMB_BONUS_ONE; break;
-    case VBR_BOMBS_TWO: bonus += VBR_BOMB_BONUS_TWO; break;
+    case 0: bonus += 2500; break;
+    case 1: bonus += 1500; break;
+    case 2: bonus += 1000; break;
     }
     if(resident->turbo_mode) {
         bonus += VBR_TURBO_MODE_BONUS;
     }
     if(resident->graze) {
-        bonus += (resident->graze * VBR_GRAZE_PER_GRAZE);
+        bonus += (resident->graze * 3);
     }
-    bonus += ((resident->miss_count - resident->bombs_used) * VBR_MISS_MINUS_BOMB_FACTOR);
-    if(bonus < VBR_BONUS_MIN) {
-        bonus = VBR_BONUS_MIN;
-    } else if(bonus > VBR_BONUS_MAX) {
-        bonus = VBR_BONUS_MAX;
+    // +200 for every miss, -200 for every bomb.
+    bonus += ((resident->miss_count - resident->bombs_used) * 200L);
+    if(bonus < 0) {
+        bonus = 0;
+    } else if(bonus > 10000) {
+        bonus = 10000;
     }
-    bonus *= VBR_BONUS_DISPLAY_SCALE;
+    bonus *= 100; // Up to 100.00%, in millionths
     skill += bonus;
     graph_fraction_of_million_put(verdict_text_left + 176,
         verdict_text_top + 216, bonus);

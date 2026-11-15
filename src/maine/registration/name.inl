@@ -1,3 +1,6 @@
+// Draws the name in the given row of [pc]'s score table with its frame and the
+// underlined [cursor] glyph. Each character has one quarter of the screen;
+// place 0 has 8 extra pixels below it.
 void pascal near reg_name_put(int place, playchar_t pc, uint8_t cursor)
 {
     register int x;
@@ -38,5 +41,5 @@ void pascal near reg_name_put(int place, playchar_t pc, uint8_t cursor)
     grcg_vline((x + 306), (y - 1), (y + 16));
     grcg_hline((x - 2), (x + 306), (y - 1));
     grcg_hline((x - 2), (x + 306), (y + 16));
-    outportb(0x7C, 0);
+    outportb(0x7C, 0); // grcg_off()
 }

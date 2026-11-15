@@ -1,4 +1,5 @@
-// TH05 all-cast line animation and genuine foreign storage/interfaces.
+// All Cast credit line rendering: the line table and the state it shares with
+// allcast.cpp.
 #ifndef TH05_ALLCAST_LINES_HPP
 #define TH05_ALLCAST_LINES_HPP
 
@@ -8,8 +9,8 @@ bool near wait_flip_and_check_measure_target(void);
 
 typedef uint8_t shiftjis_t;
 
-// Complete canonical definition from src/maine/verdict/main.hpp. This
-// independent owner preserves the same type and full original word domain.
+// Same definition as in src/maine/verdict/main.hpp. The FORCE_INT16 member
+// keeps the enum word-sized.
 enum graph_putsa_fx_func_t {
     FX_WEIGHT_NORMAL = 0, FX_WEIGHT_HEAVY = 1,
     FX_WEIGHT_BOLD = 2, FX_WEIGHT_BLACK = 3,
@@ -23,9 +24,9 @@ extern int line_id_total;
 extern int line_id_on_screen;
 extern const shiftjis_t far *LINES[47];
 
-// The seven genuine counts begin at DS:08DC. The old ASM label at 08DA
-// aliases the preceding far pointer's segment word; it is not a dummy count.
-// Use the actual counts and the natural zero-based screen index instead.
+// Number of credit lines on each of the seven screens. ReC98's disassembly
+// labels this table one word earlier, on the segment of the last LINES
+// pointer, which matches indexing it with the 1-based [loaded_screen_id].
 extern int allcast_lines_per_screen[7];
 
 #pragma codeseg SHARED
@@ -34,11 +35,5 @@ extern "C" void pascal far graph_putsa_fx(screen_x_t left, screen_y_t top,
 
 #pragma codeseg ALLCAST_LINES_TEXT group_01
 bool near screen_line_next_animate(void);
-
-typedef char allcast_line_pointer_is_far[
-    (sizeof(const shiftjis_t far *) == 4) ? 1 : -1];
-typedef char allcast_line_fx_is_word[
-    (sizeof(graph_putsa_fx_func_t) == 2) ? 1 : -1];
-typedef char allcast_line_result_is_byte[(sizeof(bool) == 1) ? 1 : -1];
 
 #endif

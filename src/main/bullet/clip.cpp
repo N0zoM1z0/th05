@@ -1,5 +1,6 @@
-// Natural C++ adapted from nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/main/bullet/clip.cpp.
+// Last check before a bullet is spawned from [bullet_template]: drops bullets
+// during a bullet clear and outside the playfield, hit-tests the player, and
+// applies playperf speed tuning. Adapted from ReC98's th05/main/bullet/clip.cpp.
 #pragma option -zCBULLET_A_TEXT -zPmain_03 -k-
 #include <dos.h>
 #include "src/main/bullet/tune.hpp"
@@ -14,20 +15,24 @@ extern bool player_is_hit;
 extern "C" subpixel_length_8_t __fastcall near playperf_speedtune(
     subpixel_length_8_t speed);
 
-// Clip the center against the playfield expanded by half a 16-pixel sprite.
-// Coordinates and collision extents retain the original Q12.4 units.
+// Both macros work on Q12.4 subpixels. The playfield is expanded by half a
+// 16x16 bullet on every side; it applies to 8x8 pellets as well.
 #define clip_playfield_encloses(x, y) ( \
     (static_cast<subpixel_t>(x) > -128) && \
     (static_cast<subpixel_t>(x) < (384 + 8) * 16) && \
     (static_cast<subpixel_t>(y) > -128) && \
     (static_cast<subpixel_t>(y) < (368 + 8) * 16) \
 )
+// True if [delta] lies within the 8-pixel bullet killbox, inclusive on both
+// ends.
 #define clip_overlaps_player(delta) ( \
     (unsigned int)((delta) += 64, delta) <= 128 \
 )
 
 bool near bullet_template_clip(void)
 {
+    // A bullet that would not finish its 16-frame decay animation before the
+    // clear ends is not spawned at all, and so doesn't award any score.
     if ((bullet_clear_time != 0) && (bullet_clear_time < 17)) {
 clipped:
         return true;
@@ -41,6 +46,8 @@ clipped:
     if (clip_overlaps_player(_AX)) {
         _DX -= player_pos.cur.y;
         if (clip_overlaps_player(_DX)) {
+            // ZUN quirk: no `return true`, so the bullet is still spawned
+            // on top of the player. Getting hit clears all bullets anyway.
             player_is_hit = true;
         }
     }

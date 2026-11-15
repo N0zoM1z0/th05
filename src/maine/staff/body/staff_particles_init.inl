@@ -1,3 +1,5 @@
+// Spreads the particles and stars randomly across the space window, with the
+// particles drifting in random directions. Hides the orb and its trails.
 void near staff_particles_init(void)
 {
     orb_particle_t near *p = particles;
@@ -16,7 +18,7 @@ void near staff_particles_init(void)
         p->al.rain_sway_x_direction = X_RIGHT;
         vector2_at(p->velocity, 0, 0, p->speed.v, p->angle);
     }
-    // The array's final element is the large orb, following the 64 particles.
+    // [p] now points to the orb.
     p->center.x.v = STAFF_CENTER_NONE;
     p->al.radius = 0;
     p->velocity.x.v = 0;

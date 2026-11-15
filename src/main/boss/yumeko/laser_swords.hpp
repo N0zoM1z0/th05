@@ -1,4 +1,4 @@
-// Full canonical Boss/Sword and Laser records and real provider interfaces.
+// Declarations for the laser/sword attack.
 #ifndef TH05_YUMEKO_LASER_SWORDS_HPP
 #define TH05_YUMEKO_LASER_SWORDS_HPP
 #include "src/main/boss/yumeko/update.hpp"

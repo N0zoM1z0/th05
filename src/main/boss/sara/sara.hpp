@@ -1,6 +1,7 @@
-// TH05 Sara interfaces and real laser ABI from natural ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: boss/b1.cpp, bullet/laser.hpp,
-// th04/main/boss/boss.hpp, bullet/bullet.hpp, gather.hpp and pattern.hpp.
+// Declarations for Sara (stage 1): lasers, bullet template helpers and the
+// shared boss functions she calls. Shinki's code also includes this header.
+// Adapted from ReC98's th05/main/boss/b1.cpp, th05/main/bullet/laser.hpp and
+// th04/main/boss/boss.hpp.
 #ifndef TH05_MAIN_BOSS_SARA_HPP
 #define TH05_MAIN_BOSS_SARA_HPP
 
@@ -8,7 +9,7 @@
 #include "src/main/gather/gather.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner is the TH05 MAIN Sara update implementation
+#error This header is only for TH05 MAIN
 #endif
 
 typedef char int8_t;
@@ -23,8 +24,8 @@ static const int TILES_BB_CELS = 16;
 static const unsigned char PHASE_HP_FILL = 0;
 static const unsigned char PHASE_BOSS_ENTRANCE_BB = 1;
 static const unsigned char PHASE_BOSS_EXPLODE_SMALL = 253;
-// Used constants retain the original complete main sprite enum's true word
-// domain. The owner does not redefine the accepted update.hpp enum/type.
+// Sprite numbers from the main sprite bank. The values above 255 make sure
+// that the enum is 16 bits wide, like the original.
 enum sara_main_patnum_t {
     PAT_BULLET16_N_BALL_BLUE = 44, PAT_BULLET16_N_BALL_RED = 48,
     PAT_SARA_STAY = 180, PAT_SARA_SPIN = 188, PAT_SARA_SPIN_last = 191,
@@ -63,9 +64,7 @@ struct Laser {
     union { int grow; int moveout; } active_at_age;
     int shrink_at_age;
     unsigned char grow_to_width;
-    // Genuine3byte unused tail present in laser.hpp/laser.inc, not invented
-    // padding to fit an operand. All24bytes of every original slot remain.
-    uint8_t padding[3];
+    uint8_t padding[3]; // unused
 
     void fixed_init(const PlayfieldPoint &origin) {
         flag = LF_FIXED_WAIT_TO_GROW;
@@ -84,7 +83,8 @@ extern Laser laser_template;
 extern nearfunc_t_near bullet_template_tune;
 extern nearfunc_t_near bg_render_bombing_func;
 
-// The callback's first declaration must carry its actual main_01 frame.
+// Turbo C++ binds a function to the segment that is active at its first
+// declaration.
 #pragma codeseg BOSS_BG_TEXT main_01
 void pascal near sara_bg_render(void);
 #pragma codeseg LASER_SC_TEXT main_03
@@ -112,9 +112,8 @@ inline subpixel_length_8_t sara_to_sp8(float value) {
 inline subpixel_t sara_rand_speed(float min, float max) {
     return randring2_next8_and_ge_lt(sara_to_sp8(min), sara_to_sp8(max));
 }
-// These are the reference's natural little-endian packed-field setters, kept
-// as owner-local inline functions rather than changing the accepted class.
-// Actual adjoining fields and all widths are asserted in template.hpp.
+// Set adjacent bullet template fields with a single 16- or 32-bit store, like
+// the BulletTemplate::set_*() methods in ReC98.
 inline void sara_set_spread(unsigned char count, unsigned char angle_delta) {
     reinterpret_cast<uint16_t &>(bullet_template.spread) =
         (count | (angle_delta << 8));
@@ -139,6 +138,7 @@ inline void sara_set_spread_for_rank(unsigned char count_e, unsigned char delta_
 }
 
 void pascal far sara_update(void);
+// Layout checks: the original code hardcodes these sizes and offsets.
 typedef char sara_pattern_callback_is_2[(sizeof(pattern_loop_func_t) == 2) ? 1 : -1];
 typedef char sara_sprite_domain_is_2[(sizeof(sara_main_patnum_t) == 2) ? 1 : -1];
 typedef char sara_tuning_callback_is_2[(sizeof(nearfunc_t_near) == 2) ? 1 : -1];

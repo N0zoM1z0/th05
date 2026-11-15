@@ -1,4 +1,4 @@
-// Four attack choices in each of Sara's second and third phases.
+// The four patterns that Sara picks from in phase 2 and in phase 3.
 #pragma option -zCB1_TABLES_TEXT -zPmain_03
 #include "src/main/boss/sara/pattern_tables.hpp"
 

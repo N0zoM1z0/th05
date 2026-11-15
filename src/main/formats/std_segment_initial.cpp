@@ -1,4 +1,4 @@
-// The original STD script allocation begins with no resident segment.
+// Segment of the loaded .STD file; 0 while none is loaded.
 // ReC98 th04/formats/std[data].asm: `_std_seg dw 0`.
 #pragma option -zCSTD_SEG_INIT_TEXT -zPmain_01
 #include "src/shared/abi.hpp"

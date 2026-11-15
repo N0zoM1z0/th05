@@ -1,4 +1,6 @@
-// Genuine consecutive insertion, score and stage rendering source context.
+// Standalone build of score_insert(), registration_score_put() and
+// registration_stage_put(), which are adjacent in the original (see
+// full_context.cpp).
 #pragma option -zCREG_VALUES_TEXT -zPGROUP_01
 #include "src/maine/registration/values.hpp"
 #include "src/maine/registration/insert.hpp"

@@ -1,4 +1,4 @@
-// The two complete staff rain and camera-transition procedures.
+// Standalone build of the two rain functions.
 #pragma option -zCSTAFF_RAIN_TEXT -zPgroup_01
 #include "src/maine/staff/state_publics.h"
 #include "src/maine/staff/rain.hpp"

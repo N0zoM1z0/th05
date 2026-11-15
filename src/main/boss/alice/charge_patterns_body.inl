@@ -1,6 +1,6 @@
-// Shared physical Alice charge/firing functions: one source for both
-// the standalone 499-byte charge owner and the full 939-byte Boss context.
-// The sequence is intentionally source-inline (no additional runtime call).
+// Alice's charged patterns, shared by charge_patterns.cpp and
+// update_context.cpp. The charge steps are macros, not functions: ZUN's code
+// repeats them inline in each pattern.
 #define ALICE_CHARGE_GATHER_SPRITE() { \
     gather_add_only_3stack( \
         boss.phase_frame - ALICE_CHARGE_GATHER_START_FRAME, \

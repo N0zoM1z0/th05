@@ -1,3 +1,5 @@
+// Removes all particles, shows the fully grown orb, and turns on decay for
+// the sparks it will emit.
 void near staff_particles_clear(void)
 {
     orb_particle_t near *p = particles;

@@ -1,6 +1,7 @@
-// Cheeto allocation, movement and collision update, adapted from natural
-// nmlgc/ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47:
-// th05/main/bullet/cheeto_u.cpp. Exactness requires independent focused replay.
+// Cheetos: homing bullets with a 16-node trail, fired by Mai & Yuki, Shinki
+// and EX-Alice. A Cheeto first decelerates, then speeds up again, turning
+// towards the player all the while.
+// Adapted from ReC98's th05/main/bullet/cheeto_u.cpp.
 #pragma option -zCCHEETO_U_TEXT -zPmain_03 -G
 #include <dos.h>
 #include "src/main/bullet/cheeto.hpp"
@@ -62,6 +63,7 @@ void near cheetos_update(void)
 		}
 		head_p->age++;
 
+		// Shift the trail by one node, hit-testing every node but the first.
 		for(node_i = TRAIL_NODE_LAST; node_i > 0; node_i--) {
 			trail_p->node_pos[node_i] = trail_p->node_pos[node_i - 1];
 
@@ -78,6 +80,8 @@ void near cheetos_update(void)
 		}
 		trail_p->node_pos[0] = head_p->pos.cur;
 		trail_p->node_sprite[0] = head_p->sprite;
+
+		// A Cheeto is removed once the end of its trail leaves the playfield.
 		if(!playfield_encloses_point(
 			trail_p->node_pos[TRAIL_NODE_LAST], CHEETO_W, CHEETO_H
 		)) {
@@ -96,7 +100,7 @@ void near cheetos_update(void)
 		if(trail_p->flag == CF_DECELERATE) {
 			head_p->speed.v--; // -= to_sp(1 / 16.0f)
 			if(head_p->speed.v <= static_cast<subpixel_length_8_t>(0.25f * 16)) {
-				static_cast<unsigned char>(trail_p->flag)++;
+				static_cast<unsigned char>(trail_p->flag)++; // = CF_SPEEDUP
 			}
 			unused_friction_factor = 0x10;
 		} else /* if(trail_p->flag == CF_SPEEDUP) */ {

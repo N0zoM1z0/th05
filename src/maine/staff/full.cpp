@@ -1,4 +1,5 @@
-// All17 real bodies in original order, including both unaccepted updater/render.
+// The 17 staff scene functions, in their original order. The build of the
+// whole staff roll, including the controller, is staff_complete_context.cpp.
 #pragma option -zCSTAFF_FULL_TEXT -zPgroup_01
 #define TH05_STAFF_FULL_FAMILY
 #include "src/maine/staff/state_publics.h"

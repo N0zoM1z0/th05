@@ -1,4 +1,5 @@
-// Yumeko's entrance overlay, normal animation and damage-flash consumption.
+// Yumeko's foreground render function: her sprite with its damage flash, and
+// the departing gate during her entrance.
 #pragma option -zCYUMEKO_FG_TEXT -zPmain_01
 #include "src/main/boss/late_foreground.hpp"
 

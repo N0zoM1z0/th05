@@ -1,4 +1,5 @@
-// Complete natural initial Louise charge and alternating spread/stack patterns.
+// Louise's charge sequence and her two phase 1 patterns, blue spreads and red
+// stacks.
 #include "src/main/boss/louise/patterns.hpp"
 #include "src/main/boss/louise/scratch.hpp"
 #include "src/main/boss/louise/charged_weapon_rules.hpp"
@@ -36,27 +37,27 @@ void near louise_pattern_blue_spreads(void)
         bullet_template.speed.v = louise_scratch.charge_speed;
         louise_set_spread(LC_BLUE_VOLLEY_COUNT, LC_BLUE_VOLLEY_STEP);
         bullet_template.special_motion = BSM_EXACT_LINEAR;
-        louise_scratch.blue_red_or_laser_direction = LC_SWEEP_SIDE_MASK - louise_scratch.blue_red_or_laser_direction;
+        louise_scratch.blue_red_or_laser_direction = 1 - louise_scratch.blue_red_or_laser_direction;
         if(louise_scratch.blue_red_or_laser_direction) {
-            bullet_template.angle = LC_BLUE_ANGLE_LEFT;
+            bullet_template.angle = LC_BLUE_ANGLE_DOWN_RIGHT;
         } else {
-            bullet_template.angle = LC_BLUE_ANGLE_RIGHT;
+            bullet_template.angle = LC_BLUE_ANGLE_DOWN_LEFT;
         }
         bullet_template_tune();
         snd_se_play(LC_FIRE_SPRITE_SE);
         if(louise_scratch.charge_speed < LC_BLUE_MAX_SPEED) {
             louise_scratch.charge_speed += LC_CHARGE_SPEED_ADD;
         }
-        // Initialization also emits the first pair on its even frame.
+        // Fall through: the first volley fires on frame 32.
     case LOUISE_CHARGE_FIRE:
         if((boss.phase_frame % LC_BLUE_FIRE_INTERVAL) == 0) {
             bullets_add_regular();
             bullet_template.angle += LC_BLUE_OTHER_SIDE_ANGLE;
             bullets_add_regular();
             if(louise_scratch.blue_red_or_laser_direction) {
-                bullet_template.angle += LC_BLUE_LEFT_SPIN_STEP;
+                bullet_template.angle += LC_BLUE_TURN_CLOCKWISE;
             } else {
-                bullet_template.angle += LC_BLUE_RIGHT_SPIN_STEP;
+                bullet_template.angle += LC_BLUE_TURN_COUNTERCLOCKWISE;
             }
             bullet_template.speed.v += LC_CHARGE_SPEED_ADD;
         }

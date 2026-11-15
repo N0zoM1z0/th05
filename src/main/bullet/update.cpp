@@ -1,13 +1,13 @@
-// TH05 regular bullet motion, collision, graze and zap update, adapted from
-// natural C++ in nmlgc/ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47:
-// th04/main/bullet/update.cpp (GAME=5). The sparks call is real typed C++;
-// no target-derived instruction macro is retained. Focused replay is separate.
+// Per-frame update of all bullets and pellets: spawn clouds, special motion,
+// decay during bullet clears, collision, grazing, slowdown, and the bullet
+// zap. Adapted from ReC98's th04/main/bullet/update.cpp, compiled for TH05.
+//
+// The far sparks_add_random() call compiles to NOP, PUSH CS, near CALL: TLINK
+// relaxes far calls within the same segment group.
 #pragma option -zCBULLET_U_TEXT -zPmain_03 -G
 #include <dos.h>
 #include "src/main/boss/late_game_state_publics.h"
 #include "src/main/bullet/update.hpp"
-
-
 
 static const int SLOWDOWN_BULLET_THRESHOLD_UNUSED = 32;
 
@@ -15,6 +15,8 @@ static const int SLOWDOWN_BULLET_THRESHOLD_UNUSED = 32;
 void pascal near bullet_update_patnum(bullet_t near &bullet)
 {
 	unsigned char patnum_base; // main_patnum_t, obviously
+
+	// Only directional and vector bullets change their sprite with the angle.
 
 	if(bullet.patnum < PAT_BULLET16_D) {
 		return;

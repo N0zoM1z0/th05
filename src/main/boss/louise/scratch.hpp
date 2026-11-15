@@ -1,5 +1,4 @@
-// Louise's original sixteen Boss scratch bytes, shared across charge patterns.
-// These fields are phase-specific views of existing storage, not new globals.
+// Louise's view of [boss_statebyte].
 #ifndef TH05_MAIN_BOSS_LOUISE_SCRATCH_HPP
 #define TH05_MAIN_BOSS_LOUISE_SCRATCH_HPP
 #include <stddef.h>
@@ -10,8 +9,8 @@ struct LouiseScratch {
     unsigned char other_state_after_speed[3];
     // Alternating second-phase laser/ring selection (0 and 1).
     unsigned char next_laser_ring_mode;
-    // Blue spreads toggle it; red stacks consume that value unchanged. The
-    // later laser sweep overwrites it with a fresh random side bit.
+    // Blue spreads toggle it, and the following red stacks turn into the
+    // direction it selects. The sweeping lasers pick it at random.
     unsigned char blue_red_or_laser_direction;
 };
 typedef char louise_scratch_is_16[(sizeof(LouiseScratch) == 16) ? 1 : -1];

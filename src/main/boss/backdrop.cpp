@@ -1,4 +1,5 @@
-// Natural ReC98 b6ba5b0a: th04/main/boss/backdrop.cpp, GAME5.
+// Draws the boss backdrop image, then fills the rest of the playfield with a
+// solid color. Adapted from ReC98's th04/main/boss/backdrop.cpp.
 #pragma option -zCBOSS_BD_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/boss/backdrop.hpp"

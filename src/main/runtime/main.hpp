@@ -1,20 +1,19 @@
-// Complete MAIN entry interfaces. TH05 operands are reviewed independently;
-// maintained TH04 core sources supply semantic provenance, not exact evidence.
+// Declarations used by main() in entry.cpp.
 #ifndef TH05_RUNTIME_MAIN_HPP
 #define TH05_RUNTIME_MAIN_HPP
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This producer implements the TH05 MAIN runtime prefix
+#error This is TH05 MAIN code
 #endif
 
-// Identical complete enum to the accepted generic boss interface.
+// Same definition as in the boss code.
 enum quit_t { Q_KEEP_RUNNING = 0, Q_QUIT_TO_OP = 1, Q_NEXT_STAGE = 2 };
 extern quit_t quit;
 extern unsigned int mem_assign_paras;
 extern long random_seed;
 
-// Foreign filenames are actual existing objects; no payload is supplied here.
+// Filenames, defined elsewhere in MAIN's data segment.
 extern const unsigned char main_pf_fn[];
 extern const char se_fn[];
 extern const char op_fn[];

@@ -1,11 +1,11 @@
-// TH05 EMS cache and complete CDG16 ABI. Natural ReC98 provenance:
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47, th04/main/ems.hpp,
-// th03/formats/cdg.h, th04/sprites/main_cdg.h, th05/playchar.h.
+// Copy of src/main/ems/ems.hpp for the combined translation unit in
+// ems_boss_full_context.cpp. Based on ReC98's th04/main/ems.hpp,
+// th03/formats/cdg.h, th04/sprites/main_cdg.h and th05/playchar.h.
 #ifndef TH05_MAIN_EMS_HPP
 #define TH05_MAIN_EMS_HPP
 #include "src/main/hud/resident.hpp"
 #if GAME != 5 || BINARY != 'M'
-#error This owner is TH05 MAIN EMS resource caching
+#error TH05 MAIN only
 #endif
 
 typedef uint16_t seg_t;
@@ -13,7 +13,8 @@ typedef uint8_t dots8_t;
 enum cdg_plane_layout_t {
     CDG_COLORS = 0, CDG_COLORS_AND_ALPHA = 1, CDG_ALPHA = 2
 };
-// The actual file header and loaded-slot structure, not a reduced field view.
+// 16-byte CDG file header. In a loaded slot, its last four bytes hold the
+// segments of the alpha and color planes.
 struct CDG {
     uint16_t bitplane_size;
     int pixel_w;
@@ -69,7 +70,7 @@ static const int FACE_H = 128;
 static const int PLANE_COUNT = 4;
 static const int BYTE_DOTS = 8;
 
-// Preserve the real32-bit constants; a TC4 signed enum would truncate them.
+// The EMS offsets exceed 16 bits, so they can't be Turbo C++ enum constants.
 #define sizeof_planar_rect(w, h) ((((w) / BYTE_DOTS) * (h)) * static_cast<uint32_t>(PLANE_COUNT))
 static const uint32_t EMS_EYECATCH_OFFSET = 0;
 static const uint32_t EMS_EYECATCH_END = EMS_EYECATCH_OFFSET + sizeof_planar_rect(EYECATCH_W, EYECATCH_H);
@@ -84,8 +85,8 @@ static const uint32_t EMSSIZE = 320000UL;
 extern seg_t Ems;
 extern unsigned char stage_id;
 extern unsigned char rank;
-// Previous real gameplay source has complete matching byte-sized playchar.
-
+// Unlike ems.hpp, no playchar declaration: the earlier code in the combined
+// unit already declares it as a byte.
 extern char far *eyename;
 extern char far *bbname;
 extern const char near EMS_NAME[];

@@ -1,10 +1,11 @@
-// Complete TH05 game-over/continue interfaces; all text and state are foreign.
+// Declarations used by gameover.cpp. The gaiji strings are defined in
+// gameover_gaiji_bank.c and score_handoff_names.c.
 #ifndef TH05_GAMEOVER_HPP
 #define TH05_GAMEOVER_HPP
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner implements TH05 MAIN game-over and continue
+#error This is TH05 MAIN code
 #endif
 
 typedef void (near pascal *near GameoverOverlay)(void);
@@ -37,7 +38,7 @@ static const unsigned int GAMEOVER_INPUT_SHOT = 0x0020;
 static const unsigned int GAMEOVER_INPUT_CANCEL = 0x1000;
 static const unsigned int GAMEOVER_INPUT_OK = 0x2000;
 static const unsigned char GAMEOVER_KEEP_RUNNING = 0;
-static const unsigned char GAMEOVER_END_SCORE = 0;
+static const unsigned char GAMEOVER_END_SCORE = 0; // ES_SCORE
 
 #pragma codeseg _TEXT
 extern "C" {
@@ -53,6 +54,9 @@ int pascal far input_wait_for_change(int frames);
 void pascal far frame_delay(int frames);
 extern "C" int pascal far snd_kaja_interrupt(int ax);
 
+// The far functions below are in the same physical code segment as
+// gameover.cpp; `samecodeseg` lets TLINK shorten their calls to
+// NOP / PUSH CS / CALL near, as in the original.
 #pragma codeseg GAMEOVER_AFTER_TEXT main_01
 void near overlay_wipe(void);
 void near overlay_black(void);

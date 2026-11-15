@@ -1,4 +1,5 @@
-// Complete MAINE verdict number/score/fraction formatting, C5E7..C8AE.
+// Standalone build of the four verdict number formatters; the matching build
+// is full.cpp.
 #pragma option -zCVERDICT_FMT_TEXT -zPgroup_01
 #include "src/maine/verdict/format.hpp"
 

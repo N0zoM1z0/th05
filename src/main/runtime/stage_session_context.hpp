@@ -1,11 +1,13 @@
-// Actual TH05 stage/session entry and foreign resource/runtime interfaces.
+// The declarations of stage_session_init.hpp, for stage_complete_context.cpp.
+// snd_load_func_t is left out, because main.hpp already defines it in that
+// translation unit.
 #ifndef TH05_STAGE_SESSION_HPP
 #define TH05_STAGE_SESSION_HPP
 #include <dos.h>
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This owner implements TH05 MAIN stage-session initialization
+#error This is TH05 MAIN code
 #endif
 
 typedef void (near pascal *near nearfunc_t_near)(void);
@@ -28,7 +30,7 @@ extern unsigned int PaletteTone;
 extern long random_seed;
 extern "C" volatile unsigned int vsync_Count2;
 
-// These are real existing filename objects, not owned payload or pointer arrays.
+// Resource filenames in MAIN's data segment.
 extern const char near SESSION_EYE_RGB[];
 extern const char near SESSION_REIMU_BFT[];
 extern const char near SESSION_MARI_BFT[];
@@ -58,7 +60,8 @@ extern const char near SESSION_ST03_MPN[];
 extern const char near SESSION_BSS4_CD2[];
 extern const char near SESSION_ST04_BFT[];
 extern const char near SESSION_ST04_MPN[];
-// Stage6 really references distinct copies of the stage5 filenames.
+// ZUN bloat: Stage 6 loads the same files as Stage 5, but through separate
+// copies of their names.
 extern const char near SESSION_BSS4_CD2_REPEAT[];
 extern const char near SESSION_ST04_BFT_REPEAT[];
 extern const char near SESSION_BSS6_CD2[];
@@ -75,7 +78,7 @@ extern "C" {
     int pascal far super_convert_tiny(int pattern);
 }
 #pragma codeseg SHARED
-// Joint TU: identical enum is already provided by the earlier gameplay loop header.
+// snd_load_func_t comes from main.hpp.
 extern "C" {
     void pascal far snd_load(const char far *filename, snd_load_func_t operation);
     int pascal far snd_kaja_interrupt(int ax);
@@ -83,8 +86,9 @@ extern "C" {
 #pragma codeseg STAGE_SESSION_MAIN03_CONTEXT main_03
 void far midboss_reset(void);
 
-// These real interfaces are all in frameAE1, including the three far-return
-// services whose original calls use a same-frame far transfer.
+// Functions in the main_01 group. hud_put(), tiles_activate() and
+// shot_level_update() are far, but TLINK shortens their calls to
+// NOP / PUSH CS / CALL near because they are in the same physical segment.
 #pragma codeseg STAGE_SESSION_TEXT main_01
 void near stage_session_init(void);
 void near gameplay_session_init(void);

@@ -1,7 +1,6 @@
-// Natural TH05 Music Room frontend, adapted from ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th02/op/m_music.cpp, GAME=5.
-// UTF-8 source is consumed as CP932. The DS-copy helper is context only and
-// remains unaccepted; all credited complete function scopes are separate.
+// The Music Room, compiled as one translation unit. The UTF-8 sources are
+// converted to Shift-JIS before compilation. See NOTES.md for why
+// nopoly_B_put() in here does not match.
 #pragma option -zCOP_MUSIC_TEXT -zPop_01
 #include <dos.h>
 #include <mem.h>

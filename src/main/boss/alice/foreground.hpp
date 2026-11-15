@@ -1,8 +1,8 @@
-// Alice's real puppet and boss foreground sprite/charge rendering interfaces.
+// Declarations for Alice's foreground rendering.
 #ifndef TH05_ALICE_FOREGROUND_HPP
 #define TH05_ALICE_FOREGROUND_HPP
 
-// Capture the real main_01 callback before the canonical setup declarations.
+// Declared before setup.hpp, so that they keep this file's main_01 segment.
 void pascal near alice_fg_render(void);
 extern "C" void pascal near puppets_render(void);
 #include <dos.h>

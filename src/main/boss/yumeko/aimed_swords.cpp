@@ -1,4 +1,5 @@
-// Complete aimed volleys and random swords, with the native word-value aim ABI.
+// Yumeko's first stationary attack: paired aimed volleys and random aimed
+// swords. The body lives in aimed_swords.inl.
 #ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
 #endif

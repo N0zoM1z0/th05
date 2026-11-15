@@ -118,6 +118,10 @@ def prepare(args, output, config):
         image.write(f'{game}/{name}', raw, scratch)
         products[name] = dict(role='rebuilt', path=str(source), bytes=len(raw), sha256=sha(raw),
                               original_equal=sha(raw) == target['sha256'])
+    for spec in args.install:   # NAME=PATH: replace a game-directory file, e.g. a save
+        name, path = spec.split('=', 1)
+        image.write(f'{game}/{name}', Path(path).read_bytes(), scratch)
+        products[name] = dict(role='installed', path=path, sha256=sha(Path(path).read_bytes()))
     image.write('AUTOEXEC.BAT', b'@ECHO OFF\r\nPATH A:\\DOS;A:\\\r\nSET TEMP=A:\\DOS\r\nSET DOSDIR=A:\\DOS\r\n'
                 b'CD \\' + game.encode() + b'\r\nECHO START > A:\\TH05RUN.TXT\r\nCALL GAME.BAT\r\n'
                 b'ECHO EXIT >> A:\\TH05RUN.TXT\r\n\x1a', scratch)
@@ -231,6 +235,7 @@ def main():
     p.add_argument('--sound', action='store_true')
     p.add_argument('--event', action='append', default=[], help='KEY@SECOND, down:KEY@SECOND or up:KEY@SECOND')
     p.add_argument('--frame', action='append', default=[], help='NAME@SECOND; save an actual window PNG')
+    p.add_argument('--install', action='append', default=[], help='DOSNAME=PATH; put a file into the game directory (e.g. GENSOU.SCR)')
     p.add_argument('--emulator', type=Path, default=Path('/usr/bin/dosbox-x'))
     args = p.parse_args()
     need(0 < args.seconds <= 1800, 'bounded duration')

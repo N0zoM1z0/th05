@@ -1,9 +1,11 @@
-// Original complete 174+334+208+684 MAIN01 lifecycle source bodies.
+// Second part of the combined unit in ems_boss_full_context.cpp:
+// stage_runtime_init() (174 bytes), stage_session_free() and pause() (334),
+// demo_load() and DemoPlay() (208), and the four EMS functions (684).
 #pragma codeseg LIFECYCLE_TEXT main_01
 #include "src/shared/abi.hpp"
 #pragma codeseg LIFECYCLE_TEXT main_01
 void near stage_runtime_init(void);
-// Natural maintained TH04 stage_runtime_init with actual TH05 state fields.
+// stage_runtime_init(): TH04's version, with TH05's state variables.
 #include "src/main/ems/ems_boss_stage_runtime_types.hpp"
 #pragma codeseg LIFECYCLE_TEXT main_01
 
@@ -45,10 +47,9 @@ void near stage_runtime_init(void)
     tiles_invalidate_reset();
 }
 
-// Diagnostic original-order 334+208+684-byte MAIN01 compiler context.
 #include "src/shared/abi.hpp"
 #pragma codeseg LIFECYCLE_TEXT main_01
-// The real eight original function signatures, declared in one source order.
+// Declare the remaining eight functions in their original order.
 extern "C" void near stage_session_free(void);
 extern "C" int near pause(void);
 void near demo_load(void);
@@ -57,9 +58,8 @@ void near ems_allocate_and_preload_eyecatch(void);
 void near bomb_bg_load__ems_preload_playchar_cdgs(void);
 void pascal near ems_preload_boss_faceset(const char far *filename);
 void near eyecatch_animate(void);
-// Actual unchanged function bodies: src/main/runtime/session_end.cpp
-// Natural TH04 maintained stage/session_init.cpp cleanup and menu semantics,
-// with TH05's actual slot ranges, held-input service and release condition.
+// Copy of src/main/runtime/session_end.cpp: TH04's stage cleanup and pause
+// menu, with TH05's slot ranges and input handling.
 #include "src/main/runtime/session_end.hpp"
 #pragma codeseg LIFECYCLE_TEXT main_01
 #pragma codeseg LIFECYCLE_TEXT main_01
@@ -119,9 +119,7 @@ extern "C" int near pause(void)
 }
 
 #pragma codeseg LIFECYCLE_TEXT main_01
-// Actual unchanged function bodies: src/main/demo/demo.cpp
-// Natural TH05 behavior from ReC98 th05/demo.cpp -> th04/main/demo.cpp,
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47. No instruction macro is retained.
+// Copy of src/main/demo/demo.cpp (ReC98 th05/demo.cpp, th04/main/demo.cpp).
 #include "src/main/demo/demo.hpp"
 #pragma codeseg LIFECYCLE_TEXT main_01
 
@@ -155,9 +153,7 @@ void near DemoPlay(void)
 }
 
 #pragma codeseg LIFECYCLE_TEXT main_01
-// Actual unchanged function bodies: src/main/ems/ems.cpp
-// Natural TH05 EMS resource cache from ReC98 th05/ems.cpp ->
-// th04/main/ems.cpp, b6ba5b0a529edbb31efdf8c0e939263804f8ee47.
+// Copy of src/main/ems/ems.cpp (ReC98 th05/ems.cpp, th04/main/ems.cpp).
 #include "src/main/ems/ems_boss_context_types.hpp"
 #pragma codeseg LIFECYCLE_TEXT main_01
 
@@ -167,8 +163,10 @@ inline void ems_write_cdg_color_planes(seg_t &handle, long offset, main_cdg_slot
         (cdg_slots[slot].bitplane_size * PLANE_COUNT));
 }
 
-// Deliberately preserve the original unbounded slot walk. It stops only when
-// a slot has no loaded alpha plane; the original cache offsets are not clamps.
+// Copies the CDG slots starting at [slot_first] into EMS and frees them, until
+// reaching a slot without an alpha plane. All slots are assumed to have the
+// first one's bitplane size. ZUN landmine: the walk is not limited to the
+// slots or the EMS region reserved for the faceset.
 #define ems_transfer_cdgs_until_freed_slot(offset_first, slot_first) { \
     int slot = slot_first; \
     uint32_t offset = offset_first; \
@@ -204,7 +202,9 @@ void near ems_allocate_and_preload_eyecatch(void)
     }
 }
 
-// The original four word-sized switch entries start on an even boundary.
+// The switch jump table below is word-aligned in the original, with a zero
+// padding byte before it. -a2 comes after all struct definitions so that it
+// does not change their layout.
 #pragma option -a2
 void near bomb_bg_load__ems_preload_playchar_cdgs(void)
 {

@@ -1,4 +1,7 @@
-// Natural semantic ReC98 b6ba5b0a TH05 laser rendering.
+// Laser rendering. Lasers are drawn as a ray in the laser's color with a white
+// core, plus a filled circle at the origin while the ray still starts there.
+// Decaying shoot-out lasers are reduced to their two edges as 1-pixel lines.
+// Same as lasers_render() in ReC98's th05/main/bullet/laser.cpp.
 #pragma option -zCLASER_RENDER_TEXT -zPmain_01 -G
 #include <dos.h>
 #include "src/main/bullet/laser.hpp"
@@ -7,12 +10,14 @@
 typedef int screen_x_t;
 extern PlayfieldPoint drawpoint;
 void near grcg_setcolor_direct_raw(void);
-// Genuine foreign hardware helper takes its color in AH; it has no C stack
-// parameter. Keep that explicit protocol at the boundary.
+// grcg_setcolor_direct_raw() takes its color in AH, not on the stack.
 #define grcg_setcolor_direct(col) _AH = col; grcg_setcolor_direct_raw()
 extern "C" void pascal far grcg_circlefill(int x, int y, int radius);
 extern "C" void pascal far grcg_line(int x1, int y1, int x2, int y2);
+// Returns nonzero if the laser is entirely off-screen.
 int pascal near laser_render_ray(const laser_coords_t near &coords);
+
+// Playfield subpixels to screen pixels.
 inline int laser_screen_left(const PlayfieldPoint &point) {
     return ((point.x.v >> 4) + 32);
 }
@@ -20,6 +25,7 @@ inline int laser_screen_top(const PlayfieldPoint &point) {
     return ((point.y.v >> 4) + 16);
 }
 
+// Converts both points to screen pixels in place, then draws the line.
 inline void laser_line_put(PlayfieldPoint& start, PlayfieldPoint& end) {
 	start.x.v = laser_screen_left(start);
 	start.y.v = laser_screen_top(start);

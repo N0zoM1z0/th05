@@ -1,4 +1,5 @@
-// Shared, unchanged complete Louise foreground definition.
+// Louise's foreground renderer, shared by foreground.cpp and
+// louise_foreground.cpp.
 #ifndef TH05_LOUISE_FG_BODY_INCLUDED
 #define TH05_LOUISE_FG_BODY_INCLUDED
 void pascal near louise_fg_render(void)
@@ -6,6 +7,7 @@ void pascal near louise_fg_render(void)
     int patnum;
     int left;
     int top;
+    // Screen coordinates of the 64x64 sprite; see sara/foreground.inl.
     left = boss.pos.cur.x.v >> 4;
     top = (boss.pos.cur.y.v >> 4) - 16;
     if(boss.phase == BOSS_FG_PHASE_EXPLODE_BIG) {

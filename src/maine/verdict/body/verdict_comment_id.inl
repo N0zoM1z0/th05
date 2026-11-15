@@ -1,3 +1,5 @@
+// Returns the record index of the second comment line, which comments on the
+// way the game was played rather than on the skill value.
 uint8_t near verdict_comment_id(void)
 {
     if((resident->end_sequence == VERDICT_ES_GOOD) ||
@@ -11,8 +13,8 @@ uint8_t near verdict_comment_id(void)
         if(resident->miss_count >= 6) {
             return 7;
         }
-        // This resident byte is still named unknown in the canonical ABI.
-        // The original comparison interprets its full unsigned byte domain.
+        // The purpose of this resident byte is not known. The original
+        // compares it as unsigned.
         if(static_cast<uint8_t>(resident->unknown) >= 15) {
             return 8;
         }

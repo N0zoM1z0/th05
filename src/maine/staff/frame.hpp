@@ -1,4 +1,4 @@
-// Actual MAINE staff frame-pump providers and shared canonical state.
+// staff_frame_advance(), which runs once per staff roll frame.
 #ifndef TH05_MAINE_STAFF_FRAME_HPP
 #define TH05_MAINE_STAFF_FRAME_HPP
 

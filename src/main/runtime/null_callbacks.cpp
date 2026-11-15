@@ -1,4 +1,5 @@
-// Actual empty callbacks used to disable stage, overlay and midboss work.
+// Empty callbacks, assigned to function pointers to disable a stage,
+// overlay or midboss hook. -k- avoids a stack frame.
 #pragma option -zCNULL_NEAR_TEXT -zPmain_01 -k-
 #include "src/shared/abi.hpp"
 #pragma codeseg NULL_NEAR_TEXT main_01

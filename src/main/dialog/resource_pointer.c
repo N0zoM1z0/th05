@@ -1,7 +1,7 @@
-/* Initial dialog script pointer, with the real four-byte large-model ABI. */
+/* dialog_fn: far pointer to the .TX2 file name that dialog_load() patches. */
 #pragma option -zCDIALOG_RESOURCE_TEXT -zPmain_01
 #ifdef __cplusplus
-#error This initialized pointer owner requires C mode
+#error Build this file as C
 #endif
 #include "src/main/dialog/resource_data.h"
 

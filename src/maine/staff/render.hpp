@@ -1,4 +1,4 @@
-// Full canonical staff objects and actual master graphics interfaces.
+// staff_scene_render(), which draws the space window.
 #ifndef TH05_MAINE_STAFF_RENDER_HPP
 #define TH05_MAINE_STAFF_RENDER_HPP
 #include <dos.h>
@@ -6,6 +6,9 @@
 
 extern screen_point_t space_window_center;
 extern unsigned char staff_orb_sprite_frame;
+
+// Sprite patterns: big and small stars follow the six particle cels in
+// stf01.bft, the four animation cels of the orb follow them in stf00.bft.
 static const int STAFF_STAR_BIG = 6;
 static const int STAFF_ORB_FIRST = 8;
 static const int STAFF_ORB_W = 32;

@@ -1,10 +1,9 @@
-// Natural TH05 enemy lifecycle ABI. Reuse the canonical 64-byte enemy,
-// 14-byte BulletTemplate, 12-byte player motion and geometry unchanged.
-// Semantic donor: maintained TH04 enemy/stage owners; ReC98 b6ba5b0a supplies
-// disassembly/format corroboration only, with original target operands checked.
+// Declarations for enemy spawning, the STD timeline runner and the per-frame
+// enemy update.
 #ifndef TH05_MAIN_ENEMY_LIFECYCLE_HPP
 #define TH05_MAIN_ENEMY_LIFECYCLE_HPP
 
+// First declarations: these fix each function's code segment.
 #pragma codeseg ENEMY_SPAWN_TEXT main_03
 extern "C" void pascal near enemies_add(void);
 void pascal far std_run(void);
@@ -15,14 +14,15 @@ extern "C" void pascal far enemies_update(void);
 #include <dos.h>
 #include "src/main/enemy/enemy.hpp"
 
+// homing_target value when no enemy can be targeted
 static const subpixel_t ENEMY_HOMING_NONE = -999 * 16;
-static const int PAT_ENEMY_KILL = 4;
+static const int PAT_ENEMY_KILL = 4;   // first sprite of the kill animation
 static const int ENEMY_KILL_CELS = 8;
 static const int RANK_LUNATIC = 3;
 #define BST_NORMAL 0
 
-// This is the real 8-byte on-disk TH05 STD spawn record. Word coordinates are
-// unaligned within this byte-packed record, as in the original resource.
+// One enemy spawn in the STD timeline, 8 bytes and byte-packed. A coordinate
+// of 999 pixels means "random".
 struct StdEnemySpawnRecord {
     uint8_t script;
     subpixel_t center_x;
@@ -50,8 +50,8 @@ extern BulletTemplate bullet_template;
 typedef void (near pascal *near EnemyBulletTuning)(void);
 extern EnemyBulletTuning bullet_template_tune;
 
-// STD advances only the pointer's 16-bit offset, preserving its segment on
-// wrap; expressing this actual far-pointer representation is intentional.
+// std_ip is a void far pointer: the STD runner advances its offset word,
+// and enemies_add() reads the spawn record it points to.
 #define std_ip_offset (reinterpret_cast<StdFarPointerWords near *>(&std_ip)->offset)
 #define current_spawn (*reinterpret_cast<const StdEnemySpawnRecord far *>(std_ip))
 
@@ -69,13 +69,12 @@ void far midboss_activate_if_stage_frame_is_midboss_start_frame(void);
 uint16_t near randring2_next16(void);
 uint16_t pascal near randring2_next16_mod(uint16_t divisor);
 extern "C" {
-    // The complete interpreter consumes global enemy_cur, preserves SI/DI,
-    // and returns its observed byte result in AL. Its internal CF-returning
-    // movement helper is not misdeclared or called from this C++ owner.
+    // The enemy script interpreter (script.asm). Runs [enemy_cur]'s script
+    // for one frame, preserving SI and DI. The byte result in AL is unused.
     unsigned char near enemy_script_update(void);
     void near bullets_add_regular(void);
-    // Genuine foreign REP MOVSW helper: one near pointer to a 14-byte template,
-    // Pascal RET 2. TH05 takes a template reference, not a whole enemy reference.
+    // Copies an enemy's bullet template to bullet_template
+    // (template_push_exact.cpp).
     void pascal near enemy_bullet_template_push(const BulletTemplate near &source);
 }
 

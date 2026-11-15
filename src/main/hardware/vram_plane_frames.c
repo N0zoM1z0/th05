@@ -1,7 +1,8 @@
-/* Original MAIN near-data bank of physical PC-98 VRAM plane pointers. */
+/* Far pointers to the four PC-98 VRAM planes (blue A800, red B000, green
+ * B800, extended E000). OP and MAINE have their own copies. */
 #pragma option -zCMAIN_VRAM_PLANES_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Native video-plane DATA must be produced by the C compiler
+#error Compile this file as C
 #endif
 #include "src/shared/hardware/vram_plane_frames.h"
 

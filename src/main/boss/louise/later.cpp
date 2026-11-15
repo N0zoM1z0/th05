@@ -1,10 +1,11 @@
-// Four complete natural patterns immediately before the original Louise update.
+// Louise's later patterns: mirrored fans, sweeping lasers, turning rings and
+// aimed pellets.
 #include "src/main/boss/louise/later.hpp"
 #include "src/main/boss/louise/scratch.hpp"
 #include "src/main/boss/louise/charged_weapon_rules.hpp"
 
-// The alternating mirror fan has two initial axes but one identical shot
-// sequence. Keep every byte-speed update and shot call in its original order.
+// Fires LC_MIRROR_COUNT groups of four bullets, mirrored across both
+// [reflect_axis] and the opposite direction, slowing down with each group.
 #define LOUISE_MIRROR_FAN(first_angle, reflect_axis) { \
     bullet_template.angle = first_angle; \
     for(i = 0; i < LC_MIRROR_COUNT; i++) { \
@@ -17,21 +18,19 @@
         bullet_template.angle += LC_MIRROR_ANGLE; \
         bullets_add_regular(); \
         bullet_template.angle = saved_angle; \
+        /* Slower by 5 subpixels. ZUN's code adds the byte 0xFB; see NOTES. */ \
         bullet_template.speed.v = bullet_template.speed.v + static_cast<subpixel_length_8_t>(-louise_speed(LC_MIRROR_SPEED_DECAY)); \
         bullet_template.angle += LC_MIRROR_SWEEP_STEP; \
     } \
 }
 
-// Both charged weapon phases terminate through the same native three-write
-// Boss state transition, after their own distinct projectile work.
+// Ends a charged pattern.
 #define LOUISE_CHARGED_RETURN_TO_STILL() { \
     boss.mode = LOUISE_MODE_REPOSITION; \
     boss.phase_frame = 0; \
     boss.sprite = LOUISE_SPRITE_STILL; \
 }
 
-// The rotating ring stack and aimed pellet fan share their actual
-// forward, nondecelerating bullet cloud mode.
 #define LOUISE_FORWARD_NONDECEL_CLOUD() \
     bullet_template.spawn_type = (LOUISE_SPAWN_CLOUD_FORWARDS | LOUISE_SPAWN_NO_DECELERATE)
 
@@ -64,7 +63,7 @@ void near louise_pattern_sweeping_lasers(void)
         laser_template.active_at_age.moveout = LC_SWEEP_MOVEOUT;
         laser_template.shootout_speed.v = to_sp(LC_SWEEP_SPEED);
         louise_scratch.blue_red_or_laser_direction = randring2_next16_and(LC_SWEEP_SIDE_MASK);
-        // Initialization also launches at its real even four-frame boundary.
+        // Fall through: the first laser fires on frame 32.
     case LOUISE_CHARGE_FIRE:
         if((laser_template.coords.angle >= LC_SWEEP_ANGLE_UPPER) ||
            (laser_template.coords.angle <= LC_SWEEP_ANGLE_LOWER)) {

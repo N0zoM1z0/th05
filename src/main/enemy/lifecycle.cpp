@@ -1,12 +1,20 @@
-// Natural TH05 enemy lifecycle, adapted from maintained TH04 algorithms.
-// Original behavior independently reviewed against the pinned TH05 artifact.
+// Enemy spawning (enemies_add(), from spawn.inl), the STD timeline runner
+// and the per-frame enemy update. The update code follows TH04's, with TH05's
+// changes: Lunatic autofire, 7 sparks per kill, unsigned score widening, an
+// IT_NONE check before dropping items, and the dream gauge recharge.
 #pragma option -zCENEMY_SPAWN_TEXT -zPmain_03
 #include "src/main/enemy/lifecycle.hpp"
 #pragma codeseg ENEMY_SPAWN_TEXT main_03
 
 #include "src/main/enemy/spawn.inl"
 
+// The midboss activation function shares this code segment, which lets the
+// linker shorten the far call to NOP / PUSH CS / CALL near, as in the original.
 #pragma samecodeseg midboss_activate_if_stage_frame_is_midboss_start_frame
+
+// The stage timeline is a list of
+//   u16 frame, u8 spawn_count, StdEnemySpawnRecord spawns[spawn_count]
+// terminated by a frame of 0.
 void pascal far std_run(void)
 {
     unsigned char spawn_count;
@@ -17,7 +25,9 @@ void pascal far std_run(void)
     std_ip_offset += sizeof(unsigned int);
     spawn_count = *reinterpret_cast<unsigned char far *>(std_ip);
     std_ip_offset++;
+    // ZUN landmine: a spawn count of 0 runs this loop 256 times.
     do {
+        // Spawns are skipped, not delayed, while a midboss is active.
         if(midboss_active == false) {
             enemies_add();
         }
@@ -29,12 +39,14 @@ void pascal far std_run(void)
     }
 }
 
-// The original 24-byte REP MOVSW template-copy function remains foreign.
+// enemy_bullet_template_push() (template_push_exact.cpp) comes next in the
+// original, followed by enemies_update(). The sparks function shares its code
+// segment, so its far call gets shortened as well.
 #pragma codeseg ENEMY_UPDATE_TEXT main_03
 #pragma samecodeseg sparks_add_random
 extern "C" void pascal far enemies_update(void)
 {
-    unsigned char value;
+    unsigned char damage;   // also reused for the kill animation sprite
     unsigned char dream_recharge;
     register enemy_t near *enemy;
     register int i;
@@ -43,7 +55,9 @@ extern "C" void pascal far enemies_update(void)
     homing_target.y.v = ENEMY_HOMING_NONE;
     shot_hitbox_radius.x.v = TO_SP(16);
     shot_hitbox_radius.y.v = TO_SP(12);
-    dream_recharge = 0; // First counts eligible enemies; becomes interval below.
+    // Counts the enemies that can be hit by shots, then becomes the number
+    // of frames between dream gauge increments.
+    dream_recharge = 0;
     enemy = enemies;
     i = 0;
 
@@ -63,6 +77,7 @@ extern "C" void pascal far enemies_update(void)
 
         enemy_script_update();
 
+        // Player collision: within 12 pixels on both axes.
         if(enemy->kills_player_on_collision == false) {
             goto collision_done;
         }
@@ -79,6 +94,7 @@ extern "C" void pascal far enemies_update(void)
         player_is_hit = true;
         goto kill_enemy;
 
+        // Shot collision, for enemies inside the playfield.
     collision_done:
         if(enemy->can_be_damaged == false) {
             goto autofire;
@@ -95,6 +111,7 @@ extern "C" void pascal far enemies_update(void)
             goto autofire;
         }
 
+        // Homing shots target the lowest enemy on screen.
         dream_recharge++;
         if(enemy->pos.cur.y.v > homing_target.y.v) {
             homing_target.x.v = enemy->pos.cur.x.v;
@@ -102,11 +119,12 @@ extern "C" void pascal far enemies_update(void)
         }
 
         shot_hitbox_center = enemy->pos.cur;
-        value = static_cast<unsigned char>(shots_hittest());
-        if(value != 0) {
+        damage = static_cast<unsigned char>(shots_hittest());
+        if(damage != 0) {
+            // HP -2 means invincible.
             if(enemy->hp != -2) {
-                if(value < enemy->hp) {
-                    enemy->hp -= value;
+                if(damage < enemy->hp) {
+                    enemy->hp -= damage;
                 } else {
                 kill_enemy:
                     enemy->flag = EF_KILL_ANIM;
@@ -135,6 +153,8 @@ extern "C" void pascal far enemies_update(void)
         }
         goto autofire;
 
+        // Autofire, only above y = 304 and when at least 48 pixels away from
+        // the player on one axis.
     autofire:
         if(enemy->autofire == false) {
             goto no_autofire;
@@ -169,14 +189,15 @@ extern "C" void pascal far enemies_update(void)
         enemy->age++;
         goto next_enemy;
 
+        // 4 frames per cel, with the frame counted in [flag].
     kill_animation:
         enemy->pos.update_seg3();
-        value = ++enemy->flag;
-        value = static_cast<unsigned char>(
-            ((value - EF_KILL_ANIM) / 4) + PAT_ENEMY_KILL
+        damage = ++enemy->flag;
+        damage = static_cast<unsigned char>(
+            ((damage - EF_KILL_ANIM) / 4) + PAT_ENEMY_KILL
         );
-        enemy->patnum_base = value;
-        if(value < (PAT_ENEMY_KILL + ENEMY_KILL_CELS)) {
+        enemy->patnum_base = damage;
+        if(damage < (PAT_ENEMY_KILL + ENEMY_KILL_CELS)) {
             goto next_enemy;
         }
         enemy->flag = EF_KILLED;
@@ -185,8 +206,11 @@ extern "C" void pascal far enemies_update(void)
         ;
     }
 
-    // TH05's homing/dream feedback uses the byte count as a recharge interval.
-    // Keep its real byte subtraction and wrap behavior before the lower clamp.
+    // While any enemy can be hit, the dream gauge recharges faster the more
+    // of them there are and the later the stage: every (144 - 8 * enemies)
+    // frames, or 80 for 8 or more enemies, minus 16 frames per stage, but at
+    // least every 4 frames. The subtraction is done in 8 bits; the > 144
+    // check catches its wraparound in later stages.
     if(homing_target.x.v != ENEMY_HOMING_NONE) {
         if(dream_recharge >= 8) {
             dream_recharge = 80;

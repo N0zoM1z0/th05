@@ -1,4 +1,5 @@
-// Alice's stationary-puppet beam: charge, contract, animate and fire.
+// Alice's beam pattern: once both puppets have stopped moving, they charge up
+// and then fire a horizontal beam from the left puppet to the right one.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/beam.hpp"
 #include "src/main/boss/alice/beam_phase.hpp"
@@ -9,8 +10,7 @@ void near alice_puppet_beam_pattern(void)
 {
     int damage;
 
-    // The full four-byte coordinates have no padding. Compare the complete
-    // position storage so movement of either component delays beam charging.
+    // Wait until both puppets have stopped moving. Compares X and Y at once.
     if(reinterpret_cast<const uint32_t &>(alice_puppet0.pos.cur) !=
         reinterpret_cast<const uint32_t &>(alice_puppet0.pos.prev) ||
         reinterpret_cast<const uint32_t &>(alice_puppet1.pos.cur) !=
@@ -48,7 +48,7 @@ void near alice_puppet_beam_pattern(void)
         return;
     }
 
-    bullet_template.spawn_type = (ABW_CLOUD_FORWARD_FLAG | ABW_NO_DECELERATION_FLAG); // Forward cloud, no deceleration.
+    bullet_template.spawn_type = (ABW_CLOUD_FORWARD_FLAG | ABW_NO_DECELERATION_FLAG);
     bullet_template.patnum = ABW_LASER_BULLET_PATNUM;
     bullet_template.speed.v = ABW_LASER_BULLET_SPEED_SUBPX;
     bullet_template.group = BG_SINGLE;
@@ -63,8 +63,8 @@ void near alice_puppet_beam_pattern(void)
         snd_se_play(ABW_LASER_HIT_SE);
     }
 
-    // Inclusive left edge, exclusive right/bottom edges, with16-bit unsigned
-    // wraparound retaining the original behavior outside the horizontal beam.
+    // The player dies if they are within the 128 pixels right of the left
+    // puppet, and within 4 pixels of its Y position.
     if(static_cast<unsigned int>(player_pos.cur.x.v - alice_puppet0.pos.cur.x.v) < to_sp(ABW_PLAYER_HIT_WIDTH_PX) &&
         static_cast<unsigned int>(alice_puppet0.pos.cur.y.v - player_pos.cur.y.v  + to_sp(ABW_PLAYER_HIT_Y_LEAD_PX)) < to_sp(ABW_PLAYER_HIT_HEIGHT_PX)) {
         player_is_hit = true;
@@ -72,12 +72,12 @@ void near alice_puppet_beam_pattern(void)
 
     if((boss.phase_frame % ABW_BURST_INTERVAL_FRAMES) == 0 &&
         (boss.phase_frame % ABW_BURST_PERIOD_FRAMES) < alice_beam_burst_window) {
-        bullet_template.patnum = ABW_AIMED_BULLET_PATNUM; // Blue round bullet.
+        bullet_template.patnum = ABW_AIMED_BULLET_PATNUM;
         bullet_template.group = BG_STACK_AIMED;
         bullet_template.angle = 0;
         bullet_template.origin.x = boss.pos.cur.x;
         bullet_template.origin.y.v = boss.pos.cur.y.v + to_sp(ABW_AIMED_BULLET_BOSS_Y_OFFSET_PX);
-        // Real adjacent semantic fields: eight bullets and six speed units.
+        // 8 bullets, each 6 subpixels per frame faster than the last.
         reinterpret_cast<uint16_t &>(bullet_template.stack) = ABW_AIMED_BULLET_COUNT | (ABW_AIMED_BULLET_SPEED_STEP << 8);
         bullet_template.speed.v = to_sp(ABW_AIMED_BULLET_SPEED_PX);
         bullet_template_tune();

@@ -1,12 +1,13 @@
-// Natural remaining TH05 dialog-animation/face/exit/sprite-owner ABI.
-// ReC98 b6ba5b0a529edbb31efdf8c0e939263804f8ee47.
+// Declarations for the last dialog functions: animation, face loading,
+// bomb background restore and the Extra Stage sprite override.
+// ReC98: th05/main/dialog/dialog.cpp.
 #ifndef TH05_MAIN_DIALOG_TAIL_HPP
 #define TH05_MAIN_DIALOG_TAIL_HPP
 #include "src/main/ems/ems.hpp"
 #include "src/main/demo/demo.hpp"
 
-// demo.hpp declares its genuine code contexts. Capture all new owner
-// functions only after restoring this TU's one real contribution.
+// demo.hpp switches code segments for its own declarations. Switch back, so
+// that the first declarations below place these functions in DIALOG_TAIL_TEXT.
 #pragma codeseg DIALOG_TAIL_TEXT main_01
 
 enum dialog_side_t {
@@ -52,7 +53,6 @@ void near playfield_copy_front_to_back(void);
 void pascal near dialog_face_unput_8(unsigned left, unsigned top);
 void near dialog_box_fade_in_animate(void);
 void near dialog_run(void);
-// Preserve the genuine near first declaration of this late sprite owner.
 void near main_pat_exalice_override_and_super_clean_stage(void);
 void far dialog_animate(void);
 void pascal near dialog_face_load_unput_put_free_8(int left, int top, int face_id);

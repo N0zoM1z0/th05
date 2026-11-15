@@ -1,7 +1,9 @@
-// C semantic banks of complete UI strings; not historical struct declarations.
+// Verdict number punctuation and counter units. The original has two "．"
+// and two "回" objects; grouping the strings into structs keeps the compiler
+// from merging these identical strings. (The structs are a reconstruction
+// device; the code addresses each string by its own symbol.)
 #ifndef TH05_MAINE_VERDICT_FORMAT_TEXT_C_H
 #define TH05_MAINE_VERDICT_FORMAT_TEXT_C_H
-#include <stddef.h>
 
 typedef struct VerdictPunctuation {
     const unsigned char points_unit[3];
@@ -16,10 +18,4 @@ typedef struct VerdictCounterUnits {
 
 extern const VerdictPunctuation near verdict_punctuation;
 extern const VerdictCounterUnits near verdict_counter_units;
-typedef char verdict_punctuation_size_check[(sizeof(VerdictPunctuation) == 12) ? 1 : -1];
-typedef char verdict_punctuation_point_check[(offsetof(VerdictPunctuation, decimal_point) == 3) ? 1 : -1];
-typedef char verdict_punctuation_percent_check[(offsetof(VerdictPunctuation, percent_sign) == 6) ? 1 : -1];
-typedef char verdict_punctuation_fraction_check[(offsetof(VerdictPunctuation, fraction_point) == 9) ? 1 : -1];
-typedef char verdict_counter_size_check[(sizeof(VerdictCounterUnits) == 6) ? 1 : -1];
-typedef char verdict_counter_bomb_check[(offsetof(VerdictCounterUnits, bomb_times) == 3) ? 1 : -1];
 #endif

@@ -1,4 +1,5 @@
-// Natural maintained TH04 src/main/hud/hud.cpp HP drawer, genuine TH05 APIs.
+// hud_hp_put(): the boss HP bar and its "Enemy!!" caption, or a blank strip
+// when [bar_value] is 0. Same as TH04's hud.cpp, including its -G option.
 #pragma option -G -zCHUD_HP_DRAW_TEXT -zPmain_01
 #include "src/main/hud/hp_draw.hpp"
 

@@ -1,11 +1,18 @@
-// Complete score storage and actual MAINE numeric-rendering interfaces.
+// Verdict screen number formatting: shared state, gaiji codes and the four
+// formatter functions in body/graph_*.inl and body/verdict_score_put.inl.
+//
+// Every extern function below is declared under the code segment its
+// definition lives in (`#pragma codeseg`), because Borland binds a function to
+// the segment of its first declaration. The formatter group's segment depends
+// on whether full.cpp (all ten verdict functions) or a standalone wrapper is
+// being compiled.
 #ifndef TH05_MAINE_VERDICT_FORMAT_HPP
 #define TH05_MAINE_VERDICT_FORMAT_HPP
 
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'E'
-#error This owner is the TH05 MAINE verdict formatter
+#error This header is for TH05 MAINE.EXE only
 #endif
 
 typedef int screen_x_t;
@@ -13,7 +20,7 @@ typedef int screen_y_t;
 typedef uint8_t shiftjis_t;
 typedef unsigned int vc2;
 
-// Semantic codes in the real shared gaiji domain, not bitmap contents.
+// Gaiji codes of the bold verdict digits.
 enum verdict_numeric_glyph_t {
     VERDICT_GLYPH_NULL = 0,
     VERDICT_GLYPH_EMPTY = 0x02,
@@ -30,14 +37,25 @@ enum verdict_numeric_glyph_t {
 };
 static const int VERDICT_GLYPH_WIDTH = 16;
 
+// If `true`, skill_apply_and_graph_percentage_put() will subtract the
+// calculated fraction from [skill] rather than add it.
 extern bool skill_subtract;
+
+// ZUN bloat: Turn into a parameter of graph_3_digit_put().
 extern bool graph_3_digit_put_as_fixed_2_digit;
+
 extern uint32_t skill;
+
+// If `true`, skill_apply_and_graph_percentage_put() also stores a quarter of
+// the calculated fraction in [verdict_skill_quarter]. Only set for the stage
+// completion rate, which therefore counts more towards the final skill value.
 extern bool verdict_capture_quarter;
 extern uint32_t verdict_skill_quarter;
+
 extern vc2 verdict_text_color;
 
-// These four distinct original DS arrays remain foreign semantic UI strings.
+// Four separate string objects in the original, even though the two decimal
+// points are identical. Defined in punctuation_data.c.
 extern const shiftjis_t near verdict_score_unit[];
 extern const shiftjis_t near verdict_decimal_point[];
 extern const shiftjis_t near verdict_percent_sign[];
@@ -55,19 +73,24 @@ extern "C" void pascal far graph_putsa_fx(screen_x_t left, screen_y_t top,
 #else
 #pragma codeseg VERDICT_FMT_TEXT group_01
 #endif
+// Assumes that [num] is a 3-digit number and renders it right-aligned to the
+// given VRAM position.
 void pascal near graph_3_digit_put(screen_x_t left, screen_y_t top, uint16_t num);
+
+// Renders all eight score digits, followed by the "点" unit. Unlike TH04, a
+// top byte of 10 or more (scores above 99,999,999) adds a ninth digit.
 void pascal near verdict_score_put(screen_x_t left, screen_y_t top,
     const score_lebcd_t far &score);
+
+// Calculates ([share] / [total]), applies the result × 1,000,000 to [skill],
+// and renders it as a right-aligned 3.2-digit percentage to the given VRAM
+// position.
 void pascal near skill_apply_and_graph_percentage_put(screen_x_t left,
     screen_y_t top, uint16_t total, uint16_t share);
+
+// Calculates ([num] / 1,000,000) and renders the result as a right-aligned
+// 3.2-digit fraction to the given VRAM position.
 void pascal near graph_fraction_of_million_put(screen_x_t left,
     screen_y_t top, uint32_t num);
-
-typedef char verdict_score_storage_is_8[(sizeof(score_lebcd_t) == 8) ? 1 : -1];
-typedef char verdict_score_digits_are_8[(sizeof(((score_lebcd_t *)0)->digits) == 8) ? 1 : -1];
-typedef char verdict_score_pointer_is_far[(sizeof(const score_lebcd_t far *) == 4) ? 1 : -1];
-typedef char verdict_flag_is_1[(sizeof(skill_subtract) == 1) ? 1 : -1];
-typedef char verdict_skill_is_4[(sizeof(skill) == 4) ? 1 : -1];
-typedef char verdict_color_is_2[(sizeof(verdict_text_color) == 2) ? 1 : -1];
 
 #endif

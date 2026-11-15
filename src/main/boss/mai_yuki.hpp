@@ -1,4 +1,5 @@
-// Natural stage-four flight interfaces and actual sprite indices.
+// Mai and Yuki's random flight, and the generic flystep_random_for() macro
+// that also implements boss_flystep_random().
 #ifndef TH05_MAIN_BOSS_MAI_YUKI_HPP
 #define TH05_MAIN_BOSS_MAI_YUKI_HPP
 #include "src/main/boss/movement.hpp"
@@ -11,7 +12,7 @@ extern y_direction_t yuki_flystep_random_next_y_direction;
 static const int PAT_B4_STILL = 180;
 static const int PAT_B4_RIGHT = 181;
 static const int PAT_B4_LEFT = 182;
-// Shared boss implementation macros.
+// Adapted from ReC98's th05/main/boss/impl.hpp.
 
 #define flystep_random_for( \
 	boss, \

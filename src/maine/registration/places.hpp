@@ -1,4 +1,4 @@
-// Full score layout/count and the original two-word row-rendering interface.
+// Declarations for places_put().
 #ifndef TH05_MREG_PLACES_HPP
 #define TH05_MREG_PLACES_HPP
 #include "src/op/hiscore/view.hpp"

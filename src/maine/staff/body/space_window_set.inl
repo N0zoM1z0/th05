@@ -1,3 +1,4 @@
+// Moves the space window, and clips graphics to it plus an 8-pixel border.
 void pascal near space_window_set(
 	screen_x_t center_x, screen_y_t center_y, pixel_t w, pixel_t h
 )

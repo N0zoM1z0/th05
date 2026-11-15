@@ -1,4 +1,6 @@
-// Natural runtime VRAM transfer candidate; no generated-size/exactness claim.
+// Plain C++ version of the two verdict bitmap transfers. Functionally
+// equivalent, but it compiles to 69 + 142 bytes instead of the original
+// 43 + 83; see bitmap_hardware_context.inl for the matching version.
 #pragma option -zCSTAFF_BITMAP_TEXT -zPgroup_01
 #include "src/maine/staff/bitmap.hpp"
 
@@ -27,7 +29,7 @@ void pascal near verdict_bitmap_put(size_t bitmap_offset)
 
     grcg_setcolor(STAFF_BITMAP_GRCG_TDW, 1);
     for(row = 0; row < STAFF_BITMAP_HEIGHT; row++) {
-        // TDW uses the real tile color; incoming CPU data is ignored.
+        // In TDW mode, the GRCG ignores the written data.
         __memset__(destination, 0, STAFF_BITMAP_VISIBLE_BYTES);
         destination += STAFF_BITMAP_VRAM_STRIDE;
     }

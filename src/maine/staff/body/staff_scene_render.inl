@@ -1,3 +1,5 @@
+// Clears the space window, draws stars, orb trails, the orb, and the
+// particles, and then the 8-pixel window border in color 1.
 void near staff_scene_render(void)
 {
     int x;
@@ -15,25 +17,29 @@ void near staff_scene_render(void)
         space_window_center.y - (space_window_h / 2),
         space_window_center.x + (space_window_w / 2) - 1,
         space_window_center.y + (space_window_h / 2) - 1);
-    outportb(0x7C, 0);
+    outportb(0x7C, 0); // grcg_off()
 
     for(i = 0; i < STAR_COUNT; i++, star_center++) {
         x = (star_center->x.v / 16) + space_window_center.x - 4;
         y = (star_center->y.v / 16) + space_window_center.y - 4;
         super_put_tiny_small(x, y, STAFF_STAR_BIG + (i % 2));
     }
+    // Zeroing [i] before setting [trail_color] matches the original loop setup.
     i = 0;
     trail_color = 6;
     for(; i < ORB_TRAIL_COUNT; i++, trail_center--) {
+        // As in staff_particles_update(), the empty `if` branch is needed for
+        // the original pointer reload.
         if(trail_center->x.v == STAFF_CENTER_NONE) {
         } else {
             x = (trail_center->x.v / 16) + space_window_center.x;
             y = (trail_center->y.v / 16) + space_window_center.y;
             grcg_setcolor(STAFF_GRCG_RMW, trail_color++);
             grcg_circlefill(x, y, ORB_RADIUS_FULL);
-            outportb(0x7C, 0);
+            outportb(0x7C, 0); // grcg_off()
         }
     }
+    // The orb: an animated sprite once fully grown, a white circle before.
     if(p->center.x.v != STAFF_CENTER_NONE) {
         x = static_cast<int>(p->center.x.v / 16L) +
             space_window_center.x - (STAFF_ORB_W / 2);
@@ -47,7 +53,7 @@ void near staff_scene_render(void)
             grcg_setcolor(STAFF_GRCG_RMW, 15);
             grcg_circlefill(x + (STAFF_ORB_W / 2),
                 y + (STAFF_ORB_H / 2), p->al.radius);
-            outportb(0x7C, 0);
+            outportb(0x7C, 0); // grcg_off()
         }
     }
     p--;
@@ -80,5 +86,5 @@ void near staff_scene_render(void)
         space_window_center.y + (space_window_h / 2),
         space_window_center.x + (space_window_w / 2) + 7,
         space_window_center.y + (space_window_h / 2) + 7);
-    outportb(0x7C, 0);
+    outportb(0x7C, 0); // grcg_off()
 }

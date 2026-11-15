@@ -1,4 +1,5 @@
-// Boss explosion creation; semantics shared with TH04's explosion family.
+// Starts boss explosions at the position of the first or second boss.
+// Equivalent to TH04's explosion spawn functions.
 #pragma option -zCBOSS_EXP_SPAWN_TEXT
 #pragma option -zPmain_03
 
@@ -23,6 +24,7 @@ void far explosions_small_reset(void)
 
 void pascal near boss_explode_small(explosion_type_t type)
 {
+    // ZUN landmine: Overwrites the second slot if both are alive.
     Explosion near *p = explosions_small;
     if(p->alive) {
         p++;
@@ -55,6 +57,7 @@ void pascal near boss_explode_small(explosion_type_t type)
     snd_se_play(15);
 }
 
+// Temporarily moves the first boss to the second one's position.
 void pascal near boss2_explode_small(unsigned int type)
 {
     subpixel_t x = boss.pos.cur.x.v;

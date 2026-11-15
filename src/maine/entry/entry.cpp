@@ -1,12 +1,17 @@
-// Natural MAINE entry adapted from nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th04/end/entry.cpp, GAME=5.
-// Canonical UTF-8; the real archive filename requires explicit CP932 staging.
+// MAINE.EXE entry point: loads the resident structure through MIKO.CFG, then
+// runs the ending, staff roll / all-cast credits, verdict and name
+// registration in the order the resident ending type asks for, and finally
+// returns to OP.EXE. Adapted from ReC98 th04/end/entry.cpp (GAME == 5).
+// The file is UTF-8; the build converts it to Shift-JIS for the
+// "怪綺談1.dat" archive name.
 #pragma option -zCMAINE_E_TEXT -zPgroup_01
 #include <process.h>
 #include "src/maine/entry/entry.hpp"
 
 resident_t far *resident;
 
+// Equivalent of ReC98's cfg_load_and_set_resident(). Reads the complete
+// MIKO.CFG without any error checking, as in the original.
 static inline resident_t __seg *entry_cfg_load_and_set_resident(
     cfg_t &configuration, const char far *filename
 ) {
@@ -30,7 +35,8 @@ void pascal near game_exit_and_exec(char far *filename)
     graph_hide();
     text_clear();
     game_exit();
-    // execl's large-model variadic terminator is a complete four-byte pointer.
+    // In the large model, the variadic NULL terminator must be a four-byte
+    // far pointer.
     execl(filename, filename, 0UL);
 }
 
@@ -47,9 +53,12 @@ void near end_animate(void)
     SCRIPT_FN[4] = ('0' + resident->playchar);
     cutscene_script_load(SCRIPT_FN);
     cutscene_animate();
-    // TH05's cutscene_script_free() is intentionally empty.
+    // TH05's cutscene_script_free() is empty, so there is no call here.
 }
 
+// Despite its name, this does not delay in TH05: the name comes from TH04,
+// where it waits 100 frames before regist_menu(). TH05 waits once at the
+// start of main() instead.
 inline void delay_then_regist_menu(void)
 {
     regist_menu();

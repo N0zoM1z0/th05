@@ -1,6 +1,17 @@
-// Natural TH05 MAINE cutscene interpreter, adapted from pinned ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47, th03/cutscene/cutscene.cpp.
-// Candidate only. Real EGC port intrinsics replace the reference ASM macro.
+// MAINE's cutscene script interpreter, which plays the ending scripts
+// (_ED??.TXT). Adapted from ReC98 th03/cutscene/cutscene.cpp (GAME == 5).
+//
+// TH05 renders all text and pictures onto the invisible VRAM page 1, and then
+// crossfades the text box onto the visible page 0 in box_1_to_0_animate().
+// The text box background is restored through the bgimage system.
+//
+// This file is compiled in two configurations:
+// * through cutscene_joined.cpp (TH05_CUTSCENE_JOINED), with every function
+//   in the single CUTSCENE_TEXT segment of the original. This is the layout
+//   that reproduces script_op()'s relocation order.
+// * directly, with everything after egc_start_copy() moved to a separate
+//   CUTSCENE_AFTER_TEXT segment. The other nine functions also match in this
+//   configuration; egc_start_copy() itself is matched by egc_setup_exact.cpp.
 #pragma option -zCCUTSCENE_TEXT -zPgroup_01
 #define TH05_CUTSCENE_IMPLEMENTATION
 #include "src/maine/cutscene/cutscene.hpp"
@@ -24,46 +35,61 @@ static const shiftjis_kanji_amount_t NAME_KANJI_LEN = (
 	NAME_LEN / sizeof(shiftjis_kanji_t)
 );
 
+// Adding a fullwidth colon after the name
 static const pixel_t NAME_W = ((NAME_LEN * GLYPH_HALF_W) + GLYPH_FULL_W);
 
 static const int TEXT_INTERVAL_DEFAULT = ((GAME == 5) ? 2 : 1);
 
+// ZUN landmine: cutscene_script_load() doesn't check whether the script
+// actually fits into this buffer.
 unsigned char script[8192];
 
 unsigned char near *script_p;
 
+// Unused in TH05, which uses the bgimage system instead.
 Planar<dots16_t> far *box_bg;
 
+// Skips any delays during the cutscene if `true`.
 bool fast_forward;
 
-// Reference-correlated unused runtime state. Its ownership/type is unaccepted;
-// the original only independently corroborates the surrounding touched offsets.
-static int8_t unused[60];
+static int8_t unused[60]; // ZUN bloat
+
+// String-to-color map
+// -------------------
+// Used to automatically change the text color whenever a specific Shift-JIS
+// code point is encountered at the start of a line.
 
 static const int COLMAP_COUNT = 8;
 
 struct colmap_t {
 	vc_t values[COLMAP_COUNT];
 
+	// Might have been originally meant for a complete character name?
 	ShiftJISKanji keys[COLMAP_COUNT][NAME_KANJI_LEN];
 };
 
 colmap_t colmap;
-extern unsigned char colmap_count;
-static int8_t padding; // Reference-correlated unused byte; no authored credit.
-typedef char th05_cutscene_colmap_is_56[(sizeof(colmap_t) == 56) ? 1 : -1];
-typedef char th05_cutscene_colmap_keys_at_8[(offsetof(colmap_t, keys) == 8) ? 1 : -1];
+extern unsigned char colmap_count; // Defined in box_mask_patterns.c.
+static int8_t padding; // ZUN bloat
+// -------------------
 
+// [y] is always aligned to GLYPH_H pixels.
 screen_point_t cursor;
 
 int text_interval;
 vc_t text_col;
-uint8_t text_fx;
+uint8_t text_fx; // Unused; TH05 directly sets [graph_putsa_fx_func].
 
 #define text_fx graph_putsa_fx_func
 
 #pragma option -a2
 
+// ZUN quirk: The top-level loop senses input once per command to update the
+// fast-forward flag, while the wait commands run their own blocking input
+// loops that are skipped while fast-forwarding. The "held" variant of the
+// input function prevents a momentary key-release scancode from entering such
+// a wait loop while the fast-forward key is still held, at the cost of about
+// 0.6 ms per call. (See ReC98 for the TH03/TH04 comparison.)
 inline void cutscene_input_sense(void) {
 	input_reset_sense_held();
 }
@@ -77,12 +103,14 @@ bool16 pascal near cutscene_script_load(const char* fn)
 	}
 	size_t size = file_size();
 
+	// ZUN landmine: No check whether [size] >= sizeof(script).
 	script_p = static_cast<unsigned char near *>(script);
 	file_read(script_p, size);
 	file_close();
 	return false;
 }
 
+// Sets up the EGC for a 16-dot inter-page copy of all four planes.
 void near egc_start_copy(void)
 {
     egc_on();
@@ -91,7 +119,8 @@ void near egc_start_copy(void)
     cutscene_egc_write(EGC_MODE_ROP_REG, 0x3100);
     cutscene_egc_write(EGC_MASKREG, 0xFFFF);
 #ifdef TH05_CUTSCENE_JOINED
-    // The original word-write must use MOV, not flag-changing XOR.
+    // The original loads the zero with MOV AX, 0; assigning 0 to _AX would
+    // compile to the one byte shorter XOR AX, AX.
     asm { mov ax, 0 }
     _DX = EGC_ADDRRESSREG;
     outport(_DX, _AX);
@@ -101,18 +130,34 @@ void near egc_start_copy(void)
     cutscene_egc_write(EGC_BITLENGTHREG, 0xF);
 }
 
-// The complete EGC helper above remains inexact. The independent linker
-// context preserves one uncredited byte between these CODE contributions;
-// no byte or instruction is supplied inside either compiler-owned function.
+// In the split configuration, the linker scaffold reserves the byte that the
+// XOR version of egc_start_copy() is short by, so that everything below still
+// lands at its original address.
 #ifdef TH05_CUTSCENE_JOINED
 #pragma codeseg CUTSCENE_TEXT group_01
 #else
 #pragma codeseg CUTSCENE_AFTER_TEXT group_01
 #endif
-void near cutscene_animate(void);
-void pascal near box_wait_animate(int frames_to_wait = 0);
-void near box_1_to_0_animate(void);
+// Function ordering fails
+// -----------------------
 
+void near cutscene_animate(void);
+
+// Waits the given amount of frames (0 = forever) for the OK, Shot, or Cancel
+// button to be pressed, while showing the Return key animation in a blocking
+// way.
+void pascal near box_wait_animate(int frames_to_wait = 0);
+
+// Crossfades the text box area from VRAM page 1 to VRAM page 0, spending
+// [text_interval] frames on each step.
+void near box_1_to_0_animate(void);
+// -----------------------
+
+// Picture crossfading works by doing a masked blit of the new picture on top
+// of the old one on the invisible VRAM page, then blitting the result to the
+// visible page using an EGC inter-page copy. Blitting the packed-pixel .PI
+// data directly to the visible page could easily take more than one frame on
+// lower-end systems.
 #define pic_copy_to_other(left, top) { \
 	egc_copy_rect_1_to_0_16(left, top, CUTSCENE_PIC_W, CUTSCENE_PIC_H); \
 }
@@ -138,13 +183,22 @@ void near cursor_advance_and_animate(void)
 		if(cursor.y >= BOX_BOTTOM) {
 			box_1_to_0_animate();
 
+			// ZUN quirk: Since [cursor.y] is >= BOX_BOTTOM here, the Return
+			// key animation will be displayed at the right edge of the "5th"
+			// line, below BOX_BOTTOM. (Same issue as with the \n command.)
 			if(!fast_forward) {
 				box_wait_animate(0);
 			}
 
+			// Unconditionally moving the cursor into the name area? This is
+			// not what a script author would expect, especially with automatic
+			// line breaks doing the opposite.
 			cursor.x = BOX_LEFT;
 			cursor.y = BOX_TOP;
 
+			// ZUN landmine: The \s command is the only place where text is
+			// unblitted from any page. Any text in an automatically started
+			// new box will be blitted on top of the old one.
 		}
 	}
 }
@@ -160,6 +214,8 @@ typedef enum {
 	_box_mask_t_FORCE_UINT16 = 0xFFFF
 } box_mask_t;
 
+// Copies the text box area from VRAM page 1 to VRAM page 0, applying the
+// given [mask]. Assumes that the EGC is active, and initialized for a copy.
 void pascal near box_1_to_0_masked(box_mask_t mask)
 {
 	extern const dot_rect_t(16, 4) BOX_MASKS[BOX_MASK_COUNT];
@@ -181,7 +237,7 @@ void pascal near box_1_to_0_masked(box_mask_t mask)
 
 void near box_1_to_0_animate(void)
 {
-
+	// ZUN bloat: box_1_to_0_masked() switches the accessed page anyway.
 	graph_accesspage(0);
 
 	egc_start_copy();
@@ -194,7 +250,7 @@ void near box_1_to_0_animate(void)
 	box_1_to_0_masked(BOX_MASK_COPY);
 	egc_off();
 
-	frame_delay(1);
+	frame_delay(1); // ZUN quirk
 }
 
 void pascal near box_wait_animate(int frames_to_wait)
@@ -219,6 +275,8 @@ void pascal near box_wait_animate(int frames_to_wait)
 	while(1) {
 		cutscene_input_sense();
 
+		// ZUN bloat: A white glyph aligned to the 8x16 cell grid, without
+		// applying boldface... why not just show it on TRAM?
 		bgimage_put_rect_16(RETURN_LEFT, cursor.y, GLYPH_FULL_W, GLYPH_H);
 
 		if(
@@ -243,14 +301,16 @@ void pascal near box_wait_animate(int frames_to_wait)
 	}
 }
 
+// Default text color for the \c command. cutscene_joined.cpp spells out the
+// value, which gives its replay a place for a mutation control.
 #ifndef CUTSCENE_SCRIPT_DEFAULT_COLOR
 #define CUTSCENE_SCRIPT_DEFAULT_COLOR V_WHITE
 #endif
-// TH05's script is a byte-oriented control language. These 16 command
-// letters are the real sparse-switch keys; keeping the original ASCII values
-// is part of the original 64-byte Borland switch-table contract.
-// Subcommands (such as `wi`/`wo`, `fm`, `vp`, `p=` and `p-`) are parsed by the
-// corresponding handlers, not additional top-level opcode values.
+
+// Script commands are introduced by a backslash and named by one
+// case-insensitive letter or symbol. Their second characters (such as the
+// `i`/`o` in `\wi`/`\wo`, or the `=` in `\p=`) are parsed by each command and
+// named in subcommands.hpp.
 enum CutsceneCommandByte {
     CUTSCENE_CMD_NEWLINE = 'n',
     CUTSCENE_CMD_NEW_TEXT_BOX = 's',
@@ -272,9 +332,12 @@ enum CutsceneCommandByte {
 
 #include "src/maine/cutscene/subcommands.hpp"
 
+// Called with [script_p] at the character past [c].
 script_ret_t pascal near script_op(unsigned char c)
 {
-
+	// ZUN bloat: Needed for code generation reasons. The structure of the
+	// conditional branches below ensures that the `return`s have no actual
+	// effect.
 	#define palette_black_in(x)  palette_black_in(x);  return CONTINUE;
 	#define palette_black_out(x) palette_black_out(x); return CONTINUE;
 	#define palette_white_in(x)  palette_white_in(x);  return CONTINUE;
@@ -284,6 +347,8 @@ script_ret_t pascal near script_op(unsigned char c)
 	int p1;
 	int p2;
 
+	// ZUN bloat: PF_FN_LEN on its own is enough, it already includes the \0
+	// terminator.
 	char fn[PF_FN_LEN + 3];
 
 	c = tolower(c);
@@ -294,6 +359,11 @@ script_ret_t pascal near script_op(unsigned char c)
 		if(cursor.y < BOX_BOTTOM) {
 			break;
 		}
+		// ZUN quirk: Since [cursor.y] is >= BOX_BOTTOM here, the Return key
+		// animation will be displayed at the right edge of the "5th" line,
+		// below BOX_BOTTOM. (Same issue as in cursor_advance_and_animate().)
+
+		// fallthrough to \s if this box is full
 
 	case CUTSCENE_CMD_NEW_TEXT_BOX:
 		c = *script_p;
@@ -312,11 +382,13 @@ script_ret_t pascal near script_op(unsigned char c)
 		graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 		bgimage_put_rect_16(BOX_LEFT, BOX_TOP, BOX_W, BOX_H);
 
+		// ZUN bloat: All blitting operations in this module access the
+		// intended page before they blit.
 		graph_accesspage(CUTSCENE_PAGE_FOREGROUND);
 		break;
 
 	case CUTSCENE_CMD_TEXT_COLOR_OR_COLOR_MAP:
-
+		// ZUN bloat: tolower() doesn't matter for either '=' or digits.
 		c = tolower(*script_p);
 
 		if(c == CUTSCENE_COLOR_MAP_ASSIGN) {
@@ -356,7 +428,8 @@ script_ret_t pascal near script_op(unsigned char c)
 				script_param_read_number_first(p1);
 				script_param_read_number_second(p2);
 				if(!fast_forward) {
-
+					// ZUN landmine: Does not prevent the potential deadlock
+					// issue with this function.
 					snd_delay_until_measure(p1, p2);
 				}
 			}
@@ -392,8 +465,10 @@ script_ret_t pascal near script_op(unsigned char c)
 			script_p++;
 			script_param_read_number_first(p1, CUTSCENE_DEFAULT_MEASURE_FADE);
 
+			// ZUN landmine: Should restrict [p1] to 8 bits - otherwise, the
+			// parameter would overflow into the function and not make this a
+			// fade. (The regular snd_kaja_func() behaves this way.)
 			snd_kaja_interrupt((KAJA_SONG_FADE << 8) + p1);
-
 		}
 		break;
 
@@ -406,6 +481,7 @@ script_ret_t pascal near script_op(unsigned char c)
 
 			graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 
+			// [text_fx] is also ignored here...
 			graph_gaiji_putc(cursor.x, cursor.y, p1, text_col);
 
 			cursor_advance_and_animate();
@@ -413,12 +489,10 @@ script_ret_t pascal near script_op(unsigned char c)
 		return CONTINUE;
 
 	case CUTSCENE_CMD_RETURN_KEY_WAIT:
-
 		box_1_to_0_animate();
 
 		script_param_read_number_first(p1, 0);
 		if(!fast_forward) {
-
 			box_wait_animate((GAME >= 4) ? p1 : 0);
 		}
 		return CONTINUE;
@@ -433,6 +507,9 @@ script_ret_t pascal near script_op(unsigned char c)
 		c = *script_p;
 		script_p++;
 
+		// ZUN landmine: Blitting and palette changes will cause screen tearing
+		// if done outside of VBLANK. It shouldn't be the script's
+		// responsibility to prevent that.
 		if((c == CUTSCENE_PIC_USE_PALETTE) || (c == CUTSCENE_PIC_KEEP_PALETTE)) {
 			graph_accesspage(CUTSCENE_PAGE_BACKGROUND);
 			if(c == CUTSCENE_PIC_USE_PALETTE) {
@@ -497,13 +574,10 @@ script_ret_t pascal near script_op(unsigned char c)
 			);
 			frame_delay(CUTSCENE_QUARTER_TRANSITION_DELAY);
 		}
-		typedef char pic_width_matches_quarter[(CUTSCENE_PIC_W == PI_QUARTER_W) ? 1 : -1];
-		typedef char pic_height_matches_quarter[(CUTSCENE_PIC_H == PI_QUARTER_H) ? 1 : -1];
 		pic_copy_to_other(CUTSCENE_PIC_LEFT, CUTSCENE_PIC_TOP);
 		break;
 
 	case CUTSCENE_CMD_BGM_CONTROL:
-
 		script_op_bgm(true, c, fn, p1);
 		break;
 
@@ -518,10 +592,15 @@ colmap_add:
 	script_p++;
 	colmap.keys[colmap_count][0].byte[1] = *script_p;
 
+	// ZUN landmine: Jumps over the additional comma separating the two
+	// parameters, and assumes it's always present.
+	// script_param_read_number_second() exists to handle exactly this
+	// situation in a cleaner way.
 	script_p += 2;
 
 	script_param_read_number_first(p1, V_WHITE);
 
+	// ZUN landmine: No bounds check
 	colmap.values[colmap_count] = p1;
 	colmap_count++;
 	break;
@@ -534,7 +613,6 @@ colmap_add:
 
 void near cutscene_animate(void)
 {
-
 	int gaiji;
 	unsigned char c;
 	uint8_t speedup_cycle;
@@ -559,6 +637,7 @@ void near cutscene_animate(void)
 
 		int i = 0;
 
+		// Same iteration code as in TH04's dialog system.
 		c = *(script_p++);
 		if(str_sep_control_or_space(c)) {
 			continue;
@@ -617,10 +696,11 @@ void near cutscene_animate(void)
 			graph_gaiji_putc(cursor.x, cursor.y, gaiji, text_col);
 
 			cursor_advance_and_animate();
-			i = 1;
+			i = 1; // ZUN bloat
 			continue;
 		}
 
+		// Regular kanji
 		kanji.byte[0] = c;
 		c = *script_p;
 		kanji.byte[1] = c;
@@ -641,8 +721,7 @@ void near cutscene_animate(void)
 
 		graph_accesspage(CUTSCENE_PAGE_FOREGROUND);
 		cursor_advance_and_animate();
-		i = 1;
-
+		i = 1; // ZUN bloat
 	}
 	bgimage_free();
 	pi_free(CUTSCENE_PIC_SLOT);

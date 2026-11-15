@@ -1,3 +1,4 @@
+// DOS file seek to the section of the current character and rank.
 inline void seek_to_playchar_and_rank(void)
 {
     _AH ^= _AH;

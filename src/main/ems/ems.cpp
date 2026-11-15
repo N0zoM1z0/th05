@@ -1,5 +1,6 @@
-// Natural TH05 EMS resource cache from ReC98 th05/ems.cpp ->
-// th04/main/ems.cpp, b6ba5b0a529edbb31efdf8c0e939263804f8ee47.
+// EMS cache for the eyecatch, the player's bomb background and the player
+// and boss facesets, so that later loads can skip the disk. Port of ReC98's
+// th05/ems.cpp (and th04/main/ems.cpp).
 #pragma option -zCEMS_TEXT -zPmain_01
 #include "src/main/ems/ems.hpp"
 
@@ -9,8 +10,10 @@ inline void ems_write_cdg_color_planes(seg_t &handle, long offset, main_cdg_slot
         (cdg_slots[slot].bitplane_size * PLANE_COUNT));
 }
 
-// Deliberately preserve the original unbounded slot walk. It stops only when
-// a slot has no loaded alpha plane; the original cache offsets are not clamps.
+// Copies the CDG slots starting at [slot_first] into EMS and frees them, until
+// reaching a slot without an alpha plane. All slots are assumed to have the
+// first one's bitplane size. ZUN landmine: the walk is not limited to the
+// slots or the EMS region reserved for the faceset.
 #define ems_transfer_cdgs_until_freed_slot(offset_first, slot_first) { \
     int slot = slot_first; \
     uint32_t offset = offset_first; \
@@ -46,7 +49,9 @@ void near ems_allocate_and_preload_eyecatch(void)
     }
 }
 
-// The original four word-sized switch entries start on an even boundary.
+// The switch jump table below is word-aligned in the original, with a zero
+// padding byte before it. -a2 comes after all struct definitions so that it
+// does not change their layout.
 #pragma option -a2
 void near bomb_bg_load__ems_preload_playchar_cdgs(void)
 {

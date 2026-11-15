@@ -1,3 +1,6 @@
+// Resets the score and the statistics, and sets up character and difficulty
+// parameters for a new game. Shared by gameplay_session_init.cpp and
+// stage_complete_context.cpp.
 void near gameplay_session_init(void)
 {
     resident->graze = 0;
@@ -14,6 +17,7 @@ void near gameplay_session_init(void)
     dream = 1;
     bb_txt_load();
 
+    // Movement speeds are in subpixels (1/16 pixel) per frame.
     switch(playchar) {
     case SESSION_REIMU:
         playchar_speed_aligned = 56;
@@ -38,6 +42,7 @@ void near gameplay_session_init(void)
     }
     playchar_shot_funcs = SHOT_FUNCS[playchar];
 
+    // Demos 1-4 are Lunatic, demo 5 is the Extra Stage.
     if(resident->demo_num != 0) {
         if(resident->demo_num < 5) {
             playperf = 40;

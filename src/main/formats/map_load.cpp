@@ -1,5 +1,6 @@
-// MAP format/flow: maintained TH04 src/main/formats/map.cpp and ReC98
-// b6ba5b0a th04/formats/map.hpp. TH05 uses unchecked direct DOS transfers.
+// Loads the current stage's .MAP file (tile sections) into its own segment.
+// Same flow as TH04's map_load() (ReC98 th04/formats/map.hpp), but TH05 uses
+// direct DOS calls. ZUN landmine: none of the DOS results are checked.
 #pragma option -zCMAP_LOAD_TEXT -zPmain_01 -k-
 #include <dos.h>
 #include "src/main/formats/map_load.hpp"
@@ -12,12 +13,14 @@ void near map_load(void)
     map_free();
     map_fn[3] = ('0' + stage_id);
 
+    // DOS file open (read-only)
     _AX = 0x3D00;
     reinterpret_cast<char near *>(_DX) = map_fn;
     geninterrupt(0x21);
     _BX = _AX;
     handle = _AX;
 
+    // DOS file read: the header, which holds the size of the section data.
     _AH = 0x3F;
     reinterpret_cast<map_header_t near *>(_DX) = &map_header;
     _CX = sizeof(map_header);
@@ -26,12 +29,13 @@ void near map_load(void)
     map_seg = reinterpret_cast<map_section_tiles_t __seg *>(
         hmem_allocbyte(map_header.size)
     );
-    // DOS reads into DS:DX. Preserve the game's DS around the segment switch.
+    // DOS file read of the sections into the new segment. DOS reads into
+    // DS:DX, so DS is switched to that segment for the read.
     asm { push ds; }
     _BX = handle;
     _CX = map_header.size;
-    // The allocator's actual segment result is still in AX. BX/CX transport
-    // above does not overwrite it; avoid rereading the stored segment handle.
+    // AX still holds hmem_allocbyte()'s result. Assigning DS from map_seg
+    // instead would reload it from memory and add two bytes.
     _DS = _AX;
     _DX = 0;
     _AH = 0x3F;

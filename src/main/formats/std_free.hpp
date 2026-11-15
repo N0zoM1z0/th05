@@ -1,6 +1,5 @@
-// STD owns an allocated real-mode segment, not a far pointer or DOS handle.
-// Provenance: ReC98 b6ba5b0a th04/formats/std.hpp, th05/formats/std.cpp;
-// maintained TH04 src/main/stage/std.cpp supplies the natural release body.
+// The loaded .STD file lives in its own allocated segment (std_seg).
+// Based on ReC98 th04/formats/std.hpp and th05/formats/std.cpp.
 #ifndef TH05_STD_FREE_HPP
 #define TH05_STD_FREE_HPP
 #include "src/shared/abi.hpp"

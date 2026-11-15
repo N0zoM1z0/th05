@@ -1,6 +1,6 @@
-// Natural TH05 verdict logic and actual foreign interfaces.
-#ifndef TH05_VERDICT_MAIN_DRAFT_HPP
-#define TH05_VERDICT_MAIN_DRAFT_HPP
+// verdict_main(): calculates and renders the skill rating ("あなたの腕前").
+#ifndef TH05_VERDICT_MAIN_HPP
+#define TH05_VERDICT_MAIN_HPP
 #include "src/maine/verdict/format.hpp"
 #include "src/maine/verdict/bonus.hpp"
 #include "src/maine/verdict/display.hpp"
@@ -18,6 +18,9 @@ enum graph_putsa_fx_func_t {
 };
 extern graph_putsa_fx_func_t graph_putsa_fx_func;
 extern uint8_t verdict_rank;
+// One 7-glyph difficulty name per rank, including Extra. Must stay a mutable
+// array of plain `char`: declaring it `const near` moves the PUSH DS of the
+// gaiji call that passes it.
 extern char verdict_rank_glyphs[5][8];
 extern const shiftjis_t near verdict_heading[];
 extern const shiftjis_t near verdict_rank_label[];

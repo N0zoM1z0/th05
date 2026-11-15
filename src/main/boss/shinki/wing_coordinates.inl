@@ -6,7 +6,7 @@ inline subpixel_t shinki_wing_random_x(void) {
 	);
 }
 
-// Limited to the top 3/2rds of the wing area.
+// Limited to the top 2/3 of the wing area.
 inline subpixel_t shinki_wing_random_y(void) {
 	return (
 		boss.pos.cur.y.v -

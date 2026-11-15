@@ -1,4 +1,4 @@
-// Two text-dissolve .BB payloads share one allocated segment.
+// Text-dissolve .BB masks: TXT1.BB and TXT2.BB share one allocated segment.
 #ifndef TH05_BB_TEXT_HPP
 #define TH05_BB_TEXT_HPP
 #include "src/main/formats/bb_load.hpp"

@@ -1,4 +1,4 @@
-// Five complete charged puppet patterns; foreign references remain unowned.
+// Alice's five puppet patterns.
 #pragma option -zCALICE_PUP_TEXT -zPmain_03
 #include "src/main/boss/alice/puppet_patterns.hpp"
 

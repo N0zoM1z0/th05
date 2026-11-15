@@ -1,4 +1,5 @@
-// Natural ReC98 b6ba5b0a th05/main/boss/bx.cpp firewave owner.
+// EX-Alice's fire waves, which travel down the playfield. Adapted from
+// ReC98's th05/main/boss/bx.cpp.
 /// Extra Stage Boss - EX-Alice
 /// ---------------------------
 

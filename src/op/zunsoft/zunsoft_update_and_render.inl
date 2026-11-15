@@ -1,3 +1,5 @@
+// Explosions stay at their origin for 16 frames, then fly outward (playing
+// SE 15 on frame 16) and disappear after 40 frames.
 void pascal near zunsoft_update_and_render(void)
 {
 	register pyro_t near *pyro = pyros;

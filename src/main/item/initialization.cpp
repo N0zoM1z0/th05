@@ -1,4 +1,5 @@
-// Natural stage initialization from the maintained TH04 item owner.
+// Item state reset at the start of a stage.
+// Part of the item family translation unit (family.cpp).
 #ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma option -zCITEM_INIT_TEXT -zPmain_03
 #endif

@@ -1,7 +1,6 @@
-// TH05 Music Room title and filename tables from natural source.
-// Provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
+// Song titles, file names and labels shown in the Music Room. UTF-8,
+// converted to Shift-JIS before compilation. Based on ReC98
 // th05/shiftjis/music.hpp and th02..th05/shiftjis/bgm.hpp.
-// Canonical UTF-8; producer explicitly stages CP932. Resources stay external.
 #ifndef TH05_OP_MUSIC_TITLES_HPP
 #define TH05_OP_MUSIC_TITLES_HPP
 

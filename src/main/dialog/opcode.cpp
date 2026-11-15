@@ -1,4 +1,6 @@
-// Complete dialog command interpreter, independent of box/run producers.
+// dialog_op() on its own. Built like this, the compiler leaves out the
+// alignment byte before the command switch table, so the exact build uses
+// opcode_full_context.cpp instead.
 #pragma option -zCDIALOG_OP_TEXT -zPmain_01
 #include <string.h>
 #include "src/main/dialog/runtime.hpp"

@@ -1,3 +1,4 @@
+// One frame of the registration screen, flipping the two VRAM pages.
 void near registration_frame(void)
 {
     snd_se_update();

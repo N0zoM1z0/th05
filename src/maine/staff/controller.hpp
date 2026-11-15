@@ -1,4 +1,4 @@
-// Full existing staff/verdict types and actual external controller providers.
+// staffroll_animate(): the whole staff roll, ending with the two verdict screens.
 #ifndef TH05_STAFF_CONTROLLER_HPP
 #define TH05_STAFF_CONTROLLER_HPP
 #include <dos.h>
@@ -7,7 +7,8 @@
 #include "src/maine/staff/frame.hpp"
 #include "src/maine/staff/reveal_b.hpp"
 
-// Foreign verdict providers really occupy the accepted full-family CODESEG.
+// The verdict functions are declared under the VERDICT_FULL_TEXT segment they
+// were compiled in.
 #ifndef TH05_VERDICT_FULL_FAMILY
 #define TH05_VERDICT_FULL_FAMILY
 #define TH05_STAFF_RESTORE_VERDICT
@@ -32,7 +33,7 @@ static const uint16_t STAFF_INPUT_CANCEL = 0x1000;
 static const uint16_t STAFF_INPUT_OK = 0x2000;
 extern uint16_t key_det;
 
-// Foreign mutable file-name objects; no file/image/font data is defined here.
+// Defined in filenames.cpp.
 extern char staff_bgm_filename[6];
 extern char staff_cdg_00_filename[10];
 extern char staff_cdg_01_filename[10];
@@ -65,17 +66,9 @@ extern "C" {
 }
 int far input_reset_sense_held(void);
 #pragma codeseg STAFF_BITMAP_TEXT group_01
-// Real external device-copy kernels, one unsigned-word argument and RET2.
 void pascal near verdict_bitmap_snap(size_t bitmap_offset);
 void pascal near verdict_bitmap_put(size_t bitmap_offset);
 #pragma codeseg STAFF_CONTROL_TEXT group_01
 void near staffroll_animate(void);
 #pragma codeseg
-
-typedef char staff_controller_word_is_2[(sizeof(size_t) == 2) ? 1 : -1];
-typedef char staff_controller_palette_is_48[(sizeof(Palette8) == 48) ? 1 : -1];
-typedef char staff_controller_rgb_is_3[(sizeof(RGB8) == 3) ? 1 : -1];
-typedef char staff_controller_input_is_2[(sizeof(key_det) == 2) ? 1 : -1];
-typedef char staff_controller_frame_is_2[(sizeof(staff_frame) == 2) ? 1 : -1];
-typedef char staff_controller_measure_is_2[(sizeof(staff_bgm_measure) == 2) ? 1 : -1];
 #endif

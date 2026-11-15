@@ -1,5 +1,5 @@
-// Genuine adjacent Alice charge patterns, final spread and complete updater.
-// Only the final callback is proposed for new authored credit.
+// Alice, the stage 3 boss: her charge patterns, final spread and update
+// function, compiled together in their original order.
 #pragma option -zCB4_UPDATE_TEXT -zPmain_03
 #include "src/main/boss/alice/update.hpp"
 #include "src/main/boss/alice/puppet_choreography.hpp"
@@ -9,10 +9,8 @@
 #include "src/main/boss/alice/charged_attack_rules.hpp"
 #include "src/main/boss/alice/charge_patterns.hpp"
 
-// The four normal waves share one countdown but the *current* HP is set
-// from the previous threshold before the next threshold is installed.
-// The four real regular-wave HP gates are 7400 -> 5200 -> 3000 -> 800,
-// and the final transition installs zero for the following attack.
+// The four pattern waves end at 7400, 5200, 3000 and 800 HP. After the
+// fourth one, the next threshold is 0.
 static const int ALICE_WAVE_ONE_END_HP = 7400;
 static const int ALICE_WAVE_HP_DECREMENT = 2200;
 static const int ALICE_REGULAR_WAVE_PATTERN_LIMIT = 24;
@@ -25,24 +23,16 @@ static const int ALICE_PUPPET_APPEAR_FRAME = 128;
 static const int ALICE_FINAL_SPREAD_TIMEOUT = 1000;
 static const int ALICE_BULLET_CLEAR_MIN_FRAMES = 20;
 static const int ALICE_REGULAR_WAVE_BONUS = 7;
-// Explicit sentinels for the existing Boss/Puppet phase lifetimes.
-static const int ALICE_PHASE_FRAME_RESET = 0;
-static const int ALICE_PATTERN_COUNT_RESET = 0;
-static const int ALICE_FIRST_ATTACK_WAVE = 0;
-static const int ALICE_FINAL_WAVE_END_HP = 0;
-static const int ALICE_PUPPET_ENTRANCE_DONE = 0;
-static const int ALICE_BEAM_FRAME_RESET = 0;
-static const int ALICE_PUPPET_FRAME_RESET = 0;
 #pragma codeseg B4_UPDATE_TEXT main_03
 
 #include "src/main/boss/alice/charge_patterns_body.inl"
 
 
+// Word-aligns the phase switch table at the end of alice_update().
 #pragma option -a2
 #include "src/main/boss/alice/final_spread.inl"
 
-// Both beam approach and beam attack hold the paired puppets at the same
-// prev-position anchors with full HP and the held-pattern callbacks.
+// Keeps both puppets at their beam positions, with full HP.
 #define ALICE_BEAM_PUPPETS_HOLD() \
     alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_BEAM_LEFT_X_PX); \
     alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_BEAM_Y_PX); \
@@ -52,32 +42,27 @@ static const int ALICE_PUPPET_FRAME_RESET = 0;
     alice_puppet1.hp = ALICE_PUPPET_HP; \
     alice_puppet_pattern0 = alice_puppet_pattern1 = alice_puppet_hold
 
-// Ring approach and final spread begin from the same previous-position
-// anchors, but only the approach resets puppet HP.
+// Moves both puppets to their positions for the ring patterns.
 #define ALICE_RING_PUPPETS_ANCHOR() \
     alice_puppet0.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_LEFT_X_PX); \
     alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX); \
     alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_RING_RIGHT_X_PX); \
     alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_RING_Y_PX)
 
-// Two attack-bank handoffs require the same minimum bullet-clear window.
-// Do not increase an already longer clear time or change the check order.
+// Clears bullets for at least 20 frames.
 #define ALICE_ENSURE_CLEAR_WINDOW() { \
     if(bullet_clear_time < ALICE_BULLET_CLEAR_MIN_FRAMES) { \
         bullet_clear_time = ALICE_BULLET_CLEAR_MIN_FRAMES; \
     } \
 }
 
-// Only transitions that advance one ordinary phase and then reset the clock
-// use this ordering; the shared ring-approach label intentionally resets
-// its clock before incrementing the phase and is left unchanged.
+// Note that `movement_complete` below does these in the opposite order.
 #define ALICE_NEXT_PHASE_AND_RESET_CLOCK() { \
     boss.phase++; \
-    boss.phase_frame = ALICE_PHASE_FRAME_RESET; \
+    boss.phase_frame = 0; \
 }
 
-// The two entering puppets receive identical state setup except their
-// separate sweep-in angles. Use the real near `p` and preserve field order.
+// Spawns a puppet off-screen. It then flies in at [entrance_angle].
 #define ALICE_START_PUPPET(entrance_angle) { \
     p->flag = ALICE_PUPPET_ACTIVE; \
     p->patnum = ALICE_PUPPET_IDLE_PATNUM; \
@@ -121,7 +106,7 @@ void pascal far alice_update(void)
         if(boss.phase_frame >= ALICE_READY_EXIT_FRAME) {
             ALICE_NEXT_PHASE_AND_RESET_CLOCK();
             boss.mode = ALICE_MODE_ATTACK;
-            boss.phase_state.patterns_seen = ALICE_PATTERN_COUNT_RESET;
+            boss.phase_state.patterns_seen = 0;
             alice_scratch.ready_phase_store_only = ALICE_READY_PHASE_STORE_VALUE;
             alice_scratch.beam_phase = ALICE_BEAM_INACTIVE;
         }
@@ -139,12 +124,12 @@ void pascal far alice_update(void)
             alice_puppet_pattern1 = alice_puppet_initial;
         } else if(boss.phase_frame > ALICE_PUPPET_APPEAR_FRAME) {
             alice_puppets_entrance();
-            if(alice_puppet0.radius.radius_motion == ALICE_PUPPET_ENTRANCE_DONE) {
+            if(alice_puppet0.radius.radius_motion == 0) {
                 boss.phase++;
                 boss.mode = ALICE_MODE_REPOSITION;
-                boss.phase_frame = ALICE_PHASE_FRAME_RESET;
-                boss.phase_state.patterns_seen = ALICE_PATTERN_COUNT_RESET;
-                alice_scratch.attack_wave = ALICE_FIRST_ATTACK_WAVE;
+                boss.phase_frame = 0;
+                boss.phase_state.patterns_seen = 0;
+                alice_scratch.attack_wave = 0;
                 alice_beam_burst_window = ALICE_BEAM_BURST_INITIAL_WINDOW;
             }
         }
@@ -158,7 +143,7 @@ void pascal far alice_update(void)
         case ALICE_MODE_REPOSITION:
             if(boss_flystep_random(boss.phase_frame - ALICE_RANDOM_FLYSTEP_LEAD_FRAMES)) {
                 boss.mode = ALICE_MODE_ATTACK;
-                boss.phase_frame = ALICE_PHASE_FRAME_RESET;
+                boss.phase_frame = 0;
                 boss.phase_state.patterns_seen++;
                 if(boss.phase_state.patterns_seen >= ALICE_REGULAR_WAVE_PATTERN_LIMIT) {
                     goto phase_complete;
@@ -181,15 +166,15 @@ phase_complete:
         ALICE_ENSURE_CLEAR_WINDOW();
         boss_explode_small(ET_NW_SE);
         ALICE_NEXT_PHASE_AND_RESET_CLOCK();
-        boss.phase_state.patterns_seen = ALICE_PATTERN_COUNT_RESET;
+        boss.phase_state.patterns_seen = 0;
         boss.mode = ALICE_MODE_REPOSITION;
         boss.hp = boss.phase_end_hp;
         if(boss.phase < ALICE_PHASE_PATTERN_WAVE_4) {
             boss.phase_end_hp -= ALICE_WAVE_HP_DECREMENT;
         } else {
-            boss.phase_end_hp = ALICE_FINAL_WAVE_END_HP;
+            boss.phase_end_hp = 0;
         }
-        alice_beam_frame = ALICE_BEAM_FRAME_RESET;
+        alice_beam_frame = 0;
         break;
 
     case ALICE_PHASE_BEAM_APPROACH_1:
@@ -219,7 +204,7 @@ phase_complete:
         alice_puppet0.pos.prev.y.v = to_sp(ALICE_PUPPET_POST_BEAM_Y_PX);
         alice_puppet1.pos.prev.x.v = to_sp(ALICE_PUPPET_POST_BEAM_RIGHT_X_PX);
         alice_puppet1.pos.prev.y.v = to_sp(ALICE_PUPPET_POST_BEAM_Y_PX);
-        alice_puppet0.phase_frame = alice_puppet1.phase_frame = ALICE_PUPPET_FRAME_RESET;
+        alice_puppet0.phase_frame = alice_puppet1.phase_frame = 0;
         alice_puppet_pattern0 = alice_puppet_spread;
         alice_puppet_pattern1 = alice_puppet_spread;
         break;
@@ -233,7 +218,7 @@ phase_complete:
             goto movement_hittest;
         }
 movement_complete:
-        boss.phase_frame = ALICE_PHASE_FRAME_RESET;
+        boss.phase_frame = 0;
         boss.phase++;
 movement_hittest:
         boss_hittest_shots();
@@ -249,7 +234,9 @@ movement_hittest:
             }
             boss.phase_state.defeat_bonus = true;
         }
-        boss.phase_frame = ALICE_PHASE_FRAME_RESET;
+        // On timeout, [defeat_bonus] stays false only because it shares its
+        // byte with [patterns_seen], which is 0 since the end of wave 4.
+        boss.phase_frame = 0;
         boss.phase = ALICE_PHASE_EXPLODE_SMALL;
         alice_puppet0.flag = ALICE_PUPPET_DEFEAT_ANIMATION;
         alice_puppet1.flag = ALICE_PUPPET_DEFEAT_ANIMATION;

@@ -1,14 +1,15 @@
-// Natural insertion body, adapted from the maintained TH04 registration source.
-// score_insert is a descriptive name; the target does not attest its spelling.
+// Inserts the score of the run that just ended into the loaded score table,
+// setting [entered_place] to the new row or to 0xFF if the score is too low.
+// Structured like TH04's version; ReC98 does not name this function.
 void near score_insert(void)
 {
     int compared_place;
     int digit_index;
 
-    // Walk upward from the lowest table row. Each stored score byte is a gaiji
-    // digit (gb_0 + 0..9), while resident->score_last holds numeric digits.
-    // Equal scores keep walking upward, so the new result precedes existing
-    // equal results. Preserve the descending digit order used by the target.
+    // Walk upward from the lowest table row, comparing from the most
+    // significant digit. Stored scores are gaiji digits (gb_0 + 0..9), while
+    // resident->score_last holds plain digits. Equal scores keep walking
+    // upward, so the new score is placed above existing equal ones.
     for(
         compared_place = (SCOREDAT_PLACES - 1);
         compared_place >= 0;
@@ -36,17 +37,17 @@ void near score_insert(void)
 
 lower_than_compared_place:
     if(compared_place == (SCOREDAT_PLACES - 1)) {
-        // Lower than the last row: leave the table untouched and publish the
-        // unsigned 0xFF sentinel consumed by regist_menu().
+        // Lower than the last row: leave the table untouched. regist_menu()
+        // checks for the resulting 0xFF.
         entered_place = -1;
         return;
     }
     entered_place = (compared_place + 1);
 
 shift_lower_places:
-    // Open the selected row by copying lower rows downward. The ninth name
-    // byte is a persistent NUL terminator initialized by scoredat_recreate(),
-    // so only the eight editable glyphs move here.
+    // Make room by moving the lower rows down. The ninth name byte is the
+    // terminator written by scoredat_recreate(), so only the eight glyphs
+    // need to move.
     for(
         compared_place = (SCOREDAT_PLACES - 2);
         compared_place >= entered_place;
@@ -69,9 +70,9 @@ shift_lower_places:
             hi.score.g_stage[compared_place];
     }
 
-    // Initialize the new editable name, convert the numeric resident score to
-    // display gaiji, and store either the reached stage or the ALL marker used
-    // for Extra/Ending states (their end_sequence values are >= REG_INSERT_EXTRA).
+    // Clear the new name, convert the score to gaiji digits, and store either
+    // the reached stage or the "All" marker for the endings (end_sequence >=
+    // ES_EXTRA).
     for(digit_index = (SCOREDAT_NAME_LEN - 1); digit_index >= 0; digit_index--) {
         hi.score.g_name[entered_place][digit_index] =
             gs_DOT;

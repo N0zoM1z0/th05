@@ -1,4 +1,6 @@
-// Natural ReC98 b6ba5b0a: th04/main/hud/hp.cpp, shared by GAME5.
+// Boss HP bar animation: fills the bar by one step per frame up to the current
+// HP, and drops it immediately when HP decreases. Identical to ReC98's
+// th04/main/hud/hp.cpp.
 #pragma option -zCHUD_HP_TEXT -zPmain_03
 #include "src/main/boss/late_game_state_publics.h"
 #include "src/main/runtime/small.hpp"

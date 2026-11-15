@@ -1,4 +1,4 @@
-// Complete TH05 tile-ring coordinates and near scroll converter interface.
+// tile_ring_set_vo() and the declarations it needs.
 #ifndef TH05_MAIN_SCROLL_RING_SET_HPP
 #define TH05_MAIN_SCROLL_RING_SET_HPP
 #include "src/shared/abi.hpp"

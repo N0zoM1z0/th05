@@ -1,10 +1,10 @@
-// Actual TH05 stage release and pause-menu interfaces. No resource payload.
+// Declarations used by session_end.cpp.
 #ifndef TH05_SESSION_END_HPP
 #define TH05_SESSION_END_HPP
 #include "src/shared/abi.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This source implements TH05 MAIN stage release and pause
+#error This is TH05 MAIN code
 #endif
 
 extern unsigned int key_det;
@@ -15,9 +15,10 @@ extern const char near aGAME_PAUSE_SPACES_1[];
 extern const char near aGAME_PAUSE_SPACES_2[];
 extern const char near aGAME_PAUSE_SPACES_3[];
 
+// Stage-specific sprite patterns and CDG slots, freed between stages.
 static const int STAGE_PATTERN_FIRST = 180;
 static const int STAGE_PATTERN_END = 256;
-// Actual CDG_PER_STAGE..CDG_PER_STAGE_last, inclusive, from frozen ems.hpp.
+// CDG_PER_STAGE to CDG_PER_STAGE_last, inclusive.
 static const int STAGE_CDG_FIRST = 1;
 static const int STAGE_CDG_END = 31;
 static const unsigned int PAUSE_INPUT_UP = 0x0001;

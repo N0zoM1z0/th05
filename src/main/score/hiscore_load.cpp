@@ -1,8 +1,10 @@
-// Load the saved top score into the eight-digit HUD score buffer.
-// The DOS register bindings and LOOP preserve the native near function's ABI.
+// hiscore_load(): loads the score list for the current character and rank,
+// and copies its top score, converted from gaiji, into [hiscore].
 #pragma option -zCHISCORE_LOAD_TEXT -zPmain_01 -k-
 #include <dos.h>
 #include "src/op/hiscore/view.hpp"
+// Declared here instead of including current.hpp, which would pull the
+// SHARED code segment into main_01 and overflow the 64 KiB group.
 #pragma codeseg SCORE_IO_TEXT main_01
 void near scoredat_load_for_cur(void);
 

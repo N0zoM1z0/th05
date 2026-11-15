@@ -1,7 +1,7 @@
-// Distinct miss/bomb counter-unit objects, each including its own terminator.
+// "回" units after the miss and bomb counts.
 #pragma option -zCVERDICT_COUNT_DATA_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error This initialized semantic DATA producer requires C mode
+#error Compile this file as C
 #endif
 #include "src/maine/verdict/format_text_c.h"
 

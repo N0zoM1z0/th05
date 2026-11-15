@@ -1,4 +1,6 @@
-// Candidate adapted from nmlgc/ReC98@b6ba5b0a; exactness requires local replay.
+// Per-difficulty bullet template tuning wrappers, all of which first adjust
+// the stack size of stacked groups by play performance. Same as ReC98's
+// th05/main/bullet/tune.cpp.
 #pragma option -zCBULLET_A_TEXT -zPmain_03
 
 #include <dos.h>
@@ -6,12 +8,17 @@
 
 #pragma option -k-
 
+// Each `codestring "\x90"` reproduces a word-alignment NOP that the original
+// has between these functions.
+
 extern "C" {
 
 static inline uint8_t not_aimed() {
 	return ~BGC0_AIMED;
 }
 
+// Stacked groups get one more bullet at high play performance and one less
+// (but never fewer than one) at low play performance.
 void pascal near tune_for_playperf(void)
 {
 	if((bullet_template.group & not_aimed()) != BG_STACK) {

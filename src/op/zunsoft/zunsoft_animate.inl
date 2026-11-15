@@ -1,3 +1,4 @@
+// Plays the logo animation; any key fades out early.
 void near zunsoft_animate(void)
 {
 	unsigned char page;
@@ -38,6 +39,7 @@ void near zunsoft_animate(void)
 
 	pyro = pyros;
 	for(i = 0; i < 256; i++, pyro++) {
+		// Clears [alive] and [age] with one word write
 		*reinterpret_cast<unsigned int near *>(pyro) = 0;
 	}
 	snd_delay_until_measure(2, 0);
@@ -52,6 +54,8 @@ void near zunsoft_animate(void)
 	graph_accesspage(1);
 	graph_showpage(0);
 	for(frame = 0; frame < 170; frame++) {
+		// TH05 polls input at the start of each frame. TH04 polls before the
+		// loop and at the end of each frame instead.
 		input_reset_sense_held();
 		if(key_det != INPUT_NONE) {
 			skip = true;

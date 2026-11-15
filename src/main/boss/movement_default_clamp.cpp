@@ -1,17 +1,16 @@
-// Original MAIN boss random-flystep boundary initialized as four Subpixels.
+// Default rectangle that boss_flystep_random() keeps the boss inside.
 #pragma option -zCBOSS_DEFAULT_CLAMP_TEXT -zPmain_01
 #include "src/main/boss/movement.hpp"
-#include "src/main/boss/movement_dynamics.hpp"
 #pragma codeseg BOSS_DEFAULT_CLAMP_TEXT main_01
 
-// Original PC-98 gameplay coordinates, not the dynamically updated
-// EX-Alice clamp (which writes to this same physical object later).
+// Playfield pixels. EX-Alice later overwrites this object with her own,
+// narrower arena of [64,320]x[48,96].
 enum BossDefaultClampPixels {
     BOSS_DEFAULT_LEFT_PX = 32,
     BOSS_DEFAULT_RIGHT_PX = 352,
     BOSS_DEFAULT_TOP_PX = 24,
     BOSS_DEFAULT_BOTTOM_PX = 128,
-    BOSS_SUBPIXEL_SHIFT = BMD_SUBPIXEL_SHIFT
+    BOSS_SUBPIXEL_SHIFT = 4
 };
 
 LRTB<Subpixel, Subpixel> near boss_flystep_random_clamp = {

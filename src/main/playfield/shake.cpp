@@ -1,6 +1,6 @@
-// Natural playfield shake adapted from nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/playfld.cpp ->
-// th04/main/playfld.cpp, retaining the GAME=5 clipping and double-left behavior.
+// Playfield shake: shifts the active VRAM page by a few pixels with the EGC
+// and schedules a tile redraw to undo it. Same code as ReC98's
+// th04/main/playfld.cpp built with GAME=5.
 #pragma option -zCPLAYFLD_TEXT -zPmain_01
 #include "src/main/playfield/shake.hpp"
 
@@ -13,7 +13,8 @@ inline void shift(
 ) {
     func(PLAYFIELD_LEFT, top, (PLAYFIELD_RIGHT - 1), bottom,
         (negate) ? -dots : dots);
-    // Both page-flipped buffers need a redraw to remove the previous shift.
+    // Only the active VRAM page was shifted, but with page flipping both pages
+    // need a redraw to undo it, so always redraw the next two frames.
     playfield_shake_redraw_time = PAGE_COUNT;
 }
 
@@ -24,6 +25,8 @@ inline void shift_x(egc_shift_func_t *func, bool negate)
 
 inline void shift_y(egc_shift_func_t *func, bool negate)
 {
+    // Micro-optimization: during boss fights (no scrolling), only the
+    // playfield area needs to move.
     if(scroll_line == 0) {
         shift(func, PLAYFIELD_TOP, (PLAYFIELD_BOTTOM - 1), negate,
             playfield_shake_y);
@@ -41,7 +44,8 @@ void near playfield_shake_update_and_render(void)
     }
 
     if(playfield_shake_x < 0) {
-        // Preserve TH05's original second left shift, not just its animation.
+        // ZUN quirk: TH05 shifts left twice, so left shakes move twice as
+        // far as right ones.
         egc_shift_left(PLAYFIELD_LEFT, 0, (PLAYFIELD_RIGHT - 1), (RES_Y - 1),
             -playfield_shake_x);
         shift_x(egc_shift_left, true);

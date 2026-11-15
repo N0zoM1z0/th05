@@ -1,4 +1,5 @@
-// Natural TH05 point-item extend check. Original complete helper near1CDAC.
+// Extra life for every 100 point items collected.
+// Part of the item family translation unit (family.cpp).
 #ifndef TH05_ITEM_FAMILY_CONTEXT
 #pragma option -zCITEM_EXTEND_TEXT -zPmain_03
 #endif
@@ -11,6 +12,8 @@ void near item_extend_check(void)
 {
     if((extends_gained * ITEM_EXTEND_POINT_INTERVAL + ITEM_EXTEND_POINT_INTERVAL)
         <= extend_point_items_collected) {
+        // At the 99-life cap, the extend still counts and raises the play
+        // performance, but grants nothing.
         playperf_raise(4);
         extends_gained++;
         if(lives < ITEM_EXTEND_LIVES_MAX) {

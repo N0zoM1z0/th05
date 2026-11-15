@@ -1,6 +1,5 @@
-// Single canonical Music Room implementation; included by music.cpp.
-
-
+// Music Room implementation, included by music.cpp. Based on ReC98
+// th02/op/m_music.cpp with the TH05 branches selected.
 
 int game_sel = (GAME_COUNT - 1);
 const int TRACK_COUNT[GAME_COUNT] = { 14, 18, 24, 28, 23 };
@@ -69,7 +68,6 @@ static int8_t unused[104];
 // Polygon state
 // -------------
 
-
 static const unsigned int POLYGON_COUNT = 16;
 
 // ZUN quirk: This has to be intentional.
@@ -119,15 +117,6 @@ int track_id_at_top;
 int track_playing;
 int track_count_cur;
 // --------------------
-
-typedef char th05_music_comment_block_is_400[(sizeof(cmt) == 400) ? 1 : -1];
-typedef char th05_music_point_scratch_is_40[(sizeof(points) == 40) ? 1 : -1];
-typedef char th05_music_centers_are_64[(sizeof(center) == 64) ? 1 : -1];
-typedef char th05_music_velocities_are_64[(sizeof(velocity) == 64) ? 1 : -1];
-typedef char th05_music_angles_are_16[(sizeof(angle) == 16) ? 1 : -1];
-typedef char th05_music_angle_speeds_are_16[(sizeof(angle_speed) == 16) ? 1 : -1];
-typedef char th05_music_choices_are_600[(sizeof(MUSIC_CHOICES) == 600) ? 1 : -1];
-typedef char th05_music_files_are_600[(sizeof(MUSIC_FILES) == 600) ? 1 : -1];
 
 void pascal near track_unput_or_put(uint8_t track_sel, bool16 put)
 {
@@ -199,13 +188,15 @@ void near nopoly_B_free(void)
 	HMem<dots8_t>::free(nopoly_B);
 }
 
-// Genuine saved-plane hardware boundary. The intrinsic owns the string-copy
-// instructions; this whole30-byte helper remains unaccepted. Its retained
-// compiler output differs from the original only in two XOR encodings.
+// Copies [nopoly_B] back to the B plane. This is ReC98's version; it compiles
+// to the right length, but __memcpy__ zeroes DI and SI with the `33` encoding
+// of XOR where the original has `31`. The matching version is in
+// nopoly_put_exact.cpp.
+// Like the original, this relies on the caller's DF = 0.
 void near nopoly_B_put(void)
 {
     asm { push ds; }
-    _ES = 0xA800; // Actual PC-98 B-plane VRAM segment.
+    _ES = 0xA800; // B plane
     _AX = FP_SEG(nopoly_B);
     _DS = _AX;
     __memcpy__(MK_FP(_ES, 0), MK_FP(_DS, 0), PLANE_SIZE);

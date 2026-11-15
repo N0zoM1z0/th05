@@ -1,6 +1,5 @@
-// Natural Yumeko helpers and complete real sword overlays. ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/main/bullet/sword.hpp,
-// th04/main/custom.hpp; original target independently validates every operand.
+// Yumeko's swords, sprites and attack helpers. The sword structures follow
+// ReC98's th05/main/bullet/sword.hpp.
 #ifndef TH05_MAIN_BOSS_YUMEKO_PATTERNS_HPP
 #define TH05_MAIN_BOSS_YUMEKO_PATTERNS_HPP
 #pragma codeseg B5_UPDATE_TEXT main_03
@@ -8,7 +7,8 @@
 #include "src/main/gather/gather.hpp"
 #include "src/main/bullet/cheeto.hpp"
 
-// Reuse the accepted complete custom_t; these are the actual stage overlays.
+// Swords are stored in the custom entity array: slot 0 holds the template, and
+// slots 1-63 the swords.
 struct sword_t {
     entity_flag_t flag;
     unsigned char angle;

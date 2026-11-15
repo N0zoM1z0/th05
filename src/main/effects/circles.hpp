@@ -1,4 +1,5 @@
-// Full circle state, adapted from pinned ReC98 th04/main/circle.cpp.
+// Circle effect pool (ReC98 th04/main/circle.cpp). Centers are in screen
+// pixels; callers pass playfield subpixels, which circle_init() converts.
 #ifndef TH05_MAIN_EFFECTS_CIRCLES_HPP
 #define TH05_MAIN_EFFECTS_CIRCLES_HPP
 #include <dos.h>

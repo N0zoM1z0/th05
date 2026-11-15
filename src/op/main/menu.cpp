@@ -1,7 +1,7 @@
-// TH05 OP startup and menus, adapted from natural C++ in nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/op/start.cpp,
-// th04/op/start.hpp and th04/op/m_main.cpp. Canonical source is UTF-8;
-// explicit CP932 staging preserves the readable Japanese string semantics.
+// OP.EXE's entry point, the main and option menus, and the game/Extra/demo
+// launchers. Based on ReC98 th05/op/start.cpp, th04/op/start.hpp and
+// th04/op/m_main.cpp. This file is UTF-8 and converted to Shift-JIS before
+// compilation.
 #pragma option -zCOP_MAIN_TEXT -zPop_01
 #include <dos.h>
 #include <conio.h>
@@ -9,13 +9,17 @@
 #include <process.h>
 #include "src/op/main/menu.hpp"
 #include "src/op/main/strings.hpp"
-#include "src/op/main/launch_sequence_rules.hpp"
 
+// Frames without input on the main menu before a demo starts
+#define OPL_ATTRACT_IDLE_FRAMES 640
+
+// execl() needs a far null pointer as its terminator in the large model,
+// hence `0UL`.
 inline void op_exit_into_main(bool fade_out_bgm, bool allow_debug) {
 	main_cdg_free();
 	cfg_save();
 	if(fade_out_bgm) {
-		snd_kaja_func(KAJA_SONG_FADE, OPL_GAME_SONG_FADE);
+		snd_kaja_func(KAJA_SONG_FADE, 10);
 	}
 	game_exit();
 	if(!allow_debug || !resident->debug) {
@@ -24,7 +28,6 @@ inline void op_exit_into_main(bool fade_out_bgm, bool allow_debug) {
 		execl(BINARY_DEB, BINARY_DEB, 0UL);
 	}
 }
-
 
 #define resident_reset_last_highest_and_stage_scores() \
 	int digit; \
@@ -47,8 +50,8 @@ inline void op_exit_into_main(bool fade_out_bgm, bool allow_debug) {
 void near start_game(void)
 {
 	resident->end_sequence = ES_SCORE;
-	resident->demo_num = OPL_FRESH_DEMO_INDEX;
-	resident->stage = OPL_SCORE_START_STAGE;
+	resident->demo_num = 0;
+	resident->stage = 0;
 	resident->credit_lives = resident->cfg_lives;
 	resident->credit_bombs = resident->cfg_bombs;
 
@@ -61,10 +64,10 @@ void near start_game(void)
 
 void near start_extra(void)
 {
-	resident->demo_num = OPL_FRESH_DEMO_INDEX;
+	resident->demo_num = 0;
 	resident->stage = STAGE_EXTRA;
-	resident->credit_lives = OPL_EXTRA_CREDIT_LIVES;
-	resident->credit_bombs = OPL_EXTRA_CREDIT_BOMBS;
+	resident->credit_lives = 3;
+	resident->credit_bombs = 3;
 
 	if(playchar_menu()) {
 		return;
@@ -76,13 +79,13 @@ void near start_extra(void)
 void near start_demo(void)
 {
 	resident->end_sequence = ES_SCORE;
-	resident->stage = OPL_SCORE_START_STAGE;
-	resident->credit_lives = OPL_DEMO_CREDIT_LIVES;
-	resident->credit_bombs = OPL_DEMO_CREDIT_BOMBS;
+	resident->stage = 0;
+	resident->credit_lives = 3;
+	resident->credit_bombs = 3;
 
 	resident->demo_num++;
-	if(resident->demo_num > OPL_DEMO_LAST_NORMAL_INDEX) {
-		resident->demo_num = OPL_DEMO_FIRST_INDEX;
+	if(resident->demo_num > 4) {
+		resident->demo_num = 1;
 	}
 
 	// Hidden Extra Stage Clear replay easter egg...
@@ -94,33 +97,33 @@ void near start_demo(void)
 			extra_playable_with[PLAYCHAR_MIMA] &&
 			extra_playable_with[PLAYCHAR_YUUKA]
 		) {
-			resident->demo_num = OPL_DEMO_HIDDEN_EXTRA_INDEX;
+			resident->demo_num = 5;
 		} else {
-			resident->demo_num = OPL_FRESH_DEMO_INDEX;
+			resident->demo_num = 0;
 			return;
 		}
 	}
 	switch(resident->demo_num) {
 	case 1:
 		resident->playchar = PLAYCHAR_REIMU;
-		resident->demo_stage = OPL_DEMO_REIMU_STAGE;
+		resident->demo_stage = 3;
 		break;
 	case 2:
 		resident->playchar = PLAYCHAR_MARISA;
-		resident->demo_stage = OPL_DEMO_MARISA_STAGE;
+		resident->demo_stage = 1;
 		break;
 	case 3:
 		resident->playchar = PLAYCHAR_MIMA;
-		resident->demo_stage = OPL_DEMO_MIMA_STAGE;
+		resident->demo_stage = 2;
 		break;
 	case 4:
 		resident->playchar = PLAYCHAR_YUUKA;
-		resident->demo_stage = OPL_DEMO_YUUKA_STAGE;
+		resident->demo_stage = 4;
 		break;
 	case 5:
 		resident->playchar = PLAYCHAR_MIMA;
 		resident->demo_stage = STAGE_EXTRA;
-		snd_kaja_func(KAJA_SONG_FADE, OPL_EXTRA_DEMO_SONG_FADE);
+		snd_kaja_func(KAJA_SONG_FADE, 8);
 		break;
 	}
 	resident_reset_last_and_highest_scores();
@@ -131,8 +134,8 @@ void near start_demo(void)
 	execl(BINARY_MAIN, BINARY_MAIN, 0UL);
 }
 
-
-
+// The menu code below (ReC98's th04/op/m_main.cpp) uses word-aligned data;
+// the launchers above do not.
 #pragma option -a2
 
 enum main_choice_t {
@@ -236,7 +239,6 @@ int8_t menu_sel = 0;
 bool quit = false;
 int8_t main_menu_unused_1 = 1;
 const shiftjis_t* MENU_DESC[] = MENU_DESCRIPTIONS;
-typedef char th05_op_menu_description_table_is_104[(sizeof(MENU_DESC) == 104) ? 1 : -1];
 resident_t far *resident;
 int8_t in_option; // ACTUAL TYPE: bool
 menu_unput_and_put_func_t menu_unput_and_put;
@@ -407,7 +409,7 @@ void pascal near menu_sel_update_and_render(int8_t max, int8_t direction)
 	}
 
 	menu_unput_and_put(menu_sel, COL_ACTIVE);
-	snd_se_play_force(OPL_OPTION_SCROLL_SE);
+	snd_se_play_force(1);
 }
 
 #define menu_init( \
@@ -478,7 +480,7 @@ void near main_update_and_render(void)
 	menu_update_vertical(key_det, MC_COUNT);
 
 	if((key_det & INPUT_OK) || (key_det & INPUT_SHOT)) {
-		snd_se_play_force(OPL_OPTION_SELECT_SE);
+		snd_se_play_force(11);
 		switch(menu_sel) {
 		case MC_GAME:
 			start_game();
@@ -583,7 +585,7 @@ void near option_update_and_render(void)
 			initialized = false;
 			break;
 		case OC_QUIT:
-			snd_se_play_force(OPL_OPTION_SELECT_SE);
+			snd_se_play_force(11);
 			return_from_option_to_main(initialized);
 			break;
 		default:
@@ -671,12 +673,11 @@ void main(void)
 
 	text_clear();
 	respal_create(); // ZUN bloat: These games don't use resident palettes.
-	mem_assign_paras = (OPL_OP_MEMORY_BYTES >> 4);
+	mem_assign_paras = (336000 >> 4);
 	if(game_init_op(OP_AND_END_PF_FN)) {
 		dos_puts2(MEMORY_INSUFFICIENT);
 		getch();
 	}
-
 
 	cfg_load();
 	if(resident->rank == RANK_SHOW_SETUP_MENU) {
@@ -690,10 +691,10 @@ void main(void)
 		resident->zunsoft_shown = true;
 	}
 
-	if((GAME == 5) && resident->demo_num == OPL_DEMO_HIDDEN_EXTRA_INDEX) {
-		resident->demo_num = OPL_FRESH_DEMO_INDEX;
+	if((GAME == 5) && resident->demo_num == 5) {
+		resident->demo_num = 0;
 	}
-	if(resident->demo_num == OPL_FRESH_DEMO_INDEX) {
+	if(resident->demo_num == 0) {
 		snd_kaja_func(KAJA_SONG_STOP, 0);
 	}
 	op_animate();
@@ -729,7 +730,9 @@ void main(void)
 			main_update_and_render();
 			if(idle_frame >= OPL_ATTRACT_IDLE_FRAMES) {
 				start_demo();
-				// ZUN bloat: Execution never gets here.
+				// Only reached if Left+Right requested the hidden Extra Stage
+				// replay without all four characters having unlocked it;
+				// start_demo() launches MAIN.EXE otherwise.
 				idle_frame = 0;
 			}
 			break;
@@ -751,7 +754,7 @@ void main(void)
 		}
 
 		resident->rand++;
-		frame_delay(OPL_FRAME_TICK_DELAY);
+		frame_delay(1);
 	}
 	main_cdg_free();
 	cfg_save_exit();

@@ -1,5 +1,6 @@
-// Original game point-number doubling flag, before its separate EVEN byte.
-// Pinned ReC98 th04/main/pointnum/pointnum[data].asm: db 0; evendata.
+// Set by items_update() while items are pulled to the player. ZUN bloat: TH04
+// doubles new point numbers while it is set; in TH05 nothing reads it.
+// ReC98: th04/main/pointnum/pointnum[data].asm, followed by an alignment byte.
 #pragma option -zCPOINTNUM_TWICE_INIT_TEXT -zPmain_01
 #include "src/main/hud/resident.hpp"
 

@@ -1,11 +1,11 @@
-/* Semantic selector strings and state; the gaiji font bitmap remains foreign. */
+/* Initialized data of the playfield overlays, see overlay_data.h. */
 #pragma option -zCHUD_DATA_TEXT -zPmain_01
 #ifdef __cplusplus
-#error This initialized semantic DATA producer requires C mode
+#error This file must be compiled as C
 #endif
 #include "src/main/hud/overlay_data.h"
 
-/* Consecutive fragment glyphs form the named popup message in the gaiji font. */
+/* A popup message is a run of consecutive glyphs in the gaiji font. */
 #define HG_FRAG4(first) (first), ((first) + 1), ((first) + 2), ((first) + 3)
 #define HG_FRAG5(first) HG_FRAG4(first), ((first) + 4)
 #define HG_FRAG8(first) HG_FRAG4(first), HG_FRAG4((first) + 4)

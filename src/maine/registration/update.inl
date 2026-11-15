@@ -8,6 +8,7 @@ void near glyphballs_update(void)
     register glyphball_t near *ball;
     register int i;
 
+    // Unblit all balls, then redraw the name field below them.
     for((ball = glyphballs, i = 0); i < REGISTRATION_NAME_LENGTH; (i++, ball++)) {
         if(ball->phase == GBP_FREE) {
             continue;
@@ -22,9 +23,9 @@ void near glyphballs_update(void)
             ball->pos.prev.y.v = 0;
         }
         bgimage_put_rect_16(
-            (ball->pos.prev.x.v / 16) - (REG_CLOUD_SIZE / 2),
-            (ball->pos.prev.y.v / 16) - (REG_CLOUD_SIZE / 2),
-            REG_CLOUD_SIZE, REG_CLOUD_SIZE);
+            (ball->pos.prev.x.v / 16) - (GLYPHBALL_CLOUD_SPLASH_W / 2),
+            (ball->pos.prev.y.v / 16) - (GLYPHBALL_CLOUD_SPLASH_W / 2),
+            GLYPHBALL_CLOUD_SPLASH_W, GLYPHBALL_CLOUD_SPLASH_W);
     }
     reg_name_put(entered_place, playchar, entered_name_cursor);
 
@@ -35,42 +36,46 @@ void near glyphballs_update(void)
         switch(ball->phase) {
         case GBP_CLOUD_AT_ORIGIN:
             ball->pos.prev = ball->pos.cur;
-            left = (ball->pos.cur.x.v / 16) - (REG_CLOUD_SIZE / 2);
-            top = (ball->pos.cur.y.v / 16) - (REG_CLOUD_SIZE / 2);
+            left = (ball->pos.cur.x.v / 16) - (GLYPHBALL_CLOUD_SPLASH_W / 2);
+            top = (ball->pos.cur.y.v / 16) - (GLYPHBALL_CLOUD_SPLASH_W / 2);
             pattern = (static_cast<unsigned int>(ball->phase_frame) >> 1) +
-                REG_GLYPH_CLOUD;
-            if(pattern < REG_GLYPH_CLOUD + REG_GLYPH_CELS) {
+                PAT_GLYPHBALL_CLOUD;
+            if(pattern < PAT_GLYPHBALL_CLOUD + GLYPHBALL_CELS) {
                 break;
             }
             ball->phase++;
-            // The final cloud frame moves immediately, without resetting age.
+            // Starts moving on the same frame, without resetting [phase_frame].
+            // fallthrough
         case GBP_FLOAT_TO_TARGET:
             ball->pos.prev = ball->pos.cur;
             vector2_at(ball->pos.velocity, 0, 0, ball->speed.v, ball->angle);
             ball->pos.cur.x.v += ball->pos.velocity.x.v;
             ball->pos.cur.y.v += ball->pos.velocity.y.v;
-            left = (ball->pos.cur.x.v / 16) - (REG_BALL_SIZE / 2);
-            top = (ball->pos.cur.y.v / 16) - (REG_BALL_SIZE / 2);
+            left = (ball->pos.cur.x.v / 16) - (GLYPHBALL_W / 2);
+            top = (ball->pos.cur.y.v / 16) - (GLYPHBALL_W / 2);
             if(left < 0) {
                 left = 0;
                 ball->angle = 0x80 - ball->angle;
-                ball->pos.cur.x.v = (REG_BALL_SIZE / 2) * 16;
-            } else if(left >= 640 - REG_BALL_SIZE) {
-                left = 640 - REG_BALL_SIZE;
+                ball->pos.cur.x.v = (GLYPHBALL_W / 2) * 16;
+            } else if(left >= 640 - GLYPHBALL_W) {
+                left = 640 - GLYPHBALL_W;
                 ball->angle = 0x80 - ball->angle;
-                ball->pos.cur.x.v = (640 - (REG_BALL_SIZE / 2)) * 16;
+                ball->pos.cur.x.v = (640 - (GLYPHBALL_W / 2)) * 16;
             }
             if(top < 0) {
                 top = 0;
                 ball->angle = -ball->angle;
-                ball->pos.cur.y.v = (REG_BALL_SIZE / 2) * 16;
-            } else if(top >= 400 - REG_BALL_SIZE) {
-                top = 400 - REG_BALL_SIZE;
+                ball->pos.cur.y.v = (GLYPHBALL_W / 2) * 16;
+            } else if(top >= 400 - GLYPHBALL_W) {
+                top = 400 - GLYPHBALL_W;
                 ball->angle = -ball->angle;
-                ball->pos.cur.y.v = (400 - (REG_BALL_SIZE / 2)) * 16;
+                ball->pos.cur.y.v = (400 - (GLYPHBALL_W / 2)) * 16;
             }
             pattern = ((static_cast<unsigned int>(ball->phase_frame) >> 2) & 3) +
-                REG_GLYPH_BALL;
+                PAT_GLYPHBALL;
+            // Steer towards the target: take its angle directly if within 2
+            // units, turn by 1 and accelerate if within 16, or turn by 1/16 of
+            // the difference and slow down otherwise.
             target_angle = iatan2(ball->target.y - ball->pos.cur.y,
                 ball->target.x - ball->pos.cur.x);
             angle_delta = ball->angle - target_angle;
@@ -115,6 +120,7 @@ void near glyphballs_update(void)
                     ball->angle -= angle_delta;
                 }
             }
+            // Arrived within 4 pixels on both axes?
             if(static_cast<unsigned int>(ball->pos.cur.x - ball->target.x + 4 * 16) <
                     8 * 16 &&
                static_cast<unsigned int>(ball->pos.cur.y - ball->target.y + 4 * 16) <
@@ -127,21 +133,22 @@ void near glyphballs_update(void)
 
         case GBP_SPLASH_AT_TARGET:
             pattern = (static_cast<unsigned int>(ball->phase_frame) >> 2) +
-                REG_GLYPH_SPLASH;
-            if(pattern >= REG_GLYPH_SPLASH + REG_GLYPH_CELS) {
+                PAT_GLYPHBALL_SPLASH;
+            if(pattern >= PAT_GLYPHBALL_SPLASH + GLYPHBALL_CELS) {
                 ball->phase++;
                 continue;
             }
             ball->pos.prev = ball->target;
-            left = (ball->target.x.v / 16) - (REG_CLOUD_SIZE / 2);
-            top = (ball->target.y.v / 16) - (REG_CLOUD_SIZE / 2);
+            left = (ball->target.x.v / 16) - (GLYPHBALL_CLOUD_SPLASH_W / 2);
+            top = (ball->target.y.v / 16) - (GLYPHBALL_CLOUD_SPLASH_W / 2);
             break;
 
         case GBP_REMOVE_REQUEST:
             ball->phase--;
             continue;
         }
-        // Invalid phases also reach this path with the original stale locals.
+        // ZUN landmine: An invalid phase gets here with [left], [top] and
+        // [pattern] left over from the previous ball, or uninitialized.
         ball->phase_frame++;
         super_put_rect(left, top, pattern);
     }

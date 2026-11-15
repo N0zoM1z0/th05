@@ -1,4 +1,4 @@
-// TH04 MAP records are retained; TH05 reads them through the raw DOS API.
+// .MAP loader: filename, header buffer and the functions map_load() calls.
 #ifndef TH05_MAP_LOAD_HPP
 #define TH05_MAP_LOAD_HPP
 #include "src/main/formats/map_free.hpp"

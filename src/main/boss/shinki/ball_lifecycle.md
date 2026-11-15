@@ -23,8 +23,7 @@ The original accepted source still applies bullet clearing before the
 movement/collision test, halves both signed velocity components upon
 entering decay, and advances the decay cel every **four frames** through
 the existing sprite range 204–207 before freeing the slot. The
-`ball_lifecycle.hpp` interface now names these five physical game
-constants, without adding entity state, changing two's-complement
+source names these five game constants next to their use, without adding entity state, changing two's-complement
 rounding, replacing the true `playfield_encloses()` expression or
 moving the two original optimizer-structural leaf calls. The source
 still runs age increment and segment-3 position update in the exact

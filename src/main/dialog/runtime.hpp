@@ -1,6 +1,7 @@
-// Natural TH05 dialog interpreter/box ABI, independent of accepted file.cpp.
-// ReC98 b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th04/main/dialog/shared.cpp,
-// th05/main/dialog/dialog.cpp, th05/formats/dialog.hpp and master.lib headers.
+// Dialog box layout, script commands and the declarations shared by the
+// dialog box, command and script loop code.
+// ReC98: th04/main/dialog/shared.cpp, th05/main/dialog/dialog.cpp and
+// th05/formats/dialog.hpp.
 #ifndef TH05_MAIN_DIALOG_RUNTIME_HPP
 #define TH05_MAIN_DIALOG_RUNTIME_HPP
 #include "src/main/hud/resident.hpp"
@@ -14,14 +15,14 @@ typedef int dialog_y_t;
 typedef unsigned int uscreen_x_t;
 typedef unsigned int uvram_y_t;
 
-// Complete TX2 sprite command payload. The original byte-packed header is
-// declared before the TU's later -a2 switch-table alignment pragma.
+// Parameters of DIALOG_PUT_SPRITE. Packed to 5 bytes: the .cpp files only
+// switch to -a2 after including this header.
 struct tx2_op_06_params {
     screen_x_t left;
     screen_y_t top;
     uint8_t patnum;
 };
-// All command bytes are described;07/08 are reserved and return false.
+// TX2 script command bytes. 0x07 and 0x08 are unused.
 enum dialog_opcode_t {
     DIALOG_SIDE_PLAYCHAR = 0x00,
     DIALOG_SIDE_BOSS = 0x01,
@@ -52,6 +53,7 @@ extern dialog_side_t dialog_side;
 extern shiftjis_t near dialog_kanji_buf[3];
 extern unsigned int key_det;
 
+// Metrics. In TH05, dialog coordinates are text RAM cells.
 static const int PLAYFIELD_LEFT = 32;
 static const int PLAYFIELD_RIGHT = 416;
 static const int PLAYFIELD_BOTTOM = 384;
@@ -114,8 +116,7 @@ int far input_reset_sense(void);
 int far input_sense(void);
 int pascal far input_wait_for_change(int frames);
 void near overlay_wipe(void);
-// Genuine foreign routines: box_put retains its original compiler-body ASM
-// and the face loader calls the original hardware unblitter. No bodies here.
+// Defined in box_put_body.inl and tail.cpp.
 void pascal near dialog_box_put(uscreen_x_t left, uvram_y_t top, int tile);
 void pascal near dialog_face_load_unput_put_free_8(screen_x_t left, screen_y_t top, int face);
 void near main_pat_exalice_override_and_super_clean_stage(void);
@@ -125,6 +126,8 @@ void near dialog_box_fade_in_animate(void);
 bool pascal near dialog_op(uint8_t command);
 void near dialog_run(void);
 
+// ZUN landmine: text_putsa() treats 0xE0-0xFF as fullwidth lead bytes, so a
+// misaligned 0xFF trail byte makes it print past the terminating NUL.
 inline void dialog_text_put(shiftjis_t *const &text) {
     text_putsa(to_tram_x(dialog_cursor.x), to_tram_y(dialog_cursor.y),
         reinterpret_cast<const char far *>(text), TX_WHITE);
@@ -140,7 +143,11 @@ inline void dialog_op_linebreak(void) {
         ? to_dialog_x(TEXT_PLAYCHAR_LEFT) : to_dialog_x(TEXT_BOSS_LEFT);
 }
 #define snd_kaja_func(function, parameter) snd_kaja_interrupt(((function) << 8) | static_cast<uint8_t>(parameter))
+// Frees all stage enemy/midboss sprites and resets the next patnum to
+// PAT_STAGE, where the boss code expects the script-loaded boss sprites.
 #define dialog_op_super_clean_stage() { super_clean(PAT_STAGE, PAT_STAGE_last + 1); }
+// Two frames per character, none while a key is held (or one on odd speedup
+// cycles, which never happen).
 #define dialog_delay(speedup_cycle) { \
     if(key_det == 0) { frame_delay(2); } \
     else if(speedup_cycle & 1) { frame_delay(1); } \

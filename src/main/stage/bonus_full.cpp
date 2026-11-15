@@ -1,4 +1,10 @@
-// Whole genuine adjacent bonus family; preceding helpers remain canonical.
+// Stage Clear and All Clear bonus tallies, rendered to text RAM.
+//
+// As in TH04, scores are counted in units of 10 points. The multiplier helpers
+// from bonus_helpers.cpp are compiled into this translation unit first, since
+// they precede these functions in the original code segment: Borland writes
+// relocations in 1 KiB chunks of code, and stage_allclear_bonus() only gets
+// the original relocation order at its original offset in the object file.
 #pragma option -zCBONUS_HELP_TEXT -zPmain_03
 #include "src/main/stage/bonus_full.hpp"
 #pragma codeseg BONUS_HELP_TEXT main_03
@@ -12,11 +18,14 @@ void near stage_clear_bonus(void)
     bool no_miss;
     bool no_bomb;
     unsigned int value;
+
+    // ZUN quirk: No Bomb also requires No Miss.
     no_miss = (resident->miss_count == bonus_previous_miss_count);
     bonus_previous_miss_count = resident->miss_count;
     no_bomb = (resident->bombs_used == bonus_previous_bomb_count) && no_miss;
     bonus_previous_bomb_count = resident->bombs_used;
 
+    // Darken the playfield behind the tally.
     PaletteTone = 60;
     palette_show();
     gaiji_putsa(20, 4, gpCLEAR_BONUS, BONUS_TX_WHITE);
@@ -37,6 +46,7 @@ void near stage_clear_bonus(void)
     value = stage_graze * 5;
     points += value;
     hud_points_put(34, 12, value);
+    // The sum so far is multiplied by the number of point items.
     value = stage_point_items_collected;
     points *= value;
     hud_5_digit_put(40, 14, value, BONUS_TX_WHITE);
@@ -49,6 +59,8 @@ void near stage_clear_bonus(void)
         points += value;
         hud_points_put(34, 17, value);
     }
+    // Large bonuses raise the play performance (and thus the rank), small
+    // ones lower it.
     if(points >= 1200000UL) {
         playperf_raise(4);
     } else if(points >= 800000UL) {
@@ -100,6 +112,7 @@ void near stage_allclear_bonus(void)
     value = stage_graze * 5;
     points += value;
     hud_points_put(34, 10, value);
+    // (lives - 1) * 10,000 points
     value = (lives * 1000) - 1000;
     points += value;
     hud_points_put(34, 12, value);
@@ -115,6 +128,7 @@ void near stage_allclear_bonus(void)
         points += extra;
         hud_points_put(34, 17, extra);
     }
+    // 2,500 points for every point item collected during the whole game
     extra = (unsigned long)extend_point_items_collected * 250UL;
     points += extra;
     hud_points_put(34, 18, extra);

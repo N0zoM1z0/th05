@@ -1,5 +1,5 @@
-// Readable verdict score messages, filenames and stage headings.
-// Canonical UTF-8 source requires explicit CP932 compiler staging.
+// Verdict score messages, filenames and the staff roll's stage headings.
+// (UTF-8; converted to Shift-JIS before compiling.)
 #pragma option -zCVERDICT_SCORE_DATA_TEXT -zPgroup_01
 #include "src/maine/verdict/ui_data.hpp"
 

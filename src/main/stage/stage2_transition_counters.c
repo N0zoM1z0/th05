@@ -1,7 +1,8 @@
-/* Stage-two transition: native particle count and paired palette clocks. */
+/* Stage 2 background state: number of particles spawned so far, the level of
+ * the color 0 pulse, and the brightness flash during the transition. */
 #pragma option -zCSTAGE2_TRANSITION_DATA_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Original stage-two initialized DATA is produced by C
+#error This file must be compiled as C
 #endif
 
 #include "src/main/stage/stage2_transition_counters.h"

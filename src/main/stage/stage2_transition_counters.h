@@ -1,4 +1,4 @@
-/* C-owned Stage 2 background state, with original near ABI for C++ clients. */
+/* Stage 2 background state, defined in stage2_transition_counters.c. */
 #ifndef TH05_STAGE2_TRANSITION_COUNTERS_H
 #define TH05_STAGE2_TRANSITION_COUNTERS_H
 #ifdef __cplusplus

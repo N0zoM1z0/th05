@@ -1,4 +1,4 @@
-// Named selectable glyphs and navigation keys, preserving the writable byte ABI.
+// The 3x17 gaiji keyboard of the name registration screen.
 #pragma option -zCREG_ALPHA_DATA_TEXT -zPGROUP_01
 #include "src/maine/registration/alphabet_data.hpp"
 

@@ -1,7 +1,7 @@
-// Original MAIN 66-byte demo/EMS/bomb/character filename bank.
+// Demo, launcher, EMS and face filenames, in their original order.
 #pragma option -zCSESSION_FILES_TEXT -zPmain_01
 #ifdef __cplusplus
-#error This initialized semantic DATA producer requires C mode
+#error Compile this file as C
 #endif
 #include "src/main/resources/session_files_c.h"
 MainSessionFiles near main_session_files = {

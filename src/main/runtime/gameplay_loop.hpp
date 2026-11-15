@@ -1,10 +1,11 @@
-// Genuine no-argument callbacks and foreign APIs used by the TH05 frame loop.
+// Declarations used by gameplay_loop(): the per-frame callback slots and
+// every update/render function it calls.
 #ifndef TH05_GAMEPLAY_LOOP_HPP
 #define TH05_GAMEPLAY_LOOP_HPP
 #include <dos.h>
 #include "src/main/runtime/main.hpp"
 
-// These are the complete canonical stage/setup callback typedefs, unchanged.
+// Callback types, as declared elsewhere in MAIN.
 typedef void (near pascal *near nearfunc_t_near)(void);
 typedef void (far pascal *near func_t_near)(void);
 typedef void (near *near RuntimeInputCallback)(void);
@@ -48,6 +49,8 @@ extern "C" volatile unsigned int vsync_Count1;
 static const unsigned int INPUT_CANCEL = 0x1000;
 static const unsigned int INPUT_Q = 0x4000;
 
+// The segments below only give each callee the code segment and group of
+// its first declaration; the functions themselves are defined elsewhere.
 #pragma codeseg RUNTIME_MAIN01_TEXT main_01
 extern "C" int near pause(void);
 extern "C" void pascal far playperf_raise(char delta);

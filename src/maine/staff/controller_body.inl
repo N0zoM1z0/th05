@@ -1,14 +1,14 @@
-// Score-page navigation is a true three-state word protocol, not a bool.
-// HOLD is preserved until an input edge; forward/backward motion clamps to
-// the bitmap boundaries and resets the same state to HOLD.
+// Scrolling between the two verdict screens at the end of the staff roll.
+// FORWARD and BACKWARD scroll until the end of the bitmap, then return to HOLD.
 enum StaffVerdictScrollMode {
     STAFF_SCROLL_HOLD = 0,
     STAFF_SCROLL_FORWARD = 1,
     STAFF_SCROLL_BACKWARD = 2,
 };
-// Original music-measure gates and deliberate input/score presentation times.
+// BGM measures at which the scene parts start.
 static const unsigned int STAFF_ORB_GATHER_MEASURE = 30;
 static const unsigned int STAFF_ORB_OPEN_MEASURE = 48;
+// Frames of the final part, counted from the last picture.
 static const int STAFF_SCORE_PAGE_INPUT_FRAME = 400;
 static const int STAFF_SCORE_SNAPSHOT_FRAME = 350;
 static const int STAFF_SCORE_FIRST_VERDICT_FRAME = 256;
@@ -16,11 +16,13 @@ static const int STAFF_SCORE_FIRST_COMMENT_FRAME = 320;
 
 void near staffroll_animate(void)
 {
-    int frame;
+    int frame; // ZUN bloat: Also reused for the return values of two updates.
     int transition_done;
     size_t bitmap_offset;
     int slide_direction;
 
+    // Render the stage score tally into the second half of the verdict
+    // bitmap, using the staff roll layout.
     verdict_text_left = 32;
     verdict_text_color = 13;
     verdict_comment_color = 13;
@@ -33,6 +35,8 @@ void near staffroll_animate(void)
     outportb(0x7C, 0);
     verdict_stage_scores_put();
     verdict_bitmap_snap(STAFF_VERDICT_SCREEN_SIZE);
+
+    // Clear both pages, then load the music and graphics.
     grcg_setcolor(STAFF_GRCG_RMW, 1);
     grcg_byteboxfill_x(0, 0, (640 - 1) / 8, 400 - 1);
     outportb(0xA6, 1);
@@ -56,6 +60,7 @@ void near staffroll_animate(void)
     for(frame = 0; frame < 8; frame++) {
         super_convert_tiny(frame);
     }
+    // Part 1: Particles drift through space, then gather into the orb.
     Palettes.colors[0].c.b = 48;
     staff_particles_init();
     frame = 0;
@@ -73,6 +78,7 @@ void near staffroll_animate(void)
         staff_orb_particles_age();
         staff_frame_advance();
     }
+    // Part 2: The orb falls through space, with pictures 0 to 4.
     staff_particles_clear();
     do {
         frame = staff_orb_opening_update();
@@ -107,6 +113,7 @@ void near staffroll_animate(void)
         staff_frame_advance();
         frame++;
     } while(transition_done == 0);
+    // Part 3: The orb bursts into rain, with pictures 5 to 9.
     staff_particles_scatter();
     do {
         frame = staff_rain_update();
@@ -139,6 +146,12 @@ void near staffroll_animate(void)
         staff_frame_advance();
     } while(transition_done == 0);
 
+    // Part 4: Picture 10 stays visible, while the verdict is rendered and
+    // snapped into the first half of the verdict bitmap. The
+    // player can then scroll to the stage scores, and quit with Shot/OK on the
+    // second screen, or with Bomb/Cancel at any time.
+    // The verdict and comments are drawn on two consecutive frames to put
+    // them on both VRAM pages.
     frame = 0;
     bitmap_offset = 0;
     slide_direction = STAFF_SCROLL_HOLD;
@@ -185,6 +198,8 @@ void near staffroll_animate(void)
                 verdict_bitmap_put(bitmap_offset);
             } else if(slide_direction == STAFF_SCROLL_BACKWARD) {
                 bitmap_offset -= STAFF_VERDICT_SCROLL_STEP;
+                // [bitmap_offset] is unsigned; only this check treats it as
+                // signed.
                 if(static_cast<int>(bitmap_offset) < 0) {
                     bitmap_offset = 0;
                     slide_direction = STAFF_SCROLL_HOLD;
@@ -194,6 +209,7 @@ void near staffroll_animate(void)
         }
         staff_frame_advance();
     }
+    // Fade out the music and the screen.
     snd_kaja_interrupt((STAFF_KAJA_SONG_FADE << 8) | 4);
     frame = 100;
     do {

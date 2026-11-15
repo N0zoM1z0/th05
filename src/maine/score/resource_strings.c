@@ -1,10 +1,11 @@
-/* Real writable MAINE score, timer and slow-mode warning resources. */
+/* MAINE score file name, score screen image and font names, and the
+ * slow-mode warning ("Scores are not recorded when playing in slow mode"). */
 #pragma option -zCSCORE_RESOURCE_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error Native score DATA uses a C compiler producer
+#error This file is compiled as C
 #endif
 
-/* All four original SCORE file opens keep independent mutable names. */
+/* Every score file call uses its own writable copy of the name. */
 char SCOREDAT_FN[] = "GENSOU.SCR";
 char SCOREDAT_FN_0[] = "GENSOU.SCR";
 char SCOREDAT_FN_1[] = "GENSOU.SCR";
@@ -15,7 +16,7 @@ char score_digits_font_name[] = "scnum.bft";
 char score_timer_font_0_name[] = "sctm0.bft";
 char score_timer_font_1_name[] = "sctm1.bft";
 
-/* The two independent warning objects are deliberately writable. */
+/* ZUN bloat: Two identical copies of the same message. */
 char slow_mode_score_warning[] =
     "スローモードでのプレイでは、スコアは記録されません";
 char slow_mode_score_warning_repeat[] =

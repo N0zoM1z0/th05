@@ -1,3 +1,5 @@
+// Sends every glyph ball still on its way straight to its target, and waits
+// until all of them have arrived.
 void near glyphballs_commit_and_wait(void)
 {
     unsigned char pending = 0;
@@ -19,6 +21,8 @@ void near glyphballs_commit_and_wait(void)
     }
     do {
         pending = 0;
+        // Initializing [i] before [ball] here, unlike in the first loop, is
+        // what the original does.
         for((i = 0, ball = glyphballs); i < REGISTRATION_NAME_LENGTH; (i++, ball++)) {
             if(ball->phase != GBP_FREE) {
                 pending++;

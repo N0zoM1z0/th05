@@ -1,13 +1,13 @@
-// Actual TH05 ending selection and real far process-handoff interfaces.
+// Declarations used by end/dispatch.cpp.
 #ifndef TH05_MAIN_END_DISPATCH_HPP
 #define TH05_MAIN_END_DISPATCH_HPP
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error This ending dispatcher belongs to TH05 MAIN
+#error This is TH05 MAIN code
 #endif
 
-// The complete sequence domain is shared with the existing MAINE entry ABI.
+// Values of resident->end_sequence, as also read by MAINE.
 typedef enum {
     ES_GOOD = 0xFF,
     ES_BAD = 0xFE,
@@ -17,6 +17,7 @@ typedef enum {
 } end_sequence_t;
 
 extern unsigned char continues_used;
+// Both are "maine"; see runtime/end_binary_names.c.
 extern const char near ending_binary_main[];
 extern const char near ending_binary_extra[];
 
@@ -26,7 +27,8 @@ extern "C" void pascal far palette_black_out(unsigned int speed);
 extern "C" int pascal far snd_kaja_interrupt(int ax);
 #pragma codeseg END_DISPATCH_TEXT main_01
 int pascal far GameExecl(const char far *binary_fn);
-// This real far callee is physically earlier in the same MAIN01 code frame.
+// GameExecl() is far, but earlier in the same physical code segment;
+// `samecodeseg` lets TLINK shorten the call to NOP / PUSH CS / CALL near.
 #pragma samecodeseg GameExecl
 void far end_game(void);
 void far end_extra(void);

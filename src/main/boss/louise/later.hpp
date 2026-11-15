@@ -1,16 +1,13 @@
-// Remaining natural Louise bullet and shoot-out laser patterns.
+// Declarations for Louise's later patterns.
 #ifndef TH05_MAIN_BOSS_LOUISE_LATER_HPP
 #define TH05_MAIN_BOSS_LOUISE_LATER_HPP
 
 #include "src/main/boss/louise/patterns.hpp"
-// The accepted header declares the full24-byte laser and its actual main03
-// spawn segment. Its sound declaration repeats the already captured SHARED ABI.
 #include "src/main/bullet/laser.hpp"
 #pragma codeseg B4_UPDATE_TEXT main_03
 
-// Complete canonical one-byte special-motion unions, as in update.hpp. That
-// large owner also declares unrelated entity enums, so keep this independent
-// ABI surface without including/redefining those unrelated types.
+// Same as in src/main/bullet/update.hpp, which declares too much else to be
+// included here.
 union BulletSpecialState {
     unsigned char turns_max;
     SubpixelLength8 speed_delta;

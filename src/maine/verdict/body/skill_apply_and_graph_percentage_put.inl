@@ -1,6 +1,8 @@
 void pascal near skill_apply_and_graph_percentage_put(screen_x_t left,
     screen_y_t top, uint16_t total, uint16_t share)
 {
+    // Both `register` keywords (also present in TH04) are needed to keep the
+    // coordinates in SI/DI; without them, the function grows by six bytes.
     register screen_x_t left_origin = left;
     register screen_y_t top_origin = top;
     uint16_t digits;
@@ -11,6 +13,7 @@ void pascal near skill_apply_and_graph_percentage_put(screen_x_t left,
     } else {
         fraction = 0;
     }
+    // ZUN quirk: Divides before multiplying, losing precision.
     if(total != share) {
         if(total) {
             fraction /= total;

@@ -1,4 +1,5 @@
-// Full 16x16, four-plane .MPN image and its two-byte allocated-segment handle.
+// .MPN tile image (16x16 pixels, four bitplanes) and the segment holding
+// all loaded images.
 #ifndef TH05_MPN_FREE_HPP
 #define TH05_MPN_FREE_HPP
 #include "src/shared/abi.hpp"

@@ -1,12 +1,11 @@
-// Exact existing verdict UI object interfaces; no graphic or font payload.
+// Verdict screen strings, defined in metric_ui_data.cpp and score_ui_data.cpp.
 #ifndef TH05_VERDICT_UI_DATA_HPP
 #define TH05_VERDICT_UI_DATA_HPP
 #include "src/shared/abi.hpp"
 #if GAME != 5 || BINARY != 'E'
-#error This verdict text owner belongs to TH05 MAINE
+#error This header is for TH05 MAINE.EXE only
 #endif
 
-// Identical to the accepted verdict formatter's complete byte character type.
 typedef uint8_t shiftjis_t;
 extern const shiftjis_t near verdict_score_unit[];
 extern const shiftjis_t near verdict_decimal_point[];

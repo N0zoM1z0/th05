@@ -1,4 +1,4 @@
-// Complete staff orb/trail helpers and opening-camera state.
+// The big orb and the camera movement of the opening part of the staff roll.
 #ifndef TH05_MAINE_STAFF_ORB_OPENING_HPP
 #define TH05_MAINE_STAFF_ORB_OPENING_HPP
 

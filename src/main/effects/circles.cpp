@@ -1,4 +1,6 @@
-// Natural TH05 specialization of ReC98 b6ba5b0a th04/main/circle.cpp.
+// Growing and shrinking circle effects: an 8-slot pool of GRCG circles whose
+// radius changes by a fixed step every frame. Same code as ReC98's
+// th04/main/circle.cpp, with TH05's pool size.
 #pragma option -zCCIRCLE_TEXT -zPmain_01
 #include "src/main/effects/circles.hpp"
 

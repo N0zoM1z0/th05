@@ -1,10 +1,7 @@
-// TH05 OP configuration persistence from natural ReC98 C++.
-// Provenance: b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// th05/cfg.cpp -> th04/formats/cfg.cpp, GAME=5 and BINARY=O.
+// Loading and saving MIKO.CFG from the OP menus. Based on ReC98
+// th04/formats/cfg.cpp (included by th05/cfg.cpp).
 #pragma option -zCCFG_TEXT -zPop_01
 #include "src/op/config/config.hpp"
-
-
 
 inline void cfg_options_update_from_resident(cfg_options_t &opts) {
 	opts.rank = resident->rank;
@@ -21,8 +18,8 @@ void near cfg_load(void)
 
 	cfg_load_and_set_resident(cfg, CFG_FN);
 
-	// TH05 does this in RES_KSO.COM.
-
+	// TH04 copies the loaded options into the resident structure at this
+	// point. In TH05, RES_KSO.COM has already done that.
 	if((resident->cfg_lives > CFG_LIVES_MAX) || (resident->cfg_lives == 0)) {
 		resident->cfg_lives = CFG_LIVES_DEFAULT;
 	}
@@ -61,6 +58,8 @@ void near cfg_save(void)
 
 void near cfg_save_exit(void)
 {
+	// The compiler emits this zero initializer as a 10-byte DATA template
+	// and copies it with F_SCOPY@.
 	cfg_t cfg = { 0 };
 
 	// ZUN landmine: In contrast to the function above, we do write the entire

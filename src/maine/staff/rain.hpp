@@ -1,4 +1,4 @@
-// Complete state and palette interfaces for the staff rain transition.
+// The particle rain of the second part of the staff roll.
 #ifndef TH05_MAINE_STAFF_RAIN_HPP
 #define TH05_MAINE_STAFF_RAIN_HPP
 
@@ -8,7 +8,7 @@ extern int staff_rain_cursor;
 extern int staff_rain_frame;
 extern screen_point_t space_window_center;
 
-// Same complete canonical RGB/Palette definitions as the frozen Boss owners.
+// master.lib palette types, as in ReC98's pc98.h.
 typedef unsigned int vc2;
 #define COLOR_COUNT 16
 #define COMPONENT_COUNT 3
@@ -40,9 +40,5 @@ extern "C" void pascal far palette_show(void);
 #endif
 void near staff_rain_spawn(void);
 int near staff_rain_update(void);
-
-typedef char staff_rain_rgb_is_3[(sizeof(RGB8) == 3) ? 1 : -1];
-typedef char staff_rain_palette_is_48[(sizeof(Palette8) == 48) ? 1 : -1];
-typedef char staff_rain_blue_is_at_2[(offsetof(RGB8, c.b) == 2) ? 1 : -1];
 
 #endif

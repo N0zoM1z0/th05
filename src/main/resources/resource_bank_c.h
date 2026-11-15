@@ -1,5 +1,12 @@
-// C-compatible semantic model; not a claim about historical source grouping.
-// Semantic resource objects grouped without losing types, identity or mutability.
+// Filenames used at startup and by stage_session_init(), in their original
+// order. The struct only keeps them contiguous; the game addresses each
+// name separately. It is plain C because Turbo C++ rejects const array
+// members in an aggregate without a constructor.
+//
+// The SESSION_* members mirror the names stage_session_init() uses for
+// them. Stage 6 (Extra) has its own copies of BSS4.CD2 and st04.bft; keep
+// them as separate members, since identical const string literals would be
+// merged.
 #ifndef TH05_MAIN_RESOURCE_FILENAME_BANK_C_H
 #define TH05_MAIN_RESOURCE_FILENAME_BANK_C_H
 #include <stddef.h>
@@ -8,7 +15,7 @@ typedef struct MainResourceFiles {
     const unsigned char main_pf_fn[12];
     const char se_fn[5];
     const char op_fn[3];
-    char stage_bgm_base[5];
+    char stage_bgm_base[5];  /* "ST00"; the stage digits are patched in place */
     const char SESSION_EYE_RGB[8];
     const char SESSION_REIMU_BFT[10];
     const char SESSION_MARI_BFT[9];

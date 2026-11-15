@@ -1,7 +1,8 @@
-/* Real far-DATA reference to the independently owned eyecatch resource name. */
+/* Far pointer to EYECATCH_FN (eyecatch_filename.c), used by the EMS
+ * eyecatch preloading code. */
 #pragma option -zCEYECATCH_POINTER_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Eyecatch pointer DATA requires a C compiler producer
+#error Compile this file as C
 #endif
 #include "src/shared/abi.hpp"
 extern char near EYECATCH_FN[8];

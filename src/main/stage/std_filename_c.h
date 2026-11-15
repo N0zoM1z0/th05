@@ -1,4 +1,4 @@
-// The original stand-alone TH05 standard-stage filename string.
+// Filename of the stage script (.STD) file.
 #ifndef TH05_MAIN_STAGE_STD_FILENAME_C_H
 #define TH05_MAIN_STAGE_STD_FILENAME_C_H
 #include <stddef.h>

@@ -1,4 +1,4 @@
-// Full canonical resident and eight-byte score records, never an opaque view.
+// score_reset() and the score state it clears.
 #ifndef TH05_HUD_SCORE_RESET_HPP
 #define TH05_HUD_SCORE_RESET_HPP
 #include "src/main/hud/resident.hpp"

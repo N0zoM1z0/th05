@@ -1,4 +1,4 @@
-// Real Louise movement provider for the frozen accepted callback interface.
+// Louise's bouncing movement.
 #ifndef TH05_MAIN_BOSS_LOUISE_FLYSTEP_HPP
 #define TH05_MAIN_BOSS_LOUISE_FLYSTEP_HPP
 #include "src/main/boss/louise/update.hpp"

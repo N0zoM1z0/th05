@@ -1,8 +1,10 @@
+// The per-frame gameplay loop, run once per stage until `quit` is set.
 #ifndef TH05_RUNTIME_COMBINED
 #pragma option -zCDEMO_TEXT -zPmain_01
 #endif
 #include "src/main/runtime/gameplay_loop.hpp"
 #pragma codeseg DEMO_TEXT main_01
+// playperf_raise() is far, in the same physical code segment (see entry.cpp).
 #pragma samecodeseg playperf_raise
 
 void near gameplay_loop(void)
@@ -56,7 +58,7 @@ void near gameplay_loop(void)
         pointnums_render();
         bullets_render();
         circles_render();
-        outportb(0x7C, 0);
+        outportb(0x7C, 0); // GRCG off
         overlay1();
         overlay2();
         playfield_shake_update_and_render();
@@ -65,6 +67,9 @@ void near gameplay_loop(void)
         total_slow_frames += (slowdown_caused_by_bullets |
             (vsync_Count1 >= slowdown_factor));
         total_frames++;
+        // Debug mode: Q toggles a fast-forward mode. While debug_frame_step
+        // is nonzero, the frame delay is skipped and the player can't be hit.
+        // Press Q: 0 -> -2, release: -1, press again: 1, release: back to 0.
         if(debug_frame_step_enabled) {
             if(key_det & INPUT_Q) {
                 if(debug_frame_step == 0) {
@@ -92,15 +97,18 @@ void near gameplay_loop(void)
             ? (void)(palette_show(), palette_changed = false)
             : (void)0;
         scroll_driver();
-        outportb(0xA6, page_front);
-        outportb(0xA4, page_back);
+        outportb(0xA6, page_front); // graph_accesspage()
+        outportb(0xA4, page_back);  // graph_showpage()
         page_front = page_back;
         page_back ^= 1;
         snd_se_update();
         frames_unused++;
 
-        // Preserve the original 16-bit CPU return-value dataflow: DX keeps
-        // the prior frame, AX holds the incremented frame and its word mask.
+        // ZUN bloat: the original copies the old frame number into DX and
+        // never uses it, and masks the new one with a word-sized AND. Neither
+        // `++stage_frame & 15` nor any other plain expression reproduces that,
+        // so the counter is written with pseudo-registers. Loading DX first
+        // gives the right size, but swaps the first two instructions.
         _AX = stage_frame;
         _DX = _AX;
         ++_AX;
@@ -109,6 +117,7 @@ void near gameplay_loop(void)
         stage_frame_mod8 = (stage_frame_mod16 & 7);
         stage_frame_mod4 = (stage_frame_mod8 & 3);
         stage_frame_mod2 = (stage_frame_mod4 & 1);
+        // Raise the play performance rank every 4096 frames.
         ((stage_frame & 4095) == 0)
             ? (void)playperf_raise(1)
             : (void)0;

@@ -1,3 +1,5 @@
+// Two 6-way spreads every 8 frames that form walls to the left and right,
+// and a cheeto into a random direction at the start of each cycle.
 void near pattern_cheetos_within_spread_walls(void)
 {
 	#define interval	shinki_cheeto_wall_scratch.ranked_interval.cheeto_wall_interval
@@ -10,6 +12,7 @@ void near pattern_cheetos_within_spread_walls(void)
 		// Expected to be a multiple of 8.
 		interval = select_for_rank(128, 48, 32, 24);
 
+		// ZUN bloat: Written, but never read.
 		unused = select_for_rank(32, 40, 48, 56);
 	}
 	int frame_in_cycle = (boss.phase_frame % interval);

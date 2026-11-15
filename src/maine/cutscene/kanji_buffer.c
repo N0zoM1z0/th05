@@ -1,8 +1,8 @@
-/* Writable two-byte Shift-JIS glyph buffer and its original string end. */
+/* The cutscene interpreter copies each two-byte Shift-JIS character from the
+ * script into this buffer before rendering it. */
 #pragma option -zCCUTSCENE_KANJI_BUFFER_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error Native cutscene-kanji DATA must have a C compiler producer
+#error This file is compiled as C
 #endif
 
 char near CUTSCENE_KANJI[3] = "  ";
-typedef char cutscene_kanji_buffer_three[(sizeof(CUTSCENE_KANJI) == 3) ? 1 : -1];

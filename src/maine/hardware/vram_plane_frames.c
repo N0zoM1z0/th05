@@ -1,7 +1,10 @@
-/* Four initialized far pointers to MAINE's PC-98 planar video hardware. */
+/* Far pointers to the four PC-98 graphics planes (B, R, G, E at segments
+ * A800h, B000h, B800h and E000h), as in ReC98's
+ * th05/hardware/vram_planes[data].asm. The original also had a _VRAM_PLANE
+ * alias for the first pointer; it is not declared here. */
 #pragma option -zCVRAM_PLANES_DATA_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error Physical far pointer resources require C initialized DATA
+#error This file is compiled as C
 #endif
 #include "src/shared/hardware/vram_plane_frames.h"
 

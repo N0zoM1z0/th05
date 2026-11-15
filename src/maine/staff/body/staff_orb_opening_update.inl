@@ -1,3 +1,8 @@
+// Camera and window movement while the orb falls through space: the camera
+// first accelerates downwards and then oscillates around 11.25 pixels per
+// frame, while the window becomes narrower and taller and moves to the left.
+// Returns 1 from frame 512 on; around frame 1000, the orb and the camera then
+// start drifting to the left.
 int near staff_orb_opening_update(void)
 {
     int elapsed;

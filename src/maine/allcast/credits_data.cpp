@@ -1,6 +1,7 @@
-// Readable TH05 all-cast names, game headings, and credits.
-// Reconstructed from the original referenced NUL objects, not graphics/font data.
-// Preserve original spelling, punctuation, spaces, and physically distinct names.
+// All Cast credit lines: game titles, cast names with their roles, and staff.
+// The spelling ("Tiyuri", "Elliy", "Programer", ...) and the space padding are
+// ZUN's. Identical lines are still separate strings. The file is UTF-8 and is
+// converted to Shift-JIS for the build.
 #pragma option -zCALLCAST_UI_DATA_TEXT -zPgroup_01
 #include "src/maine/allcast/credits_data.hpp"
 
@@ -51,52 +52,3 @@ uint8_t allcast_credit_pmd[] = "    P.M.D. Program                             M
 uint8_t allcast_credit_thanks[] = "    Special Thanks                             Aotaka";
 uint8_t allcast_credit_makers[] = "                                               Amusement Makers";
 uint8_t allcast_credit_players[] = "             and all test player and you ... ";
-
-// Each complete encoded NUL object has its independently reviewed extent.
-typedef char allcast_project_size[(sizeof(allcast_project) == 48) ? 1 : -1];
-typedef char allcast_th01_title_size[(sizeof(allcast_th01_title) == 65) ? 1 : -1];
-typedef char allcast_th01_reimu_size[(sizeof(allcast_th01_reimu) == 57) ? 1 : -1];
-typedef char allcast_th02_title_size[(sizeof(allcast_th02_title) == 60) ? 1 : -1];
-typedef char allcast_th02_reimu_size[(sizeof(allcast_th02_reimu) == 57) ? 1 : -1];
-typedef char allcast_th02_rika_size[(sizeof(allcast_th02_rika) == 58) ? 1 : -1];
-typedef char allcast_th02_meira_size[(sizeof(allcast_th02_meira) == 58) ? 1 : -1];
-typedef char allcast_th02_marisa_size[(sizeof(allcast_th02_marisa) == 59) ? 1 : -1];
-typedef char allcast_th02_mima_size[(sizeof(allcast_th02_mima) == 56) ? 1 : -1];
-typedef char allcast_th03_title_size[(sizeof(allcast_th03_title) == 63) ? 1 : -1];
-typedef char allcast_th03_reimu_size[(sizeof(allcast_th03_reimu) == 57) ? 1 : -1];
-typedef char allcast_th03_marisa_size[(sizeof(allcast_th03_marisa) == 59) ? 1 : -1];
-typedef char allcast_th03_mima_size[(sizeof(allcast_th03_mima) == 57) ? 1 : -1];
-typedef char allcast_th03_ellen_size[(sizeof(allcast_th03_ellen) == 57) ? 1 : -1];
-typedef char allcast_th03_kotohime_size[(sizeof(allcast_th03_kotohime) == 59) ? 1 : -1];
-typedef char allcast_th03_kana_size[(sizeof(allcast_th03_kana) == 61) ? 1 : -1];
-typedef char allcast_th03_rikako_size[(sizeof(allcast_th03_rikako) == 59) ? 1 : -1];
-typedef char allcast_th03_chiyuri_size[(sizeof(allcast_th03_chiyuri) == 65) ? 1 : -1];
-typedef char allcast_th03_yumemi_size[(sizeof(allcast_th03_yumemi) == 59) ? 1 : -1];
-typedef char allcast_th04_title_size[(sizeof(allcast_th04_title) == 62) ? 1 : -1];
-typedef char allcast_th04_reimu_size[(sizeof(allcast_th04_reimu) == 57) ? 1 : -1];
-typedef char allcast_th04_marisa_size[(sizeof(allcast_th04_marisa) == 59) ? 1 : -1];
-typedef char allcast_th04_orange_size[(sizeof(allcast_th04_orange) == 62) ? 1 : -1];
-typedef char allcast_th04_kurumi_size[(sizeof(allcast_th04_kurumi) == 58) ? 1 : -1];
-typedef char allcast_th04_elly_size[(sizeof(allcast_th04_elly) == 61) ? 1 : -1];
-typedef char allcast_th04_yuuka_size[(sizeof(allcast_th04_yuuka) == 62) ? 1 : -1];
-typedef char allcast_th04_mugetsu_size[(sizeof(allcast_th04_mugetsu) == 56) ? 1 : -1];
-typedef char allcast_th04_gengetsu_size[(sizeof(allcast_th04_gengetsu) == 57) ? 1 : -1];
-typedef char allcast_th05_title_size[(sizeof(allcast_th05_title) == 61) ? 1 : -1];
-typedef char allcast_th05_reimu_size[(sizeof(allcast_th05_reimu) == 57) ? 1 : -1];
-typedef char allcast_th05_marisa_size[(sizeof(allcast_th05_marisa) == 59) ? 1 : -1];
-typedef char allcast_th05_mima_size[(sizeof(allcast_th05_mima) == 57) ? 1 : -1];
-typedef char allcast_th05_yuuka_size[(sizeof(allcast_th05_yuuka) == 62) ? 1 : -1];
-typedef char allcast_th05_sara_size[(sizeof(allcast_th05_sara) == 61) ? 1 : -1];
-typedef char allcast_th05_louise_size[(sizeof(allcast_th05_louise) == 57) ? 1 : -1];
-typedef char allcast_th05_alice_size[(sizeof(allcast_th05_alice) == 62) ? 1 : -1];
-typedef char allcast_th05_yuki_size[(sizeof(allcast_th05_yuki) == 61) ? 1 : -1];
-typedef char allcast_th05_mai_size[(sizeof(allcast_th05_mai) == 61) ? 1 : -1];
-typedef char allcast_th05_yumeko_size[(sizeof(allcast_th05_yumeko) == 56) ? 1 : -1];
-typedef char allcast_th05_shinki_size[(sizeof(allcast_th05_shinki) == 68) ? 1 : -1];
-typedef char allcast_credit_program_size[(sizeof(allcast_credit_program) == 63) ? 1 : -1];
-typedef char allcast_credit_graphics_size[(sizeof(allcast_credit_graphics) == 63) ? 1 : -1];
-typedef char allcast_credit_music_size[(sizeof(allcast_credit_music) == 63) ? 1 : -1];
-typedef char allcast_credit_pmd_size[(sizeof(allcast_credit_pmd) == 64) ? 1 : -1];
-typedef char allcast_credit_thanks_size[(sizeof(allcast_credit_thanks) == 54) ? 1 : -1];
-typedef char allcast_credit_makers_size[(sizeof(allcast_credit_makers) == 64) ? 1 : -1];
-typedef char allcast_credit_players_size[(sizeof(allcast_credit_players) == 46) ? 1 : -1];

@@ -1,4 +1,5 @@
-// One true declaration context for the adjacent name and row renderers.
+// Declarations for reg_name_put() and registration_place_put(). Both must be
+// declared here, under the same #pragma codeseg, for display.cpp to match.
 #ifndef TH05_MREG_DISPLAY_HPP
 #define TH05_MREG_DISPLAY_HPP
 #include <dos.h>

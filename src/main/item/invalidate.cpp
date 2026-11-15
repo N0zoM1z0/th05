@@ -1,10 +1,11 @@
-// Natural maintained TH04 item invalidation with actual TH05 loop bounds.
+// Marks the tiles under all items and item splashes for redrawing.
 #pragma option -zCITEM_INVALIDATE_TEXT -zPmain_01 -k-
 #include "src/main/item/invalidate.hpp"
 #pragma codeseg ITEM_INVALIDATE_TEXT main_01
 
 void near items_invalidate(void)
 {
+    // Both box dimensions in one 32-bit store
     *reinterpret_cast<uint32_t near *>(&tile_invalidate_box) =
         (static_cast<uint32_t>(ITEM_H) << 16) | ITEM_W;
     {
@@ -28,6 +29,7 @@ void near items_invalidate(void)
         splashes_left = ITEM_SPLASH_COUNT;
         do {
             if(splash->flag != F_FREE) {
+                // The splash's previous diameter in pixels, plus 1
                 tile_invalidate_box.y = tile_invalidate_box.x =
                     (static_cast<unsigned int>(splash->radius_prev.v) >> 3) + 1;
                 reinterpret_cast<ItemPointInvalidator>(

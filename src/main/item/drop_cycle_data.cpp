@@ -1,4 +1,4 @@
-// Original MAIN automatic enemy-item drop selector, one mutable byte.
+// Counts automatic item drop requests from enemies (see items_add()).
 #pragma option -zCMAIN_ITEM_DROP_CYCLE_DATA_TEXT -zPmain_01
 #include "src/shared/abi.hpp"
 

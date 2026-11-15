@@ -1,3 +1,7 @@
+// Pairs of aimed bullets on every second frame of a 64-frame cycle, from two
+// points 64 pixels apart above Yumeko, plus a sword from a random point near
+// the top every [yumeko_sword_interval] frames. Speeds up once the remaining
+// HP of this phase drops below 600.
 void near yumeko_pattern_aimed_swords(void)
 {
     unsigned char angle;
@@ -37,6 +41,7 @@ void near yumeko_pattern_aimed_swords(void)
         snd_se_play(3);
     }
     if((boss.phase_frame % yumeko_sword_interval) == 0) {
+        // Random deviation of up to 15 angle units either way.
         angle = randring2_next16_and(0x1F) - 0x0F;
         sword_template.origin.y.v = randring2_next16_mod(to_sp(96));
         sword_template.origin.x.v = randring2_next16_mod(to_sp(352)) + to_sp(16);

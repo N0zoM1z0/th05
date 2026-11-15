@@ -1,7 +1,8 @@
-/* Last stage's resident MISS and BOMB counters for No Miss/No Bomb awards. */
+/* Miss and bomb totals at the end of the previous stage, compared against
+ * the current totals for the No Miss and No Bomb bonuses. */
 #pragma option -zCSTAGE_PREVIOUS_COUNTS_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Original two-byte near DATA is a native C initializer
+#error This file must be compiled as C
 #endif
 
 #include "src/main/stage/bonus_previous_resources.h"

@@ -1,6 +1,5 @@
-// Full TH05 item ABI. Semantic donor: maintained TH04 src/main/item/item.hpp.
-// Layout corroboration: ReC98 b6ba5b0a th04/main/item/item.hpp and items[bss].asm;
-// actual TH05 pool count, operands and caller frames reviewed independently.
+// Items: the item record and pool, the item tables and the item counters.
+// Follows ReC98's th04/main/item/item.hpp; TH05 has 40 items instead of 32.
 #ifndef TH05_MAIN_ITEM_ITEM_HPP
 #define TH05_MAIN_ITEM_ITEM_HPP
 #include "src/main/bullet/update.hpp"
@@ -16,18 +15,19 @@ enum item_miss_field_t {
 };
 struct item_t {
     entity_flag_t flag;
-    char unused;
+    char unused; // ZUN bloat
     PlayfieldMotion pos;
     unsigned char type;
     char unknown;
     int patnum;
-    // Genuine word boolean, unlike the game's one-byte bool fields.
+    // A 16-bit boolean, unlike the one-byte bool used elsewhere.
     int pulled_to_player;
 };
 extern item_t items[ITEM_COUNT];
 extern const int ITEM_PATNUM[IT_COUNT];
 extern const unsigned char ENEMY_DROPS[64];
-// Original table is field/axis/slot, with Y first and X second.
+// Velocities of the items dropped when losing a life, by playfield third and
+// item. Yes, Y comes first and X second.
 extern const Subpixel ITEM_MISS_VELOCITIES[MISS_FIELD_COUNT][2][ITEM_MISS_COUNT];
 extern unsigned char item_drop_cycle;
 extern bool items_pull_to_player;

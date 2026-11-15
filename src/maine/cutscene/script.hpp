@@ -1,5 +1,9 @@
-// Natural shared script parameter parsing and real cutscene commands.
-// Provenance: pinned ReC98 th03/formats/script.hpp, specialized to TH05 MAINE.
+// Script parameter parsing and the commands shared with the dialog system,
+// from ReC98 th03/formats/script.hpp, reduced to TH05's MAINE branches.
+// Included by cutscene.cpp at the point where these functions are defined.
+
+// Code generation: <ctype.h>'s flag macros, redeclared as constants. (From
+// ReC98, which notes this only as a code generation requirement.)
 #if defined(__TURBOC__) && defined(__MSDOS__)
 #undef _IS_DIG
 #undef _IS_CTL
@@ -14,9 +18,15 @@ enum script_ret_t {
 
 int script_param_number_default;
 
+// In the original binary, "control character" refers to every ASCII codepoint
+// < 0x20.
+
 #define str_sep_control_or_space(c) \
 	(iscntrl(c) || (c == ' '))
 
+// Reads up to 3 ASCII number digits from [script_p] and writes the resulting
+// 3-digit number to [ret]. If [script_p] does not point to any digit,
+// [script_param_number_default] is written to [ret] instead.
 void pascal near script_param_read_number_first(int& ret)
 {
 	unsigned char c0 = *script_p; script_p++;
@@ -51,6 +61,10 @@ void pascal near script_param_read_number_second(int& ret)
 	}
 }
 
+// Reads a filename parameter into [ret]: as many characters from [script_p]
+// until either a control or ' ' character (which is consumed), or until
+// (PF_FN_LEN - 1) characters have been read. The result is \0-terminated, and
+// [temp_len] receives its length.
 #define script_param_read_fn(ret, temp_len, temp_c) { \
 	for(temp_len = 0; temp_len < (PF_FN_LEN - 1); temp_len++) { \
 		temp_c = *script_p; \
@@ -63,12 +77,16 @@ void pascal near script_param_read_number_second(int& ret)
 	ret[temp_len] = '\0'; \
 }
 
+// The macros below trigger "unreachable code" and "condition is always
+// true/false" warnings.
 #if defined(__TURBOC__) && defined(__MSDOS__)
 #pragma warn -rch
 #pragma warn -ccc
 #endif
 
-// This cutscene always stops playback before loading a new BGM.
+// \m$ stops the BGM, \m* plays it, and \m,fn loads and plays [fn]. Unlike
+// ReC98's shared macro, [stop_before_load] is not tested: the cutscene always
+// stops playback before loading.
 #define script_op_bgm(stop_before_load, temp_c, temp_fn, temp_len) { \
     c = *script_p; \
     if(c == '$') { \

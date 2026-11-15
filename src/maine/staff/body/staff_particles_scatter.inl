@@ -1,9 +1,10 @@
+// Bursts all particles out of the orb, then hides the orb.
 void near staff_particles_scatter(void)
 {
     orb_particle_t near *p = particles;
     int i;
     for(i = 0; i < ORB_PARTICLE_COUNT; i++, p++) {
-        // These initial polar values really precede the random replacement.
+        // ZUN bloat: Immediately overwritten below.
         p->angle = iatan2(-p->center.y.v, -p->center.x.v);
         p->speed.v = ihypot(p->center.x.v, p->center.y.v) / 32;
         p->patnum_tiny = PAT_ORB_PARTICLE;

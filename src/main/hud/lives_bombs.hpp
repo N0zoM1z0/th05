@@ -1,7 +1,5 @@
-// TH05 resource-count HUD, using canonical standalone byte state.
-// Natural donor: maintained TH04 src/main/hud/hud.cpp. Actual TH05 globals,
-// signed display locals, unsigned bomb-count comparison and calls reviewed
-// independently in locally attested MAIN.
+// Lives and bomb counters in the HUD. TH05 keeps both counts in standalone
+// byte globals rather than in the resident structure as TH04 does.
 #ifndef TH05_HUD_LIVES_BOMBS_HPP
 #define TH05_HUD_LIVES_BOMBS_HPP
 #include "src/shared/abi.hpp"
@@ -17,8 +15,7 @@ static const unsigned int HUD_RESOURCE_BOMB = 0xD3;
 static const unsigned int HUD_RESOURCE_YINYANG = 0xD4;
 static const unsigned int HUD_RESOURCE_WHITE = 0xE1;
 
-// The same real MASTER declarations used by accepted overlay.hpp; no new
-// bridge, guessed register convention or return value is introduced.
+// master.lib text RAM functions, declared as in overlay.hpp.
 #pragma codeseg _TEXT
 extern "C" {
     void far pascal gaiji_putca(unsigned x, unsigned y,

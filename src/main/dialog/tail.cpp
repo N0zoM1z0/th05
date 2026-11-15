@@ -1,10 +1,16 @@
-// Natural TH05 dialog tail from ReC98 th05/main/dialog/dialog.cpp,
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47. Resources remain external.
+// The last four dialog functions, in original order: animation, face
+// loading, bomb background restore and the Extra Stage sprite override.
+// ReC98: th05/main/dialog/dialog.cpp.
+//
+// In this combined build only the face loader and the sprite override come
+// out exactly as in the original. dialog_animate() and dialog_exit() are
+// matched by animate.cpp and exit.cpp, but stay here to keep the layout.
 #pragma option -zCDIALOG_TAIL_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/dialog/tail.hpp"
 #pragma option -a2
 
+// Same body as animate.cpp.
 void far dialog_animate(void)
 {
     if(resident->demo_num != 0) {
@@ -33,6 +39,9 @@ void far dialog_animate(void)
     dialog_post();
 }
 
+// Replaces the face at (left, top) with face [face_id] of the current side's
+// faceset, or just removes it for FACE_NONE. The faceset comes from EMS if
+// available, otherwise from disk.
 void pascal near dialog_face_load_unput_put_free_8(int left, int top, int face_id)
 {
     size_t size;
@@ -46,14 +55,17 @@ void pascal near dialog_face_load_unput_put_free_8(int left, int top, int face_i
             } else {
                 offset = EMS_FACESET_BOSS_OFFSET;
             }
+            // Each face is stored as its alpha plane followed by the four
+            // color planes. The product is only 16 bits wide.
             size = cdg_slots[CDG_DIALOG_FACE].bitplane_size;
             offset += (face_id * size * (PLANE_COUNT + 1));
             allocate_and_load_from_ems(cdg_slots[CDG_DIALOG_FACE].seg_alpha(), offset, size);
             offset += size;
             size *= PLANE_COUNT;
             allocate_and_load_from_ems(cdg_slots[CDG_DIALOG_FACE].seg_colors(), offset, size);
-            offset += size;
+            offset += size;   // ZUN bloat: never used
         } else {
+            // Patch the stage or character digit into the file name.
             if(dialog_side != SIDE_PLAYCHAR) {
                 faceset_fn[3] = ('0' + stage_id);
             } else {
@@ -71,6 +83,7 @@ void pascal near dialog_face_load_unput_put_free_8(int left, int top, int face_i
     }
 }
 
+// Same body as exit.cpp.
 void near dialog_exit(void)
 {
     if(Ems) {
@@ -93,6 +106,9 @@ void near dialog_exit(void)
     }
 }
 
+// Replaces the MIKO16.BFT sprites with the ST06_16.BFT ones used in the
+// EX-Alice fight, also clearing all stage-specific sprites, then reloads the
+// player's bomb shape sprites.
 void near main_pat_exalice_override_and_super_clean_stage(void)
 {
     super_clean(TINY_MIKO16_START, PAT_MAX);

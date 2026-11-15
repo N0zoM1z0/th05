@@ -1,4 +1,4 @@
-// Complete Boss and real sprite APIs for late-game foreground callbacks.
+// Declarations for Yumeko's and Shinki's foreground renderers.
 #ifndef TH05_LATE_FOREGROUND_HPP
 #define TH05_LATE_FOREGROUND_HPP
 #pragma codeseg YUMEKO_FG_TEXT main_01
@@ -11,6 +11,7 @@ extern boss_stuff_t boss2;
 extern unsigned char stage_frame_mod16;
 static const unsigned char LATE_FG_PHASE_HP_FILL = 0;
 static const unsigned char LATE_FG_PHASE_EXPLODE_BIG = 254;
+// super_put_1plane() argument for the hit flash.
 static const unsigned int LATE_FG_PUT_PLANES = 0xFF00 | 0xC0;
 static const int YUMEKO_FG_ENTRANCE_PATNUM = 192;
 static const int SHINKI_FG_WING_FIRST = 184;

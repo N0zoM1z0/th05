@@ -1,4 +1,4 @@
-// Eight real original MAIN resource filenames, without a pointer table.
+// Demo replay, launcher, EMS handle name, bomb background and face filenames.
 #ifndef TH05_MAIN_RESOURCES_SESSION_FILES_C_H
 #define TH05_MAIN_RESOURCES_SESSION_FILES_C_H
 #include <stddef.h>

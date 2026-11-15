@@ -1,7 +1,8 @@
-// Natural filename fields include a real mutable stage-song basename.
+// Archive, sound and resource filenames loaded at startup and stage setup.
+// The archive name is CP932 text; the build converts it from UTF-8.
 #pragma option -zCRESOURCE_BANK_TEXT -zPmain_01
 #ifdef __cplusplus
-#error This initialized semantic DATA producer requires C mode
+#error Compile this file as C
 #endif
 #include "src/main/resources/resource_bank_c.h"
 

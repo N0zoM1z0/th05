@@ -1,4 +1,4 @@
-// Real TH05 STD file parser state and near/FAR call ABIs.
+// State filled in by std_load(), and the functions it calls.
 #ifndef TH05_MAIN_FORMATS_STD_LOAD_HPP
 #define TH05_MAIN_FORMATS_STD_LOAD_HPP
 #include <dos.h>

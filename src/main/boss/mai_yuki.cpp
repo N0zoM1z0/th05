@@ -1,4 +1,5 @@
-// Natural pinned ReC98 th05/main/boss/b4_both.cpp.
+// Random flight of Mai and Yuki, who move independently within the same
+// rectangle. Adapted from ReC98's th05/main/boss/b4_both.cpp.
 /// Stage 4 Boss - Mai & Yuki (both)
 /// --------------------------------
 

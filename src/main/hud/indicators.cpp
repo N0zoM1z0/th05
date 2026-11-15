@@ -1,5 +1,5 @@
-// Natural maintained TH04 HUD donor, with actual TH05 indicator behavior.
-// The donor's documented -G context agrees with the original HUD prologues.
+// Point item, dream, graze and power indicators of the HUD. Based on TH04's
+// hud.cpp, which is compiled with -G (optimize for speed) like this file.
 #pragma option -G
 #pragma option -zCHUD_INDICATORS_TEXT -zPmain_01
 #include "src/main/hud/indicators.hpp"
@@ -11,6 +11,8 @@ extern "C" void pascal far hud_point_items_put(void)
     hud_5_digit_put(62, 15, extend_point_items_collected, HUD_INDICATOR_CYAN);
 }
 
+// Draws the dream bar. Reaching the maximum shows the "DreamBonus Max" popup
+// and clears bullets for at least 20 frames.
 extern "C" void pascal far hud_dream_put(void)
 {
     const hud_dream_colors_t colors = HUD_DREAM_COLORS;

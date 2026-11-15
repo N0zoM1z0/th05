@@ -1,4 +1,6 @@
-// Natural C++ recovery of MAIN's point-popup lifecycle. Exactness is separate.
+// Point-popup init, invalidation and per-frame update as one plain C++ file.
+// Not built: compiles to 184 bytes against the original 166 (see NOTES.md).
+// The built versions are init.cpp, invalidate.asm and update.asm.
 #pragma option -zCPOINTNUM_LIFE_TEXT -zPmain_01 -k-
 #include "src/main/pointnum/lifecycle.hpp"
 #pragma codeseg POINTNUM_LIFE_TEXT main_01
@@ -15,7 +17,7 @@ void near pointnums_invalidate(void)
     do {
         if(pointnum->flag != F_FREE) {
             tile_invalidate_box.x = pointnum->width;
-            // These coordinates are not adjacent fields of one SPPoint.
+            // Position drawn last frame; popups only move vertically.
             tiles_invalidate_around(pointnum->center_prev_y.v, pointnum->center_cur.x.v);
         }
         pointnum++;

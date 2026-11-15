@@ -1,4 +1,6 @@
-// Natural full-pool initialization; request the compiler's standard inline form.
+// memset() version of item_splashes_init(). Not built: Borland's intrinsic
+// memset() gives 24 bytes instead of the original 26.
+// splash_init_register_exact.cpp has the version that matches.
 #pragma option -zCITEM_SPLASH_INIT_TEXT -zPmain_03
 #include <mem.h>
 #include "src/main/item/splash.hpp"

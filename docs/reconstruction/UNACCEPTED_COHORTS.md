@@ -14,7 +14,7 @@ MAIN `dialog_op()` at `13B82..13D4A` is now accepted as a **complete
 30-byte table and all ten ordered relocations. The real preceding 73-byte
 STD callbacks, followed by already accepted graphics and box functions,
 restore the exact compiler context. The previous 455-byte diagnostics are
-superseded. See [interpreter acceptance](../../src/main/dialog/opcode.md).
+superseded. See the [dialog notes](../../src/main/dialog/NOTES.md).
 
 ## Different-language alternatives, not missing executable ownership
 
@@ -32,7 +32,7 @@ be described as uncovered code:
 
 Yumeko's 283-byte `swords_update()` is now owned by exact C++ (2026-11-14);
 the reviewed-ASM owner was retired. See
-[the C++ result](../../src/main/boss/yumeko/swords_update.md).
+[the Yumeko notes](../../src/main/boss/yumeko/NOTES.md).
 
 ## Current follow-up candidates for an incoming agent
 
@@ -60,8 +60,8 @@ writes the previous Miss/Bomb bytes at `[22432,22434)`. The first
 interval belongs to the original signed-word `_explosion_big_frame`
 consumer. Both have now been independently reconstructed and accepted
 at their correct DGROUP addresses. Read the
-[provenance correction](../../src/main/stage/bonus_previous_resources.md)
-and [Boss explosion frame](../../src/main/boss/explosion_frame.md)
+[provenance correction](../../src/main/stage/NOTES.md)
+and [Boss explosion frame](../../src/main/boss/NOTES.md)
 before accepting new zero-filled state: native bytes alone do not prove
 variable identity, type, or alignment ownership.
 

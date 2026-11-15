@@ -1,4 +1,7 @@
-// Complete point-popup update with scalar field types and rise assignment.
+// pointnums_update(): moves point popups up, ages and expires them, and
+// rebuilds the list of live popups. Not built: this is the closest C++
+// version so far (same 111 bytes, different registers and branch layout);
+// the built version is update.asm. See update.md.
 #pragma option -zCPOINTNUM_LIFE_TEXT -zPmain_01 -k-
 #include "src/main/pointnum/lifecycle.hpp"
 #pragma codeseg POINTNUM_LIFE_TEXT main_01

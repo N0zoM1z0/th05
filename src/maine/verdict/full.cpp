@@ -1,4 +1,7 @@
-// Genuine complete ten-function verdict family; no synthetic context prefix.
+// The ten verdict functions, in their original order.
+// Compiling them in one translation unit matters: verdict_animate()'s
+// relocations only come out in the original order when the compiler's object
+// records are split the same way as in the original build.
 #pragma option -zCVERDICT_FULL_TEXT -zPgroup_01
 #define TH05_VERDICT_FULL_FAMILY
 #include "src/maine/verdict/full.hpp"

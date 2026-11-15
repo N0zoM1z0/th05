@@ -1,4 +1,4 @@
-// Four complete natural staff helpers; the preceding updater is not included.
+// Standalone build of the orb spark, trail, growth and opening functions.
 #pragma option -zCSTAFF_TRAIL_TEXT -zPgroup_01
 #include "src/maine/staff/state_publics.h"
 #include "src/maine/staff/orb_opening.hpp"

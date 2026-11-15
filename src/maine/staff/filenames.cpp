@@ -1,5 +1,4 @@
-// Semantic resource filenames only; no music, image, or font file contents.
-// Original target objects and pinned ReC98 th05_maine.asm:6105..6118.
+// Staff roll resource filenames, loaded by staffroll_animate().
 #pragma option -zCSTAFF_FILES_DATA_TEXT -zPgroup_01
 #include "src/maine/staff/filenames.hpp"
 

@@ -1,3 +1,5 @@
+// Draws one row of [pc]'s score table. The name of the row being edited is
+// left to reg_name_put().
 void pascal near registration_place_put(int place, int pc)
 {
     int x;

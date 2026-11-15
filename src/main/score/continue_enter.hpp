@@ -1,4 +1,4 @@
-// Actual TH05 score entry interfaces; the insertion implementation is foreign.
+// High score entry on continue. The insertion itself is in continue_raw.cpp.
 #ifndef TH05_MAIN_SCORE_CONTINUE_ENTER_HPP
 #define TH05_MAIN_SCORE_CONTINUE_ENTER_HPP
 #include "src/shared/abi.hpp"

@@ -1,3 +1,5 @@
+// Emits a spark 12 pixels from the orb's center, into a random downward
+// direction.
 void near staff_orb_spark_add(void)
 {
     orb_particle_t near *p = &particles[staff_spark_cursor++];

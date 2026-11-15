@@ -1,4 +1,9 @@
-// Ordinary full-pool traversal with only genuine hardware/private ABI bridges.
+// Plain C++ attempt at sparks_render(), which draws every live spark in GRCG
+// color 12 on the blue plane. Not built: the original is kept as assembly
+// (scene_render.asm). Borland compiles this to 71 bytes instead of 60, with
+// ENTER/LEAVE, stack temporaries for `top` and `left` and a DX reload.
+// Pseudo-registers are used only where the callees take register arguments:
+// AH for the color helper, ES for the VRAM plane and CL for the spark's cel.
 #pragma option -zCSPARK_BATCH_TEXT -zPmain_01 -k-
 #include "src/main/effects/spark/render_candidate.hpp"
 

@@ -1,9 +1,10 @@
-/* Source owner of the one genuine near-DATA big explosion frame counter. */
+/* Frame counter of the big boss explosion. ZUN defined it in C, so it */
+/* has an unmangled C symbol. */
 #pragma option -zCBOSS_EXPLOSION_FRAME_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Original initialized Boss explosion frame requires native C
+#error Compile this file as C, not C++
 #endif
 #include "src/main/boss/explosion_frame.h"
 
 int near explosion_big_frame = 0;
-typedef char original_big_explosion_frame_word[(sizeof(explosion_big_frame) == 2) ? 1 : -1];
+typedef char big_explosion_frame_is_a_word[(sizeof(explosion_big_frame) == 2) ? 1 : -1];

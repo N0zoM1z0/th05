@@ -1,7 +1,6 @@
-// Candidate local ABI adapted from nmlgc/ReC98@b6ba5b0a529edbb3:
-// th04/main/boss/explode.cpp, th03/math/polar.hpp, th04/formats/super.h,
-// th03/hardware/palette.hpp and the master.lib graphics declarations.
-// Layout assertions check this compiler's representation, not target ownership.
+// Boss explosion state and the graphics functions that explosion.cpp uses.
+// Adapted from ReC98's th04/main/boss/explode.cpp, th03/math/polar.hpp,
+// th04/formats/super.h and th03/hardware/palette.hpp.
 #ifndef TH05_MAIN_BOSS_EXPLOSION_HPP
 #define TH05_MAIN_BOSS_EXPLOSION_HPP
 
@@ -20,9 +19,14 @@ struct Explosion {
     SPPoint center;
     SPPoint radius_cur;
     SPPoint radius_delta;
-    signed char unused; // ReC98 th04/main/boss/explode.cpp: int8_t ZUN bloat.
+    signed char unused; // ZUN bloat
+
+    // Added to the angle for the Y coordinate, which turns the circle into a
+    // slanted ellipse.
     unsigned char angle_offset;
 
+    // A method is the most idiomatic way for this to compile into ZUN's
+    // original three instructions.
     unsigned char angle_y(const unsigned char &angle_base) {
         return (angle_offset + angle_base);
     }
@@ -64,10 +68,9 @@ enum {
     PAT_EXPLOSION_SMALL = 164
 };
 
-// Keep expression types at the call site: the small renderer's AX/DX
-// pseudoregisters are unsigned words, whereas the big renderer uses signed
-// coordinate locals. Converting these into typed helper arguments changes ABI
-// and can change the clipping comparisons.
+// Macros rather than functions: the small renderer passes the unsigned AX/DX
+// registers, the big one signed locals, and the clipping comparisons must
+// keep those types.
 #define explosion_to_screen_left(center, width) (32 + ((center) >> 4) - ((width) / 2))
 #define explosion_to_screen_top(center, height) (16 + ((center) >> 4) - ((height) / 2))
 #define explosion_clip_small(left, top, width, height) ( \
@@ -79,6 +82,7 @@ enum {
     ((top) < 0) || ((top) > (400 - (height))) \
 )
 
+// Layout checks: the original code hardcodes these offsets.
 typedef char th05_explosion_is_16[(sizeof(Explosion) == 16) ? 1 : -1];
 typedef char th05_explosion_alive_at_0[(offsetof(Explosion, alive) == 0) ? 1 : -1];
 typedef char th05_explosion_age_at_1[(offsetof(Explosion, age) == 1) ? 1 : -1];

@@ -1,4 +1,5 @@
-// Complete automatic drop schedule, indexed after every second drop request.
+// Items for automatic enemy drops. items_add() uses one entry for every
+// second request.
 #pragma option -zCITEM_DROP_DATA_TEXT -zPmain_01
 #include "src/main/item/item.hpp"
 

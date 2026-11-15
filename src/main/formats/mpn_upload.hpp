@@ -1,4 +1,4 @@
-// MPN upload interfaces: native far helpers in _TEXT, near caller in main_01.
+// mpn_load() and the far .MPN helpers it calls.
 #ifndef TH05_MAIN_FORMATS_MPN_UPLOAD_HPP
 #define TH05_MAIN_FORMATS_MPN_UPLOAD_HPP
 
@@ -11,6 +11,9 @@ extern "C" {
     void pascal far mpn_free(void);
 }
 
+// The tile images are blitted to a reserved area of VRAM, the rightmost
+// 4 tile columns (x = 576 to 639) over the full screen height, which the
+// game covers with black text RAM cells. 4 * 25 = 100 tile images.
 enum {
     MPN_UPLOAD_TILE_W = 16,
     MPN_UPLOAD_TILE_H = 16,

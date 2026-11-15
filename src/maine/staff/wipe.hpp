@@ -1,4 +1,4 @@
-// Real six-word Pascal text-wipe API; three states are returned in AL.
+// staff_text_wipe(), the text-layer wipe used to reveal and hide staff images.
 #ifndef TH05_MAINE_STAFF_WIPE_HPP
 #define TH05_MAINE_STAFF_WIPE_HPP
 
@@ -7,11 +7,12 @@
 
 enum StaffWipeStatus {
     STAFF_WIPE_ACTIVE = 0,
-    STAFF_WIPE_CLEARED = 1,
-    STAFF_WIPE_COVERED = 2
+    STAFF_WIPE_CLEARED = 1, // All text cells are clear, the image is visible
+    STAFF_WIPE_COVERED = 2  // The image area was filled with color 1
 };
 
-// Byte text selectors in the staff font, not font bitmap data.
+// Gaiji codes of the wipe. 0x98 is fully black; 0x99 to 0x9F become
+// progressively more transparent.
 enum StaffWipeGlyph {
     STAFF_WIPE_GLYPH_EMPTY = 0x02,
     STAFF_WIPE_GLYPH_COVER = 0x98,
@@ -41,11 +42,8 @@ extern "C" {
 #else
 #pragma codeseg STAFF_WIPE_TEXT group_01
 #endif
-// Identical to the shared image_phase.hpp API; no bool or enum-return alias.
+// Same declaration as in image_phase.hpp.
 unsigned char pascal near staff_text_wipe(int left, int top, int width,
     int height, int extent, int direction);
-
-typedef char staff_wipe_selector_is_1[(sizeof(char) == 1) ? 1 : -1];
-typedef char staff_wipe_word_is_2[(sizeof(int) == 2) ? 1 : -1];
 
 #endif

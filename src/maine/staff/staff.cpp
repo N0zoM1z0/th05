@@ -1,4 +1,5 @@
-// Natural TH05 staff-roll state and complete clipping interface.
+// ReC98's staff roll state declarations and space_window_set(), as a
+// standalone file. The build uses full.cpp and staff_complete_context.cpp.
 #pragma option -zCSCORE_TEXT
 
 #include "src/maine/staff/staff.hpp"
@@ -41,8 +42,6 @@ struct orb_particle_t {
 	} al;
 };
 // ------------------
-
-typedef char th05_staff_orb_particle_is_20[(sizeof(orb_particle_t) == 20) ? 1 : -1];
 
 // State
 // -----

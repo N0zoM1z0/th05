@@ -1,5 +1,5 @@
-// Local difficulty/performance tuning ABI; candidate source provenance is
-// nmlgc/ReC98@b6ba5b0a529edbb3. Acceptance requires this repository's replay.
+// Bullet template tuning by difficulty and play performance ("playperf").
+// The tune_for_*() helpers are implemented in spawn_raw.asm.
 #ifndef TH05_MAIN_BULLET_TUNE_HPP
 #define TH05_MAIN_BULLET_TUNE_HPP
 

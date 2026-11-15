@@ -1,4 +1,4 @@
-// Four complete staff state functions, D387..D5E1; updater is retained separately.
+// Standalone build of the particle init/gather/clear/scatter functions.
 #pragma option -zCSTAFF_LIFE_TEXT -zPgroup_01
 #include "src/maine/staff/lifecycle.hpp"
 

@@ -1,17 +1,15 @@
-// Stage and boss initialization adapted from natural C++ in nmlgc/ReC98
-// b6ba5b0a529edbb31efdf8c0e939263804f8ee47: th05/main014.cpp,
-// th04/main/boss/reset.cpp, th04/formats/bb_boss.cpp, th05/main/stage/setup.cpp.
-// Candidate: rank selection is expressed as real typed C++ calls; no original
-// instruction macro is retained. Only the first ten main014 functions belong
-// to this reviewed continuous target range; score_delta_commit is excluded.
+// Boss state reset, boss .BB file loading, and the per-stage setup functions
+// that select the midboss, the boss, their sprites and the stage background.
+// Follows ReC98's th05/main014.cpp, th04/main/boss/reset.cpp,
+// th04/formats/bb_boss.cpp and th05/main/stage/setup.cpp. ReC98's main014.cpp
+// also contains score_delta_commit(), which is not part of this code segment
+// in the original game.
 #pragma option -zCmain_01_TEXT -zPmain_01 -d-
 #include "src/main/stage/setup.hpp"
 #include "src/main/boss/yumeko/final_ring_scratch.hpp"
 
-// Original stage scheduling / Boss HP protocol: seven distinct stage
-// initializers share the same 22-byte midboss and 24-byte Boss structures.
-// These values are not stage numbers or guessed gameplay tuning; they are
-// the exact per-stage event trigger and original HP boundaries.
+// Stage frame at which the midboss appears, and its HP. Stage 6 has no
+// midboss and just sets a timer that never runs out during the stage.
 static const unsigned int STAGE1_MIDBOSS_TRIGGER_FRAME = 2500;
 static const unsigned int STAGE2_MIDBOSS_TRIGGER_FRAME = 2750;
 static const unsigned int STAGE3_MIDBOSS_TRIGGER_FRAME = 5750;
@@ -25,8 +23,8 @@ static const int STAGE3_MIDBOSS_INITIAL_HP = 1400;
 static const int STAGE4_MIDBOSS_INITIAL_HP = 1100;
 static const int STAGE5_MIDBOSS_INITIAL_HP = 1550;
 static const int STAGEX_MIDBOSS_INITIAL_HP = 3000;
-// Stage 5's first two bytes of Boss scratch are rank-adjusted attack
-// delays, not separate per-Boss mutable variables.
+// Yumeko's spawn intervals for the aimed swords (BASE) and the lasers
+// (REPEAT), per difficulty. They are stored in the boss scratch area.
 static const int STAGE5_RANK_BASE_EASY = 20;
 static const int STAGE5_RANK_BASE_NORMAL = 10;
 static const int STAGE5_RANK_BASE_HARD = 6;
@@ -57,11 +55,9 @@ void near boss_reset(void)
 void pascal near bb_boss_load(const char far *fn)
 {
 	bb_boss_seg = bb_load(fn);
-
 }
 
 void near bb_boss_free(void)
-
 {
 	if(bb_boss_seg) {
 		hmem_free(reinterpret_cast<void __seg *>(bb_boss_seg));
@@ -69,18 +65,15 @@ void near bb_boss_free(void)
 	}
 }
 
-/* ReC98
- * -----
- * TH05 stage initialization
- */
-
+// Stage setup
+// -----------
 
 void pascal near stage1_setup(void)
 {
 	midboss_update_func = midboss1_update;
 	midboss_render_func = midboss1_render;
 	midboss.frames_until = STAGE1_MIDBOSS_TRIGGER_FRAME;
-	STAGE_POINT_SET(midboss.pos. cur, (PLAYFIELD_W / 2), ((PLAYFIELD_H * 6) / 23));
+	STAGE_POINT_SET(midboss.pos.cur, (PLAYFIELD_W / 2), ((PLAYFIELD_H * 6) / 23));
 	STAGE_POINT_SET(midboss.pos.prev, (PLAYFIELD_W / 2), ((PLAYFIELD_H * 6) / 23));
 	STAGE_POINT_SET(midboss.pos.velocity, 0, 0);
 	midboss.hp = STAGE1_MIDBOSS_INITIAL_HP;

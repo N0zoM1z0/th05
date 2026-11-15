@@ -1,4 +1,4 @@
-// Original near-function arrays for Yumeko's two mobile attack waves.
+// Attack banks for Yumeko's two mobile waves.
 #ifndef TH05_YUMEKO_SCHEDULE_DATA_HPP
 #define TH05_YUMEKO_SCHEDULE_DATA_HPP
 #include "src/shared/abi.hpp"

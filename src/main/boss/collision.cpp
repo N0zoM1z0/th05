@@ -1,4 +1,4 @@
-// Complete 43-byte original-register boss/player collision function.
+// boss_hittest_player() compiled on its own; generic.cpp includes the same body.
 #pragma option -zCBOSS_COLLISION_TEXT -zPmain_03
 #include <dos.h>
 #include "src/main/boss/generic.hpp"

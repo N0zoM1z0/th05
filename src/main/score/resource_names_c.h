@@ -1,4 +1,5 @@
-// The original consecutive score file and continue glyph resources.
+// The score file name and the CONTINUE entry name, as one struct so that the
+// two strings keep their original order.
 #ifndef TH05_MAIN_SCORE_RESOURCE_NAMES_C_H
 #define TH05_MAIN_SCORE_RESOURCE_NAMES_C_H
 #include <stddef.h>

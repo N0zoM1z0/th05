@@ -1,10 +1,13 @@
-// Full sword twirling, camera-relative motion, player collision and decay.
+// Updates all swords: twirling animation, motion, player collision and the
+// decay animation after a sword was removed.
 #ifndef TH05_YUMEKO_COMBINED_CONTEXT
 #pragma option -zCB5_UPDATE_TEXT -zPmain_03
 #endif
 #include <dos.h>
 #include "src/main/boss/yumeko/update.hpp"
 #pragma codeseg B5_UPDATE_TEXT main_03
+// Emits no code, but keeps Turbo C++ from merging the `continue` jumps after
+// the clipping and collision checks, which ZUN's code keeps separate.
 inline bool optimization_barrier(void) { return false; }
 
 #pragma option -O
@@ -19,6 +22,9 @@ void pascal near swords_update(void)
             sword->flag = F_REMOVE;
             sword->twirl_time = 0;
         }
+        // Sprites 193-224 show the 32 directions of a sword. While twirling,
+        // swords in odd slots spin clockwise and the others counterclockwise,
+        // and settle on their movement direction at the end.
         if(sword->twirl_time > 0) {
             sword->twirl_time--;
             if(sword->twirl_time == 0) {
@@ -39,7 +45,7 @@ void pascal near swords_update(void)
                 continue;
             }
         }
-        // Both genuine Point-return words are dead before any foreign call.
+        // update_seg3() returns the new position in AX (X) and DX (Y).
         sword->pos.update_seg3();
         if(static_cast<subpixel_t>(_AX) <= -16 * 16 ||
            static_cast<subpixel_t>(_AX) >= (PLAYFIELD_W + 16) * 16 ||
@@ -49,6 +55,7 @@ void pascal near swords_update(void)
             sword->flag = F_FREE;
             continue;
         }
+        // 14x14-pixel hitbox around the player.
         if(sword->flag != F_REMOVE) {
             _AX -= player_pos.cur.x.v;
             _DX -= player_pos.cur.y.v;
@@ -63,6 +70,7 @@ void pascal near swords_update(void)
             optimization_barrier();
             continue;
         }
+        // Removed swords slow down and play the decay sprites 225-228.
         if(sword->patnum_tiny < 225) {
             sword->patnum_tiny = 225;
             sword->pos.velocity.x.v /= 2;

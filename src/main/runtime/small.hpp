@@ -1,6 +1,7 @@
-// Shared declarations for the remaining small natural GAME5 MAIN owners.
-// Natural-source provenance: ReC98@b6ba5b0a529edbb31efdf8c0e939263804f8ee47,
-// slowdown.hpp, scroll.hpp, tile/tile.hpp, hud/hud.hpp, player/player.hpp.
+// Small declarations shared by slowdown.cpp, hud/hp.cpp, player/position.cpp,
+// bullet/patnum.cpp, scroll/convert.cpp and tile/render.cpp. Names follow
+// ReC98's slowdown.hpp, scroll.hpp, tile/tile.hpp, hud/hud.hpp and
+// player/player.hpp.
 #ifndef TH05_MAIN_RUNTIME_SMALL_HPP
 #define TH05_MAIN_RUNTIME_SMALL_HPP
 
@@ -9,7 +10,7 @@
 #include "src/main/hud/resident.hpp"
 
 #if GAME != 5 || BINARY != 'M'
-#error These owners implement the TH05 MAIN ABI
+#error This is TH05 MAIN code
 #endif
 
 typedef int vram_y_t;
@@ -39,8 +40,9 @@ extern SmallRenderCallback bg_render_not_bombing;
 extern SmallRenderCallback midboss_invalidate;
 extern SmallRenderCallback stage_invalidate;
 
-// Explicit first-declaration context for foreign main_01 entry points,
-// including the genuinely far-Pascal low-level HP renderer.
+// Functions defined elsewhere in the main_01 group. Declaring them in a
+// main_01 segment gives their fixups the right group, also for callers in
+// main_03. hud_hp_put() is far Pascal.
 #pragma codeseg SMALL_MAIN01_CONTEXT main_01
 void pascal far hud_hp_put(int value);
 void near overlay_titles_invalidate(void);

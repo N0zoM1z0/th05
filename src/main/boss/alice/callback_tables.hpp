@@ -1,4 +1,5 @@
-// Complete Alice puppet and four-wave attack callback schedule interfaces.
+// Alice's pattern tables: one pattern per puppet phase, and three random
+// choices for each of the four pattern waves.
 #ifndef TH05_ALICE_CALLBACK_TABLES_HPP
 #define TH05_ALICE_CALLBACK_TABLES_HPP
 #include "src/main/boss/alice/puppet_patterns.hpp"

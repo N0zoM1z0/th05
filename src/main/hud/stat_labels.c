@@ -1,7 +1,9 @@
-/* Original HUD's small-gaiji words, not glyph bitmap or screen pixels. */
+/* HUD captions in the small gaiji font. Each word takes two to four glyphs
+ * and is NUL-padded to 5 bytes. The last one, RUIKEI ("total"), is the
+ * caption of the extend point item counter. */
 #pragma option -zCSTAT_LABELS_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Semantic HUD DATA requires the original C producer
+#error This file must be compiled as C
 #endif
 
 enum HudSmallGlyph {
@@ -16,7 +18,7 @@ enum HudSmallGlyph {
     HSG_POWER_FIRST, HSG_POWER_SECOND,
     HSG_ENEMY_FIRST = 0xEA,
     HSG_ENEMY_SECOND, HSG_ENEMY_THIRD,
-    HSG_SUIKEI_FIRST, HSG_SUIKEI_SECOND
+    HSG_RUIKEI_FIRST, HSG_RUIKEI_SECOND
 };
 
 const unsigned char near hud_small_labels[10][5] = {
@@ -29,7 +31,7 @@ const unsigned char near hud_small_labels[10][5] = {
     { HSG_PLAYER_FIRST, HSG_PLAYER_SECOND, HSG_NULL, HSG_NULL, HSG_NULL },
     { HSG_POWER_FIRST, HSG_POWER_SECOND, HSG_NULL, HSG_NULL, HSG_NULL },
     { HSG_ENEMY_FIRST, HSG_ENEMY_SECOND, HSG_ENEMY_THIRD, HSG_NULL, HSG_NULL },
-    { HSG_SUIKEI_FIRST, HSG_SUIKEI_SECOND, HSG_NULL, HSG_NULL, HSG_NULL }
+    { HSG_RUIKEI_FIRST, HSG_RUIKEI_SECOND, HSG_NULL, HSG_NULL, HSG_NULL }
 };
 
 typedef char hud_small_label_stride[(sizeof(hud_small_labels[0]) == 5) ? 1 : -1];

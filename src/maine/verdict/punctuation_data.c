@@ -1,7 +1,8 @@
-// Canonical UTF-8 source; the compiler consumes explicit CP932 staging.
+// Score unit, decimal points and percent sign used by the verdict number
+// formatters. (UTF-8; converted to Shift-JIS before compiling.)
 #pragma option -zCVERDICT_PUNCT_DATA_TEXT -zPgroup_01
 #ifdef __cplusplus
-#error This initialized semantic DATA producer requires C mode
+#error Compile this file as C
 #endif
 #include "src/maine/verdict/format_text_c.h"
 

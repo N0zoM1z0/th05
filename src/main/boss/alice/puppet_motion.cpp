@@ -1,4 +1,5 @@
-// Complete puppet entrance followed by the movement/pattern dispatcher.
+// Moves the puppets into place when they appear, and later towards their
+// targets while running their patterns.
 #pragma option -zCALICE_PMV_TEXT -zPmain_03
 #include "src/main/boss/alice/puppet_motion.hpp"
 #include "src/main/boss/alice/beam_phase.hpp"
@@ -22,8 +23,8 @@ void near alice_puppets_entrance(void)
     alice_puppet1.pos.prev = alice_puppet1.pos.cur;
 }
 
-// Native pixel-exact fractional pursuit on either puppet coordinate.
-// Keep the two original division passes and final snap, in X-before-Y order.
+// Moves one coordinate towards its target: by 1/16 of the distance, then by
+// 1/4 once that rounds to 0, and finally snaps to the target.
 #define ALICE_PUPPET_SETTLE_AXIS(axis) { \
     value = p->pos.prev.axis.v - p->pos.cur.axis.v; \
     if((value / to_sp(2)) != 0) { \

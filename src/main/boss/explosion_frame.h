@@ -1,4 +1,4 @@
-/* Real 16-bit C initialized frame of the single large Boss explosion. */
+/* Frame counter of the big boss explosion, defined in explosion_frame.c. */
 #ifndef TH05_BOSS_EXPLOSION_FRAME_H
 #define TH05_BOSS_EXPLOSION_FRAME_H
 #ifdef __cplusplus

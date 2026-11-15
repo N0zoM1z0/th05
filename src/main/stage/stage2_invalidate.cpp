@@ -1,10 +1,12 @@
-// Mark the previous 8x8 footprint of each active stage-two particle dirty.
+// Stage 2 background: marks the tiles under every active particle's previous
+// position for redrawing.
 #pragma option -zCSTAGE2_INVALIDATE_TEXT -zPmain_01
 #include "src/main/stage/background2.hpp"
 #include "src/main/stage/stage2_transition_rules.hpp"
 #pragma codeseg STAGE2_INVALIDATE_TEXT main_01
 
-// Canonical two-word dirty rectangle and the real Pascal y/x interface.
+// Size of the area that tiles_invalidate_around() redraws. Note the y, x
+// parameter order.
 struct point_t { pixel_t x; pixel_t y; };
 extern point_t tile_invalidate_box;
 extern "C" void pascal near tiles_invalidate_around(subpixel_t y, subpixel_t x);

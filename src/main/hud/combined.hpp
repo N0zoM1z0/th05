@@ -1,6 +1,7 @@
-// Genuine whole HUD source context. Frozen owner headers are not included:
-// their first declarations select separate producer segments. These complete
-// declarations retain the same canonical types and real calling conventions.
+// Declarations for combined.cpp. It cannot include score_reset.hpp,
+// lives_bombs.hpp, indicators.hpp or hp_draw.hpp: the first declaration of a
+// function fixes its code segment, and those headers each name their own.
+// Here, all HUD functions are declared in HUD_COMBINED_TEXT instead.
 #ifndef TH05_HUD_COMBINED_HPP
 #define TH05_HUD_COMBINED_HPP
 #include "src/main/hud/resident.hpp"

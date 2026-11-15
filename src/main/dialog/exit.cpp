@@ -1,4 +1,6 @@
-// Complete bomb-background restoration after dialog, from the maintained tail.
+// dialog_exit(): reloads the bomb background that dialog_animate() freed.
+// tail.cpp keeps an identical copy for its own layout; built on its own,
+// the late -a2 below gives the switch table its original one-byte alignment.
 #pragma option -zCDIALOG_TAIL_TEXT -zPmain_01
 #include <dos.h>
 #include "src/main/dialog/tail.hpp"
@@ -6,6 +8,7 @@
 
 void near dialog_exit(void)
 {
+    // Copy the background back from EMS, or reload it from disk.
     if(Ems) {
         playchar_bomb_bg_load_from_ems();
     } else {

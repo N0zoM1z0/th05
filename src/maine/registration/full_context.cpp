@@ -1,24 +1,28 @@
-// Complete natural MAINE score codec / registration compiler context.
-// All 14 real function bodies remain in original order; no artificial CODE prefix.
-// Includes only the genuine one-byte local ROR required by the score file format.
+// MAINE's high score registration module, with all 17 functions in their
+// original order: the score file codecs, the score file lifecycle
+// (src/maine/score/end_body.inl), score insertion and table rendering, the
+// glyph balls, and regist_menu(). Most bodies are shared with the standalone
+// wrappers in this directory through the .inl files. Only this complete
+// module reproduces regist_menu()'s relocation order, as the codecs in front
+// of it move the boundary of Borland's 1024-byte code records into the right
+// place.
 #pragma option -zCREG_FULL_TEXT
 #include "src/main/hud/resident.hpp"
-// Both genuine codec function definitions now precede the score lifecycle.
+// Every function has to be declared in REG_FULL_TEXT before any header
+// declares it in another segment.
 #pragma codeseg REG_FULL_TEXT GROUP_01
 unsigned char pascal near scoredat_decode(void);
 void pascal near scoredat_encode(void);
-// Score lifecycle function signatures must precede their general header.
 #pragma codeseg REG_FULL_TEXT GROUP_01
 void near scoredat_recreate(void);
 bool pascal near hiscore_scoredat_load_for(int pc);
 void near hiscore_scoredat_save(void);
 #pragma codeseg _TEXT
-// The two complete type headers do not declare the nine owned functions.
 #include "src/op/hiscore/view.hpp"
 #include "src/maine/score/end.hpp"
 #include "src/maine/registration/glyphball.hpp"
-// Exact real declarations; registration and sound headers separately declare
-// two incompatible original game-specific sound enum names in this combined TU.
+// Declared here rather than through src/shared/sound/se.hpp, whose sound
+// enum names clash with the ones from the registration headers.
 #pragma codeseg SHARED
 extern "C" void far snd_se_update(void);
 void pascal far frame_delay(int frames);
@@ -47,8 +51,11 @@ void near regist_menu(void);
 #include "src/maine/registration/motion.hpp"
 #include "src/maine/registration/menu.hpp"
 #pragma codeseg REG_FULL_TEXT GROUP_01
-// First eight-byte score key and original near-Pascal cipher interface.
-// The one-byte local rotate is genuinely required by the original codec.
+// Decodes [hi] in place, and returns the difference between the stored and the
+// calculated checksum (0 if the section is valid). Each byte is mixed with the
+// two random keys and with the following encoded byte, rotated right by 3.
+// The rotation is a ROR instruction on a byte variable, with [key2] in AL;
+// neither _crotr() nor a shift expression compiles to that.
 unsigned char pascal near scoredat_decode(void)
 {
     int index;
@@ -70,6 +77,7 @@ unsigned char pascal near scoredat_decode(void)
     }
     return (hi.score_sum - checksum);
 }
+// Recalculates the checksum, picks new random keys, and encodes [hi] in place.
 void pascal near scoredat_encode(void)
 {
     int index;
@@ -91,7 +99,6 @@ void pascal near scoredat_encode(void)
         index--;
     }
 }
-
 
 #include "src/maine/score/end_body.inl"
 

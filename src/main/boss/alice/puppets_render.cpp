@@ -1,4 +1,5 @@
-// Complete real puppet-renderer owner; also included by the coherent foreground TU.
+// Renders both puppets. Compiled on its own, and also included by
+// foreground.cpp.
 #ifndef TH05_ALICE_FG_COMBINED
 #pragma option -zCALICE_FG_TEXT -zPmain_01
 #include "src/main/boss/alice/foreground.hpp"

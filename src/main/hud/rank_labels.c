@@ -1,7 +1,8 @@
-/* Five original difficulty labels, in the game's bold gaiji alphabet. */
+/* Difficulty names shown at the bottom of the HUD, in the bold gaiji
+ * alphabet. Each is padded with empty glyphs to 7 characters plus NUL. */
 #pragma option -zCRANK_LABELS_TEXT -zPmain_01
 #ifdef __cplusplus
-#error These semantic gaiji selectors must have a C producer
+#error This file must be compiled as C
 #endif
 #include "src/main/hud/overlay_data.h"
 

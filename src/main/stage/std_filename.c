@@ -1,7 +1,8 @@
-// Original TH05 standard-stage event file, not synthesized resource contents.
+// Filename of the stage script (.STD) file. std_load() refers to it as std_fn
+// and replaces the second digit with the stage number.
 #pragma option -zCSTD_FILENAME_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Native initialized resource names must use the original C producer
+#error This file must be compiled as C
 #endif
 #include "src/main/stage/std_filename_c.h"
 MainStdFilename near main_std_filename = { "ST00.STD" };

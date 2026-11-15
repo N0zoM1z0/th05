@@ -1,12 +1,13 @@
-/* Three four-phase screen coverage tiles, not stored font or sprite pixels. */
+/* BOX_TILES: the three dither patterns that fade a dialog box in, from 1/4
+ * to 3/4 coverage. Each tile is four rows of one 16-pixel word. */
 #pragma option -zCDIALOG_TILE_MASKS_TEXT -zPmain_01
 #ifdef __cplusplus
-#error Original semantic tile masks require a C compiler producer
+#error Build this file as C
 #endif
 #include "src/shared/abi.hpp"
 
-/* Repeat a four-pixel coverage nibble across a complete sixteen-pixel word.
- * The phase rotates its active bits one place to the right on each row. */
+/* Row [phase] of the tile with [count] of every four pixels set: a 4-pixel
+ * nibble repeated across the word, rotated one pixel right on each row. */
 #define DIALOG_COVERAGE_BASE(count) (((1U << (count)) - 1U) << (4 - (count)))
 #define DIALOG_ROW_NIBBLE(count, phase) ( \
     ((DIALOG_COVERAGE_BASE(count) >> (phase)) | \

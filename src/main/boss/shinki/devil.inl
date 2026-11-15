@@ -1,4 +1,7 @@
-#include "src/main/boss/shinki/devil_ballistics.hpp"
+// Shinki's Devil attack: four columns of red spreads and decorative pellets
+// from her wings, aimed purple balls, and four lasers that start turning once
+// her HP drops to 5600 or at frame 1800 at the latest.
+#include "src/main/boss/shinki/wing_hitboxes.hpp"
 #include "src/main/boss/shinki/devil_float_state.h"
 void near pattern_devil(void)
 {
@@ -8,7 +11,6 @@ void near pattern_devil(void)
 			(SHINKI_WING_W / 2) - (SHINKI_WING_W / 8)
 		),
 		COLUMN_W = (SHINKI_WING_W / 4),
-		// Devil's staged startup is shared with the whole Shinki controller.
 		DEVIL_PATTERN_START_FRAME = 192,
 		DEVIL_FORCE_LASER_FRAME = 1800,
 		DEVIL_SPREAD_INTERVAL_FRAMES = 4,
@@ -34,12 +36,12 @@ void near pattern_devil(void)
 	#define laser_angle_inner	shinki_devil_scratch.laser_angle_inner
 	#define laser_angle_outer	shinki_devil_scratch.laser_angle_outer
 
-	// This is byte 10's phase_relative alias, not an independent laser flag.
-	// The leaf clears it at frame 192 and restores it only after the 64-frame
-	// grow delay and the next outer-angle 0x30 boundary (at most 127 updates).
-	// The 2,800-HP gap from the 5,600 trigger to phase end is the original
-	// safety margin: at a fixed shot level, 64 live shots plus eight 18-frame
-	// shot cycles top out at 2,570 HP after Stage 6 character scaling.
+	// Shares its byte with the shared-wave index of shinki_update(), which
+	// only lets the phase end once this flag is set again. This happens after
+	// the lasers have grown and the outer bullet angle has returned to 0x30,
+	// at most 127 frames after the lasers were spawned. The 2800 HP between
+	// the laser trigger and the end of the phase are more than the player can
+	// deal in that time.
 	#define lasers_active    	shinki_devil_scratch.wave_or_laser.devil_lasers_active
 
 	#define bullet_direction 	shinki_devil_scratch.bullet_direction
@@ -50,23 +52,19 @@ void near pattern_devil(void)
 
 	#define laser_grow_delay shinki_devil_laser_grow_delay
 
-	// One fixed-speed shot per symmetric column; keep each column's real
-	// origin shift at the call site and preserve the original firing order.
+	// Fires the current spread from the current column.
 	#define DEVIL_FIRE_COL(direction) { \
 		bullet_template.angle = (direction); \
 		bullets_add_regular_fixedspeed(); \
 	}
 
-	// Starting with the second fixed laser, each real wing column shifts
-	// its launch X before allocating the next slot; A remains the first.
+	// Moves one column to the left and spawns the next laser there.
 	#define DEVIL_NEXT_FIXED_LASER(slot) { \
 		laser_template.coords.origin.x.v -= to_sp(COLUMN_W); \
 		laser_manual_fixed_spawn(slot); \
 	}
 
-	// Both red and decorative four-column spreads shift to the next column
-	// before choosing its separate angle. The first decorative shot instead
-	// chooses its angle before moving to its first source position.
+	// Moves one column to the left and fires the current spread there.
 	#define DEVIL_NEXT_FIRE_COL(direction) { \
 		bullet_template.origin.x.v -= to_sp(COLUMN_W); \
 		DEVIL_FIRE_COL(direction); \
@@ -81,9 +79,9 @@ void near pattern_devil(void)
 	// Laser activation
 	if((boss.hp <= HP_PHASE_10_DEVIL_LASER) || (boss.phase_frame >= DEVIL_FORCE_LASER_FRAME)) {
 		if(laser_grow_delay == 0) {
-			laser_template.coords.width.nonshrink = SHINKI_DEVIL_LASER_WIDTH_PX;
-			laser_template.coords.angle = SHINKI_DEVIL_LASER_INITIAL_ANGLE;
-			laser_template.col = SHINKI_DEVIL_LASER_COLOR;
+			laser_template.coords.width.nonshrink = 6;
+			laser_template.coords.angle = 0x40;
+			laser_template.col = 0x0E;
 
 			// Assign laser IDs from right to left
 			laser_template.coords.origin.x.v += to_sp(SHINKI_TO_LAST_COLUMN_DISTANCE);
@@ -102,16 +100,14 @@ void near pattern_devil(void)
 	// Spread bullets
 	if((boss.phase_frame % DEVIL_SPREAD_INTERVAL_FRAMES) == 0) {
 		if(phase_frame_minus_startup_delay == 0) {
-			bullet_angle_inner = SHINKI_DEVIL_INITIAL_INNER_BULLET_ANGLE;
-			bullet_angle_outer = SHINKI_DEVIL_INITIAL_OUTER_BULLET_ANGLE;
-			b6ball_interval = select_for_rank(
-                DEVIL_BALL_START_EASY, DEVIL_BALL_START_NORMAL,
-                DEVIL_BALL_START_HARD, DEVIL_BALL_START_LUNATIC);
+			bullet_angle_inner = 0x20;
+			bullet_angle_outer = 0x00;
+			b6ball_interval = select_for_rank(64, 40, 32, 28);
 			bullet_intro_done = false;
 			bullet_direction = CLOCKWISE;
 			lasers_active = false;
-			laser_angle_inner = SHINKI_DEVIL_LASER_INITIAL_ANGLE;
-			laser_angle_outer = SHINKI_DEVIL_LASER_INITIAL_ANGLE;
+			laser_angle_inner = 0x40;
+			laser_angle_outer = 0x40;
 			laser_direction = CLOCKWISE;
 		}
 		bullet_template.spawn_type = (BST_CLOUD_FORWARDS | BST_NO_DECELERATE);
@@ -121,38 +117,36 @@ void near pattern_devil(void)
 			bullet_intro_done++;
 		}
 		if(!bullet_intro_done) {
-			bullet_template.spread = SHINKI_DEVIL_PRELUDE_BULLET_COUNT;
+			bullet_template.spread = 1;
 		} else {
-			bullet_template.spread = SHINKI_DEVIL_FULL_BULLET_COUNT;
+			bullet_template.spread = 3;
 		}
-		bullet_template.spread_angle_delta = SHINKI_DEVIL_SPREAD_ARC_ANGLE;
-		bullet_template.speed.v = sara_to_sp8(SHINKI_DEVIL_BULLET_SPEED_PX);
+		bullet_template.spread_angle_delta = 0x30;
+		bullet_template.speed.v = sara_to_sp8(7.0f);
 
 		bullet_template.origin.x.v += to_sp(SHINKI_TO_LAST_COLUMN_DISTANCE);
 		DEVIL_FIRE_COL(bullet_angle_outer);
 
 		DEVIL_NEXT_FIRE_COL(bullet_angle_inner);
 
-		DEVIL_NEXT_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_inner);
+		DEVIL_NEXT_FIRE_COL(0x80 - bullet_angle_inner);
 
-		DEVIL_NEXT_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE - bullet_angle_outer);
+		DEVIL_NEXT_FIRE_COL(0x80 - bullet_angle_outer);
 
 		if(!bullet_intro_done) {
 			bullet_angle_outer += DEVIL_PRELUDE_OUTER_STEP;
 			bullet_angle_inner += DEVIL_PRELUDE_INNER_STEP;
 		} else {
 			// "Decorative" pellets aimed to the top of the playfield
-			bullet_template.patnum = SHINKI_DEVIL_DECORATIVE_PELLET_PATNUM;
+			bullet_template.patnum = 0;
 			bullet_template.spawn_type = BST_NO_DECELERATE;
-			sara_set_spread(DEVIL_DECORATIVE_SPREAD_COUNT, SHINKI_DEVIL_SPREAD_ARC_ANGLE); // technically redundant
+			sara_set_spread(DEVIL_DECORATIVE_SPREAD_COUNT, 0x30); // technically redundant
 
-			// This first decorative shot sets its angle before moving the origin.
-			// Later columns shift the origin before selecting their angle.
-			bullet_template.angle = (SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_outer);
+			bullet_template.angle = (0x80 + bullet_angle_outer);
 			bullet_template.origin.x.v += to_sp((COLUMN_W * (COLUMN_COUNT - 1)));
 			bullets_add_regular_fixedspeed();
 
-			DEVIL_NEXT_FIRE_COL(SHINKI_DEVIL_MIRROR_ANGLE + bullet_angle_inner);
+			DEVIL_NEXT_FIRE_COL(0x80 + bullet_angle_inner);
 
 			DEVIL_NEXT_FIRE_COL(DEVIL_ANGLE_ZERO - bullet_angle_inner);
 
@@ -178,12 +172,12 @@ void near pattern_devil(void)
 			b6ball_template.origin.x.v = shinki_wing_random_x();
 			b6ball_template.origin.y.v = shinki_wing_random_y();
 			b6ball_template.angle = player_angle_from(b6ball_template.origin.x, b6ball_template.origin.y);
-			b6ball_template.speed.v = sara_to_sp8(SHINKI_DEVIL_AIMED_BALL_SPEED_PX);
+			b6ball_template.speed.v = sara_to_sp8(3.75f);
 			b6ball_template.patnum_tiny = PAT_B6BALL_PURPLE;
 			b6balls_add();
 		}
 
-		snd_se_play(SHINKI_DEVIL_VOLLEY_SOUND);
+		snd_se_play(3);
 	}
 
 	// Lasers
@@ -192,7 +186,7 @@ void near pattern_devil(void)
 	} else if(laser_grow_delay < DEVIL_LASER_GROW_FRAMES) {
 		laser_grow_delay++;
 	} else if(laser_grow_delay == DEVIL_LASER_GROW_FRAMES) {
-		// Keep the four direct calls: a loop shrinks the original 802-byte leaf.
+		// Four separate calls rather than a loop, as in ZUN's code.
 		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_A);
 		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_B);
 		laser_manual_grow(SHINKI_DEVIL_LASER_SLOT_C);
@@ -206,8 +200,8 @@ void near pattern_devil(void)
 	} else if((boss.phase_frame % DEVIL_LASER_TURN_INTERVAL_FRAMES) == 0) {
 		lasers[0].coords.angle = laser_angle_outer;
 		lasers[1].coords.angle = laser_angle_inner;
-		lasers[2].coords.angle = (SHINKI_DEVIL_MIRROR_ANGLE - lasers[1].coords.angle);
-		lasers[3].coords.angle = (SHINKI_DEVIL_MIRROR_ANGLE - lasers[0].coords.angle);
+		lasers[2].coords.angle = (0x80 - lasers[1].coords.angle);
+		lasers[3].coords.angle = (0x80 - lasers[0].coords.angle);
 		if(laser_direction == CLOCKWISE) {
 			laser_angle_outer++;
 			laser_angle_inner--;
@@ -222,11 +216,10 @@ void near pattern_devil(void)
 			}
 		}
 		if((boss.hp <= HP_PHASE_10_DEVIL_FAST) || (boss.phase_frame >= DEVIL_FAST_STAGE_FRAME)) {
-			// Growth leaves this 16-bit delay at 65; consume the fast-stage sentinel once.
+			// [laser_grow_delay] is 65 after the lasers have grown, so this
+			// only speeds up the balls once.
 			if((laser_grow_delay++) == DEVIL_FAST_DELAY_SENTINEL) {
-				b6ball_interval = select_for_rank(
-                    DEVIL_BALL_FAST_EASY, DEVIL_BALL_FAST_NORMAL,
-                    DEVIL_BALL_FAST_HARD, DEVIL_BALL_FAST_LUNATIC);
+				b6ball_interval = select_for_rank(52, 20, 16, 12);
 				boss_explode_small(ET_CIRCLE);
 			}
 		}

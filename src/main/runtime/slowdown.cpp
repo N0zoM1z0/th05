@@ -1,4 +1,4 @@
-// Natural ReC98 b6ba5b0a: th04/main/slowdown.cpp; maintained TH04 donor consulted.
+// Frame rate limiter. Same as ReC98's th04/main/slowdown.cpp.
 #pragma option -zCSLOWDOWN_TEXT -zPmain_01
 #include "src/main/runtime/small.hpp"
 

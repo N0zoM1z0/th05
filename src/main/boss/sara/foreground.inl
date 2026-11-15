@@ -1,9 +1,13 @@
-// Canonical complete foreground definition.
+// Sara's foreground renderer, shared by sara/foreground.cpp and
+// boss/foreground.cpp. Her moving sprites animate twice as fast as the
+// standing one.
 void pascal near sara_fg_render(void)
 {
     int left;
     int top;
     int patnum;
+    // Screen coordinates of the 64x64 sprite. The playfield's left edge at
+    // x=32 cancels out half the sprite width; its top edge is at y=16.
     left = boss.pos.cur.x.v >> 4;
     top = (boss.pos.cur.y.v >> 4) - 16;
     if(boss.phase == BOSS_FG_PHASE_EXPLODE_BIG) {

@@ -1,5 +1,6 @@
-// Script subcommands, interpreted only after their controlling top-level byte.
-// The same printable character can have a different meaning in each handler.
+// The characters that follow a cutscene script command and select its variant,
+// e.g. the `o` in `\wo` or the `=` in `\p=`. Each one is only meaningful for
+// its own command, so the same character appears under several names.
 #ifndef TH05_CUTSCENE_SUBCOMMANDS_HPP
 #define TH05_CUTSCENE_SUBCOMMANDS_HPP
 
@@ -27,8 +28,8 @@ enum CutsceneScriptSubcommand {
     CUTSCENE_INLINE_EXCLAMATION = '!'
 };
 
-// Defaults on parameter-free script operations. Changing these values alters
-// actual scene timing or colors, not just a source spelling.
+// Values used when a command is given without a parameter, plus the two VRAM
+// pages.
 enum CutsceneScriptDefaults {
     CUTSCENE_WAIT_DEFAULT_FRAMES = 64,
     CUTSCENE_TONE_NORMAL = 100,

@@ -1,5 +1,6 @@
-// Original enemy-shot dispatch is three real main_03 near-C callbacks.
-// The C++ compiler and linker resolve the actual functions, not copied offsets.
+// Bullet spawn functions selected by the enemy script's bullet command: after
+// tuning [bullet_template], the script interpreter calls
+// bullets_add_by_mode[mode] (ReC98 th05_main.asm: `call off_2129C[bx]`).
 #pragma option -zCBULLET_DISPATCH_DATA_TEXT -zPmain_03
 
 #pragma codeseg B6_UPDATE_TEXT main_03
@@ -10,6 +11,8 @@ extern "C" {
 }
 #pragma codeseg BULLET_DISPATCH_DATA_TEXT main_03
 
+// Indexed by spawn mode: regular, fixed-speed (no playperf speed tuning),
+// and special-motion bullets.
 typedef void (near *near BulletAddCallback)(void);
 BulletAddCallback near bullets_add_by_mode[3] = {
     bullets_add_regular,

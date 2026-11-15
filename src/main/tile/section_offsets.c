@@ -1,5 +1,5 @@
-// Semantic MAP section addresses, from ReC98 b6ba5b0a
-// th04/main/tile/section[data].asm and th04/formats/map.hpp.
+// Byte offset of every section inside the loaded MAP file, used to look up
+// tile rows (ReC98 th04/main/tile/section[data].asm, th04/formats/map.hpp).
 #include "src/main/tile/section_offsets.h"
 
 #define SECTION_OFFSET(section_id) ((section_id) * TILE_SECTION_BYTES)

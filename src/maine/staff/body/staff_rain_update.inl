@@ -1,3 +1,7 @@
+// Second part of the staff roll: the camera slows down and reverses, then the
+// window moves to the right while particles rain down and sway left and right.
+// The background also turns blue. Returns 1 once the window has reached the
+// right edge of the screen.
 int near staff_rain_update(void)
 {
     orb_particle_t near *p = particles;
@@ -34,6 +38,7 @@ int near staff_rain_update(void)
                     vector2_at(p->velocity, 0, 0, p->speed.v, p->angle);
                 }
             }
+            // Avoid overflowing the counter, while keeping the 8-frame cycle
             if(staff_rain_frame >= 30000) {
                 staff_rain_frame = 29992;
             }

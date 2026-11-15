@@ -1,4 +1,4 @@
-// Readable stage-bonus UI text; encoded to CP932 only in compiler staging.
+// Japanese texts of the bonus screens.
 #ifndef TH05_STAGE_BONUS_STRINGS_HPP
 #define TH05_STAGE_BONUS_STRINGS_HPP
 

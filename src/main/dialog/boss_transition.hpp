@@ -1,4 +1,4 @@
-// Canonical MAIN callback and scroll interfaces for dialog-to-boss activation.
+// Callback variables and functions used by the STD-to-boss transition.
 #ifndef TH05_DIALOG_BOSS_TRANSITION_HPP
 #define TH05_DIALOG_BOSS_TRANSITION_HPP
 #include "src/shared/geometry.hpp"
@@ -23,11 +23,10 @@ extern nearfunc_t_near boss_fg_render;
 extern nearfunc_t_near boss_fg_render_func;
 extern nearfunc_t_near overlay1;
 
-// These are all real AE1-frame functions. Preserve each first declaration's
-// near callback context and the genuine far cdecl animation interface.
-// First declaration binds these near callbacks to their actual compiler
-// segment. The complete dialog context emits them before the graphics prefix;
-// their independent owner retains the original dedicated segment.
+// All of these live in main_01. A function's first declaration fixes its
+// code segment: opcode_full_context.cpp compiles the two callbacks into
+// DIALOG_RUN_TEXT together with the rest of the dialog code, while
+// boss_transition.cpp builds them in their own segment.
 #if defined(TH05_DIALOG_OPCODE_FULL_CONTEXT)
 #pragma codeseg DIALOG_RUN_TEXT main_01
 #else

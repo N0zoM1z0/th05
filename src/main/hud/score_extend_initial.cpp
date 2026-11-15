@@ -1,4 +1,6 @@
-// ReC98 th04/score[data].asm: adjacent ordinary extend and high-score latches.
+// Score flags: the number of extends gained from point items, and whether
+// the "HiScore Entry" popup was already shown this game. See ReC98's
+// th04/score[data].asm.
 #pragma option -zCSCORE_EXTEND_FLAGS_TEXT -zPmain_01
 
 unsigned char extends_gained = 0;

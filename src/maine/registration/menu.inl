@@ -46,6 +46,9 @@ void near regist_menu(void)
         }
     }
     hiscore_scoredat_load_for(playchar);
+
+    // Slow mode scores are only recorded for the Extra Stage. Otherwise, show
+    // the "not recorded in slow mode" warning, with a shadow.
     if(resident->turbo_mode || rank == RANK_EXTRA) {
         score_insert();
         places_put(playchar);
@@ -56,6 +59,7 @@ void near regist_menu(void)
         graph_putsa_fx(120, 192, 2, registration_turbo_warning);
     }
     bgimage_snap();
+    // Cleared without continues?
     if(resident->end_sequence >= REG_END_EXTRA &&
             resident->score_last.continues_used == 0) {
         hi.score.cleared = SCOREDAT_CLEARED;
@@ -84,6 +88,9 @@ void near regist_menu(void)
     gaiji_putca(23, 21, gALPHABET[0], REG_ATTR_HIGHLIGHT);
     col = 0;
     row = 0;
+    // [input_lock] holds the last accepted input until the keys are released,
+    // or until they have been held for REG_REPEAT_DELAY frames, after which
+    // they repeat every second frame.
     input_lock = 1;
     while(1) {
         input_reset_sense_held();

@@ -1,9 +1,9 @@
-// Natural complete Louise callback and real shared Boss interfaces.
+// Louise's update function and the shared boss functions it calls.
 #ifndef TH05_MAIN_BOSS_LOUISE_UPDATE_HPP
 #define TH05_MAIN_BOSS_LOUISE_UPDATE_HPP
 
-// This genuine near rendering callback belongs to main_01 before the shared
-// setup header repeats its declaration. Its assigned pointer is only16 bits.
+// louise_bg_render() is in main_01. Turbo C++ binds a function to the segment
+// that is active at its first declaration, so declare it before setup.hpp.
 #pragma codeseg LOUISE_UPDATE_MAIN01_TEXT main_01
 void pascal near louise_bg_render(void);
 #pragma codeseg B4_UPDATE_TEXT main_03
@@ -12,7 +12,7 @@ void pascal near louise_bg_render(void);
 #pragma codeseg B4_UPDATE_TEXT main_03
 
 static const int LOUISE_HP_TOTAL = 4400;
-// Original eight-phase far switch and two distinct three-mode attacks.
+// Phases. 3 and 6 are short pauses before the next attack phase.
 static const unsigned char LOUISE_PHASE_SETUP = 0;
 static const unsigned char LOUISE_PHASE_READY = 1;
 static const unsigned char LOUISE_PHASE_BLUE_RED_SPREADS = 2;
@@ -21,7 +21,6 @@ static const unsigned char LOUISE_PHASE_MIRRORED_FANS = 4;
 static const unsigned char LOUISE_PHASE_LASERS_AND_RINGS = 5;
 static const unsigned char LOUISE_PHASE_FIRE_TRANSITION_SECOND = 6;
 static const unsigned char LOUISE_PHASE_AIMED_PELLETS = 7;
-// Original movement helper: signed speed/frame words, Pascal RET4, truth in AL.
 bool pascal near louise_flystep(subpixel_t speed, int end_frame);
 bool near boss_hittest_shots(void);
 void near boss_hittest_shots_invincible(void);

@@ -1,7 +1,6 @@
-#include "src/main/boss/shinki/ball_lifecycle.hpp"
-// Native source control-flow barrier: original ReC98 decomp.hpp implements
-// this as an empty inlined false-returning function. The two real uses are
-// part of original source structure, not an inserted NOP or opcode template.
+// Emits no code, but keeps Turbo C++ from merging the jumps after the clipping
+// and collision checks, which ZUN's code keeps separate. Same as ReC98's
+// decomp.hpp.
 inline bool optimization_barrier(void) { return false; }
 void near b6balls_update(void)
 {
@@ -13,9 +12,11 @@ void near b6balls_update(void)
 	int i;
 	for((p = b6balls, i = 1); i < (1 + B6BALL_COUNT); (i++, p++)) {
 		if(p->flag != B6BF_FREE) {
+		// Balls spawn inside a 48-pixel cloud that shrinks by 2 pixels per
+		// frame until it is smaller than the ball.
 		if(p->flag == B6BF_CLOUD) {
-			p->cloud_radius.v -= to_sp(SHINKI_B6_CLOUD_SHRINK_PX);
-			if(p->cloud_radius.v < to_sp(B6BALL_W / SHINKI_B6_HITBOX_HALF_DIVISOR)) {
+			p->cloud_radius.v -= to_sp(2.0f);
+			if(p->cloud_radius.v < to_sp(B6BALL_W / 2)) {
 				static_cast<unsigned char>(p->flag)++;
 			} else {
 				continue;
@@ -35,7 +36,7 @@ void near b6balls_update(void)
 			_AX -= player_pos.cur.x.v;
 			_DX -= player_pos.cur.y.v;
 			if(overlap_wh_inplace_fast(
-				_AX, _DX, to_sp(B6BALL_W / SHINKI_B6_HITBOX_HALF_DIVISOR), to_sp(B6BALL_H / SHINKI_B6_HITBOX_HALF_DIVISOR)
+				_AX, _DX, to_sp(B6BALL_W / 2), to_sp(B6BALL_H / 2)
 			)) {
 				player_is_hit = true;
 				p->flag = B6BF_DECAY;
@@ -47,12 +48,12 @@ void near b6balls_update(void)
 			// can't be smaller. You know how you properly DRY decay state
 			// initialization? By moving it into a function...
 			p->patnum_tiny = PAT_DECAY_B6BALL;
-			p->pos.velocity.x.v /= SHINKI_B6_DECAY_VELOCITY_DIVISOR;
-			p->pos.velocity.y.v /= SHINKI_B6_DECAY_VELOCITY_DIVISOR;
+			p->pos.velocity.x.v /= 2;
+			p->pos.velocity.y.v /= 2;
 			p->decay_frame = 0;
 		} else /* if(p->flag == B6BF_DECAY) */ {
 			p->decay_frame++;
-			if((p->decay_frame % SHINKI_B6_DECAY_ANIMATION_INTERVAL) == 0) {
+			if((p->decay_frame % 4) == 0) {
 				p->patnum_tiny++;
 				if(p->patnum_tiny >= (PAT_DECAY_B6BALL_last + 1)) {
 					p->flag = B6BF_FREE;
