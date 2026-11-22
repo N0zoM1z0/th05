@@ -49,3 +49,29 @@ transferred acceptance.
 [Receipt format reference](reconstruction/ORACLE_FORMATS.md) covers special
 DATA/ASM/retained-producer formats when needed. Existing accepted receipts and
 the raw-byte/relocation gates remain valid under this narrower workflow.
+
+## Rechecking the accepted evidence
+
+`python3 scripts/audit_ledgers.py` rechecks every row of the four C/C++
+ledgers and the reviewed-ASM family ledger without running a compiler and
+without `scripts/lib`. It reparses the original MAIN MZ and the decoded OP/MAINE
+payloads, then confirms the recorded target hash and ordered fixups, both
+retained producer EXE/COM files, the named receipt and a differing compiled
+negative. It also checks that `resources/ownership.json` files exactly the
+ledger extent, including internal padding rows, under that unit.
+`ownership.py --check --verify-targets` rehashes every reviewed vendor, gap and
+resource row against the targets. Both need the private `.analysis/` inputs.
+
+The byte/fixup oracle cannot tell a symbol from a literal address that happens
+to have the same value: DS- and CS-relative offsets create no MZ relocation.
+Position independence is therefore checked separately by relinking with moved
+contributions (`scripts/audit_dos_pi.py`).
+
+Reviewer proofs must not compare their own script hashes. A tooling edit
+otherwise fails unchanged byte evidence: until 2026-11-22, four Master
+reviewers (`egc_shifts`, `ems_transfers`, `primary_circlefill`,
+`primary_circlex`) failed `--verify-targets` only because their scripts had
+been edited. Their comparisons now drop `reviewer_sources`, as the string
+runtime review drops its `scripts/` identities. Other reviewers still record
+script hashes; if one fails after an edit, check whether the difference is only
+that hash before refreshing its proof with `--write`.

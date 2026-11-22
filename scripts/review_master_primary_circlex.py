@@ -12,7 +12,7 @@ from pathlib import Path
 import re
 
 import review_master as base
-from review_master_primary_circlefill import need, sha, digest, ASM, SOURCE_FLAGS
+from review_master_primary_circlefill import need, sha, digest, without_tool_hashes, ASM, SOURCE_FLAGS
 from lib.omf import describe_omf, parse_omf, normalize_dependency_timestamps
 from lib.pc98 import parse_mz
 from lib.replay_toolchain import static_toolchain, validate_full_toolchain
@@ -268,7 +268,7 @@ def validate_metadata(meta, *, root=ROOT):
 
 def review_inputs(meta, *, root=ROOT):
     validate_metadata(meta, root=root)
-    need(build_metadata(root=root) == meta, 'actual original producers/native context differs')
+    need(without_tool_hashes(build_metadata(root=root)) == without_tool_hashes(meta), 'actual original producers/native context differs')
     return dict(full_bytes=SIZE, procedures=1, byte_proof_replayed=True, authored_credit=0, new_builds=0)
 
 

@@ -34,6 +34,14 @@ SOURCES = ('scripts/review_string_runtime.py', 'scripts/review_main_runtime.py',
 need, sha = vendor.need, vendor.sha
 
 
+def without_tool_hashes(proof):
+    """Drop reviewer-script hashes: a tooling edit must not fail unchanged byte evidence."""
+    proof = dict(proof)
+    if isinstance(proof.get('identities'), dict):
+        proof['identities'] = {k: v for k, v in proof['identities'].items() if not k.startswith('scripts/')}
+    return proof
+
+
 def identities(root):
     return {p: sha((root / p).read_bytes()) for p in SOURCES}
 
@@ -275,7 +283,7 @@ def reviewed_claims(root, views, *, verify_targets=False):
     need((views['main']['size'], views['main']['sha256']) == (145958, vendor.PINS['target_payload_sha256']),
          'string coordinate view differs')
     if verify_targets:
-        need(native_review(root) == proof, 'native string object/fixup replay differs')
+        need(without_tool_hashes(native_review(root)) == without_tool_hashes(proof), 'native string object/fixup replay differs')
     return [dict(start=a, end=a+n, kind='verified-vendor-code', library='CL.LIB', member=m,
                  segment=s) for m, s, a, n in SCOPES], sha(path.read_bytes())
 

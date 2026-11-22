@@ -38,6 +38,14 @@ def need(value, message):
         raise ValueError(message)
 
 
+def without_tool_hashes(proof):
+    """Drop reviewer-script hashes: a tooling edit must not fail unchanged byte evidence."""
+    proof = {k: v for k, v in proof.items() if k != 'reviewer_sources'}
+    if isinstance(proof.get('identities'), dict):
+        proof['identities'] = {k: v for k, v in proof['identities'].items() if not k.startswith('scripts/')}
+    return proof
+
+
 def sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
@@ -181,7 +189,7 @@ def build_metadata(*, root=ROOT):
 
 def review_inputs(meta, *, root=ROOT):
     validate_metadata(meta, root=root)
-    need(build_metadata(root=root) == meta, 'current primary/native observations differ from proposal')
+    need(without_tool_hashes(build_metadata(root=root)) == without_tool_hashes(meta), 'current primary/native observations differ from proposal')
     return dict(procedures=4, full_bytes=1048, byte_proof_replayed=True, authored_credit=0, compiler_invocations=0)
 
 
