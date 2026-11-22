@@ -49,8 +49,10 @@ def main() -> int:
         products[artifact] = {"file": PRODUCTS[artifact], "build": str((out / receipt["output"]).relative_to(ROOT)),
                               "bytes": (out / receipt["output"]).stat().st_size, "sha256": receipt["sha256"],
                               "original_equal": receipt["raw_file_equal"],
-                              "overlays": [o["source"] for o in receipt["overlays"]]}
+                              "overlays": [o["source"] for o in receipt["overlays"]],
+                              "integrated_units": receipt.get("integrated_units", [])}
         print(f"[{artifact}] {products[artifact]['bytes']} bytes, {len(receipt['overlays'])} overlays, "
+              f"{len(receipt.get('integrated_units', []))} integrated units, "
               f"original-equal={receipt['raw_file_equal']}", flush=True)
     staging = args.output.with_name(args.output.name + ".new")
     shutil.rmtree(staging, ignore_errors=True)

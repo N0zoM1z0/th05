@@ -33,7 +33,6 @@ from typing import NamedTuple
 
 from lib.omf import parse_omf
 from lib.pc98 import MZImage, parse_mz
-from lib.unit_oracle import map_publics
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = (ROOT / ".analysis").resolve()
@@ -366,7 +365,11 @@ def relink(artifact: str, product: dict, output: Path, padding: dict[str, int]) 
     if exe.read_bytes() != baseline_exe.read_bytes() or map_path.read_bytes() != baseline_map:
         raise ValueError("unshifted relink does not reproduce the product EXE and MAP")
     old_rows = map_rows(map_path)
-    publics = sorted({address for address, _ in map_publics(map_path)})
+    # Integrated units carry alias publics that TLINK displays under one demangled name.
+    text = map_path.read_text(encoding="cp437")
+    table = text[text.find("Publics by Value"):]
+    publics = sorted({int(m[1], 16) * 16 + int(m[2], 16)
+                      for m in re.finditer(r"^\s*([0-9A-F]{4}):([0-9A-F]{4})\s", table, re.M)})
     args, files_text = read_response(work / response)
     if args[:4] != ["-c", "-s", "-E", "c0l.obj"]:
         raise ValueError("unexpected TLINK response")

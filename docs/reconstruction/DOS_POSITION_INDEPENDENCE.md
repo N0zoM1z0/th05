@@ -129,11 +129,13 @@ pixel-exact one; TH04's memory observer has no TH05 counterpart yet.
 
 ## Limits
 
-- The product links 50 maintained translation units into ReC98's tree. Most
-  other units replace parts of ReC98's undecompiled `th05_main.asm`, `th05_op.asm`
-  and `th05_maine.asm`; linking them needs those functions cut from the dumps
-  (see [DOS_BUILD.md](../DOS_BUILD.md)). Until then they are covered by the
-  object-level check above, not by a relink or a runtime run.
+- The product links the 50 overlaid translation units plus, since the dump
+  integration, 99 MAIN and 18 MAINE units in place of ReC98 dump code (see
+  [DOS_BUILD.md](../DOS_BUILD.md)). The integrated build passes the same three
+  relinks: MAIN 294 contributions, the 1,001/952/667 relocations, all far
+  transfers, far pointers and switch tables, and no new literal candidates;
+  its attract loop plays the same demos. The remaining units are covered by the
+  object-level check, not by a relink or a runtime run.
 - ZUN.COM is built by ReC98's `zungen`/`comcstm` pipeline and was not relinked.
   The ZUN resident ASM families (`file_family_native.asm`,
   `resdata_native.asm`) use `org` to place their bounded scope inside the `-S`

@@ -51,12 +51,31 @@ timing. Evidence: `.analysis/runtime/play-{original,rebuilt}-b/`.
 ## Maintained-source coverage
 
 MAIN overlays 34, OP 9 and MAINE 7 ReC98 translation units with TH05's exact
-units. The full route above was re-run on that build. TUs whose maintained
-units split functions into separate files (`th04/tile.cpp`, `th05/gather.cpp`,
-`th05/main014.cpp`, `th05/egcrect.cpp`) and function-scoped TUs are not yet
-overlaid, and nor are the undecompiled `th05_*.asm` parts. Replacing these
-next, until the product links from maintained source alone as TH04's does,
-is the remaining DOS work.
+units. After the build, `scripts/integrate_product.py` (method in
+`scripts/lib/product_integration.py`) also links the accepted units whose code
+ReC98 still keeps in its IDA dumps `th05_main.asm` and `th05_maine.asm`:
+
+1. Each unit module is compiled exactly as in its replay, into `obj/integ/`.
+2. One relink with a public marker before every dump procedure and data label
+   gives their addresses; bytes do not change.
+3. A unit's code is located in that image by matching every byte outside its
+   FIXUPP fields. The dump procedures that tile the match, and the tables and
+   alignment between them, are cut and declared `extrn`.
+4. The unit object gets alias PUBDEFs for the cut names. Its externs that ReC98
+   names differently are renamed to the symbol the matched ReC98 code
+   resolves at the same fixup; dump labels it needs become public.
+
+Every TLINK warning or error stops the link. In the current build this
+replaces 175 MAIN and 22 MAINE dump procedures (29,176 MAIN dump bytes) with
+99 MAIN and 18 MAINE units; `integration.json` next to each build lists them
+and the reasons the others stay out. The attract loop plays the same three
+demos as the unintegrated build.
+
+Still from ReC98: units inside ReC98 C++ translation units that are not
+overlaid (their function would have to be cut from the C++ source), units built
+through special pipelines (`compiler_pipeline`, generated sources,
+before/after binders), units whose ReC98 code differs from the original bytes,
+initialized DATA units, the reviewed ASM families, and all of OP's dump code.
 
 ## Position independence
 

@@ -25,68 +25,13 @@ from pathlib import Path
 import re
 import sys
 
-from lib.omf import parse_omf
+from lib.omf_edit import object_segments, segment_names
 from lib.unit_oracle import map_publics
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGERS = {"main": "config/accepted_units.json", "op": "config/accepted_units.op.json",
            "maine": "config/accepted_units.maine.json", "zun": "config/accepted_units.zun.json"}
 MAP_ROW = re.compile(r"\s*([0-9A-F]{4}):([0-9A-F]{4})\s+([0-9A-F]{4})\s+C=(\S+)\s+S=(\S+)\s+G=(\S+)\s+M=(\S+)")
-FIXUP_WIDTH = {0: 1, 1: 2, 2: 2, 3: 4, 4: 1, 5: 2, 9: 2, 13: 2}
-
-
-def index(data: bytes, at: int) -> tuple[int, int]:
-    if data[at] & 0x80:
-        return ((data[at] & 0x7F) << 8) | data[at + 1], at + 2
-    return data[at], at + 1
-
-
-def object_segments(raw: bytes) -> dict[int, tuple[bytearray, set[int]]]:
-    """Segment index -> (LEDATA image, fixup-covered offsets)."""
-    images: dict[int, bytearray] = {}
-    covered: dict[int, set[int]] = {}
-    last = None
-    for record in parse_omf(raw):
-        data = record.data
-        if record.record_type in (0xA0, 0xA1):
-            segment, at = index(data, 0)
-            width = 4 if record.record_type == 0xA1 else 2
-            offset = int.from_bytes(data[at:at + width], "little")
-            payload = data[at + width:]
-            image = images.setdefault(segment, bytearray())
-            if len(image) < offset + len(payload):
-                image.extend(b"\0" * (offset + len(payload) - len(image)))
-            image[offset:offset + len(payload)] = payload
-            covered.setdefault(segment, set())
-            last = (segment, offset)
-        elif record.record_type in (0xA2, 0xA3):
-            last = None  # iterated data never holds code here
-        elif record.record_type in (0x9C, 0x9D):
-            at = 0
-            while at < len(data):
-                head = data[at]
-                if not head & 0x80:  # THREAD subrecord
-                    method = (head >> 2) & 7
-                    at += 1
-                    if (head & 0x40 and method < 3) or (not head & 0x40 and method < 3):
-                        _, at = index(data, at)
-                    continue
-                locat = (head << 8) | data[at + 1]
-                kind = (locat >> 10) & 0xF
-                where = locat & 0x3FF
-                fixdat = data[at + 2]
-                at += 3
-                if not fixdat & 0x80 and ((fixdat >> 4) & 7) < 3:
-                    _, at = index(data, at)
-                if not fixdat & 0x08:
-                    _, at = index(data, at)
-                if not fixdat & 0x04:
-                    at += 4 if record.record_type == 0x9D else 2
-                if last is None:
-                    raise ValueError("FIXUPP without LEDATA")
-                segment, base = last
-                covered[segment].update(range(base + where, base + where + FIXUP_WIDTH.get(kind, 2)))
-    return {k: (images[k], covered[k]) for k in images}
 
 
 def map_rows(path: Path) -> list[tuple[int, int, str, str]]:
@@ -98,22 +43,6 @@ def map_rows(path: Path) -> list[tuple[int, int, str, str]]:
             if match[4] == "CODE":
                 rows.append((start, int(match[3], 16), match[5], match[7]))
     return rows
-
-
-def segment_names(raw: bytes) -> list[str]:
-    names, segments = [], []
-    for record in parse_omf(raw):
-        data = record.data
-        if record.record_type == 0x96:
-            at = 0
-            while at < len(data):
-                names.append(data[at + 1:at + 1 + data[at]].decode("cp437"))
-                at += 1 + data[at]
-        elif record.record_type in (0x98, 0x99):
-            at = 1 + (3 if (data[0] >> 5) == 0 else 0) + (4 if record.record_type == 0x99 else 2)
-            name, _ = index(data, at)
-            segments.append(names[name - 1])
-    return segments
 
 
 def objects_by_module(source: Path) -> dict[str, bytes]:

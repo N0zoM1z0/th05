@@ -37,7 +37,7 @@ CALIBRATION_MAPS = {"main": ".analysis/builds/main-calibration-b/source/obj/th05
                     "maine": ".analysis/builds/maine-calibration-a/source/obj/th05/maine.map"}
 
 
-def code_order_anchor(artifact: str) -> str:
+def code_order_anchor(artifact: str, extra: list[tuple[str, str]] = ()) -> str:
     """Empty SEGDEF/GRPDEF anchor keeping overlay context segments inside their group.
 
     TLINK orders segments by first appearance. Maintained headers declare foreign
@@ -57,6 +57,9 @@ def code_order_anchor(artifact: str) -> str:
         for m in re.finditer(r"^#pragma codeseg[ \t]+(\w+)[ \t]+(\w+)", path.read_text(errors="replace"), re.M):
             if m[1] not in group_of and m[2].lower() in set(group_of.values()):
                 contexts.setdefault(m[1], m[2].lower())
+    for name, group in extra:  # segments of integrated unit objects
+        if name not in group_of and group.lower() in set(group_of.values()):
+            contexts.setdefault(name, group.lower())
     for name, group in sorted(contexts.items()):
         last = max((i for i, seg in enumerate(order) if group_of[seg] == group), default=len(order) - 1)
         order.insert(last + 1, name)
@@ -133,12 +136,19 @@ def main() -> int:
                                       link.response.replace("c0l.obj ", "c0l.obj obj\\th05\\anchor.obj ", 1))
         suffix = "com" if args.artifact == "zun" else "exe"
         result = builder.build(f"bin/th05/{args.artifact}.{suffix}")
+        integration = None
+        if args.overlay and args.artifact in ("main", "maine"):
+            # Replace dump procedures with the accepted units that reproduce them.
+            from integrate_product import integrate
+            integration = integrate(source, args.artifact)
+            (work / "integration.json").write_text(json.dumps(integration, indent=2) + "\n")
         if suffix == "exe":
             image = parse_mz(result.read_bytes())
             if not image.valid:
                 raise RuntimeError(str(image.errors))
         receipt = {"kind": "untrusted-reference-scaffold", "revision": REVISION,
                    "artifact": args.artifact, "overlays": overlays,
+                   "integrated_units": integration["integrated_units"] if integration else [],
                    "output": str(result.relative_to(work)), "sha256": digest_file(result),
                    "target_sha256": target["sha256"], "raw_file_equal": result.read_bytes() == target_data,
                    "toolchain_receipt_sha256": tool["receipt_sha256"],
