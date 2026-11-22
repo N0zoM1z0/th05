@@ -7,9 +7,10 @@ inside an executable's data range; structure resizing is out of scope. ReC98
 reached 100% PI for TH05's `OP.EXE`, `MAIN.EXE` and `MAINE.EXE` in September
 2020 (`cbf14ebb`, "Final false positives in TH05's MAIN.EXE"). That result
 covers the pinned ReC98 tree, not our maintained source, so this audit checks
-the TH05 DOS product we build (`scripts/build.py`: ReC98 `b6ba5b0a` with the 50
-maintained translation units of `config/maintained_sources.toml` overlaid) and
-the maintained source itself. The method follows TH04's
+the TH05 DOS product we build and the maintained source itself. The product
+(`scripts/build.py`) is ReC98 `b6ba5b0a` with the 50 translation units of
+`config/maintained_sources.toml` overlaid and 141 MAIN and 26 MAINE accepted
+units linked in place of ReC98 code ([DOS_BUILD.md](../DOS_BUILD.md)). The method follows TH04's
 `TH04_DOS_POSITION_INDEPENDENCE.md`.
 
 ## Shifted relinks
@@ -24,9 +25,9 @@ checker maps the following back to their MAP owners:
 
 | Executable | Contributions moved (CODE/DATA/BSS) | MZ relocations | Far CALL/JMP targets | Far data pointers | Switch tables (entries) |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| MAIN | 162 / 26 / 7 | 1,001 | 819 | 19 | 60 (519) |
+| MAIN | 272 / 26 / 7 | 1,001 | 819 | 19 | 60 (519) |
 | OP | 112 / 35 / 13 | 952 | 526 | 279 | 17 (162) |
-| MAINE | 105 / 27 / 12 | 667 | 436 | 84 | 16 (151) |
+| MAINE | 117 / 27 / 12 | 667 | 436 | 84 | 16 (151) |
 
 All relocation sites keep their order within their owners. Every far
 transfer, every far pointer in initialized data (offset word plus relocated
@@ -36,10 +37,10 @@ compare; master.lib's `_BGM_MGET` compares a byte offset, so its 13-entry table
 is bounded by `18h/2+1`.
 
 Capstone 5.0.6 then screens direct 16-bit CS/DS displacements, restarting the
-decode at every MAP public. Of 7,113 (MAIN), 1,403 (OP) and 1,754 (MAINE)
-displacements that name a mapped owner, 6,961, 1,172 and 1,531 move with it. A
+decode at every MAP public. Of 7,112 (MAIN), 1,403 (OP) and 1,754 (MAINE)
+displacements that name a mapped owner, 6,965, 1,172 and 1,532 move with it. A
 displacement whose owner moved but whose value did not follow is listed in
-`direct-offset-review.json` (18, 97 and 95); a candidate inside a checked
+`direct-offset-review.json` (18, 97 and 94-95); a candidate inside a checked
 switch table is dropped. All listed candidates were reviewed:
 
 - **Hardware and foreign segments.** master.lib `GET_MACHINE_AT` reads the BIOS
@@ -114,28 +115,28 @@ template fields) are structure layout, which ReC98's PI criterion excludes.
 
 ## Runtime
 
-Headless DOSBox-X (`scripts/play_dos.py`, 24,000 cycles, no input) booted the
-baseline and the 3/7/11 and 32/16/64 products through `GAME.BAT` into the first
-attract demo and saved a frame every 2 s from 26 to 48 s
-(`.analysis/runtime/pi-demo-{baseline,shift-3-7-11,shift-32-16-64}/`). All
-three play the same Lunatic demo with the same enemies, bombs and
-points. Host-timed captures are not frame-aligned, so each capture was matched
-to its nearest frame of the port's `--scene demo1` render. The matched frames
-advance in lockstep: 3/7/11 stays 4 frames ahead of the baseline (271 vs 267
-at 26 s, 1651 vs 1646 at 48 s) and 32/16/64 stays 39-40 frames behind, the
-difference in boot time. Every capture differs from its port frame by about
-100,000 pixels in all three runs, so this is a trajectory check, not a
-pixel-exact one; TH04's memory observer has no TH05 counterpart yet.
+Headless DOSBox-X (`scripts/play_dos.py`, 24,000 cycles, no input) boots
+`GAME.BAT` into the attract demos. Before the integration, the overlay-only
+product and its 3/7/11 and 32/16/64 relinks were captured every 2 s from 26
+to 48 s (`.analysis/runtime/pi-demo-*/`). Host-timed captures are not
+frame-aligned, so each one was matched to its nearest frame of the port's
+`--scene demo1` render. The matched frames advance in lockstep: 3/7/11 stays
+4 frames ahead (271 vs 267 at 26 s, 1651 vs 1646 at 48 s) and 32/16/64 stays
+39-40 frames behind, the difference in boot time. Every capture differs from
+its port frame by about 100,000 pixels in all runs, so this is a trajectory
+check, not a pixel-exact one; TH04's memory observer has no TH05 counterpart
+yet.
+
+The integrated product was run through 275 s of the attract loop next to the
+overlay-only one, with a frame every 20 s (`.analysis/runtime/attract-*/`).
+Both play demo 1, the title, demo 2 and demo 3 with the same stage, boss and
+counter states at each capture.
 
 ## Limits
 
-- The product links the 50 overlaid translation units plus, since the
-  integration, 141 MAIN and 26 MAINE units in place of ReC98 code (see
-  [DOS_BUILD.md](../DOS_BUILD.md)). The integrated build passes the same three
-  relinks: MAIN 313 contributions, the 1,001/952/667 relocations, all far
-  transfers, far pointers and switch tables, and no new literal candidates;
-  its attract loop plays the same demos. The remaining units are covered by the
-  object-level check, not by a relink or a runtime run.
+- Accepted units that the product does not link yet (see
+  [DOS_BUILD.md](../DOS_BUILD.md)) are covered by the object-level check, not by
+  a relink or a runtime run.
 - ZUN.COM is built by ReC98's `zungen`/`comcstm` pipeline and was not relinked.
   The ZUN resident ASM families (`file_family_native.asm`,
   `resdata_native.asm`) use `org` to place their bounded scope inside the `-S`
@@ -148,18 +149,14 @@ pixel-exact one; TH04's memory observer has no TH05 counterpart yet.
 ## Replay
 
 ```sh
-python3 scripts/build.py --output .analysis/build/pi-baseline
-python3 scripts/audit_dos_pi.py --baseline .analysis/build/pi-baseline \
-  --output .analysis/pi/shift-16-32-48
-python3 scripts/audit_dos_pi.py --baseline .analysis/build/pi-baseline \
-  --output .analysis/pi/shift-32-16-64 --padding 32 16 64
-python3 scripts/audit_dos_pi.py --baseline .analysis/build/pi-baseline \
-  --output .analysis/pi/shift-3-7-11 --padding 3 7 11
-```
-
-Each output directory holds the shifted products, `build.json`, and per
-executable `receipt.json` and `direct-offset-review.json`.
-
-```sh
+python3 scripts/build.py
+for layout in "16 32 48" "32 16 64" "3 7 11"; do
+  python3 scripts/audit_dos_pi.py \
+    --output ".analysis/pi/integ-${layout// /-}" --padding $layout
+done
 python3 scripts/audit_unit_pi.py --output .analysis/pi/unit-literals.json
 ```
+
+Each audit directory holds the shifted products, `build.json`, and per
+executable `receipt.json` and `direct-offset-review.json`; only the JSON files
+are retained.

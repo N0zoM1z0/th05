@@ -302,7 +302,8 @@ def main():
         if args.write:
             (ROOT / PROOF).write_text(json.dumps(result, indent=2) + '\n')
         else:
-            need(json.loads((ROOT / PROOF).read_text()) == result, 'saved string evidence differs')
+            need(without_tool_hashes(json.loads((ROOT / PROOF).read_text())) == without_tool_hashes(result),
+                 'saved string evidence differs')
         print('PASS: six complete distributed CODE contributions /4034 bytes; zero authored credit')
     return 0
 

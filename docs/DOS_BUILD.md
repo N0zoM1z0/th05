@@ -18,8 +18,10 @@ with `GAME=4`), then `#include` of the maintained source. Shift-JIS units are
 re-encoded like the replays. A generated empty-SEGDEF anchor, linked after
 `c0l.obj`, keeps our headers' declaration-context segments (e.g.
 `SMALL_MAIN01_CONTEXT`) inside their group; otherwise TLINK stretches
-`main_01` over the `main_03` segments. Outputs and `build.json` (sizes,
-SHA-256, overlays, original equality) go to `.analysis/build/th05/`. ZUN.COM
+`main_01` over the `main_03` segments. MAIN and MAINE then link the accepted
+units that replace ReC98 code (see below). Outputs and `build.json` (sizes,
+SHA-256, overlays, integrated units, original equality) go to
+`.analysis/build/th05/`. ZUN.COM
 goes through ReC98's `zungen`/`comcstm` pipeline and is byte-identical to the
 original. OP and MAINE ship unpacked (the originals are DIET-packed).
 
@@ -41,12 +43,16 @@ executables equal the TH05 targets), installs the products, and boots
 game directory first, for example a `GENSOU.SCR` with Extra unlocked. Only one
 Borland/Wine build may run at a time.
 
-## Verified routes (2026-11-14)
+## Verified routes
 
-With the same timed inputs, original and rebuilt products both reach the title,
-character select, the Stage 1 card, Stage 1 combat and the Stage 1 boss, then
-a bomb and the Game Over/Continue screen. Scores differ only through input
-timing. Evidence: `.analysis/runtime/play-{original,rebuilt}-b/`.
+On 2026-11-14, with the same timed inputs, the original and the overlay-only
+products both reached the title, character select, the Stage 1 card, Stage 1
+combat and the Stage 1 boss, then a bomb and the Game Over/Continue screen;
+scores differed only through input timing.
+
+On 2026-11-22 the integrated product played 275 s of the attract loop (demo 1,
+title, demo 2, title, demo 3) with the same stage, boss and counter states as
+the overlay-only product (`.analysis/runtime/attract-{baseline,integ}/`).
 
 ## Maintained-source coverage
 

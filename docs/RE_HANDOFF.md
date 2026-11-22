@@ -1,4 +1,4 @@
-# TH05 reconstruction — handoff (2026-11-15)
+# TH05 reconstruction — handoff (2026-11-22)
 
 ## Start here
 
@@ -45,7 +45,6 @@ ledger lists as an input, plus a few layout references.
 - **Near Vector2**: natural C++ is 67 bytes against the 55-byte ASM owner (a
   12-byte register-copy residual). See
   [`vector2_near.md`](../src/shared/math/vector2_near.md).
-
 - **Position independence**: the DOS product passes three shifted relinks
   and a demo run ([DOS_POSITION_INDEPENDENCE.md](reconstruction/DOS_POSITION_INDEPENDENCE.md)).
   `audit_unit_pi.py` covers every accepted unit at object level.
@@ -137,3 +136,13 @@ Ghidra project, ledger-referenced receipts and producers, and accepted native
 or vendor evidence; another machine needs them copied separately. Before
 deleting evidence, check ledger hashes and tracked references rather than age
 or name.
+
+The 2026-11-22 cleanup kept exactly that: every `.analysis/` path named in a
+tracked file (Markdown evidence links included), every run directory whose
+`receipt.json` or evidence JSON hash a tracked config records, the targets,
+decoded images, toolchain, runtime disk images and fonts, the calibration
+builds, the current product tree, and the port's demo captures. PI audits and
+runtime captures keep only their JSON and PNG files. Everything else (superseded replays and builds,
+experiment directories, integration scratch trees) was removed after the
+ledger recheck, `--verify-targets`, every reviewer `--check` and the replay
+plans passed without it.

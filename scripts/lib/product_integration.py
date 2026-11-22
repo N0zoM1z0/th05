@@ -1,18 +1,20 @@
 """Link accepted maintained units into the ReC98-scaffolded DOS product.
 
 The product build (`scripts/build_reference.py --overlay`) starts from ReC98's
-tree, whose undecompiled code lives in the IDA-derived dumps (`th05_main.asm`,
-`th05_maine.asm`) and the ASM files they include. This module replaces dump
-procedures with the accepted maintained units that reproduce them:
+tree. Its undecompiled code lives in the IDA-derived dumps (`th05_main.asm`,
+`th05_maine.asm`) and the ASM files they include; the rest is ReC98 C++. This
+module replaces both with the accepted maintained units that reproduce them:
 
 1. Compile every eligible unit module into `obj/integ/`.
-2. Mark every dump procedure public, relink once, and read the procedure
-   addresses from the MAP. The bytes do not change.
+2. Relink once with a public marker label before every dump procedure and
+   data label and read their addresses from the MAP. The bytes do not change.
 3. Locate each unit object's code in that image: all bytes outside the
-   object's FIXUPP fields must match. The dump procedures that tile the match
-   are removed from the source and declared `extrn` instead.
-4. Give the unit object alias PUBDEFs for the removed names, so dump callers
-   and other ReC98 modules resolve to the maintained code.
+   object's FIXUPP fields must match. Dump procedures that tile the match,
+   with the tables and alignment between them, are cut and declared `extrn`.
+   ReC98 C++ functions that tile it are reduced to prototypes and their
+   translation unit is recompiled.
+4. Give the unit object alias PUBDEFs for the replaced names, and rename its
+   externs to the names the matched ReC98 code uses.
 
 Position does not matter for a working product: the relink audit showed that
 the ReC98 code is position independent.
@@ -127,7 +129,7 @@ def eligible_modules(project: Path, artifact: str, overlaid: set[str], reference
     entries = tomllib.loads((project / f"config/exact_units{suffix}.toml").read_text())["units"]
     accepted = {u["id"] for u in json.loads((project / f"config/accepted_units{suffix}.json").read_text())["units"]}
     modules: dict[str, Module] = {}
-    skipped = {"special-pipeline": [], "rec98-tu": [], "data": []}
+    skipped = {"special-pipeline": [], "overlaid": [], "data": []}
     for entry in entries:
         if entry["id"] not in accepted:
             continue
@@ -139,7 +141,7 @@ def eligible_modules(project: Path, artifact: str, overlaid: set[str], reference
             skipped["special-pipeline"].append(entry["id"])
             continue
         if module in overlaid:
-            skipped["rec98-tu"].append(entry["id"])
+            skipped["overlaid"].append(entry["id"])
             continue
         if module not in modules:
             modules[module] = Module(len(modules), module, entry)
