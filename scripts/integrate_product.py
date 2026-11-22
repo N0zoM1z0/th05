@@ -58,11 +58,23 @@ def integrate(source: Path, artifact: str, rounds: int = 12) -> dict:
         for module, mapping in renames.items():
             job.objects[module] = rename_externs(job.objects[module], mapping)
         job.apply()
+        failed = job.apply_cxx()
+        if failed:
+            job.restore_cxx()
+            for path, raw in originals.items():
+                path.write_bytes(raw)
+            for module, cuts in job.cxx_cuts.items():
+                for tu, _ in cuts:
+                    if tu in failed:
+                        job.excluded[module] = f"{tu}: {failed[tu]}"
+            job.log.append(f"round {attempt}: C++ cuts failed: {failed}")
+            continue
         out = job.assemble(job.dump_obj, f"dump-asm-{attempt}")
         missing = {m[3] for m in UNDEFINED_ASM.finditer(out)}
         if asm_failed(out):
             for path, raw in originals.items():
                 path.write_bytes(raw)
+            job.restore_cxx()
             if not missing:
                 raise RuntimeError("dump assembly failed:\n" + out[-3000:])
             job.extra_labels |= missing
@@ -83,6 +95,7 @@ def integrate(source: Path, artifact: str, rounds: int = 12) -> dict:
             break
         for path, raw in originals.items():
             path.write_bytes(raw)
+        job.restore_cxx()
         ours = {Path(m.obj.replace("\\", "/")).stem.lower(): m for m in job.modules}
         progressed = False
         for symbol, module in undefined:
@@ -116,8 +129,11 @@ def integrate(source: Path, artifact: str, rounds: int = 12) -> dict:
     else:
         raise RuntimeError("integration did not converge:\n" + "\n".join(job.log))
     units = [u for m in job.modules if m.module in job.removals for u in m.units]
+    cut = sorted({tu for cuts in job.cxx_cuts.values() for tu, _ in cuts})
     return {"artifact": artifact, "integrated_modules": len(job.removals), "integrated_units": units,
             "removed_procedures": sorted(p.name for ps in job.removals.values() for p in ps),
+            "cut_cxx_functions": sorted(n for cs in job.cxx_cuts.values() for _, names in cs for n, _ in names),
+            "cut_cxx_units": cut,
             "excluded": job.excluded, "skipped": {k: len(v) for k, v in job.skipped.items()},
             "renamed_externs": renames, "log": job.log}
 

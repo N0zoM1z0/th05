@@ -138,7 +138,7 @@ def eligible_modules(project: Path, artifact: str, overlaid: set[str], reference
         if any(key in entry for key in SPECIAL):
             skipped["special-pipeline"].append(entry["id"])
             continue
-        if module in overlaid or (reference / module).exists():
+        if module in overlaid:
             skipped["rec98-tu"].append(entry["id"])
             continue
         if module not in modules:
@@ -188,6 +188,60 @@ def asm_failed(output: str) -> bool:
 
 KEEP = (r"^[ \t]*(\w+[ \t]+ends\b|\w+[ \t]+segment\b|include\b|assume\b|public\b"
         r"|extrn\b|extern\b|\S+[ \t]+procdesc\b)")
+CXX_INCLUDE = re.compile(r'^[ \t]*#[ \t]*include[ \t]+"([^"]+\.(?:cpp|c|inl))"', re.M)
+
+
+def cxx_files(root: Path, tu: str) -> list[Path]:
+    order, stack = [], [root / tu]
+    while stack:
+        path = stack.pop(0)
+        if path in order or not path.is_file():
+            continue
+        order.append(path)
+        text = path.read_text(encoding="cp932", errors="surrogateescape")
+        stack.extend(root / m[1] for m in CXX_INCLUDE.finditer(text))
+    return order
+
+
+def find_definition(text: str, name: str, prefix: bool = False) -> list[tuple[int, int]]:
+    """Spans of column-0 function definitions named `name` (case-insensitive).
+
+    With `prefix`, `name` may be cut short: TCC truncates mangled names to 31
+    characters.
+    """
+    spans = []
+    tail = r"\w*" if prefix else ""
+    for match in re.finditer(r"^(?![#/ \t{}])[^\n;{]*\b" + re.escape(name) + tail + r"[ \t]*\(", text, re.I | re.M):
+        at = match.end()
+        brace = text.find("{", at)
+        if brace < 0 or ";" in text[at:brace]:
+            continue  # a prototype
+        depth, i = 0, brace
+        while i < len(text):
+            c = text[i]
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+                if depth == 0:
+                    break
+            elif text.startswith("//", i):
+                i = text.find("\n", i)
+            elif text.startswith("/*", i):
+                i = text.find("*/", i) + 1
+            elif c in "\"'":
+                j = i + 1
+                while j < len(text) and text[j] != c:
+                    j += 2 if text[j] == "\\" else 1
+                i = j
+            i += 1
+        if i >= len(text) or text.rfind("\n", 0, i) != i - 1:
+            continue  # the closing brace is not at column 0
+        line_end = text.find("\n", i)
+        spans.append((match.start(), len(text) if line_end < 0 else line_end + 1, brace))
+    return spans
+
+
 UNDEFINED_ASM = re.compile(r"\*\*Error\*\* (\S+)\((\d+)\) Undefined symbol: (\S+)")
 TLINK_UNDEFINED = re.compile(r"Undefined symbol (\S+) in module (\S+)", re.I)
 TLINK_DUPLICATE = re.compile(r"(\S+(?: \S+)*?) defined in module (\S+) is duplicated in module (\S+)", re.I)
@@ -357,6 +411,7 @@ class Integration:
 
     def object_publics(self, rows) -> None:
         """Add the mangled publics of every other linked object at their linked addresses."""
+        self.tu_publics: dict[tuple[str, str], list[tuple[int, str]]] = {}
         text, _ = self.response()
         names = text.replace("+\r\n", " ").split(",", 1)[0].split()[3:]
         starts: dict[tuple[str, str], list[int]] = {}
@@ -375,6 +430,9 @@ class Integration:
                 where = starts.get((module, segments[segment - 1][0]))
                 if where and len(where) == 1:
                     self.by_address.setdefault(where[0] + offset, []).append(public)
+                    if segments[segment - 1][1] == "CODE":
+                        self.tu_publics.setdefault((module, segments[segment - 1][0]), []).append(
+                            (where[0] + offset, public))
 
     def link_replacing(self, label, old_obj, new_obj, exe, map_path) -> str:
         text, path = self.response()
@@ -407,13 +465,14 @@ class Integration:
         self.aliases: dict[str, dict[str, tuple[int, int]]] = {}
         self.matches: dict[str, dict[int, int]] = {}
         self.spans: dict[str, list[tuple[Path, int, int]]] = {}
+        self.cxx_cuts: dict[str, list[tuple[str, list[tuple[str, int]]]]] = {}
         claimed: set[str] = set()
         for module in self.modules:
             if module.module in self.excluded:
                 continue
             raw = self.objects[module.module]
             segs = code_segments(raw)
-            removed, aliases, spans = [], {}, []
+            removed, aliases, spans, cxx = [], {}, [], []
             for index, (name, data, covered) in segs.items():
                 hits = find_masked(self.image, data, covered)
                 if len(hits) != 1:
@@ -424,10 +483,30 @@ class Integration:
                 following = [a for a in starts if a >= end]
                 before = [a for a in starts if a < start]
                 if not inside or inside[0][0] != start:
+                    if not [r for r in self.dump_rows if r[0] <= start < r[0] + r[1]]:
+                        cut = self.plan_cxx_cut(start, end)
+                        if isinstance(cut, str):
+                            self.excluded[module.module] = f"{name}: {cut}"
+                            break
+                        tu, names = cut
+                        cxx.append((tu, names))
+                        for public, offset in names:
+                            aliases[public] = (index, offset)
+                        continue
                     self.excluded[module.module] = f"{name} does not start at a dump procedure"
                     break
                 row = [r for r in self.dump_rows if r[0] <= start < r[0] + r[1]]
-                if not row or end > row[0][0] + row[0][1]:
+                if not row:
+                    cut = self.plan_cxx_cut(start, end)
+                    if isinstance(cut, str):
+                        self.excluded[module.module] = f"{name}: {cut}"
+                        break
+                    tu, names = cut
+                    cxx.append((tu, names))
+                    for public, offset in names:
+                        aliases[public] = (index, offset)
+                    continue
+                if end > row[0][0] + row[0][1]:
                     self.excluded[module.module] = f"{name} leaves its dump segment"
                     break
                 if following and following[0] < end:
@@ -475,16 +554,37 @@ class Integration:
                         self.label_owner[label.lower()] = (module.module, kind)
             if module.module in self.excluded:
                 continue
-            names = {p.name.lower() for p in removed}
+            names = {p.name.lower() for p in removed} | {n.lower() for _, cut in cxx for n, _ in cut}
             if names & claimed:
                 self.excluded[module.module] = "procedures already replaced by another module"
                 continue
             claimed |= names
             self.removals[module.module] = removed
             self.spans[module.module] = spans
+            self.cxx_cuts[module.module] = cxx
             self.matches[module.module] = {index: find_masked(self.image, data, covered)[0]
                                            for index, (_, data, covered) in segs.items()}
             self.aliases[module.module] = aliases
+
+    def plan_cxx_cut(self, start: int, end: int):
+        """ReC98 C++ functions that exactly tile [start, end), as (TU source, [(public, offset)])."""
+        row = next((r for r in self.rows if r[0] <= start < r[0] + r[1] and r[2] == "CODE"), None)
+        if row is None:
+            return "outside every code contribution"
+        tu = row[4]
+        if not tu.lower().endswith((".cpp", ".c")) or tu.lower().startswith("integ/"):
+            return f"inside {tu}"
+        if tu.lower() in {o.lower() for o in self.overlaid}:
+            return f"inside overlaid {tu}"
+        entries = sorted(self.tu_publics.get((tu.lower(), row[3]), []))
+        starts = [a for a, _ in entries]
+        if start not in starts:
+            return f"does not start at a {tu} function"
+        later = [a for a in starts if a >= end]
+        limit = min(later[0] if later else row[0] + row[1], row[0] + row[1])
+        if not end <= limit < end + 16:
+            return f"ends inside a {tu} function"
+        return tu, [(name, a - start) for a, name in entries if start <= a < end]
 
     def group_frame(self, raw: bytes, frame: tuple | None) -> int | None:
         if not frame or frame[0] != 1:
@@ -591,6 +691,63 @@ class Integration:
         for module, aliases in self.aliases.items():
             path = self.source / next(m.obj for m in self.modules if m.module == module).replace("\\", "/")
             path.write_bytes(add_aliases_at(self.objects[module], aliases))
+
+    def apply_cxx(self) -> dict[str, str]:
+        """Cut the replaced functions from ReC98 C++ sources and recompile; return failed TUs."""
+        from .reference_build import canonical, rules_from_batch
+        by_tu: dict[str, set[str]] = {}
+        for cuts in self.cxx_cuts.values():
+            for tu, names in cuts:
+                by_tu.setdefault(tu, set()).update(base_name(n) for n, _ in names)
+        if not by_tu:
+            return {}
+        rules = rules_from_batch((self.source / "build_dumb.bat").read_text())
+        failed = {}
+        self.cxx_originals = getattr(self, "cxx_originals", {})
+        for tu, names in sorted(by_tu.items()):
+            files = cxx_files(self.source, tu)
+            texts = {f: f.read_text(encoding="cp932", errors="surrogateescape") for f in files}
+            for path, text in texts.items():
+                self.cxx_originals.setdefault(path, text)
+            plan: dict[Path, list[tuple[int, int]]] = {}
+            problem = None
+            for name in sorted(names):
+                found = [(f, s) for f in files for s in find_definition(texts[f], name)]
+                if not found:
+                    found = [(f, s) for f in files for s in find_definition(texts[f], name, prefix=True)]
+                if len(found) != 1:
+                    problem = f"{len(found)} definitions of {name}"
+                    break
+                plan.setdefault(found[0][0], []).append(found[0][1])
+            rule = next(((key, r) for key, r in rules.items() if r.kind == "tcc"
+                         and canonical(r.arguments[-1]) == canonical(tu)), None)
+            if problem is None and rule is None:
+                problem = "no ReC98 compile rule"
+            if problem:
+                failed[tu] = problem
+                continue
+            for path, spans in plan.items():
+                text = texts[path]
+                for begin, finish, brace in sorted(spans, reverse=True):
+                    # Keep the signature as a prototype for callers later in the TU.
+                    prototype = text[begin:brace].rstrip() + "; /* body replaced by a maintained unit */\n"
+                    text = text[:begin] + prototype + text[finish:]
+                path.write_text(text, encoding="cp932", errors="surrogateescape")
+            obj = self.source / rule[0]
+            self.cxx_objects = getattr(self, "cxx_objects", {})
+            if obj.exists():
+                self.cxx_objects.setdefault(obj, obj.read_bytes())
+            obj.unlink(missing_ok=True)
+            out = self.run(f"cxx-{Path(tu).stem}", self.dos("tcc", *rule[1].arguments), check=False)
+            if not obj.exists() or re.search(r"(?m)^Error ", out):
+                failed[tu] = "cut source does not compile"
+        return failed
+
+    def restore_cxx(self) -> None:
+        for path, text in getattr(self, "cxx_originals", {}).items():
+            path.write_text(text, encoding="cp932", errors="surrogateescape")
+        for path, raw in getattr(self, "cxx_objects", {}).items():
+            path.write_bytes(raw)
 
     def segments_for_anchor(self) -> list[tuple[str, str]]:
         """(segment, group) of every code segment in the integrated objects."""

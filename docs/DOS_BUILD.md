@@ -61,21 +61,24 @@ ReC98 still keeps in its IDA dumps `th05_main.asm` and `th05_maine.asm`:
 3. A unit's code is located in that image by matching every byte outside its
    FIXUPP fields. The dump procedures that tile the match, and the tables and
    alignment between them, are cut and declared `extrn`.
-4. The unit object gets alias PUBDEFs for the cut names. Its externs that ReC98
+4. When the match lies in a ReC98 C++ translation unit instead, the ReC98
+   functions that tile it are found by their publics, their definitions are
+   reduced to prototypes in the C++ source, and that unit is recompiled with
+   its `build_dumb.bat` flags.
+5. The unit object gets alias PUBDEFs for the cut names. Its externs that ReC98
    names differently are renamed to the symbol the matched ReC98 code
    resolves at the same fixup; dump labels it needs become public.
 
-Every TLINK warning or error stops the link. In the current build this
-replaces 175 MAIN and 22 MAINE dump procedures (29,176 MAIN dump bytes) with
-99 MAIN and 18 MAINE units; `integration.json` next to each build lists them
-and the reasons the others stay out. The attract loop plays the same three
-demos as the unintegrated build.
+Every TLINK warning or error stops the link. The current build runs 141 MAIN
+and 26 MAINE accepted units in place of 175 + 22 dump procedures and 56 C++
+functions from 14 ReC98 translation units. `integration.json` next to each
+build lists them and why the others stay out. The attract loop plays the same
+three demos as the unintegrated build.
 
-Still from ReC98: units inside ReC98 C++ translation units that are not
-overlaid (their function would have to be cut from the C++ source), units built
-through special pipelines (`compiler_pipeline`, generated sources,
-before/after binders), units whose ReC98 code differs from the original bytes,
-initialized DATA units, the reviewed ASM families, and all of OP's dump code.
+Still from ReC98: units whose ReC98 code differs from the original bytes or
+spans several ReC98 functions, units built through special pipelines
+(`compiler_pipeline`, generated sources, before/after binders), initialized
+DATA units, the reviewed ASM families, and all of OP's dump code.
 
 ## Position independence
 

@@ -49,11 +49,11 @@ ledger lists as an input, plus a few layout references.
 - **Position independence**: the DOS product passes three shifted relinks
   and a demo run ([DOS_POSITION_INDEPENDENCE.md](reconstruction/DOS_POSITION_INDEPENDENCE.md)).
   `audit_unit_pi.py` covers every accepted unit at object level.
-- **Product integration**: `build.py` now links 99 MAIN and 18 MAINE units in
-  place of ReC98 dump procedures ([DOS_BUILD.md](DOS_BUILD.md)). Next: cut
-  functions from ReC98 C++ translation units (dialog, boss_6, laser, boss_bg,
-  score_rm, gather, midboss and the whole-TU sound/exit/input ones), then the
-  72 units whose module is a ReC98 TU path, special pipelines and OP.
+- **Product integration**: `build.py` now links 141 MAIN and 26 MAINE units in
+  place of ReC98 dump procedures and C++ functions ([DOS_BUILD.md](DOS_BUILD.md)).
+  The reasons for the rest are in each build's `integration.json`; the largest
+  groups are units whose ReC98 code differs from the original bytes, special
+  compiler pipelines, DATA units, ASM families and OP.
 - **Private verification**: `python3 scripts/audit_ledgers.py` and
   `ownership.py --check --verify-targets` both pass (2026-11-22). Run them after
   changing a reviewer or ledger.

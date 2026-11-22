@@ -129,10 +129,10 @@ pixel-exact one; TH04's memory observer has no TH05 counterpart yet.
 
 ## Limits
 
-- The product links the 50 overlaid translation units plus, since the dump
-  integration, 99 MAIN and 18 MAINE units in place of ReC98 dump code (see
+- The product links the 50 overlaid translation units plus, since the
+  integration, 141 MAIN and 26 MAINE units in place of ReC98 code (see
   [DOS_BUILD.md](../DOS_BUILD.md)). The integrated build passes the same three
-  relinks: MAIN 294 contributions, the 1,001/952/667 relocations, all far
+  relinks: MAIN 313 contributions, the 1,001/952/667 relocations, all far
   transfers, far pointers and switch tables, and no new literal candidates;
   its attract loop plays the same demos. The remaining units are covered by the
   object-level check, not by a relink or a runtime run.
