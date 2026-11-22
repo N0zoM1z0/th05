@@ -19,8 +19,11 @@ public outer_copy_up, outer_end
 
 outer_header label byte
     jmp near ptr outer_entry
+header_usage_ptr label word
     dw outer_usage
+header_usage_size label word
     dw (inner_program_start - outer_usage)
+header_inner_size label word
     dw ORIGINAL_INNER_SIZE
     dd ORIGINAL_TIMESTAMP
     db 'comcstm (c)O.Morikawa 1996'
@@ -43,8 +46,8 @@ outer_entry:
     jnz short outer_copy_up
 @@print_help:
     mov bx, 1          ; DOS standard output
-    mov dx, word ptr ds:[103h]  ; header usage-text pointer
-    mov cx, word ptr ds:[105h]  ; header usage-text length
+    mov dx, word ptr ds:[header_usage_ptr]
+    mov cx, word ptr ds:[header_usage_size]
     mov ah, DOS_WRITESTDOUT
     int 21h
     mov ax, DOS_EXIT_OK
@@ -52,9 +55,9 @@ outer_entry:
 outer_copy_up:
     mov di, PSP_RUNTIME_START
     push di
-    mov si, word ptr ds:[103h]
-    add si, word ptr ds:[105h]
-    mov cx, word ptr ds:[107h]  ; inner COM length from original header
+    mov si, word ptr ds:[header_usage_ptr]
+    add si, word ptr ds:[header_usage_size]
+    mov cx, word ptr ds:[header_inner_size]
     inc cx
     shr cx, 1
     rep movsw

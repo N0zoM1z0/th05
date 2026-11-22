@@ -57,3 +57,10 @@ units split functions into separate files (`th04/tile.cpp`, `th05/gather.cpp`,
 overlaid, and nor are the undecompiled `th05_*.asm` parts. Replacing these
 next, until the product links from maintained source alone as TH04's does,
 is the remaining DOS work.
+
+## Position independence
+
+`scripts/audit_dos_pi.py` relinks these products with moved CODE/DATA/BSS and
+checks that every relocation, far call, far pointer, switch table and direct
+displacement follows its owner. See
+[DOS_POSITION_INDEPENDENCE.md](reconstruction/DOS_POSITION_INDEPENDENCE.md).

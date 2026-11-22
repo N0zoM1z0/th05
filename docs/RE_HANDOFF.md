@@ -46,6 +46,14 @@ ledger lists as an input, plus a few layout references.
   12-byte register-copy residual). See
   [`vector2_near.md`](../src/shared/math/vector2_near.md).
 
+- **Position independence**: the DOS product passes three shifted relinks
+  and a demo run ([DOS_POSITION_INDEPENDENCE.md](reconstruction/DOS_POSITION_INDEPENDENCE.md)).
+  It covers only the 50 overlaid translation units; extending `build.py` to
+  link the function-scoped units would let the same audit cover them.
+- **Private verification**: `python3 scripts/audit_ledgers.py` and
+  `ownership.py --check --verify-targets` both pass (2026-11-22). Run them after
+  changing a reviewer or ledger.
+
 The ZUN `-S` child's vendor bytes and its resolved small gaps are in
 [ZUN_CHILD_OWNERSHIP.md](reconstruction/ZUN_CHILD_OWNERSHIP.md).
 
