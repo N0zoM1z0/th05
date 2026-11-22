@@ -71,6 +71,47 @@ One real case was fixed: the ZUN outer launcher read its own COMCSTM header as
 `zun-outer` replay still reproduces every byte (receipt
 `.analysis/zun-outer/pi-labels-a/receipt.json`).
 
+## Every accepted unit, at object level
+
+The product links only 50 maintained translation units, so
+`scripts/audit_unit_pi.py` checks all 548 C/C++ units and 87 ASM families from
+their retained producers instead. For each one it rebuilds the compiled OMF
+segment and the bytes covered by FIXUPP records, decodes the unit's own extent,
+and lists:
+
+- any 16-bit direct memory displacement (no base or index register) whose
+  field has no fixup, and
+- any 16-bit immediate without a fixup whose value equals the offset of a
+  DGROUP public in the producer MAP. The binders place every foreign symbol at
+  its original address, so a literal pointer would match one.
+
+Of 7,672 direct displacements, 32 have no fixup, and all of them address
+PC-98 BIOS or interrupt-vector memory through ES: the key groups
+`es:[052Ah..0533h]` in the three input-sense families, the INT 60h/61h vectors
+`es:[0180h]`/`es:[0184h]` in the PMD/MMD resident checks, and the EGC BIOS byte
+`es:[0495h]` in `egc-rect-setup`. No immediate matches a DGROUP public without
+a fixup; 278 immediates in MAIN units that do match all carry one. Removing an
+object's fixup coverage makes the check report the unit's DGROUP accesses.
+DATA units are not decoded: a literal pointer in an initializer has no
+recognizable shape, so those rely on the source screen.
+
+## Layout adjacency
+
+Two dependencies on variable order survive any fixup check:
+
+- `HUD_SCORE_PUT` (`src/main/hud/score.asm`) prints `_hiscore` and then
+  `_score` without resetting SI, so `_score` must directly precede `_hiscore`,
+  exactly as in TH04.
+- The random-ring readers read a word at `randring[randring_p]`; at index 255
+  its high byte is the cursor's own low byte, so `randring_p` must directly
+  follow the 256-byte ring.
+
+Both pairs sit inside the `_BSS` contribution of ReC98's `th05_main.asm`, so
+the relinks never split them (distance 8 and 256 in all four layouts). Treat
+each pair as one layout owner when moving or redefining them. Adjacent fields
+written together inside one structure (spread count and angle delta, bullet
+template fields) are structure layout, which ReC98's PI criterion excludes.
+
 ## Runtime
 
 Headless DOSBox-X (`scripts/play_dos.py`, 24,000 cycles, no input) booted the
@@ -88,10 +129,11 @@ pixel-exact one; TH04's memory observer has no TH05 counterpart yet.
 
 ## Limits
 
-- The product links 50 maintained translation units into ReC98's tree. The
-  roughly 500 function-scoped exact units are not in it yet (see
-  [DOS_BUILD.md](../DOS_BUILD.md)), so for them PI rests on the source screen,
-  not on a relink.
+- The product links 50 maintained translation units into ReC98's tree. Most
+  other units replace parts of ReC98's undecompiled `th05_main.asm`, `th05_op.asm`
+  and `th05_maine.asm`; linking them needs those functions cut from the dumps
+  (see [DOS_BUILD.md](../DOS_BUILD.md)). Until then they are covered by the
+  object-level check above, not by a relink or a runtime run.
 - ZUN.COM is built by ReC98's `zungen`/`comcstm` pipeline and was not relinked.
   The ZUN resident ASM families (`file_family_native.asm`,
   `resdata_native.asm`) use `org` to place their bounded scope inside the `-S`
@@ -115,3 +157,7 @@ python3 scripts/audit_dos_pi.py --baseline .analysis/build/pi-baseline \
 
 Each output directory holds the shifted products, `build.json`, and per
 executable `receipt.json` and `direct-offset-review.json`.
+
+```sh
+python3 scripts/audit_unit_pi.py --output .analysis/pi/unit-literals.json
+```

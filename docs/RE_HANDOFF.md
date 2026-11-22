@@ -48,8 +48,9 @@ ledger lists as an input, plus a few layout references.
 
 - **Position independence**: the DOS product passes three shifted relinks
   and a demo run ([DOS_POSITION_INDEPENDENCE.md](reconstruction/DOS_POSITION_INDEPENDENCE.md)).
-  It covers only the 50 overlaid translation units; extending `build.py` to
-  link the function-scoped units would let the same audit cover them.
+  `audit_unit_pi.py` covers every accepted unit at object level. Linking the
+  remaining units into the product means cutting their functions out of
+  ReC98's `th05_*.asm` dumps; that is the next DOS-build milestone.
 - **Private verification**: `python3 scripts/audit_ledgers.py` and
   `ownership.py --check --verify-targets` both pass (2026-11-22). Run them after
   changing a reviewer or ledger.
