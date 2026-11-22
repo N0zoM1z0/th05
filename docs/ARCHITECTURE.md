@@ -2,8 +2,7 @@
 
 TH05 is a real-mode, segmented 16-bit PC-98 game using the Borland/TASM/TLINK
 tool family. `OP.EXE` owns menus and setup, `MAIN.EXE` gameplay, `MAINE.EXE`
-endings, and `ZUN.COM` launch/resident services. These responsibilities are
-candidate source-level descriptions pending bounded target review.
+endings, and `ZUN.COM` launch/resident services.
 
 Unlike TH04's MZ-named ZUN.COM, this TH05 target is a plain COM program.
 Do not reuse a loader merely because filenames match across games.

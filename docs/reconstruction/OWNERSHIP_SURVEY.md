@@ -281,9 +281,9 @@ explicit switch-table/padding classifications. All remaining intervals stay
 global ownership is still unreviewed. In particular, the separately accepted
 ZUN memory child retains its unreviewed global ownership status here. Only the 31 complete CL.LIB contributions (2,901 bytes) in the
 [reviewed library evidence](CL_VENDOR_OWNERSHIP.md) are explicitly classified
-third-party. Names or shape alone never justify an exclusion. Two members with
-unwritten CODE reservations remain unknown.
-Both the authored denominator and percentage remain null.
+third-party. Names or shape alone never justify an exclusion. The unwritten CODE
+reservations of two members were later filed as zero-credit reviewed gaps in
+`config/reviewed_gaps.json`.
 
 `python3 scripts/ownership.py --write` regenerates the inventory after progress
 changes. Public CI checks its coverage, exact agreement with the acceptance

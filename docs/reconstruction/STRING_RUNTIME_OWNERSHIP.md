@@ -4,7 +4,7 @@ Six complete distributed CL.LIB CODE contributions, totaling4,034 bytes, are
 explicitly classified as third-party library code. They add zero authored
 bytes, functions, C/C++ units or ASM credit. This is object provenance and
 native linked-byte verification, not a reconstruction of Borland's source.
-The authored denominator and global98% percentage remain unreviewed.
+The authored denominator and global 98% percentage remain unreviewed.
 
 The original MAIN is the candidate-local-attested Japanese copy, SHA-256
 `c41f6e6b9a97b2433acc576ceaee800707c8d4ea7e498150a259663c8fa7d4f0`.
@@ -24,7 +24,7 @@ or target-derived code array is published.
 
 The two CODE SEGDEFs in each member are independently complete. Ordinary
 OMF checksums, segment identity, every LEDATA byte and full gapless coverage
-are verified. All209 original fixup actions and131 original loader relocation
+are verified. All 209 original fixup actions and 131 original loader relocation
 sites retain their order. Each full linked contribution occurs uniquely in
 the pinned native image. No selected public/function slice, internal hole,
 relocation sorting or byte normalization can substitute for a contribution.
@@ -32,8 +32,8 @@ relocation sorting or byte normalization can substitute for a contribution.
 Both string constructors and the complete string implementation use _TEXTC;
 _TEXT additionally contains exception/cleanup support and compiler metadata.
 Class CODE therefore does not imply that every byte is an instruction. No
-instruction-byte denominator is inferred from the4,034 CODE bytes. The
-separate102-byte strings DATA object is already reviewed by the earlier CL
+instruction-byte denominator is inferred from the 4,034 CODE bytes. The
+separate 102-byte strings DATA object is already reviewed by the earlier CL
 DATA owner and adds no new credit here. BSS, preceding/following gaps and
 other library members are not adopted by this decision.
 
@@ -50,8 +50,8 @@ complete initialized-DATA anchors, including the strings DATA object. Its
 late DATA shift-18 and late runtime BSS shift-20 are reused without changing
 that review, old members or their evidence.
 
-The combined _TEXTC base is calibration1FD8D versus original1FD7A. Its frame
-moves1FD80 to1FD70 and its offsets change by-3; together these give the actual
+The combined _TEXTC base is calibration 1FD8D versus original 1FD7A. Its frame
+moves 1FD80 to 1FD70 and its offsets change by-3; together these give the actual
 linear change-19. Seven original far CALL/loader-relocation anchors verify
 the native class frame and include both constructor entries. All other CODE
 bindings remain unchanged. Every resulting relocation field is checked
@@ -60,7 +60,7 @@ a comparison result. The rest of MAIN's layout and whole EXE are unaccepted.
 
 ## NOPs and controls
 
-All28 instruction NOPs are the actual first byte of TLINK's five-byte
+All 28 instruction NOPs are the actual first byte of TLINK's five-byte
 NOP/PUSHCS/CALL relaxation. Per-contribution offsets are explicit in the proof:
 
 | Contribution | Instruction NOP offsets |
@@ -73,10 +73,10 @@ NOP/PUSHCS/CALL relaxation. Per-contribution offsets are explicit in the proof:
 | strings / _TEXTC | 93,222,412,599,769,1059,1163 |
 
 These are checked padding with zero authored credit and remain inside the
-full comparisons. Two other90 bytes are not NOP instructions: ctor3/_TEXTC203
+full comparisons. Two other 90 bytes are not NOP instructions: ctor3/_TEXTC203
 is embedded compiler metadata after the constructor's RETF200; strings/_TEXT526
-is the CALL displacement inside the relaxation at523. The native gate accounts
-for every90 byte and verifies each actual90/0E/E8 instruction sequence.
+is the CALL displacement inside the relaxation at 523. The native gate accounts
+for every 90 byte and verifies each actual 90/0E/E8 instruction sequence.
 
 Each of the six contributions has its own fixed, nonrelocated byte-zero
 mutation in the decoded distributed-OMF model. All six are rejected by the
@@ -93,6 +93,6 @@ adoption. Neither mode grants authored-source acceptance.
 
 The separate `config/reviewed_string_runtime_units.json` decision binds the
 proof and this note. The normal ownership inventory accepts exactly the six
-listed contributions. Unknown falls127882 to123848; MAIN unknown falls48172
-to44138. Verified vendor CODE rises69770 to73804. All authored C/C++/ASM/DATA
+listed contributions. Unknown falls127882 to 123848; MAIN unknown falls48172
+to 44138. Verified vendor CODE rises69770 to 73804. All authored C/C++/ASM/DATA
 counters, existing accepted sources and old ownership decisions stay unchanged.

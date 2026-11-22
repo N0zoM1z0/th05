@@ -6,13 +6,11 @@ decision. The original proposal, its verifier and its proof hash remain
 unchanged; the decision pins the complete public proof file and original
 artifact/payload identities.
 
-Only the twenty listed names are adopted. Their376 complete bytes become
-`verified-vendor-code`, including9 vendor-owned EVEN padding bytes alongside
-367 instruction bytes. This grants0 game-authored bytes. It does not publish
-an authored denominator or percentage. Every other Master procedure, the forty
-absent/ambiguous/different source candidates, modified library/game code,
-DATA/BSS and uncovered gaps remain unknown. The mixed standalone prefix is
-not classified as a whole.
+Only the twenty listed names are adopted by this decision. Their 376 complete
+bytes become `verified-vendor-code`, including 9 vendor-owned EVEN padding
+bytes alongside 367 instruction bytes, and grant 0 game-authored bytes. The
+other Master procedures and DATA/BSS are classified by the later reviews
+indexed in [VENDOR_REVIEWS.md](VENDOR_REVIEWS.md).
 
 `ownership.reviewed_master()` is optional when no explicit decision exists.
 When present, it validates the immutable public proof and requires all twenty
@@ -37,6 +35,6 @@ and the public-only CI command. The adoption helper also completed a real retain
 twenty procedures without compilation, Wine or downloads.
 
 Regenerate the gapless inventory with `scripts/ownership.py --write
---verify-targets`. The reviewed vendor total is3,277 bytes (2,901 CL plus376
+--verify-targets`. The reviewed vendor total is 3,277 bytes (2,901 CL plus 376
 Master); authored source counters are unchanged. Public CI checks the saved
 inventory and structural evidence without requiring proprietary inputs.

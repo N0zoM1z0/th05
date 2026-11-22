@@ -26,7 +26,7 @@ DX is unchanged. No new DX:AX Point-return guarantee is inferred from the
 existing nominal C++ declaration, and accepted callers/types are unchanged.
 
 The far level updater zero-extends power, searches all nine unsigned WORD
-bounds, stores level0..9, selects the corresponding near function from the
+bounds, stores level 0..9, selects the corresponding near function from the
 current character's ten-entry row, and calls the real far HUD provider at
 AE1:2445 (MAIN D255). SHOT_LEVEL_UPDATE is a descriptive maintained public;
 its historical spelling is unknown. The real no-argument far interface has
@@ -54,11 +54,11 @@ sprite payloads or a provider body. Both existing semantic C tables, the pool,
 player motion, cursor, power and function pointers receive no new DATA/BSS credit.
 
 Two fresh deterministic producers pass complete ordinary OMF/CODE/LEDATA,
-native MAP publics/CS/DGROUP, all130 raw bytes and the empty original fixup
-stream. The shared normal negative changes primary sprite20 to21 and is
+native MAP publics/CS/DGROUP, all 130 raw bytes and the empty original fixup
+stream. The shared normal negative changes primary sprite20 to 21 and is
 rejected with unchanged extent and fixup order. Normalized objects, MAPs and
 whole MZ outputs are deterministic; only dependency metadata is normalized.
-Explicit adoption adds128 ASM instruction bytes and two compared, uncredited
+Explicit adoption adds 128 ASM instruction bytes and two compared, uncredited
 NOPs. No C/C++ function, initialized DATA/BSS, foreign HUD provider or whole
 executable gains acceptance. Unchanged accepted inputs and tool execution
 proofs are reused after identity checks; no whole replay, per-function extra
@@ -71,7 +71,7 @@ two fresh successful producers. The source uses a genuine far HUD call;
 TLINK itself produces the observed NOP/PUSHCS/CALL sequence. Neither that
 sequence nor a fixup is supplied or edited manually.
 
-The intermediate b producer already matches the130 bytes. It predates the
+The intermediate b producer already matches the 130 bytes. It predates the
 additional real C++ public spelling used by existing callers, so it is retained
 as historical evidence only. Final c source exports both compatible names at
 the same entry and has two fresh producers plus the normal shared negative.

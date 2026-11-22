@@ -2,8 +2,8 @@
 
 Twenty-four complete vendor DATA contributions,619 bytes in each of MAIN, OP
 and MAINE, are now explicitly classified as third-party initialized DATA.
-This adds **zero authored exact bytes**. The complete authored denominator and
-percentage remain unreviewed; all other unknown intervals remain present.
+This adds **zero authored exact bytes**; it removes these bytes from the
+authored denominator.
 
 Each contribution is backed by a complete ordinary `_DATA` SEGDEF from the
 pinned Borland CL.LIB, with complete nonoverlapping LEDATA coverage. No selected
@@ -35,7 +35,7 @@ this review does not reclassify any associated CODE, BSS or linker padding.
 The source pins and both calibration/native coordinate sets are in
 `config/cl_data_sources.json`. Public proof is
 `config/vendor_data_ownership.json`; an independent explicit decision in
-`config/reviewed_vendor_data_units.json` selects the24 reviewed rows by ID and
+`config/reviewed_vendor_data_units.json` selects the 24 reviewed rows by ID and
 pins the exact evidence file. The ownership inventory overlays those complete
 ranges only on unknown spans. Overlap with accepted source, tables, padding or
 another vendor claim fails closed. The observation universe and every authored
@@ -46,10 +46,10 @@ counter remain unchanged;1857 bytes move from unknown to vendor DATA.
 No byte normalization, relocation masking, guessed all-zero range, contribution
 slice or transferred reference acceptance is used. Other CL DATA is not silently
 included: relocation-bearing `files`, `exit` and `xxv` are now proven separately
-below; incomplete DATA such as `new` is rejected; small or
-all-zero ambiguous templates remain unknown. Even the single inter-member
-alignment bytes are outside these whole-object claims. Unknown game, library,
-asset and original-assembly ownership is not inferred from this scan.
+below; incomplete DATA such as `new` is rejected, and small or
+all-zero ambiguous templates are not matched by this scan. Later reviews
+classified those (see `config/reviewed_gaps.json`). Single inter-member
+alignment bytes are outside these whole-object claims.
 
 The private input is the existing attested CL.LIB, SHA256
 `7d53ed1864b8b778040aa8203ebe4e01385112d9b3f134744a461aec0b171ba7`.

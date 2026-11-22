@@ -2,8 +2,8 @@
 
 The complete MAIN procedure is 152DA..15311, 55 instruction bytes with no
 table or MZ fixup. ReC98 b6ba5b0a th04/math/vector2n.asm places ENDP before
-the following EVEN NOP at 15311; that separate byte remains unknown and is not
-part of the proposed C++ contribution. The earlier 56-byte routing included it.
+the following EVEN NOP at 15311; that separate byte is a checked zero-credit
+alignment byte and is not part of the proposed C++ contribution. The earlier 56-byte routing included it.
 
 The real near Pascal interface takes a near reference to the canonical
 four-byte SPPoint, a byte angle in a WORD stack slot and a signed WORD length,
@@ -12,7 +12,7 @@ stored. Signed products are arithmetic-shifted by eight, then their low words
 are written to x and y. The overlapping foreign sine/cosine arrays and all
 geometry identities are imported unchanged; no data or result buffer is owned.
 
-The natural C++ attempt first emitted106 bytes, then92 after keeping samples
+The natural C++ attempt first emitted 106 bytes, then 92 after keeping samples
 and coordinates in their actual word domains. On 2026-11-13 it was reduced
 again to **67 bytes** by using the Borland `<dos.h>` pseudoregister interface
 for the signed 32-bit products and the original byte-angle/table-offset
@@ -25,7 +25,7 @@ Two fresh independent native producers emit the same complete 67-byte
 contribution and normalized OMF. The original ordered relocation stream is
 empty in both. A same-extent source negative changes the fixed-point shift
 from eight to seven and emits a different 67-byte contribution. The candidate
-still differs from the original 55-byte function (only9/55 bytes match), so it
+still differs from the original 55-byte function (only 9/55 bytes match), so it
 remains an inexact compiler-context experiment and receives **zero CODE
 credit**. It is not promoted to an accepted unit and does not replace the
 exact original-language ASM owner.

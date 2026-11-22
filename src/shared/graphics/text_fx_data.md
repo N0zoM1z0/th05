@@ -56,7 +56,7 @@ address-difference tables support an assembly-origin inference. The pinned
 has 640 structurally valid members and no GRAPH_PUTSA_FX/GRPPSAFX/GLYPH_WEIGHT
 exports; its ordinary GRAPH_*_PUTS members have no DATA payload. This excludes
 that specific library as a direct provider, without proving every historical
-vendor origin impossible. The global ownership denominator remains unreviewed.
+vendor origin impossible.
 
 ## Replay and retained evidence
 

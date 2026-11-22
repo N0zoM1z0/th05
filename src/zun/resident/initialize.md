@@ -10,10 +10,9 @@ the original and candidate relocation lists are both empty. The compiled
 `argc == 3` mutation is rejected.
 
 The canonical unit, source inputs and receipt identity are in
-`config/exact_units.zun.toml` and `config/accepted_units.zun.json`. The ZUN
-progress and remaining physical gaps are maintained in
-[`docs/PROGRESS.md`](../../../docs/PROGRESS.md) and the
-[ZUN ownership map](../../../docs/reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md).
+`config/exact_units.zun.toml` and `config/accepted_units.zun.json`. The vendor
+bytes around it are listed in the
+[`-S` child ownership note](../../../docs/reconstruction/ZUN_CHILD_OWNERSHIP.md).
 
 ## Compiler context and source
 
@@ -73,17 +72,17 @@ The maintained control flow preserves the original behavior:
 
 ## Related accepted ownership
 
-- [`config.cpp`](config.cpp) and [configuration ABI](config.md): exact
-  322-byte `cfg_init()`.
-- [`semantic_data.cpp`](semantic_data.cpp) and [semantic DATA](semantic_data.md):
-  exact 320-byte initialized DATA contribution.
-- [Original C0T startup](crt_native.md): 613 source-written CODE bytes,
-  110 initialized DATA bytes and a separate two-byte runtime CS slot.
-- [Master resident memory and graphics](resdata_native.md): 226-byte family.
-- [Master file/DOS providers](file_family_native.md): 830-byte family.
-- [Borland CT.LIB resident modules](../../../docs/reconstruction/ZUN_OWNERSHIP_MAP_2026-11-13.md):
-  exact relocated `brk`/`sbrk` and `nearheap` objects.
+- [`config.cpp`](config.cpp): exact 322-byte `cfg_init()`; its ABI and
+  preserved defects are in [the directory notes](README.md).
+- [`semantic_data.cpp`](semantic_data.cpp): exact 320-byte initialized DATA
+  contribution.
+- The original C0T startup relinks exactly: 613 source-written CODE bytes and
+  110 initialized DATA bytes (`replay_zun_crt.py`). Its two-byte writable CS
+  slot is a zero-credit reviewed gap.
+- [Master resident memory and graphics](resdata_native.asm) (226 bytes) and
+  [Master file/DOS providers](file_family_native.asm) (830 bytes) are
+  reviewed ASM families.
+- Borland CT.LIB and Master DATA members: see the
+  [`-S` child ownership note](../../../docs/reconstruction/ZUN_CHILD_OWNERSHIP.md).
 
-The accepted `main()` function does not make the complete `-S` child or outer
-`ZUN.COM` exact. Consult the ownership map for the remaining unknown intervals;
-do not infer that they are all code.
+Every byte of the `-S` child is now classified in `resources/ownership.json`.

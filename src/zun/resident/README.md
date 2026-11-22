@@ -11,4 +11,4 @@
   saving SI/DI. The build uses Turbo C++ 4.02 and CP932 source input.
 - **C0T startup.** The pinned tiny-model `C0T.OBJ` relinks exactly in the
   `-S` context. Its two uninitialised CODE bytes (read through `CS:[0363]`
-  during startup) are compared but stay unknown ownership.
+  during startup) are compared and filed as a zero-credit reviewed gap.

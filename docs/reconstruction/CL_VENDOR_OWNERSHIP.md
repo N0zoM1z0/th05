@@ -2,7 +2,7 @@
 
 31 complete contributions are classified as third-party library CODE by
 `config/reviewed_vendor_units.json`, bound to the exact public evidence hash.
-This grants no authored source credit. The global denominator remains unreviewed.
+This grants no authored source credit.
 
 31 complete MAIN library CODE contributions / 2901 bytes have a retained native
 proof from the actual pinned CL.LIB member records. CODE is an OMF class; this
@@ -118,7 +118,7 @@ nearby gaps and other artifacts remain independent.
 
 ## Independently reviewed initialized DATA
 
-[CL DATA ownership](CL_DATA_OWNERSHIP.md) separately reviews24 complete DATA
+[CL DATA ownership](CL_DATA_OWNERSHIP.md) separately reviews 24 complete DATA
 contributions /1857 bytes across MAIN, OP and MAINE. These receive zero authored
 credit and do not transfer CODE acceptance or establish the global denominator.
 The ordinary relocation-free DATA lane preserves ambiguous, relocated,
@@ -137,9 +137,10 @@ FAR JMP shortenings, yield the complete authentic 88-byte function in both
 contexts without changing source or target bytes.
 
 The separate [explicit adoption](../../config/reviewed_main_setenvp.json)
-adds **88 bytes of third-party CODE and zero authored C++**. The zeroed
-four-byte original `_DATA` environment pointer and the `_INIT_` contribution
-remain unknown until their own source/data layout review. The existing 31
+adds **88 bytes of third-party CODE and zero authored C++**. Its zeroed
+four-byte `_DATA` environment pointer (`22F34`) and six-byte `_INIT_`
+contribution (`22FDE`) are classified as vendor initialized DATA by the same
+review. The existing 31
 complete CL.LIB owners and separate `exec`/`farheap` CODE record proof remain
 unchanged. The source-current review requires no native compilation:
 
@@ -206,9 +207,8 @@ is *not double-counted* and leaves that accepted claim untouched.
 The [verifier](../../scripts/review_main_shifted_vendor.py) uses the
 pinned original library, actual OMF FIXUPP records, original target,
 native calibration, symbol binding and unique native method prologues.
-All vendor DATA, BSS, mutable state and adjacent regions remain unknown
-unless independently reviewed. These are **zero game-authored bytes**,
-not acceptance of game C++ or a new denominator.
+Vendor DATA, BSS and mutable state are covered by their own reviews. These
+are **zero game-authored bytes**.
 
 ```sh
 python3 scripts/review_main_shifted_vendor.py --check

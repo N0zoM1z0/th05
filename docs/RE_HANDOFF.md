@@ -46,10 +46,8 @@ ledger lists as an input, plus a few layout references.
   12-byte register-copy residual). See
   [`vector2_near.md`](../src/shared/math/vector2_near.md).
 
-The ZUN `-S` interval docs under `docs/reconstruction/ZUN_*_2026-11-13.md`
-predate the final gap review: their remaining "28 unknown bytes" are now
-reviewed vendor bytes or uncredited alignment rows in
-`config/reviewed_gaps.json`.
+The ZUN `-S` child's vendor bytes and its resolved small gaps are in
+[ZUN_CHILD_OWNERSHIP.md](reconstruction/ZUN_CHILD_OWNERSHIP.md).
 
 ## Exact-work loop
 
@@ -111,7 +109,9 @@ config receipt path is set in `config/zun_crt.toml`.
   Multi-byte alignment is now limited to the CODE→DGROUP paragraph pad; other
   zero runs need source or OMF evidence. Search raw operand bytes for readers,
   not just a linear disassembly (ZUN `[225A,225C)` turned out to be
-  master.lib's `file_sharingmode`).
+  master.lib's `file_sharingmode`). A zero DATA word doesn't name its variable
+  either: an early Stage Clear source matched zeros at `[222B4,222B6)` that
+  belong to `_explosion_big_frame` ([stage notes](../src/main/stage/NOTES.md)).
 - **Pinned scripts.** The verifier no longer hashes Markdown notes or
   `scripts/` in the ASM/C++ acceptance paths, but many vendor reviewers still
   self-hash their own scripts. Avoid editing `scripts/lib/unit_oracle.py`,

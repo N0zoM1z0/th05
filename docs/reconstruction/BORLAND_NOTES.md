@@ -65,11 +65,11 @@ The complete original particle function stays unaccepted; no fake zero address
 or handwritten compiler-body instructions substitute for a solution.
 
 Preparing that renderer's genuine AX/CX graphics arguments before its signed
-clipping predicates now gives a maintained158-byte C++ candidate, replacing
-the171-byte coordinate-spill candidate. Its sole remaining instruction
+clipping predicates now gives a maintained 158-byte C++ candidate, replacing
+the 171-byte coordinate-spill candidate. Its sole remaining instruction
 difference is the same OR/CMP zero encoding; it stays outside acceptance.
 
-The386-byte Shinki wing transition is now accepted through an explicit
+The 386-byte Shinki wing transition is now accepted through an explicit
 TCC `-S` / TASM32 recipe. Unchanged compiler-generated instructions reproduce
 the original ascending fixups `[76,305]`, while direct TCC emits `[305,76]`.
 Missing foreign CODE SEGDEFs in compiler GROUP declarations require an empty
@@ -161,8 +161,8 @@ four actual empty foreign CODE SEGDEFs already present in the direct object:
 LASER_SC_TEXT, BOSS_BG_TEXT, BULLET_A_TEXT and MAIN_0_TEXT. Those declarations
 supply no instructions, values, public aliases or alignment filler.
 
-The resulting complete contribution is still4120 versus original4124;
-ball update remains216 versus220. Its TASM fixups are ascending and do not
+The resulting complete contribution is still 4120 versus original 4124;
+ball update remains 216 versus 220. Its TASM fixups are ascending and do not
 match the original order. This falsifies that backend explanation for the
 missing Shinki branches; it grants no new code, no cold acceptance and no
 reason to change accepted producers or the core replay pipeline.
@@ -187,8 +187,8 @@ provenance commands are recorded in `.analysis/dialog-graphics-origin-review.jso
 
 Private `shinki-natural-cfg-a/observations.json` records two natural C++
 control-flow checks on the original frozen monolithic source. A positive
-playfield enclosure with nested decay handling still emits216 versus the
-original220 bytes; a real value-returning typed enclosure predicate emits240.
+playfield enclosure with nested decay handling still emits 216 versus the
+original 220 bytes; a real value-returning typed enclosure predicate emits 240.
 Both use unchanged flags and preserve the actual collision macro side effects.
 Neither is exact and neither changes maintained source or credit. Together
 with the recorded B/TASM backend result, these are completed negative
@@ -198,29 +198,29 @@ add idle work to retain the two original jump relay blocks.
 
 ## Real local definitions recover EX-Alice far calls
 
-The standalone1060-byte EX-Alice callback emitted1064 bytes: four external
+The standalone 1060-byte EX-Alice callback emitted 1064 bytes: four external
 far calls became TLINK's length-preserving NOP/PUSH-CS/near-CALL sequences.
 Giving the declaration the caller's segment alone did not change that result.
-The coherent real33-byte shot gate,78-byte phase helper and1060-byte update
+The coherent real 33-byte shot gate,78-byte phase helper and 1060-byte update
 now share one actual C++ TU/CODE contribution. Every function body is verbatim
 from the maintained natural sources, with unchanged real far/near ABI and
 compiler flags. That context emits the original four-byte far-call sequences.
-Two fresh producers match all1171 raw bytes and ordered fixups[309,272]; the
-updater's own1060-byte scope retains all52 switch-table bytes and its own
-compiled HP-threshold mutation. Prefix111 already has an owner and is not
+Two fresh producers match all 1171 raw bytes and ordered fixups[309,272]; the
+updater's own 1060-byte scope retains all 52 switch-table bytes and its own
+compiled HP-threshold mutation. Prefix 111 already has an owner and is not
 counted twice. This is evidence for this source-definition context; unrelated
 far calls and source cohorts still require their own actual producers.
 
 ## Typed IVT reads can retain the native far-pointer access
 
-MMD resident detection now has independent47-byte acceptance in MAIN, OP and
-MAINE. A named far-pointer local emitted60 bytes with a stack spill and frame.
+MMD resident detection now has independent 47-byte acceptance in MAIN, OP and
+MAINE. A named far-pointer local emitted 60 bytes with a stack spill and frame.
 The maintained TH04 typed signature-access form instead lets TC4J retain the
 real IVT pointer in ES:BX; every field test and both FAR returns are ordinary
 C++. Only ES=0 is an explicit hardware boundary. No handwritten LES, forced
 return register or RETF is needed. This observation is specific to those
-actual producers; adjacent PMD's ordinary result still lives in DX and emits51
-instead of46.
+actual producers; adjacent PMD's ordinary result still lives in DX and emits 51
+instead of 46.
 
 ## Proven same-CS declarations retain real far interfaces
 
@@ -242,19 +242,19 @@ the complete compared extent and original ordered fixups, and test only the
 affected source. The separate session803 candidate still lacks a mandatory
 zero and remains unaccepted; correcting far-call context alone cannot accept it.
 
-The two reset NOPs are uncredited padding (relative133/158); replacement
-`main-stage-runtime-init-b` preserves the174 complete compared bytes and
+The two reset NOPs are uncredited padding (relative 133/158); replacement
+`main-stage-runtime-init-b` preserves the 174 complete compared bytes and
 credits172 instructions. A native scan of all accepted MAIN/OP/MAINE CODE
 instruction regions also found three older relaxation NOPs in two MAIN
-owners. Only those two owners and reset174 were recompiled for corrected
+owners. Only those two owners and reset 174 were recompiled for corrected
 classification; no OP/MAINE omissions were found. Original receipts stay
 archived. Padding is never removed from raw comparison.
 
 The same proven context declarations recover the old enemy blockers in
 `main-enemy-samecodeseg-a`: the real midboss far entry returns RETF0 and the
-real Spark entry RETF8, with both callee frames1527 matching their callers.
+real Spark entry RETF8, with both callee frames 1527 matching their callers.
 Only lifecycle.cpp changes; its full typed ABI remains unchanged. Two fresh
-producers pass the original89/576 complete bytes and ordered fixups, with
+producers pass the original 89/576 complete bytes and ordered fixups, with
 both linker NOPs explicitly uncredited. This replaces the earlier unsupported
 call-context assumption, not the genuine callee interfaces.
 
@@ -272,7 +272,7 @@ The stage-two updater keeps the full method return type, calls it normally,
 and immediately reads signed AX/DX for four bounds comparisons. Its remaining
 algorithm uses ordinary typed fields and locals. No register math, shortened
 record, scalar-return stand-in or instruction body is introduced. This removes
-the named-point spill from664 to the original653 bytes. Two fresh producers
+the named-point spill from 664 to the original 653 bytes. Two fresh producers
 in `main-stage2-update-abi-a` match all raw bytes and fixups `[441,426,225]`;
 the independent palette-peak mutation rejects. The scrolling service also
 uses the canonical existing C/Pascal/near declaration and the same real address.
@@ -282,7 +282,7 @@ Live returned coordinates are consumed into the real cache before pointer,
 count or age changes; the hit-animation return is consumed before subsequent
 work. The remaining homing angle uses an unsigned byte-storage view for modulo
 256 updates, preserving the canonical full Shot class. Two fresh producers
-match all408 bytes, including eight compiler table bytes and ordered fixups
+match all 408 bytes, including eight compiler table bytes and ordered fixups
 `[202,112]`; a real acceleration mutation rejects.
 
 These are compiler-extension ABI consumers, recorded as C++ DOS-intrinsic
@@ -293,15 +293,15 @@ reuse the mechanism without checking that callee's actual ABI and lifetime.
 ## Scalar rvalues can preserve the original transition scaling
 
 The stage-two initializer's476-byte form already had the original single
-common X store in DX. Its16-byte difference was exactly four in-place
+common X store in DX. Its 16-byte difference was exactly four in-place
 `frame <<= 3` operations, each four bytes shorter than the original ordinary
 scalar-result scaling. Replacing only those four real assignments with
 `frame = frame * 8` preserves the eight branches, genuine state writes and
-values (all normalized transition frames are0..127). No register variable,
+values (all normalized transition frames are 0..127). No register variable,
 extra work, barrier, flag variation or padding is introduced.
 
 The independently factored initializer in `main-stage2-particle-initializer-a`
-now matches all492 bytes and ordered fixups `[484,441]` from two fresh
+now matches all 492 bytes and ordered fixups `[484,441]` from two fresh
 producers, with its own zoom mutation rejected. The already accepted updater
 and ABI header were not changed or replayed. Prior claims that branch stores
 caused the shrink are superseded by the actual four-sequence native comparison.
@@ -316,15 +316,15 @@ algorithm alias, register forcing or alternate ABI was introduced to repair it.
 
 A genuine static function need not be exported or given a synthetic caller to
 be reviewed. Turbo C++ emitted the unmodified private Shinki phase helper as
-one complete102-byte contribution even when isolated. `main-shinki-phase23-a`
+one complete 102-byte contribution even when isolated. `main-shinki-phase23-a`
 passes two fresh producers and its own mutation; this resolves the missing
 public boundary through whole-contribution ownership rather than a made-up
 MAP symbol. Function-scoped review still requires real publics.
 
-The complete1445-byte natural stage-bonus family retains allclear579's
+The complete 1445-byte natural stage-bonus family retains allclear579's
 nonmonotone original relocation stream. The accepted two later scopes add no
-credit for the real305-byte helper prefix. Native inspection of both saved
-producers also confirms the full1445 raw bytes and unchanged prefix, with zero
+credit for the real 305-byte helper prefix. Native inspection of both saved
+producers also confirms the full 1445 raw bytes and unchanged prefix, with zero
 new compilation (`.analysis/stage-bonus-full-raw-context.json`). Genuine
 preceding functions supply context; an arbitrary byte or phase prefix cannot.
 
@@ -332,7 +332,7 @@ preceding functions supply context; an arbitrary byte or phase prefix cannot.
 
 The HUD bar consumes BL, but the maintained donor and original callers establish
 a word `int` parameter in its real six-byte near Pascal frame. The first
-indicator producer229 used an overnarrow byte formal, letting the compiler push
+indicator producer 229 used an overnarrow byte formal, letting the compiler push
 the memory word directly. Restoring the canonical int emits the original
 zero-extension for Dream and Power, recovering233. `main-hud-indicators-b`
 passes complete raw/order checks and its own mutation. Preserve the full API;
@@ -340,7 +340,7 @@ a register read alone cannot justify narrowing a declaration.
 
 ## samecodeseg with a locally defined callee
 
-In the first OP exit candidate, both real bodies25/72 landed in the wrapper's
+In the first OP exit candidate, both real bodies 25/72 landed in the wrapper's
 97-byte contribution: the samecodeseg annotation also associated the locally
 defined cleanup with that code segment. A later codeseg selector did not undo
 it. This was a failed complete boundary, and no second/negative was run.
@@ -348,21 +348,21 @@ it. This was a failed complete boundary, and no second/negative was run.
 The actual donors use separate wrapper and cleanup TUs. Factoring their
 unchanged bodies accordingly, retaining the far interfaces and a wrapper-only
 samecodeseg annotation for the foreign cleanup, restores each real position.
-`op-game-exit-to-dos-b` and `op-game-exit-core-b` independently pass25/72, original
+`op-game-exit-to-dos-b` and `op-game-exit-core-b` independently pass 25/72, original
 ordered fixups and their own mutations. One checked wrapper NOP receives zero
 credit. Do not infer multiple emitted contributions from source pragmas alone;
 inspect actual OMF/MAP before expanding a replay.
 
 A separate natural CDG-free-all loop with the correct far external cleanup
-and samecodeseg annotation emits15 bytes, versus original14. All loop
+and samecodeseg annotation emits 15 bytes, versus original 14. All loop
 instructions agree, but the external far-to-near relaxation retains one NOP;
 the original local-family call is four bytes. This is not an accepted owner
 and does not justify changing the actual far API.
 
 ## A real near-array view at a far API boundary
 
-`main-hud-put-context-a` already reproduced the full1198 extent, accepted861
-prefix, alignment zero, table and original ordered fixups. The only new337 raw
+`main-hud-put-context-a` already reproduced the full 1198 extent, accepted 861
+prefix, alignment zero, table and original ordered fixups. The only new 337 raw
 difference was the twelve-byte rank-label address sequence: an explicit far
 cast computed the offset before pushing DS. The actual DS-resident array uses
 the donor expression `(const char near *)&glEASY[rank * 8]`, implicitly converted
@@ -374,13 +374,13 @@ The full source's861-byte prefix consists of the exact existing eight natural
 functions. Its original type definitions precede the donor's documented-a2,
 while-G is initial. This genuine context supplies the final function's odd
 start, one zero and emitted-record split; no arbitrary alignment prefix was
-added. Both full1198 and prefix861 are independently checked in both producers,
-with new credit limited to328 instructions and eight generated table bytes.
+added. Both full 1198 and prefix 861 are independently checked in both producers,
+with new credit limited to 328 instructions and eight generated table bytes.
 
 ## Shared scalar initialization and complete semantic filename owners
 
-The first stage-state initializer237 had the same frame and all eleven typed
-clear counts as original233. Its only size difference was two immediate zero
+The first stage-state initializer 237 had the same frame and all eleven typed
+clear counts as original 233. Its only size difference was two immediate zero
 stores versus the original shared zero value. The ordinary expression
 `hitshot_next_free_id = shots_alive_count = 0` preserves the actual shots-first
 store order and recovers233 in `main-stage-state-init-b`, with its own ring
@@ -388,15 +388,15 @@ mutation. This does not introduce register aliases, lifetime barriers or flags.
 
 The OP score menu's original filename subset begins at odd DS2823. It cannot
 be modeled as a standalone word-aligned23-byte compiler DATA contribution.
-The complete existing53-byte readable pool begins at even DS2818; a semantic
+The complete existing 53-byte readable pool begins at even DS2818; a semantic
 char-field owner preserves all seven genuine strings and their internal odd
 positions without filler. Both CODE contexts reference that real near object.
-`op-score-files-canonical-a` replaces the old53-byte evidence with two fresh
+`op-score-files-canonical-a` replaces the old 53-byte evidence with two fresh
 whole-DATA producers and its own filename mutation; no new DATA is counted.
 
-The standalone312 menu then emits its required original26 descending fixups,
+The standalone 312 menu then emits its required original 26 descending fixups,
 while seven affected prior CODE scopes retain their complete raw/order matches
-in `op-score-code-canonical-a`. The new CODE and53 DATA sources need different
+in `op-score-code-canonical-a`. The new CODE and 53 DATA sources need different
 controls, so each necessary TU group is replayed separately and all replacements
 are imported atomically. Source inclusion is CPP-local: shared headers used by
 MAINE remain unchanged, keeping that unrelated closure out of replay.

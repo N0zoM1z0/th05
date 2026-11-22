@@ -94,7 +94,7 @@ Run `git status --short` and `python3 scripts/preflight.py` before target work.
   separately; recover compiler-generated code as C/C++.
 - Compare padding normally but give it zero authored credit. Keep source,
   semantics, exact units, decoded/packed files and whole EXE claims separate.
-  Unknown ownership remains unknown; the global denominator is not yet reviewed.
+  Unknown ownership remains unknown and counts against the denominator.
 - The supplied Japanese copy is candidate-local-attested, not independently
   proved pristine. Keep proprietary inputs and outputs in ignored directories;
   Ghidra projects use `ghidra-project/`.

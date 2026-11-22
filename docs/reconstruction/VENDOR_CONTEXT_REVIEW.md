@@ -140,17 +140,14 @@ python3 scripts/review_context_remaining.py --context maine --check
 
 `--structural-check` validates the public proof without private native
 inputs; the ownership map overlays only explicitly selected CODE intervals.
-The source members' DATA/BSS/INIT records remain outside these claims.
-All other uncovered ranges, runtime writable variables, vendor DATA/BSS
-and game sources remain unknown pending their own review.
+The source members' DATA/BSS/INIT records are classified by separate reviews.
 
 The original gapless-lane root adoption passed its then-current native
 `ownership.py --write --verify-targets` check. Its historical global totals
 are **superseded** by later source reviews of `farheap`, `exec`, `setenvp`,
 CRT DATA and additional authored functions. Use the generated
 [`resources/ownership.json`](../../resources/ownership.json), not old
-adoption-time totals, for the current unknown/vendor breakdown. The global
-authored denominator remains unreviewed.
+adoption-time totals, for the current unknown/vendor breakdown.
 
 
 ## MAINE original linker-frame recovery for five further CODE owners

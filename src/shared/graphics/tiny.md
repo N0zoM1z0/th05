@@ -36,8 +36,7 @@ These are adapted game procedures rather than the unchanged public Master
 routine. The reconstruction is attributed to Koizuka/Master and ZUN through
 the candidate reference; it does not claim independent invention, exclusion
 of library ancestry, literal historical source or original assembler identity.
-Reviewed ASM counts remain separate from C/C++ and verified vendor bodies;
-the unreviewed global authored denominator is unchanged.
+Reviewed ASM counts remain separate from C/C++ and verified vendor bodies.
 
 ## Preserved interfaces and behavior
 
@@ -62,7 +61,8 @@ The named semantic macros preserve these different write rules.
 
 The 32x32 kernel writes and rereads the actual CODE word at BF60..BF62 to
 restore the destination for each color. That word precedes the complete
-procedure, stays outside its source contribution and remains unknown ownership.
+procedure and stays outside its source contribution; it is a zero-credit
+`checked-uncredited-asm-cs-variable` gap row.
 The binder supplies its address without an initial value. Its original shared
 state behavior is retained. No credit is given to the coordinate, handle table,
 sprite data, neighboring kernels or already accepted C++ callers.

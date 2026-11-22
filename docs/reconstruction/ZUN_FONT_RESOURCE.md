@@ -18,9 +18,9 @@ The independently re-parsed directory places the complete `-G` child at
 
 | Outer file range | Bytes | Observation / inventory policy |
 | --- | ---: | --- |
-| 2488..24D3 | 75 | Complete CG-RAM control code; stays unknown |
-| 24D3..24D4 | 1 | Zero code/DATA alignment candidate; stays unknown |
-| 24D4..2541 | 109 | Two DOS dollar-terminated messages; stay unknown |
+| 2488..24D3 | 75 | Complete CG-RAM control code; accepted `zun-gaiji` ASM |
+| 24D3..24D4 | 1 | Zero alignment byte; checked, zero credit |
+| 24D4..2541 | 109 | Two DOS dollar-terminated messages; accepted `zun-gaiji` DATA |
 | 2541..4541 | 8192 | Complete font bitmap; explicit resource classification |
 
 The reader has no instruction NOP, relocation, embedded dispatcher or branch
@@ -64,7 +64,8 @@ messages, alignment, other children or vendor origins.
 `-S` has positive Borland runtime/C++ evidence and cannot become original ASM.
 `-O` matches a reference KAJA utility but still lacks the required independent
 vendor provenance. The 311-byte `-M` assembly replay remains an origin inference.
-All 9,924 other ZUN bytes stay unknown.
+The other ZUN bytes are classified by their own reviews; see
+`resources/ownership.json`.
 
 ## Verification and explicit adoption
 

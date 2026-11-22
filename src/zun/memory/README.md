@@ -1,7 +1,7 @@
 # TH05 memory-check child
 
-`check.asm` is a maintained **original-style assembly candidate**, with origin
-still inferred. It represents the `-M` child embedded in the attested ZUN.COM
+`check.asm` is the accepted owner (`zun-memory`, reviewed ZUN COM lane) of the
+complete 311-byte child. Its assembly origin is inferred from the code shape below. It represents the `-M` child embedded in the attested ZUN.COM
 container, not the outer launcher's entry point.
 
 The strongest origin evidence is the bare COM entry with no C runtime, direct

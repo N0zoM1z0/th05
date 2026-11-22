@@ -1,10 +1,13 @@
-# Input-sense source and deferred origin
+# Input sense: reviewed original ASM
 
-`input_sense.asm` is maintained semantic source without exact acceptance or
-authored credit. It adapts pinned ReC98 b6ba5b0a's
-`th04/hardware/input_s.asm`, selected by `th05/input_s.asm`. The source contains
-named firmware groups, key masks and game input bits rather than copied bytes.
-It defines no keyboard bitmap, initialized state or joystick implementation.
+`input_sense.asm` is the accepted owner of the complete 262-byte two-entry
+keyboard/joystick scanner in all three executables (`main-`, `op-` and
+`maine-input-sense-original-asm` in `config/asm_families.toml`). Two TASM32/TLINK
+producers reproduce every byte and the single far `JS_SENSE` relocation at
++251; the compiled negative changes the BIOS shift-status `MOV AH,2` to
+`MOV AH,3`. Credit is the 261 instruction bytes; the trailing EVEN NOP at +261
+compares with zero credit. The source follows pinned ReC98 b6ba5b0a
+`th04/hardware/input_s.asm` (selected by `th05/input_s.asm`, `GAME=5`).
 
 | Artifact | Complete native range | CS / DS | key_det / shiftkey | js_stat / js_bexist | JS_SENSE |
 | --- | --- | --- | --- | --- | --- |
@@ -30,58 +33,16 @@ word. DS remains the game frame; ES/AX/flags are changed. No extra save/restore,
 release clearing, IF guarantee or held-key delay is introduced. The normal
 firmware/vendor clobber contracts still apply.
 
-Reference history e4eed85c44283c8b48ac9a00cf152cfd5b9210d6 explicitly describes
-manual tail-call optimization at the reset prefix. This supports deliberate
-fallthrough organization; it does not independently prove the historical
-source language of the complete ordinary no-argument FAR sense body. The
-remaining keyboard tests and BIOS boundary could also come from C/intrinsics
-or mixed source. No positive compiler-origin proof is asserted either.
+## Origin
 
-The bounded 653-member vendor review finds related BIOS input work in
-JSSENSE.ASM but a different aggregated bit-mapping algorithm. That is relevant
-ancestry of the separate joystick provider, not proof that this whole game
-wrapper is vendor code or original ASM. Both bodies and the trailing alignment
-remain unknown ownership. Do not promote all 262 bytes from the eight-byte
-reset prefix's evidence or count a non-returning prefix as a separate exact
-function merely to gain credit.
+ReC98 history e4eed85c describes manual tail-call optimization at the reset
+prefix, which explains the fallthrough. On its own it would not prove that the
+whole body was written in assembly. The ASM decision rests on the full native
+review: both public entries at 0 and 8, the shared RETF at 260, register-carried
+state and the shape of the keyboard tests. The bounded vendor review found
+related BIOS input code in master.lib `JSSENSE.ASM`, but with a different bit
+mapping, so the wrapper is game code rather than vendor code. The binder
+anchors only DS globals and `JS_SENSE`; it supplies no firmware bytes,
+joystick body, DATA or BSS.
 
-Independent report `.analysis/input-sense-native-source-origin-review.json`
-has SHA-256 `c09a88cd011ccad6dc966b679cec6e652ff543444b2df38e9e97aba9ab11f08a`.
-It records complete native boundaries, NOP/fixup enumeration, history, bounded
-vendor search and an independent semantic review of the maintained source.
-No assembler, linker, Ghidra session or target runtime was run for this owner.
-There is no live exact proposal, binder, producer or acceptance receipt.
-
-## 2026-11-11: source-backed complete MAIN keyboard/joystick scanner accepted
-
-The *entire* original two-entry SHARED family is now accepted for MAIN at
-`[14FC2,150C8)` as `main-input-sense-original-asm`: **262/262 original
-bytes**, 261 decoded instruction bytes and one original trailing `EVEN` NOP
-at +261. Both real TASM32/TLINK producers reproduce the full raw scope,
-original single far `JS_SENSE` relocation at +251, native shared code frame
-14AB and DGROUP data frame 209D. The compiled semantic negative changes the
-original PC-98 BIOS shift-status `MOV AH,2` to `MOV AH,3` and is rejected.
-
-The source is the original-register implementation in
-`src/shared/hardware/input_sense.asm`, whose *complete* TH05 key map,
-low/high input byte OR masks, independent numpad diagonals, BIOS INT18
-shift-mask logic, and joystick conditional callback are corroborated by the
-pinned ReC98 `th04/hardware/input_s.asm` (`GAME=5`). A separate full native
-review decodes all 78 instructions, confirms both live public entrypoints
-at relative 0 and 8, and distinguishes the real reset-entry fallthrough
-from an invented separately returning helper. The symbol-only binder anchors
-real memory globals at DS03D0/2646/3064/3066 and JS_SENSE at 0000:367A;
-no firmware bytes, joystick body, initialized DATA or BSS are supplied.
-
-This is an *exact reviewed original-register ASM reconstruction*, not proof
-that the game authors originally wrote the complete body in assembly rather
-than C or a mixture. The earlier origin cautions above remain valid: the
-known hand-optimized eight-byte reset prefix **by itself** would not justify
-whole-body authorship. Here the independent **full** semantic source review,
-complete 262-byte native comparison, all original relocation/entry boundaries,
-and compiled negative provide the additional evidence for source-backed ASM
-ownership. Credit is 261 assembly instruction bytes; the one NOP compares
-but earns no authored credit. No C++ or vendor source authorship is inferred.
-
-Strict receipt:
-`.analysis/gpt-web-main-input-sense-262-asm-c/receipt.json`.
+Receipt (MAIN): `.analysis/gpt-web-main-input-sense-262-asm-c/receipt.json`.

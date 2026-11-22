@@ -61,7 +61,7 @@ bindings. Its 187 fixup actions and all 20 original loader relocations retain
 their actual order; sorting is forbidden.
 
 `loadprog` ends with its genuine RET at AE1C. The zero at AE1D is outside this
-member and remains unknown. The next accepted slowdown function starts AE1E.
+member; it is a checked word-alignment byte with zero credit. The next accepted slowdown function starts AE1E.
 AE10 is the paragraph frame of main_01, not a new function boundary; it lies
 inside the last library call path. The complete native 871-byte function
 contains 376 instructions and 14 real TLINK relaxation NOPs, at
@@ -93,7 +93,7 @@ symbol-address relationships are applied:
 The DATA interval includes the original initializer/exit markers, not game
 CODE. Eight already reviewed complete initialized DATA objects independently
 anchor the offset change: _abort31, files2 42, ioerror91, ctype257, signal38,
-xx18, strings102 and loadprog40. Their actual complete library LEDATA bytes
+xx18, strings 102 and loadprog40. Their actual complete library LEDATA bytes
 occur uniquely at both retained and native DATA positions, with empty original
 relocation lists. These unchanged prior DATA proofs are reused, not relabelled.
 Early CRT DATA offsets remain unchanged. No arbitrary per-operand binding is
@@ -106,7 +106,7 @@ Its actual CODE FIXUPP at B9 is an offset16 DGROUP reference to `_BSSEND`,
 and B6 references `_BSS`. The four initializer/exit fields likewise refer to
 `_INIT_`, `_INITEND_`, `_EXIT_` and `_EXITEND_`. Native startup clears
 261A..C734 and iterates INIT25F6..2614 and EXIT2614..261A. Three real relocated
-DGROUP immediates agree at209D. SS is checked separately and is never translated
+DGROUP immediates agree at 209D. SS is checked separately and is never translated
 as DGROUP; foreign segment bases also remain unchanged.
 
 The complete final ordinary library BSS suffix has the pinned WORD-aligned
@@ -180,11 +180,11 @@ Final independent adoption/overlay gate:
 `70481d0fb6eceec74e6825163207eb19609e2b9ca95fccab07ea3d322c48b2f7`.
 All four incremental compiler plans are empty.
 
-Full CI passes317 tests, including the14 new ownership/padding tests. Native
+Full CI passes 317 tests, including the 14 new ownership/padding tests. Native
 ownership replay and `review_main_runtime.py --check` also pass. Root final
 audit is `.analysis/vendor-review/main-runtime-root-final-review.json`, SHA-256
 `ac0524934853084a54b42f6ad2bae463141dabf76e8271c2ea983a74010c814c`.
 
-Independent verification of all116 native padding roles:
+Independent verification of all 116 native padding roles:
 `.analysis/vendor-review/main-runtime-padding-review.json`, SHA-256
 `0cdcbdbaa8bd276ea12c2c3e2808e70844c24ae05822b09c95b39636e56d6ea4`.

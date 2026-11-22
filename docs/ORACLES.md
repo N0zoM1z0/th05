@@ -39,7 +39,9 @@ compiler-owned bytes and earn no credit. Matching a bounded unit establishes
 neither whole-program placement nor standalone linkage.
 
 Decoded OP/MAINE bytes, packed files and whole executables are separate claims.
-The authored denominator remains unreviewed, so no global percentage is claimed.
+The global percentage comes from `resources/ownership.json`: every unknown
+interval counts against it, and only reviewed vendor, asset, BSS, padding and
+alignment rows are excluded from the denominator.
 The supplied Japanese target is candidate-local-attested, not independently
 proved pristine. Reference projects and Ghidra views supply evidence, not
 transferred acceptance.

@@ -270,8 +270,8 @@ def reviewed_claims(root, views, *, verify_targets=False):
     need(decision == dict(schema_version=1, classification='third-party-library-code',
          artifact='th05-main', decision='ADOPT_ONLY_LISTED_CONTRIBUTIONS', evidence_sha256=sha(raw),
          scopes=[dict(member=m, segment=s, start=a, size=n) for m, s, a, n in SCOPES],
-         authored_credit=0, authored_denominator=None, other_scopes_policy='unknown', notes=NOTES,
-         notes_sha256=sha((root / NOTES).read_bytes())), 'string explicit adoption differs')
+         authored_credit=0, authored_denominator=None, other_scopes_policy='unknown', notes=NOTES),
+         'string explicit adoption differs')
     need((views['main']['size'], views['main']['sha256']) == (145958, vendor.PINS['target_payload_sha256']),
          'string coordinate view differs')
     if verify_targets:

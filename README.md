@@ -54,10 +54,9 @@ reused after input identity checks. Only new or affected units are compiled.
 ledgers. OP/MAINE compare cached decoded load modules, preserving observed
 relocation order; packed-file equality remains a separate claim.
 
-The standalone ZUN `-M` memory-check child also reproduces all **311 bytes**
-(142 code, 169 initialized data) from maintained semantic assembly. Its
-original assembly style remains inferred. This separate comparison is not an
-authored-byte ownership decision or part of the C/C++ counters. See
+The ZUN `-M` memory-check child reproduces all **311 bytes** (142 code, 169
+initialized data) from maintained assembly and counts in the reviewed ZUN COM
+lane, separately from the C/C++ counters. See
 [child source and evidence](src/zun/memory/README.md).
 
 ## Setup

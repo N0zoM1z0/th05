@@ -5,7 +5,7 @@ native loaders. Each is 184 instruction bytes, 71 instructions, no NOPs,
 padding, tables, placeholders or owned DATA. Original ordered MZ fixups are
 [70,78,87], the three real Beep-library far calls. RETF 6 is at relative 181.
 
-| Artifact | Complete load range | CS | DS:filename13 / extension15 / SE byte / BGM byte |
+| Artifact | Complete load range | CS | DS:filename13 / extension 15 / SE byte / BGM byte |
 | --- | --- | --- | --- |
 | MAIN | 14EA4..14F5C | 14AB | 209D:3056 / 0826 / 0835 / 0836 |
 | OP | DBBE..DC76 | 0D30 | 0EFE:383E / 0A52 / 0A61 / 0A62 |

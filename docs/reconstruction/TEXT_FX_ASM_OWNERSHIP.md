@@ -13,10 +13,10 @@ The C/C++ ledgers, functions and counters remain unchanged.
 
 Across OP and MAINE this adds **678 ASM instruction bytes and 64 semantic ASM
 DATA bytes**, separately reported. All 756 bytes in these complete scopes pass
-raw comparison; 14 are uncredited. The 32 raster-mask bytes between dispatch
-and state in each artifact remain unknown and receive no authored credit.
-The observed universe stays 319,268 bytes, with no global denominator or
-percentage claim. The inferred ZUN memory-child origin is not promoted.
+raw comparison; 14 are uncredited. The 32 glyph-overlay mask bytes between dispatch
+and state in each artifact are a separate accepted C DATA unit
+(`op-glyph-overlay-mask-data`, `maine-glyph-overlay-mask-data`). The inferred
+ZUN memory-child origin is not promoted.
 
 ## Why this is an assembly reconstruction
 
@@ -120,8 +120,7 @@ six units. Neither proposal production nor inferred-origin replay alone grants
 ownership credit. Structural CI rejects changed sources, expanded selections,
 altered byte accounting or stale evidence/decision digests.
 
-The gapless ownership inventory overlays only still-unknown intervals. It
-separates reviewed ASM instructions, reviewed ASM initialized DATA, checked
-ASM alignment and checked ASM runtime placeholders. Every other unknown span,
-including raster resources, remains in the observation universe. Full executable
+The gapless ownership inventory files these scopes as reviewed ASM
+instructions, reviewed ASM initialized DATA, checked ASM alignment and checked
+ASM runtime placeholders. Full executable
 linkage, actual game execution, packing and the 98% objective remain unaccepted.
